@@ -297,20 +297,24 @@ h3 {
 /* Inputs, forms */
 .llh-skill-input, .llh-resource-input, .llh-fund-input, .llh-crisis-input {
   flex: 1;
-  padding: 13px 15px;
-  border-radius: 9px;
-  border: 1.2px solid var(--llh-border);
+  padding: 15px 17px;
+  border-radius: 11px;
+  border: 1.49px solid var(--llh-border);
   background: #F6F8FA;
   color: var(--llh-text);
   outline: none;
-  font-size: 1.06em;
+  font-size: 1.09em;
   margin-right: 0;
-  box-shadow: 0 1.5px 8px #b1b48313;
-  transition: border-color 0.17s, background 0.13s;
+  box-shadow: 0 1.5px 12px #b1b48317;
+  transition: border-color 0.17s, background 0.13s, box-shadow 0.15s;
+  font-family: inherit;
 }
-.llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus, .llh-crisis-input:focus {
+
+.llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus, .llh-crisis-input:focus,
+.llh-skill-input:focus-visible, .llh-resource-input:focus-visible, .llh-fund-input:focus-visible, .llh-crisis-input:focus-visible {
   border-color: var(--llh-secondary);
   background: #EDF6F8;
+  box-shadow: 0 2px 12px #5fa1af36;
 }
 
 /* Cards */
