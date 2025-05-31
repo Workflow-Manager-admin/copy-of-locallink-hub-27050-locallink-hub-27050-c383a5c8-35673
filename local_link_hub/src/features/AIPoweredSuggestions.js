@@ -6,10 +6,14 @@ import React from "react";
  */
 // PUBLIC_INTERFACE
 function AIPoweredSuggestions({ user }) {
-  // Simulated AI suggestions
+  // Expanded, varied AI suggestions for demonstration
   const suggestions = [
     "You matched 95% with Colin J. (Dog Walking ↔ Gardening)",
-    "There are 3 new local requests for 'Bike Repair' skills."
+    "There are 3 new local requests for 'Bike Repair' skills.",
+    "Top suggestion: Reach out to Priya Patel for shared childcare swaps.",
+    "Offer: Your 'Tool Lending' badge has 4 neighbor interest pings.",
+    "Safety Alert: 2 micro-community members marked 'in need' in Crisis tab.",
+    "AI Match: Alison W.'s Home Organizing service fits your requests."
   ];
 
   return (
