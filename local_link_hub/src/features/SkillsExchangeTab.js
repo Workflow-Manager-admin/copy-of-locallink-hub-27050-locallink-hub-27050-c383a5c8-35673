@@ -7,7 +7,7 @@ import VerifiedBadge from "./VerifiedBadge";
  */
 // PUBLIC_INTERFACE
 function SkillsExchangeTab({ user }) {
-  // Simulated skills/offers list
+  // Expanded, varied example skill offers/requests
   const skillOffers = [
     {
       name: "Maria B.",
@@ -15,7 +15,10 @@ function SkillsExchangeTab({ user }) {
       profilePic: "https://randomuser.me/api/portraits/women/67.jpg",
       verified: true,
       trustScore: 92,
-      badges: [{ skill: "Math Tutoring", verified: true }]
+      badges: [
+        { skill: "Math Tutoring", verified: true },
+        { skill: "SAT Prep", verified: false }
+      ]
     },
     {
       name: "Colin J.",
@@ -23,6 +26,58 @@ function SkillsExchangeTab({ user }) {
       profilePic: "https://randomuser.me/api/portraits/men/83.jpg",
       verified: false,
       trustScore: 71,
+      badges: [
+        { skill: "Dog Walking", verified: false }
+      ]
+    },
+    {
+      name: "Priya Patel",
+      skill: "Childcare (CPR Cert.)",
+      profilePic: "https://randomuser.me/api/portraits/women/37.jpg",
+      verified: true,
+      trustScore: 87,
+      badges: [
+        { skill: "Childcare", verified: true },
+        { skill: "First Aid", verified: true }
+      ]
+    },
+    {
+      name: "Lee Q.",
+      skill: "Garden Design",
+      profilePic: "https://randomuser.me/api/portraits/men/61.jpg",
+      verified: true,
+      trustScore: 95,
+      badges: [
+        { skill: "Gardening", verified: true }
+      ]
+    },
+    {
+      name: "Alison W.",
+      skill: "Home Organizing",
+      profilePic: "https://randomuser.me/api/portraits/women/90.jpg",
+      verified: false,
+      trustScore: 66,
+      badges: [
+        { skill: "Decluttering", verified: false }
+      ]
+    },
+    {
+      name: "Sam E.",
+      skill: "Bicycle Repair (Mobile)",
+      profilePic: "https://randomuser.me/api/portraits/men/48.jpg",
+      verified: true,
+      trustScore: 93,
+      badges: [
+        { skill: "Bike Repair", verified: true },
+        { skill: "Tool Lending", verified: false }
+      ]
+    },
+    {
+      name: "Mavis L.",
+      skill: "Language Exchange (Spanish ↔ English)",
+      profilePic: "https://randomuser.me/api/portraits/women/22.jpg",
+      verified: false,
+      trustScore: 78,
       badges: []
     }
   ];
