@@ -1,26 +1,24 @@
-/* Feature-specific "premium" styles for LocalLink Hub, polishing original with improved gradients, spacing, depth, glow, and trust+verified highlights */
-
 .llh-map-card {
-  background: linear-gradient(111deg, #191715 60%, #1e1c18 110%);
-  border-radius: 15px;
-  box-shadow: 0 4px 32px #271a0896, 0 1.5px 17px #8f0a0a13;
-  padding: 22px 26px 18px 25px;
-  margin-bottom: 12px;
-  border: 1.4px solid var(--llh-border);
-  min-width: 235px;
+  background: linear-gradient(111deg, #19243d 60%, #263a53 110%);
+  border-radius: 17px;
+  box-shadow: 0 5px 34px #3a8dff74, 0 2px 13px #14d4b437;
+  padding: 22px 27px 18px 26px;
+  margin-bottom: 13px;
+  border: 2px solid var(--llh-border);
+  min-width: 240px;
   min-height: 148px;
   position: relative;
 }
 .llh-map-card-header {
-  font-size: 1.19em;
-  font-weight: 800;
-  color: var(--llh-secondary);
-  margin-bottom: 12px;
-  text-shadow: 0 2px 14px #8f0a0a11;
+  font-size: 1.22em;
+  font-weight: 900;
+  color: var(--llh-primary);
+  margin-bottom: 13px;
+  text-shadow: 0 2px 17px #3a8dff15;
   display: flex;
   align-items: center;
-  gap: 7px;
-  letter-spacing: .01em;
+  gap: 10px;
+  letter-spacing: .012em;
 }
 .llh-map-imgbox {
   display: flex;
@@ -28,11 +26,11 @@
   justify-content: center;
 }
 .llh-map-geofence-note {
-  font-size: 1.06em;
-  margin-top: 8px;
-  color: var(--llh-primary);
-  font-weight: 600;
-  text-shadow: 0 2px 7px #68580812;
+  font-size: 1.08em;
+  margin-top: 9px;
+  color: var(--llh-secondary);
+  font-weight: 900;
+  text-shadow: 0 2px 7px #37e3dc21;
 }
 
 .llh-section {
@@ -46,180 +44,180 @@
 /* Profile Card - Sleek 3D */
 .llh-profile-card {
   display: flex;
-  background: linear-gradient(107deg, #23221f 60%, #262311 110%);
-  border-radius: 16px;
-  padding: 16px 25px;
-  gap: 22px;
+  background: linear-gradient(120deg, #17385d 70%, #141f41 100%);
+  border-radius: 18px;
+  padding: 18px 27px;
+  gap: 26px;
   align-items: center;
-  min-width: 280px;
-  box-shadow: 0 2px 18px #b1b48304, 0 1.5px 13px #68580812;
-  border: 1.6px solid var(--llh-accent);
+  min-width: 295px;
+  box-shadow: 0 4px 24px #20e3d214, 0 2px 13px #3a8dff30;
+  border: 2.3px solid var(--llh-accent);
 }
 
 .llh-profile-title {
-  font-weight: 800;
-  font-size: 1.13em;
+  font-weight: 900;
+  font-size: 1.16em;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   color: var(--llh-accent);
   letter-spacing: .02em;
 }
 
 .llh-badges-list {
   display: flex;
-  gap: 8px;
-  margin: 8px 0 6px 0;
+  gap: 10px;
+  margin: 10px 0 7px 0;
 }
 .llh-badge {
-  background: #353308;
+  background: #1a3557;
   color: var(--llh-secondary);
-  border-radius: 14px;
-  font-size: .99em;
-  padding: 7px 13px 5px 12px;
-  margin: 0 2px;
+  border-radius: 15px;
+  font-size: 1.02em;
+  padding: 7px 15px 6px 13px;
+  margin: 0 3px;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-weight: 600;
-  letter-spacing: .01em;
-  box-shadow: 0 2px 8px #68580821;
-  border: 1.3px solid #b1b48325;
+  gap: 6px;
+  font-weight: 700;
+  letter-spacing: .012em;
+  box-shadow: 0 2px 13px #14d4b439;
+  border: 1.6px solid var(--llh-border);
 }
 .llh-badge-verified {
-  background: var(--llh-accent);
-  color: #fff;
-  border: 1.4px solid var(--llh-primary);
-  box-shadow: 0 2px 8px #8f0a0a36;
+  background: var(--llh-secondary);
+  color: #142133;
+  border: 2.1px solid var(--llh-primary);
+  box-shadow: 0 3px 12px #14d4b455;
 }
 
 .llh-profile-trust-score {
-  font-size: 1.01em;
+  font-size: 1.04em;
   color: var(--llh-success);
   margin-top: 5px;
-  font-weight: 700;
-  text-shadow: 0 1.5px 8px #b1b48317;
+  font-weight: 900;
+  text-shadow: 0 2px 10px #14d4b437;
 }
 
 .llh-skill-form, .llh-resource-form, .llh-fund-form {
   margin: 20px 0;
   display: flex;
-  gap: 13px;
+  gap: 14px;
 }
 
 .llh-skill-input, .llh-resource-input, .llh-fund-input {
   flex: 1;
-  padding: 13px 15px;
-  border-radius: 7px;
-  border: 1.3px solid var(--llh-border);
-  background: #181818;
+  padding: 14px 16px;
+  border-radius: 9px;
+  border: 1.5px solid var(--llh-border);
+  background: #172d43;
   color: var(--llh-text);
   outline: none;
   font-size: 1.09em;
-  box-shadow: 0 2px 10px #68580812;
+  box-shadow: 0 2px 12px #14d4b424;
   margin-right: 0;
-  transition: border-color 0.16s;
+  transition: border-color 0.17s, background 0.14s;
 }
 .llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus {
   border-color: var(--llh-primary);
-  background: #1c180d;
+  background: #0a263a;
 }
 
 /* General Cards */
 .llh-skill-card, .llh-resource-card, .llh-fund-card, .llh-crisis-card {
-  background: linear-gradient(117deg,#23221f 65%, #2c2713 95%);
-  border-radius: 14px;
-  box-shadow: 0 4px 22px #b1b48314, 0 1px 12px #8f0a0a10;
-  padding: 14px 18px 13px 16px;
-  min-width: 170px;
-  min-height: 96px;
+  background: linear-gradient(120deg,#18324f 60%, #264976 110%);
+  border-radius: 16px;
+  box-shadow: 0 5px 19px #14d4b422, 0 2px 12px #3a8dff20;
+  padding: 15px 19px 14px 17px;
+  min-width: 180px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-  border: 1.3px solid var(--llh-border);
+  gap: 10px;
+  border: 1.5px solid var(--llh-border);
   position: relative;
 }
 .llh-resource-title {
-  font-weight: 700;
+  font-weight: 900;
   color: var(--llh-accent);
-  font-size: 1em;
-  letter-spacing: .01em;
+  font-size: 1.08em;
+  letter-spacing: .012em;
 }
 .llh-resource-details {
-  font-size: 0.95em;
+  font-size: 0.97em;
   color: var(--llh-text-muted);
 }
 .llh-resource-listing-user {
   color: var(--llh-secondary);
-  font-size: 0.97em;
+  font-size: 0.98em;
   margin-top: 3px;
 }
 .llh-fund-balance {
-  background: linear-gradient(111deg, #2b2622 60%, #23221e 100%);
+  background: linear-gradient(120deg, #223d5a 60%, #11294a 100%);
   border-radius: 10px;
   color: var(--llh-success);
-  font-size: 1.16em;
+  font-size: 1.18em;
   display: flex;
-  gap: 13px;
+  gap: 15px;
   align-items: center;
   margin-bottom: 15px;
-  padding: 10px 16px 11px 16px;
-  box-shadow: 0 2px 12px #b1b48322;
-  font-weight: 700;
+  padding: 11px 18px 12px 19px;
+  box-shadow: 0 3px 18px #14d4b425;
+  font-weight: 900;
 }
 .llh-fund-total {
   color: var(--llh-accent);
-  font-weight: 800;
-  font-size: 1.23em;
+  font-weight: 900;
+  font-size: 1.28em;
 }
 .llh-fund-card {
-  min-width: 185px;
+  min-width: 190px;
   color: var(--llh-text);
-  background: linear-gradient(120deg,#1c1917 50%, #181716 100%);
-  box-shadow: 0 1.5px 14px #b1b48309;
+  background: linear-gradient(120deg,#253963 58%, #192644 100%);
+  box-shadow: 0 3px 19px #14d4b41f;
 }
 
 /* Fund Need text */
 .llh-fund-need {
   font-size: 1em;
   color: var(--llh-alert);
-  font-weight: 700;
-  margin: 5px 0 0 0;
+  font-weight: 900;
+  margin: 6px 0 0 0;
 }
 .llh-fund-amount {
-  font-size: 0.98em;
+  font-size: 0.99em;
   color: var(--llh-success);
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 /* Crisis Card enhanced */
 .llh-crisis-card {
   min-width: 170px;
-  background: linear-gradient(113deg,#391a15 55%, #321a1a 90%);
-  border-left: 5px solid #b12f35;
+  background: linear-gradient(120deg,#473876 55%, #3e264b 100%);
+  border-left: 6px solid #fb70a2;
   position: relative;
-  color: #fff5ed;
-  border-radius: 13px;
-  font-weight: 700;
-  box-shadow: 0 2.5px 21px #e87a4162;
-  transition: box-shadow 0.1s;
+  color: #fff7fd;
+  border-radius: 14px;
+  font-weight: 900;
+  box-shadow: 0 4px 26px #ff5d5d45;
+  transition: box-shadow 0.13s;
 }
 .llh-crisis-urgent {
-  border-color: #e87a41;
-  background: linear-gradient(118deg,#70381e 65%, #4a2520 100%);
-  box-shadow: 0 5px 24px #e87a417c;
+  border-color: #FF5D5D;
+  background: linear-gradient(120deg,#fc5185 55%, #4d69e6 100%);
+  box-shadow: 0 8px 37px #ff5d5d8e;
 }
 .llh-crisis-type {
-  font-weight: 800;
+  font-weight: 900;
   color: var(--llh-alert);
-  letter-spacing: .02em;
-  font-size: 1.09em;
+  letter-spacing: .014em;
+  font-size: 1.1em;
 }
 .llh-crisis-desc {
-  font-size: 1.08em;
-  margin-bottom: 7px;
+  font-size: 1.1em;
+  margin-bottom: 8px;
 }
 .llh-crisis-owner {
   font-size: 0.93em;
@@ -229,29 +227,29 @@
 .llh-cards-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 19px;
+  gap: 20px;
   margin-bottom: 2em;
 }
 
 /* AI Suggestions */
 .llh-ai-suggestions {
-  margin-top: 10px;
-  background: #181818;
-  border: 1.3px solid var(--llh-border);
-  border-radius: 9px;
-  padding: 14px 15px 10px 15px;
-  box-shadow: 0 1.5px 9px #68580809;
+  margin-top: 11px;
+  background: #172b4b;
+  border: 1.6px solid var(--llh-border);
+  border-radius: 12px;
+  padding: 16px 17px 11px 17px;
+  box-shadow: 0 2px 11px #14d4b427;
   font-size: 1em;
 }
 .llh-ai-header {
-  font-weight: 800;
+  font-weight: 900;
   color: var(--llh-secondary);
-  font-size: 1.07em;
-  margin-bottom: 3px;
+  font-size: 1.1em;
+  margin-bottom: 4px;
 }
 .llh-ai-list {
   margin: 0 0 0 8px;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 12px;
   color: var(--llh-text-muted);
   font-size: 1em;
 }
@@ -270,6 +268,6 @@
 
 /* Utility adjustments for trusted/verified, high visibility, glows, etc. */
 .llh-glow-primary {
-  box-shadow: 0 2px 14px #8f0a0a59 !important;
+  box-shadow: 0 2px 18px #3a8dff59 !important;
 }
-.llh-txt-verified { color: var(--llh-secondary) !important; font-weight: 700;}
+.llh-txt-verified { color: var(--llh-accent) !important; font-weight: 900; }
