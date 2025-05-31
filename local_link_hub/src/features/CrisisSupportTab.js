@@ -6,7 +6,7 @@ import React from "react";
  */
 // PUBLIC_INTERFACE
 function CrisisSupportTab({ user }) {
-  // Simulated urgent requests/offers
+  // Expanded with more varied, realistic demo requests/offers
   const requests = [
     {
       type: "Need",
@@ -18,6 +18,30 @@ function CrisisSupportTab({ user }) {
       type: "Offer",
       description: "Spare generator for charging phones",
       owner: "Monica O.",
+      urgent: false
+    },
+    {
+      type: "Need",
+      description: "Lost dog, brown, near Oak Ave — help locate",
+      owner: "Brian S.",
+      urgent: true
+    },
+    {
+      type: "Offer",
+      description: "Safe shelter for 2 adults/2 pets (1 night)",
+      owner: "Hakim C.",
+      urgent: false
+    },
+    {
+      type: "Need",
+      description: "Urgent: diapers (Size 2) and formula needed ASAP",
+      owner: "Rina Valdez",
+      urgent: true
+    },
+    {
+      type: "Offer",
+      description: "Supply run: can drive for meds, groceries",
+      owner: "Salim D.",
       urgent: false
     }
   ];
