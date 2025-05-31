@@ -6,7 +6,7 @@ import React from "react";
  */
 // PUBLIC_INTERFACE
 function ResourceReUpTab({ user }) {
-  // Demo resource list
+  // Expanded, realistic resource listings
   const resourceItems = [
     {
       name: "Bookshelf (free)",
@@ -19,6 +19,36 @@ function ResourceReUpTab({ user }) {
       details: "Swap for any board games.",
       user: "Ben H.",
       profilePic: "https://randomuser.me/api/portraits/men/75.jpg"
+    },
+    {
+      name: "Fresh Tomatoes (organic)",
+      details: "Harvested from backyard, no pesticides. Free/share.",
+      user: "Jorge M.",
+      profilePic: "https://randomuser.me/api/portraits/men/58.jpg"
+    },
+    {
+      name: "Winter Jackets (3, kids & adults)",
+      details: "Gently used – please take whatever fits.",
+      user: "Susan Lim",
+      profilePic: "https://randomuser.me/api/portraits/women/11.jpg"
+    },
+    {
+      name: "Laptop Charger (Lenovo)",
+      details: "Extra, 65W USB-C. Can lend for semester.",
+      user: "Victor Greer",
+      profilePic: "https://randomuser.me/api/portraits/men/67.jpg"
+    },
+    {
+      name: "Puzzles & Boardgames",
+      details: "Free cycle or exchange for plants.",
+      user: "Jenny P.",
+      profilePic: "https://randomuser.me/api/portraits/women/41.jpg"
+    },
+    {
+      name: "Bike Helmet (youth)",
+      details: "Gently used, clean, safe.",
+      user: "Aun M.",
+      profilePic: "https://randomuser.me/api/portraits/men/87.jpg"
     }
   ];
 
