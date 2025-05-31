@@ -47,7 +47,15 @@ function CommunityFundTab({ user }) {
       <div className="llh-fund-balance">
         <span>Fund Total:</span>
         <span className="llh-fund-total">${fundBalance}</span>
-        <button className="llh-form-btn" style={{marginLeft:8}}>Contribute</button>
+        <button
+          className="llh-form-btn"
+          style={{marginLeft:8}}
+          aria-label="Contribute to community fund"
+          tabIndex={0}
+          onClick={() => window.alert('Thank you for your contribution! [Demo Action]')}
+        >
+          Contribute
+        </button>
       </div>
       <h3>Current Requests</h3>
       <div className="llh-cards-row">
@@ -57,14 +65,29 @@ function CommunityFundTab({ user }) {
             <div><b>{r.name}</b></div>
             <div className="llh-fund-need">{r.need}</div>
             <div className="llh-fund-amount">Required: ${r.amount}</div>
-            <button className="llh-form-btn">Support</button>
+            <button
+              className="llh-form-btn"
+              aria-label={`Support request for ${r.name}`}
+              tabIndex={0}
+              onClick={() => window.alert(`You chose to support: ${r.name} [Demo Action]`)}
+            >
+              Support
+            </button>
           </div>
         ))}
       </div>
       <form className="llh-fund-form" style={{marginTop:18,display:'flex',gap:'8px'}}>
         <input className="llh-fund-input" placeholder="Describe your need or proposal (e.g. urgent repair)" />
         <input className="llh-fund-input" placeholder="Amount" type="number" min={1} />
-        <button className="llh-form-btn" type="button">Request</button>
+        <button
+          className="llh-form-btn"
+          type="button"
+          aria-label="Request community funds"
+          tabIndex={0}
+          onClick={() => window.alert('Your request would be submitted! [Demo Action]')}
+        >
+          Request
+        </button>
       </form>
     </div>
   );

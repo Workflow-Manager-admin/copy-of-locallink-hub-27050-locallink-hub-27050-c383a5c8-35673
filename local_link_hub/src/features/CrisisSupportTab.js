@@ -57,7 +57,15 @@ function CrisisSupportTab({ user }) {
       </div>
       <form className="llh-crisis-form" style={{display:'flex',gap:'8px',marginBottom:16}}>
         <input className="llh-crisis-input" placeholder="Request help or offer aid (shelter, supplies, etc)" />
-        <button className="llh-form-btn" type="button">Send</button>
+        <button
+          className="llh-form-btn"
+          type="button"
+          aria-label="Send crisis support request or offer"
+          tabIndex={0}
+          onClick={() => window.alert('Your request/offer would be sent & shown to neighbors! [Demo Action]')}
+        >
+          Send
+        </button>
       </form>
       <h3>Active Crisis Requests/Offers</h3>
       <div className="llh-cards-row">
