@@ -228,47 +228,47 @@ h3 {
 
 /* BUTTONS */
 .llh-form-btn, .btn, .btn-large {
-  background: linear-gradient(90deg, var(--llh-primary) 60%, var(--llh-secondary) 100%);
-  color: #fff;
+  background: linear-gradient(90deg, var(--llh-secondary) 55%, var(--llh-accent) 100%);
+  color: var(--llh-primary);
   border: 0;
-  border-radius: 8px;
+  border-radius: 9px;
   font-size: 1.13em;
   font-weight: 900;
   padding: 12px 33px;
   cursor: pointer;
   letter-spacing: 0.018em;
-  box-shadow: 0 5px 24px #1cb9fd31;
-  transition: background 0.2s, transform .13s;
+  box-shadow: 0 3px 16px #b1b48322;
+  transition: background 0.18s, color 0.18s, transform .13s;
 }
 
 .llh-form-btn:hover, .btn:hover, .btn-large:hover {
-  background: linear-gradient(90deg, #256ee8 50%, #37e3dc 100%);
-  color: #fff6e4;
-  transform: translateY(-2px) scale(1.038);
-  box-shadow: 0 7px 28px #48e6fc29;
+  background: linear-gradient(90deg, #98b4b5 40%, #b1b483 100%);
+  color: #222a35;
+  transform: translateY(-1.5px) scale(1.025);
+  box-shadow: 0 5px 20px #b1b48344;
 }
 .btn-large {
   padding: 15px 39px;
-  font-size: 1.21rem;
+  font-size: 1.18em;
 }
 
 /* Inputs, forms */
 .llh-skill-input, .llh-resource-input, .llh-fund-input, .llh-crisis-input {
   flex: 1;
   padding: 13px 15px;
-  border-radius: 8px;
-  border: 1.6px solid var(--llh-border);
-  background: #122235;
+  border-radius: 9px;
+  border: 1.2px solid var(--llh-border);
+  background: #F6F8FA;
   color: var(--llh-text);
   outline: none;
-  font-size: 1.08em;
+  font-size: 1.06em;
   margin-right: 0;
-  box-shadow: 0 2px 12px #37e3dc15;
-  transition: border-color 0.17s, background 0.16s;
+  box-shadow: 0 1.5px 8px #b1b48313;
+  transition: border-color 0.17s, background 0.13s;
 }
 .llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus, .llh-crisis-input:focus {
-  border-color: var(--llh-primary);
-  background: #142943;
+  border-color: var(--llh-secondary);
+  background: #EDF6F8;
 }
 
 /* Cards */
