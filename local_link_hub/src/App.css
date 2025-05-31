@@ -38,16 +38,17 @@ body {
 /* Modern Navbar */
 .navbar, .llh-navbar {
   background: var(--llh-navbar-bg);
-  padding: 0 0 0 0;
-  min-height: 64px;
+  min-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid var(--llh-border);
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--llh-border);
   position: fixed;
   top: 0; left: 0; width: 100vw;
   box-sizing: border-box;
   z-index: 110;
-  box-shadow: 0 3px 30px #110a1a23;
+  box-shadow: 0 2px 18px #232A3914;
+  padding: 0 32px 0 0;
 }
 
 .llh-logo, .logo {
