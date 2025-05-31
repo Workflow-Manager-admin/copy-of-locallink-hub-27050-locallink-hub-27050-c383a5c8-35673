@@ -6,7 +6,7 @@ import React from "react";
  */
 // PUBLIC_INTERFACE
 function CommunityFundTab({ user }) {
-  // Demo data
+  // Expanded demo data and varied requests
   const fundBalance = 1235;
   const requests = [
     {
@@ -17,9 +17,27 @@ function CommunityFundTab({ user }) {
     },
     {
       name: "Jacob N.",
-      need: "Help with heating bill",
+      need: "Help with heating bill (disconnect notice)",
       amount: 50,
       profilePic: "https://randomuser.me/api/portraits/men/17.jpg"
+    },
+    {
+      name: "Linda W.",
+      need: "Medicine co-pay after accident",
+      amount: 18,
+      profilePic: "https://randomuser.me/api/portraits/women/24.jpg"
+    },
+    {
+      name: "Alan C.",
+      need: "School supplies for refugee teens",
+      amount: 35,
+      profilePic: "https://randomuser.me/api/portraits/men/21.jpg"
+    },
+    {
+      name: "Natalie S.",
+      need: "Urgent home repair (burst pipe)",
+      amount: 70,
+      profilePic: "https://randomuser.me/api/portraits/women/55.jpg"
     }
   ];
 
