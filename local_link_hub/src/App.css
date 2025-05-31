@@ -1,19 +1,19 @@
 :root {
-  --llh-primary: #3A8DFF;          /* Sapphire Blue (Primary) */
-  --llh-secondary: #14D4B4;        /* Emerald/Cyan Accent */
-  --llh-accent: #F9CB40;           /* Vibrant Yellow/Gold Highlight */
-  --llh-bg: #111A23;               /* Deep Blue/Black */
-  --llh-bg-gradient: linear-gradient(120deg, #141E30 0%, #1A293A 50%, #112030 100%);
-  --llh-card-bg: #18222f;
-  --llh-navbar-bg: #132536f5;
-  --llh-card-glow: 0 6px 36px #3a8dffaa;
-  --llh-border: rgba(58,141,255,0.09);
+  --llh-primary: #1A2436;        /* Navy/Charcoal - Primary */
+  --llh-secondary: #5FA1AF;      /* Subtle Teal - Secondary */
+  --llh-accent: #B1B483;         /* Muted Gold/Silver Accent */
+  --llh-bg: #F9FAFB;             /* Soft Silver (Background) */
+  --llh-bg-gradient: linear-gradient(120deg, #E9ECEF 0%, #F9FAFB 100%);
+  --llh-card-bg: #FFFFFF;        /* Elevated Card - Pure White */
+  --llh-navbar-bg: #222A35F5;    /* Deep Charcoal Transparent */
+  --llh-card-glow: 0 6px 24px #5fa1af18;
+  --llh-border: #D3DBE6;         /* Subtle Silver Border */
 
-  --llh-success: #26ec9a;
-  --llh-alert: #FF5D5D;
-  --llh-text: #E7F6F2;
-  --llh-text-muted: #BFD7E7;
-  --llh-text-dark: #2b3a4d;
+  --llh-success: #168070;        /* Professional Teal for Success */
+  --llh-alert: #A74544;          /* Elegant Muted Alert */
+  --llh-text: #212529;           /* Deep Charcoal for Text */
+  --llh-text-muted: #6C7A89;     /* Muted Grey for Secondary Text */
+  --llh-text-dark: #11161D;
 }
 
 body {
