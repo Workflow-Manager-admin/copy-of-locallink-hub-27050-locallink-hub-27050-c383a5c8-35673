@@ -1,4 +1,4 @@
-// CrisisSupportTab: Overlay for urgent help - shelter, first aid, support
+ // CrisisSupportTab: Overlay for urgent help - shelter, first aid, support
 import React from "react";
 
 /**
@@ -74,6 +74,16 @@ function CrisisSupportTab({ user }) {
             <div className="llh-crisis-type">{req.type}</div>
             <div className="llh-crisis-desc">{req.description}</div>
             <div className="llh-crisis-owner">by {req.owner}</div>
+            <button
+              className="llh-form-btn"
+              type="button"
+              aria-label={`Respond to ${req.type} from ${req.owner}`}
+              tabIndex={0}
+              style={{marginTop: 10}}
+              onClick={() => window.alert(`You responded to ${req.type}: "${req.description}" [Demo Action]`)}
+            >
+              Respond
+            </button>
           </div>
         ))}
       </div>
@@ -85,3 +95,4 @@ function CrisisSupportTab({ user }) {
 }
 
 export default CrisisSupportTab;
+
