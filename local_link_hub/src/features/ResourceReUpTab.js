@@ -57,7 +57,15 @@ function ResourceReUpTab({ user }) {
       <h2 className="llh-tab-title">Resource Re-Up <span className="llh-tab-desc">— Give/claim items or swap within your micro-community</span></h2>
       <form className="llh-resource-form">
         <input className="llh-resource-input" placeholder="List something to share (e.g. spare seeds, books, toys)" />
-        <button className="llh-form-btn" type="button">List</button>
+        <button
+          className="llh-form-btn"
+          type="button"
+          aria-label="List resource item"
+          tabIndex={0}
+          onClick={() => window.alert('Your resource would be listed! [Demo Action]')}
+        >
+          List
+        </button>
       </form>
       <h3>Available now:</h3>
       <div className="llh-cards-row">
