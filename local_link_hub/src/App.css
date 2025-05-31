@@ -256,28 +256,42 @@ h3 {
 
 /* BUTTONS */
 .llh-form-btn, .btn, .btn-large {
-  background: linear-gradient(90deg, var(--llh-secondary) 55%, var(--llh-accent) 100%);
+  background: linear-gradient(93deg, var(--llh-secondary) 52%, var(--llh-accent) 95%);
   color: var(--llh-primary);
-  border: 0;
-  border-radius: 9px;
-  font-size: 1.13em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.17em;
   font-weight: 900;
-  padding: 12px 33px;
+  padding: 13px 38px;
   cursor: pointer;
   letter-spacing: 0.018em;
-  box-shadow: 0 3px 16px #b1b48322;
-  transition: background 0.18s, color 0.18s, transform .13s;
+  box-shadow: 0 3px 18px #b1b48330;
+  transition: 
+    background 0.18s, 
+    color 0.18s, 
+    transform .12s cubic-bezier(.33,1.2,.5,1),
+    box-shadow 0.16s;
+  position: relative;
+  /* Accessibility: custom focus ring via :focus-visible above */
+  outline: none;
 }
 
-.llh-form-btn:hover, .btn:hover, .btn-large:hover {
-  background: linear-gradient(90deg, #98b4b5 40%, #b1b483 100%);
-  color: #222a35;
-  transform: translateY(-1.5px) scale(1.025);
-  box-shadow: 0 5px 20px #b1b48344;
+.llh-form-btn:active, .btn:active, .btn-large:active {
+  transform: scale(.97) translateY(1.5px);
+  background: linear-gradient(92deg, var(--llh-secondary) 62%, var(--llh-accent) 100%);
+  box-shadow: 0 2px 8px #b1b48342;
 }
+
+.llh-form-btn:hover, .btn:hover, .btn-large:hover, .llh-form-btn:focus-visible, .btn:focus-visible, .btn-large:focus-visible {
+  background: linear-gradient(90deg, #7ab4b5 30%, #b1b483 100%);
+  color: #1a2436;
+  transform: scale(1.032) translateY(-2px);
+  box-shadow: 0 8px 26px #b1b48355;
+}
+
 .btn-large {
-  padding: 15px 39px;
-  font-size: 1.18em;
+  padding: 16px 44px;
+  font-size: 1.21em;
 }
 
 /* Inputs, forms */
