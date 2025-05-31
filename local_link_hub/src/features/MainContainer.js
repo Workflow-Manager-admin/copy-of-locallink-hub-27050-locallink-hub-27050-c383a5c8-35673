@@ -15,7 +15,7 @@ import AIPoweredSuggestions from "./AIPoweredSuggestions";
 function MainContainer() {
   const [activeTab, setActiveTab] = useState("skills");
 
-  // simulated user context/profile (normally from auth/user backend)
+  // simulated user context/profile (with more badges for demo)
   const user = {
     name: "Alex Rivera",
     profilePic: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -24,7 +24,9 @@ function MainContainer() {
     trustScore: 98,
     badges: [
       { skill: "Bike Repair", verified: true },
-      { skill: "Gardening", verified: false }
+      { skill: "Gardening", verified: false },
+      { skill: "First Aid", verified: true },
+      { skill: "AI Facilitation", verified: false }
     ]
   };
 
