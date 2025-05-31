@@ -18,13 +18,41 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background: var(--llh-bg-gradient);
   color: var(--llh-text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+  font-size: 16.5px;
+  line-height: 1.58;
+  font-weight: 400;
+}
+
+/* Enhanced Typography and Headings */
+h1, h2, h3, h4 {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+  font-weight: 800;
+  color: var(--llh-primary);
+  margin-top: 0;
   letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 1.23em;
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: 1.12em;
+}
+
+/* Accessibility: Focus outlines */
+:focus-visible {
+  outline: 2.5px solid var(--llh-accent);
+  outline-offset: 2.5px;
+  transition: outline .13s;
 }
 
 /* App Layout */
