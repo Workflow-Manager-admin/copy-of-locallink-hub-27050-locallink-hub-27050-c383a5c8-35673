@@ -4,6 +4,16 @@
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+  --llh-primary: #8f0a0a;
+  --llh-secondary: #b1b483;
+  --llh-accent: #685808;
+  --llh-bg: #23221e;
+  --llh-card-bg: #181818;
+  --llh-border: rgba(255,255,255,0.06);
+  --llh-success: #93cb87;
+  --llh-alert: #e87a41;
+  --llh-text: #fff;
+  --llh-text-muted: #dad9cc;
 }
 
 body {
