@@ -498,50 +498,54 @@ h3 {
 .llh-alert {
   display: flex;
   align-items: center;
-  background: #F4EDEC;
+  background: #f6eae6;
   color: var(--llh-alert);
   font-weight: 900;
   gap: 9px;
   border-radius: 15px;
-  padding: 10px 30px;
-  border: 1.3px solid #b1b48370;
-  font-size: 1.04em;
-  box-shadow: 0 2px 8px #a7454429;
+  padding: 10px 28px;
+  border: 1.45px solid #b1b48370;
+  font-size: 1.07em;
+  box-shadow: 0 2px 13px #a7454425;
 }
 .llh-alert-high {
-  background: #F3E1E0;
+  background: #faebea;
   color: #a74544;
   border-color: #a74544c0;
   font-weight: 900;
-  font-size: 1.12em;
+  font-size: 1.13em;
 }
 .llh-alert-icon {
-  font-size: 1.28em;
+  font-size: 1.33em;
   color: var(--llh-accent);
   font-weight: 900;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
+/* AI Suggestions visually improved, higher contrast for accessibility */
 .llh-ai-suggestions {
   margin-top: 13px;
-  background: #f5f7fb;
-  border: 1.3px solid #b1b48349;
-  border-radius: 13px;
-  padding: 14px 17px 11px 20px;
-  box-shadow: 0 2px 7px #b1b48319;
-  font-size: 1em;
+  background: #fafdfe;
+  border: 1.42px solid #b1b48344;
+  border-radius: 14px;
+  padding: 17px 17px 13px 22px;
+  box-shadow: 0 2px 12px #b1b4831f;
+  font-size: 1.02em;
+  color: var(--llh-text);
 }
 .llh-ai-header {
   font-weight: 900;
   color: var(--llh-secondary);
-  font-size: 1.08em;
-  margin-bottom: 2px;
+  font-size: 1.09em;
+  margin-bottom: 3px;
+  letter-spacing: .012em;
 }
 .llh-ai-list {
-  margin: 0 0 0 7px;
-  padding: 0 0 0 13px;
+  margin: 0 0 0 8px;
+  padding: 0 0 0 14px;
   color: var(--llh-text-muted);
   font-size: 1em;
+  line-height: 1.44;
 }
 
 /* Verified Icon refinement */
