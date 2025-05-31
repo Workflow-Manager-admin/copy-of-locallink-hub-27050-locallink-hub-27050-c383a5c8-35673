@@ -1,10 +1,10 @@
 .llh-map-card {
-  background: linear-gradient(111deg, #19243d 60%, #263a53 110%);
-  border-radius: 17px;
-  box-shadow: 0 5px 34px #3a8dff74, 0 2px 13px #14d4b437;
-  padding: 22px 27px 18px 26px;
-  margin-bottom: 13px;
-  border: 2px solid var(--llh-border);
+  background: linear-gradient(111deg, #F9FAFB 65%, #E9ECEF 110%);
+  border-radius: 19px;
+  box-shadow: 0 3px 18px #b1b4831b;
+  padding: 27px 29px 20px 30px;
+  margin-bottom: 16px;
+  border: 1.7px solid var(--llh-border);
   min-width: 240px;
   min-height: 148px;
   position: relative;
@@ -12,9 +12,9 @@
 .llh-map-card-header {
   font-size: 1.22em;
   font-weight: 900;
-  color: var(--llh-primary);
+  color: var(--llh-secondary);
   margin-bottom: 13px;
-  text-shadow: 0 2px 17px #3a8dff15;
+  text-shadow: 0 1.5px 14px #b1b48327;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -28,35 +28,34 @@
 .llh-map-geofence-note {
   font-size: 1.08em;
   margin-top: 9px;
-  color: var(--llh-secondary);
+  color: var(--llh-accent);
   font-weight: 900;
-  text-shadow: 0 2px 7px #37e3dc21;
+  text-shadow: 0 1px 5px #b1b48323;
 }
 
 .llh-section {
-  margin-bottom: 19px;
+  margin-bottom: 21px;
   display: flex;
-  gap: 26px;
+  gap: 28px;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-/* Profile Card - Sleek 3D */
 .llh-profile-card {
   display: flex;
-  background: linear-gradient(120deg, #17385d 70%, #141f41 100%);
-  border-radius: 18px;
-  padding: 18px 27px;
-  gap: 26px;
+  background: linear-gradient(120deg, #F7F9FA 80%, #EDFAF7 100%);
+  border-radius: 19px;
+  padding: 20px 33px;
+  gap: 27px;
   align-items: center;
-  min-width: 295px;
-  box-shadow: 0 4px 24px #20e3d214, 0 2px 13px #3a8dff30;
-  border: 2.3px solid var(--llh-accent);
+  min-width: 265px;
+  box-shadow: 0 2px 12px #b1b48312, 0 2px 10px #5fa1af10;
+  border: 1.7px solid var(--llh-accent);
 }
 
 .llh-profile-title {
   font-weight: 900;
-  font-size: 1.16em;
+  font-size: 1.14em;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -66,29 +65,29 @@
 
 .llh-badges-list {
   display: flex;
-  gap: 10px;
-  margin: 10px 0 7px 0;
+  gap: 11px;
+  margin: 11px 0 7px 0;
 }
 .llh-badge {
-  background: #1a3557;
+  background: #EFF4F5;
   color: var(--llh-secondary);
-  border-radius: 15px;
+  border-radius: 14px;
   font-size: 1.02em;
-  padding: 7px 15px 6px 13px;
+  padding: 7px 17px 6px 13px;
   margin: 0 3px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-weight: 700;
   letter-spacing: .012em;
-  box-shadow: 0 2px 13px #14d4b439;
-  border: 1.6px solid var(--llh-border);
+  box-shadow: 0 2px 9px #5fa1af18;
+  border: 1.1px solid #b1b48338;
 }
 .llh-badge-verified {
   background: var(--llh-secondary);
-  color: #142133;
-  border: 2.1px solid var(--llh-primary);
-  box-shadow: 0 3px 12px #14d4b455;
+  color: var(--llh-primary);
+  border: 1.7px solid var(--llh-accent);
+  box-shadow: 0 3px 10px #b1b48335;
 }
 
 .llh-profile-trust-score {
@@ -96,52 +95,52 @@
   color: var(--llh-success);
   margin-top: 5px;
   font-weight: 900;
-  text-shadow: 0 2px 10px #14d4b437;
+  text-shadow: 0 1px 7px #5fa1af13;
 }
 
 .llh-skill-form, .llh-resource-form, .llh-fund-form {
-  margin: 20px 0;
+  margin: 21px 0;
   display: flex;
-  gap: 14px;
+  gap: 16px;
 }
 
 .llh-skill-input, .llh-resource-input, .llh-fund-input {
   flex: 1;
-  padding: 14px 16px;
-  border-radius: 9px;
-  border: 1.5px solid var(--llh-border);
-  background: #172d43;
+  padding: 13px 15px;
+  border-radius: 8px;
+  border: 1.1px solid var(--llh-border);
+  background: #FAFAFB;
   color: var(--llh-text);
   outline: none;
-  font-size: 1.09em;
-  box-shadow: 0 2px 12px #14d4b424;
+  font-size: 1.07em;
+  box-shadow: 0 1.5px 6px #5fa1af19;
   margin-right: 0;
-  transition: border-color 0.17s, background 0.14s;
+  transition: border-color 0.13s, background 0.14s;
 }
 .llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus {
-  border-color: var(--llh-primary);
-  background: #0a263a;
+  border-color: var(--llh-secondary);
+  background: #EDF6F8;
 }
 
 /* General Cards */
 .llh-skill-card, .llh-resource-card, .llh-fund-card, .llh-crisis-card {
-  background: linear-gradient(120deg,#18324f 60%, #264976 110%);
-  border-radius: 16px;
-  box-shadow: 0 5px 19px #14d4b422, 0 2px 12px #3a8dff20;
+  background: linear-gradient(120deg,#F8FAFC 60%, #ECF1F7 110%);
+  border-radius: 17px;
+  box-shadow: 0 2px 11px #b1b48313, 0 2px 7px #5fa1af10;
   padding: 15px 19px 14px 17px;
   min-width: 180px;
   min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  border: 1.5px solid var(--llh-border);
+  gap: 11px;
+  border: 1.2px solid var(--llh-border);
   position: relative;
 }
 .llh-resource-title {
   font-weight: 900;
   color: var(--llh-accent);
-  font-size: 1.08em;
+  font-size: 1.09em;
   letter-spacing: .012em;
 }
 .llh-resource-details {
@@ -150,32 +149,32 @@
 }
 .llh-resource-listing-user {
   color: var(--llh-secondary);
-  font-size: 0.98em;
+  font-size: 0.99em;
   margin-top: 3px;
 }
 .llh-fund-balance {
-  background: linear-gradient(120deg, #223d5a 60%, #11294a 100%);
-  border-radius: 10px;
+  background: linear-gradient(120deg, #f3f8fa 80%, #ecf1f7 100%);
+  border-radius: 13px;
   color: var(--llh-success);
-  font-size: 1.18em;
+  font-size: 1.11em;
   display: flex;
   gap: 15px;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 11px 18px 12px 19px;
-  box-shadow: 0 3px 18px #14d4b425;
+  margin-bottom: 13px;
+  padding: 13px 20px 12px 20px;
+  box-shadow: 0 2px 10px #b1b48313;
   font-weight: 900;
 }
 .llh-fund-total {
   color: var(--llh-accent);
   font-weight: 900;
-  font-size: 1.28em;
+  font-size: 1.21em;
 }
 .llh-fund-card {
   min-width: 190px;
   color: var(--llh-text);
-  background: linear-gradient(120deg,#253963 58%, #192644 100%);
-  box-shadow: 0 3px 19px #14d4b41f;
+  background: linear-gradient(120deg,#FAFAFC 71%, #F0F4F8 100%);
+  box-shadow: 0 2px 9px #b1b48315;
 }
 
 /* Fund Need text */
@@ -183,7 +182,7 @@
   font-size: 1em;
   color: var(--llh-alert);
   font-weight: 900;
-  margin: 6px 0 0 0;
+  margin: 7px 0 0 0;
 }
 .llh-fund-amount {
   font-size: 0.99em;
@@ -195,19 +194,19 @@
 /* Crisis Card enhanced */
 .llh-crisis-card {
   min-width: 170px;
-  background: linear-gradient(120deg,#473876 55%, #3e264b 100%);
-  border-left: 6px solid #fb70a2;
+  background: linear-gradient(120deg,#F2F5FC 55%, #F6E5DB 100%);
+  border-left: 6px solid #b1b483;
   position: relative;
-  color: #fff7fd;
+  color: #222a35;
   border-radius: 14px;
   font-weight: 900;
-  box-shadow: 0 4px 26px #ff5d5d45;
+  box-shadow: 0 4px 18px #b1b48328;
   transition: box-shadow 0.13s;
 }
 .llh-crisis-urgent {
-  border-color: #FF5D5D;
-  background: linear-gradient(120deg,#fc5185 55%, #4d69e6 100%);
-  box-shadow: 0 8px 37px #ff5d5d8e;
+  border-color: #A74544;
+  background: linear-gradient(120deg,#F9E2E1 55%, #C7ECF1 100%);
+  box-shadow: 0 6px 29px #a7454465;
 }
 .llh-crisis-type {
   font-weight: 900;
