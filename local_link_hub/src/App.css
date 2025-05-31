@@ -188,35 +188,44 @@ h3 {
 /* Tabs */
 .llh-tabs {
   display: flex;
-  gap: 14px;
-  margin-bottom: 28px;
-  border-bottom: 1.5px solid var(--llh-border);
+  gap: 8px;
+  margin-bottom: 27px;
+  border-bottom: 1.6px solid var(--llh-border);
   background: #F3F6F8;
-  border-radius: 15px 15px 0 0;
-  box-shadow: 0 -1.5px 13px #222a3512;
-  padding-left: 18px;
-  padding-top: 7px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -1.5px 14px #222a3512;
+  padding-left: 11px;
+  padding-top: 5.5px;
 }
+
 .llh-tab {
-  border: none;
+  border: 0;
   background: none;
   color: var(--llh-primary);
-  font-size: 1.12em;
+  font-size: 1.11em;
   font-weight: 800;
-  letter-spacing: .02em;
-  padding: 16px 38px 13px 26px;
+  letter-spacing: .03em;
+  padding: 14px 32px 11px 20px;
   cursor: pointer;
-  border-radius: 15px 15px 0 0;
+  border-radius: 16px 16px 0 0;
   margin-right: 2px;
   position: relative;
-  transition: background 0.17s, color 0.19s;
+  transition: 
+    background 0.25s cubic-bezier(.42,0,.53,1.41), 
+    color 0.2s,
+    font-size 0.2s;
+  min-width: 120px;
+  outline: none;
 }
 .llh-tab.active,
-.llh-tab:focus {
+.llh-tab:focus,
+.llh-tab:focus-visible {
   background: linear-gradient(120deg, #E9ECEF 0%, #F9FAFB 98%);
   color: var(--llh-accent);
   border-bottom: 3px solid var(--llh-accent);
+  font-size: 1.18em;
   z-index: 2;
+  box-shadow: 0 7px 20px #b1b48325;
 }
 
 .llh-tab-title {
