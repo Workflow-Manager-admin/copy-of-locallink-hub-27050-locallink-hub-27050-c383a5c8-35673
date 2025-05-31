@@ -110,7 +110,15 @@ function SkillsExchangeTab({ user }) {
         </div>
         <form className="llh-skill-form">
           <input className="llh-skill-input" placeholder="What can you offer or request? (e.g. Piano lessons)" />
-          <button className="llh-form-btn" type="button">Post</button>
+          <button
+            className="llh-form-btn"
+            type="button"
+            aria-label="Post skill offer or request"
+            tabIndex={0}
+            onClick={() => window.alert('This would post your skill to the community feed! [Demo Action]')}
+          >
+            Post
+          </button>
         </form>
       </div>
       <h3>People offering skills nearby</h3>
