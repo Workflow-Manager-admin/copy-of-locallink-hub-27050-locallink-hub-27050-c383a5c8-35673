@@ -1,0 +1,168 @@
+/* LocalLink Hub Main Container Styles */
+/* Root colors */
+:root {
+  --llh-primary: #8f0a0a;
+  --llh-secondary: #b1b483;
+  --llh-accent: #685808;
+  --llh-bg: #23221e;
+  --llh-card-bg: #181818;
+  --llh-border: rgba(255,255,255,0.06);
+  --llh-success: #93cb87;
+  --llh-alert: #e87a41;
+  --llh-text: #fff;
+  --llh-text-muted: #dad9cc;
+}
+
+.llh-main-container {
+  background: var(--llh-bg);
+  min-height: 100vh;
+  color: var(--llh-text);
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+.llh-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #181818;
+  border-bottom: 2px solid var(--llh-border);
+  padding: 12px 36px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+.llh-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.llh-logo-symbol {
+  color: var(--llh-primary);
+  font-size: 1.5em;
+}
+
+.llh-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.llh-profile-pic {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--llh-primary);
+}
+
+.llh-profile-name {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.llh-verified {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px 2px 4px;
+  margin-left: 4px;
+  background: #23221e;
+  border-radius: 16px;
+  font-size: 0.89em;
+}
+.llh-verified-badge {
+  color: var(--llh-secondary);
+  font-weight: 600;
+}
+
+/* Layout */
+.llh-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 1280px;
+  margin: 24px auto 0 auto;
+  padding: 16px;
+  gap: 32px;
+}
+
+/* Map & Alerts Panel */
+.llh-mappanel {
+  width: 355px;
+  max-width: 95vw;
+  min-width: 265px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.llh-alert {
+  background: var(--llh-alert);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 16px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 1px 5px rgba(45,30,0,0.07);
+}
+
+.llh-alert-high {
+  background: #b82b2b;
+}
+
+.llh-alert-icon {
+  font-size: 1.3em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.llh-tabs-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+}
+
+.llh-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.llh-tab {
+  background: #22201b;
+  border: none;
+  color: var(--llh-text-muted);
+  font-size: 1.04em;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.13s, border 0.13s, background 0.13s;
+}
+
+.llh-tab.active,
+.llh-tab:hover {
+  color: var(--llh-primary);
+  background: #181818;
+  border-bottom: 3px solid var(--llh-primary);
+}
+
+.llh-tab-content {
+  background: var(--llh-card-bg);
+  border-radius: 0 8px 8px 8px;
+  min-height: 430px;
+  box-shadow: 0 2px 17px 0 #1313081a;
+  padding: 32px 32px 20px 32px;
+  border: 1px solid var(--llh-border);
+}
