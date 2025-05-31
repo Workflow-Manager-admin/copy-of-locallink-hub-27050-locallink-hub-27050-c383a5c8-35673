@@ -443,28 +443,50 @@ h3 {
 .llh-alert {
   display: flex;
   align-items: center;
-  background: #243042;
+  background: #F4EDEC;
   color: var(--llh-alert);
   font-weight: 900;
-  gap: 8px;
-  border-radius: 13px;
-  padding: 9px 24px;
-  border: 1.4px solid #ff5d5d54;
+  gap: 9px;
+  border-radius: 15px;
+  padding: 10px 30px;
+  border: 1.3px solid #b1b48370;
   font-size: 1.04em;
-  box-shadow: 0 3px 17px #ff5d5d3d;
+  box-shadow: 0 2px 8px #a7454429;
 }
 .llh-alert-high {
-  background: #38223c;
-  color: #FFF9EE;
-  border-color: #ff5d5ddf;
+  background: #F3E1E0;
+  color: #a74544;
+  border-color: #a74544c0;
   font-weight: 900;
-  font-size: 1.15em;
+  font-size: 1.12em;
 }
 .llh-alert-icon {
   font-size: 1.28em;
-  color: #faef6e;
+  color: var(--llh-accent);
   font-weight: 900;
   margin-right: 6px;
+}
+
+.llh-ai-suggestions {
+  margin-top: 13px;
+  background: #f5f7fb;
+  border: 1.3px solid #b1b48349;
+  border-radius: 13px;
+  padding: 14px 17px 11px 20px;
+  box-shadow: 0 2px 7px #b1b48319;
+  font-size: 1em;
+}
+.llh-ai-header {
+  font-weight: 900;
+  color: var(--llh-secondary);
+  font-size: 1.08em;
+  margin-bottom: 2px;
+}
+.llh-ai-list {
+  margin: 0 0 0 7px;
+  padding: 0 0 0 13px;
+  color: var(--llh-text-muted);
+  font-size: 1em;
 }
 
 /* Verified Icon refinement */
