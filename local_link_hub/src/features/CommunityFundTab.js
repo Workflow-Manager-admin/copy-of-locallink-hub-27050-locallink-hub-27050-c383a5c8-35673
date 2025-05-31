@@ -1,0 +1,55 @@
+// CommunityFundTab: Community micro-grants, support and balance
+import React from "react";
+
+/**
+ * CommunityFundTab: Feature tab for micro-grants, support and giving.
+ */
+// PUBLIC_INTERFACE
+function CommunityFundTab({ user }) {
+  // Demo data
+  const fundBalance = 1235;
+  const requests = [
+    {
+      name: "Elsa M.",
+      need: "Emergency groceries for 2 kids",
+      amount: 25,
+      profilePic: "https://randomuser.me/api/portraits/women/33.jpg"
+    },
+    {
+      name: "Jacob N.",
+      need: "Help with heating bill",
+      amount: 50,
+      profilePic: "https://randomuser.me/api/portraits/men/17.jpg"
+    }
+  ];
+
+  return (
+    <div>
+      <h2 className="llh-tab-title">Community Fund <span className="llh-tab-desc"> — Support, request, or earn credits for real needs</span></h2>
+      <div className="llh-fund-balance">
+        <span>Fund Total:</span>
+        <span className="llh-fund-total">${fundBalance}</span>
+        <button className="llh-form-btn" style={{marginLeft:8}}>Contribute</button>
+      </div>
+      <h3>Current Requests</h3>
+      <div className="llh-cards-row">
+        {requests.map((r, i) => (
+          <div className="llh-fund-card" key={i}>
+            <img className="llh-profile-pic" src={r.profilePic} alt="" />
+            <div><b>{r.name}</b></div>
+            <div className="llh-fund-need">{r.need}</div>
+            <div className="llh-fund-amount">Required: ${r.amount}</div>
+            <button className="llh-form-btn">Support</button>
+          </div>
+        ))}
+      </div>
+      <form className="llh-fund-form" style={{marginTop:18,display:'flex',gap:'8px'}}>
+        <input className="llh-fund-input" placeholder="Describe your need or proposal (e.g. urgent repair)" />
+        <input className="llh-fund-input" placeholder="Amount" type="number" min={1} />
+        <button className="llh-form-btn" type="button">Request</button>
+      </form>
+    </div>
+  );
+}
+
+export default CommunityFundTab;
