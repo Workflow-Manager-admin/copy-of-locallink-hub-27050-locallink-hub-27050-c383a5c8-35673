@@ -1,4 +1,4 @@
-// ResourceReUpTab: UI for listing/sharing items and free exchanges
+ // ResourceReUpTab: UI for listing/sharing items and free exchanges
 import React from "react";
 
 /**
@@ -75,6 +75,16 @@ function ResourceReUpTab({ user }) {
             <div className="llh-resource-title">{item.name}</div>
             <div className="llh-resource-details">{item.details}</div>
             <span className="llh-resource-listing-user">Listed by {item.user}</span>
+            <button
+              className="llh-form-btn"
+              type="button"
+              aria-label={`Express interest in ${item.name}`}
+              tabIndex={0}
+              style={{marginTop: 8}}
+              onClick={() => window.alert(`You expressed interest in: ${item.name} [Demo Action]`)}
+            >
+              Interested
+            </button>
           </div>
         ))}
       </div>
@@ -83,3 +93,4 @@ function ResourceReUpTab({ user }) {
 }
 
 export default ResourceReUpTab;
+
