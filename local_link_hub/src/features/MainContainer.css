@@ -1,3 +1,84 @@
+.llh-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--llh-bg-gradient);
+}
+
+.llh-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100vw;
+  max-width: 100vw;
+  padding-top: 74px;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 90vh;
+  background: var(--llh-bg-gradient);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.llh-mappanel {
+  flex: 0 0 345px;
+  width: 345px;
+  min-width: 260px;
+  max-width: 350px;
+  padding: 18px 12px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 22px;
+  box-sizing: border-box;
+}
+
+.llh-tabs-section {
+  flex: 1 1 700px;
+  width: 700px;
+  max-width: 96vw;
+  min-width: 320px;
+  background: var(--llh-card-bg);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px #5fa1af1a;
+  border: 1.5px solid var(--llh-border);
+  min-height: 585px;
+  margin-right: 0;
+  margin-bottom: 42px;
+  padding: 36px 30px 44px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Tabs + Tabbar refinement if needed (reuse App.css if defined there) */
+/* .llh-tabs, .llh-tab, etc. are mostly in App.css; override here only if necessary */
+
+/* Cards Row improvements */
+.llh-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 24px;
+  margin-bottom: 2.2em;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Enhanced sections */
+.llh-section {
+  margin-bottom: 23px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 28px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card styles (subclassed in App.css mostly, but additional harmonization here) */
 .llh-map-card {
   background: linear-gradient(111deg, #F9FAFB 65%, #E9ECEF 110%);
   border-radius: 19px;
@@ -33,22 +114,12 @@
   text-shadow: 0 1px 5px #b1b48323;
 }
 
-.llh-section {
-  margin-bottom: 23px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px 28px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* Profile card refinement for demo user box */
 .llh-profile-card {
   display: flex;
   background: linear-gradient(120deg, #F7F9FA 80%, #EDFAF7 100%);
   border-radius: 19px;
-  padding: 20px 33px;
+  padding: 22px 33px;
   gap: 27px;
   align-items: center;
   min-width: 265px;
@@ -101,31 +172,38 @@
   text-shadow: 0 1px 7px #5fa1af13;
 }
 
+/* Forms for Skill/Resource/Fund aligned row, responsive */
 .llh-skill-form, .llh-resource-form, .llh-fund-form {
-  margin: 21px 0;
+  margin: 18px 0;
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 100%;
 }
 
 .llh-skill-input, .llh-resource-input, .llh-fund-input {
   flex: 1;
-  padding: 13px 15px;
-  border-radius: 8px;
-  border: 1.1px solid var(--llh-border);
-  background: #FAFAFB;
+  padding: 15px 17px;
+  border-radius: 11px;
+  border: 1.49px solid var(--llh-border);
+  background: #F6F8FA;
   color: var(--llh-text);
   outline: none;
-  font-size: 1.07em;
-  box-shadow: 0 1.5px 6px #5fa1af19;
+  font-size: 1.09em;
   margin-right: 0;
-  transition: border-color 0.13s, background 0.14s;
+  box-shadow: 0 1.5px 12px #b1b48317;
+  transition: border-color 0.17s, background 0.13s, box-shadow 0.15s;
+  font-family: inherit;
 }
 .llh-skill-input:focus, .llh-resource-input:focus, .llh-fund-input:focus {
   border-color: var(--llh-secondary);
   background: #EDF6F8;
+  box-shadow: 0 2px 12px #5fa1af36;
 }
 
-/* General Cards */
+/* General Cards Harmonization */
 .llh-skill-card, .llh-resource-card, .llh-fund-card, .llh-crisis-card {
   background: linear-gradient(120deg,#F8FAFC 66%, #EEF3F8 115%);
   border-radius: 18px;
@@ -136,7 +214,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 11px;
+  gap: 12px;
   border: 1.7px solid var(--llh-border);
   position: relative;
   animation: cardFadeIn .48s cubic-bezier(.5,1.4,.6,1) 1;
@@ -147,26 +225,12 @@
   80% { opacity:1;}
   100% { opacity: 1; transform: scale(1) translateY(0);}
 }
-.llh-resource-title {
-  font-weight: 900;
-  color: var(--llh-accent);
-  font-size: 1.09em;
-  letter-spacing: .012em;
-}
-.llh-resource-details {
-  font-size: 0.97em;
-  color: var(--llh-text-muted);
-}
-.llh-resource-listing-user {
-  color: var(--llh-secondary);
-  font-size: 0.99em;
-  margin-top: 3px;
-}
+
 .llh-fund-balance {
   background: linear-gradient(120deg, #f3f8fa 80%, #ecf1f7 100%);
   border-radius: 13px;
   color: var(--llh-success);
-  font-size: 1.11em;
+  font-size: 1.13em;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -175,10 +239,11 @@
   box-shadow: 0 2px 10px #b1b48313;
   font-weight: 900;
 }
+
 .llh-fund-total {
   color: var(--llh-accent);
   font-weight: 900;
-  font-size: 1.21em;
+  font-size: 1.23em;
 }
 .llh-fund-card {
   min-width: 190px;
@@ -201,7 +266,7 @@
   margin-bottom: 5px;
 }
 
-/* Crisis Card enhanced */
+/* Crisis Card styling */
 .llh-crisis-card {
   min-width: 170px;
   background: linear-gradient(120deg,#F2F5FC 55%, #F6E5DB 100%);
@@ -233,16 +298,6 @@
   color: var(--llh-text-muted);
 }
 
-.llh-cards-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px 24px;
-  margin-bottom: 2.2em;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: 100%;
-}
-
 /* AI Suggestions */
 .llh-ai-suggestions {
   margin-top: 11px;
@@ -266,6 +321,7 @@
   font-size: 1em;
 }
 
+/* Verified icons and utility */
 .llh-verified-icon, .llh-verified-icon-small {
   display: inline-block;
   margin-left: 2px;
@@ -278,8 +334,52 @@
   height: 15px;
 }
 
-/* Utility adjustments for trusted/verified, high visibility, glows, etc. */
+/* Utility adjustments */
 .llh-glow-primary {
   box-shadow: 0 2px 18px #3a8dff59 !important;
 }
 .llh-txt-verified { color: var(--llh-accent) !important; font-weight: 900; }
+
+/* Responsive */
+@media (max-width: 1130px) {
+  .llh-content {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+    width: 100vw;
+  }
+  .llh-mappanel {
+    width: 100%;
+    max-width: none;
+    min-width: unset;
+    align-items: stretch;
+    padding: 21px 6vw 13px 6vw;
+    margin-bottom: 0;
+  }
+  .llh-tabs-section {
+    margin-right: 0;
+    width: 99vw;
+    min-width: unset;
+    max-width: 99vw;
+    padding: 18px 2vw 24px 2vw;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 770px) {
+  .llh-content {
+    padding-top: 52px !important;
+    flex-direction: column;
+    gap: 0;
+  }
+  .llh-mappanel {
+    padding: 7vw 2vw 0 2vw;
+  }
+  .llh-tabs-section {
+    border-radius: 0;
+    padding: 10px 1vw 24px 1vw;
+    width: 100vw;
+    min-width: unset;
+  }
+  .llh-navbar, .navbar { min-height: 52px;}
+}
