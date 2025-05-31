@@ -280,54 +280,55 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #151f2d;
-  border-radius: 15px;
-  box-shadow: 0 4px 29px #37e3dc17, var(--llh-card-glow);
-  border: 1.7px solid var(--llh-border);
-  padding: 22px 17px 16px 18px;
-  gap: 11px;
-  min-width: 185px;
+  background: var(--llh-card-bg);
+  border-radius: 18px;
+  box-shadow: 0 6px 28px #b1b48318, var(--llh-card-glow);
+  border: 1.6px solid var(--llh-border);
+  padding: 27px 19px 19px 23px;
+  gap: 14px;
+  min-width: 190px;
+  transition: box-shadow 0.13s;
 }
 .llh-profile-card {
   flex-direction: row;
   align-items: center;
-  gap: 24px;
-  background: linear-gradient(120deg, #202e44 70%, #1b2848 100%);
-  box-shadow: 0 1.7px 25px #3a8dff19, var(--llh-card-glow);
-  border: 2.1px solid var(--llh-accent);
+  gap: 25px;
+  background: linear-gradient(120deg, #F7F9FA 72%, #EDF2F7 100%);
+  box-shadow: 0 2px 16px #b1b48318, var(--llh-card-glow);
+  border: 2px solid var(--llh-accent);
 }
 
 .llh-badges-list {
   display: flex;
-  gap: 8px;
-  margin: 10px 0;
+  gap: 10px;
+  margin: 14px 0 9px 0;
 }
 
 .llh-badge {
-  background: #2e4968;
+  background: #e6ecec;
   color: var(--llh-secondary);
   border-radius: 13px;
   font-size: 1em;
-  padding: 6px 18px 5px 14px;
+  padding: 7px 18px 6px 14px;
   margin: 0 2px;
   display: inline-flex;
   align-items: center;
   gap: 7px;
   font-weight: 700;
-  letter-spacing: .018em;
-  box-shadow: 0 2px 14px #14d4b42b;
-  border: 1.5px solid #14d4b421;
+  letter-spacing: .016em;
+  box-shadow: 0 2px 8px #b1b48327;
+  border: 1.1px solid #b1b48330;
 }
 .llh-badge-verified {
   background: var(--llh-secondary);
-  color: #19294a;
-  border: 1.7px solid var(--llh-primary);
-  box-shadow: 0 2px 13px #37e3dc47;
+  color: var(--llh-primary);
+  border: 1.7px solid var(--llh-accent);
+  box-shadow: 0 2px 9px #5fa1af49;
 }
 
 .llh-profile-title {
   font-weight: 900;
-  font-size: 1.21em;
+  font-size: 1.17em;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -337,27 +338,27 @@ h3 {
 .llh-profile-trust-score {
   font-size: 1.01em;
   color: var(--llh-success);
-  margin-top: 4px;
-  letter-spacing: .01em;
+  margin-top: 6px;
+  letter-spacing: .007em;
   font-weight: 800;
 }
 .llh-fund-balance {
-  background: #202e44;
-  border-radius: 12px;
+  background: linear-gradient(120deg, #f3f8fa 75%, #e9ecef 100%);
+  border-radius: 13px;
   color: var(--llh-success);
-  font-size: 1.21em;
+  font-size: 1.16em;
   display: flex;
-  gap: 12px;
+  gap: 15px;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 12px 18px;
-  box-shadow: 0 2px 17px #37e3dc22;
+  margin-bottom: 17px;
+  padding: 13px 23px;
+  box-shadow: 0 2px 11px #b1b4831a;
   font-weight: 900;
 }
 .llh-fund-total {
   color: var(--llh-accent);
   font-weight: 900;
-  font-size: 1.25em;
+  font-size: 1.22em;
 }
 
 .llh-fund-need {
