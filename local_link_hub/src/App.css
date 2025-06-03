@@ -393,7 +393,7 @@ body::after {
   background: var(--lux-glass-overlay);
   border-radius: var(--lux-radius-main);
   border: 1.9px solid var(--lux-gold-main);
-  box-shadow: var(--lux-shadow-card), 0 3px 24px var(--lux-gold-main) inset;
+  box-shadow: 0 4px 16px 0 #0002, 0 2px 10px #ecd08c0a;
   padding: 24px 30px;
   margin: 12px 0;
   transition: 
@@ -406,7 +406,7 @@ body::after {
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 10px 32px 0 #ecd08c35, 0 1.4px 5px #ecd08c11, 0 6px 30px var(--lux-gold-leaf) inset;
+  box-shadow: 0 7px 27px 0 #0004, 0 1.4px 5px #ecd08c0a inset;
   border-color: var(--lux-gold-leaf);
   background: var(--lux-overlay-gradient);
   transform: translateY(-2.5px) scale(1.018);
