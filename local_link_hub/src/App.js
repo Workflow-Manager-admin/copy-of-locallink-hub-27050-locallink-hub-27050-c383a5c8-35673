@@ -412,7 +412,97 @@ function MainContainer() {
         <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
         <main className="main-content" tabIndex={0}>
           {activeTab === "dashboard" && <DashboardTab />}
-          {/* ...all other tab content components would be rendered here in a real app... */}
+          {activeTab === "skillbarter" && (
+            <div>
+              <h2>Skill Bartering</h2>
+              <p>Barter your skills with trusted neighbors. Exchange time, help, and expertise in a luxury context.</p>
+              <button className="btn-ghost" onClick={() => alert("Skill Barter Matchmaking coming soon!")}>Find Match</button>
+            </div>
+          )}
+          {activeTab === "payforward" && (
+            <div>
+              <h2>Pay-It-Forward</h2>
+              <p>Give and receive - spread kindness through neighborly actions and community credits.</p>
+            </div>
+          )}
+          {activeTab === "emergency" && (
+            <div>
+              <h2>Emergency / Crisis Support</h2>
+              <p>Activate local crisis response. Request urgent help or offer aid instantly.</p>
+            </div>
+          )}
+          {activeTab === "aidhub" && (
+            <div>
+              <h2>Community Aid Hub</h2>
+              <p>Micro-grant and support system: Request or offer resources and credits.</p>
+            </div>
+          )}
+          {activeTab === "resources" && (
+            <div>
+              <h2>Resource Re-Up</h2>
+              <p>List spare items, upcycle, or request resources from neighbors.</p>
+            </div>
+          )}
+          {activeTab === "eco" && (
+            <div>
+              <h2>Eco Recommendations</h2>
+              <p>AI-powered zero-waste and eco-action tips tailored for your micro-community.</p>
+            </div>
+          )}
+          {activeTab === "impact" && (
+            <div>
+              <h2>Impact Score</h2>
+              <p>Track your trust and impact ratings within the LocalLink network.</p>
+            </div>
+          )}
+          {activeTab === "groups" && (
+            <div>
+              <h2>Groups</h2>
+              <p>Find and join local micro-groups for shared interests and collaboration.</p>
+            </div>
+          )}
+          {activeTab === "events" && (
+            <div>
+              <h2>Events</h2>
+              <p>View and RSVP to upcoming local events and workshops.</p>
+            </div>
+          )}
+          {activeTab === "mental" && (
+            <div>
+              <h2>Mental Health</h2>
+              <p>Access resilience resources and stress relief support circles.</p>
+            </div>
+          )}
+          {activeTab === "wellness" && (
+            <div>
+              <h2>Wellness</h2>
+              <p>Wellness recommendations and healthy habits from your neighbors.</p>
+            </div>
+          )}
+          {activeTab === "knowledge" && (
+            <div>
+              <h2>Knowledge</h2>
+              <p>Community knowledge base: share, find, and request how-to guides.</p>
+            </div>
+          )}
+          {activeTab === "recommender" && (
+            <div>
+              <h2>Skill Recommender</h2>
+              <p>Personalized AI skill suggestions based on your community profile.</p>
+            </div>
+          )}
+          {activeTab === "tracker" && (
+            <div>
+              <h2>Impact Tracker</h2>
+              <p>Detailed analytics and milestones of your impact journey.</p>
+            </div>
+          )}
+          {activeTab === "disaster" && (
+            <div>
+              <h2>Disaster Tools</h2>
+              <p>Local disaster toolkits: preparedness, real-time updates, and support channels.</p>
+            </div>
+          )}
         </main>
       </div>
       <footer className="lux-footer" role="contentinfo">
