@@ -346,14 +346,15 @@ body::before {
   border-color: var(--lux-maroon-light);
 }
 
-/* === GOLD/ONYX CARDS: champagne base, gold trims, see-through overlays === */
+/* === GOLD/ONYX/MAROON CARDS: champagne base, gold trims, maroon as highlight/accent === */
 .tab-content,
 .map-view,
 .micro-community-info {
   background: rgba(246,243,230,0.93); /* premium card on champagne bg */
   border-radius: var(--lux-border-radius);
   border: 1.7px solid var(--lux-gold-deep);
-  box-shadow: 0 5px 15px 0 #f6efd99f, 0 2px 8px #BFA14B0a;
+  box-shadow: 0 5px 15px 0 #BFA14B0a, 0 2px 8px #921d3616;
+  /* For active or highlighted cards/rows, add border-left or background with var(--lux-maroon/light/accent) for accent. */
   padding: 26px 31px;
   margin: 14px 0;
   transition: 
@@ -365,11 +366,12 @@ body::before {
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 9px 28px 0 #f6efd9a2, 0 1.6px 10px #FFD70016 inset;
-  border-color: var(--lux-gold-main);
-  background: linear-gradient(115deg, #fffbe3 90%, #f6efd9 110%);
+  box-shadow: 0 9px 28px 0 #921d3645, 0 1.6px 10px #FFD70016 inset;
+  border-color: var(--lux-maroon);
+  background: linear-gradient(115deg, #fffbe3 85%, #fde6ef 120%);
   transform: translateY(-2.5px) scale(1.012);
 }
+/* Use var(--lux-maroon) or --accent for border or text in highlighted rows in cards/lists for accent */
 
 /* === HEADINGS & INFO: deep gold or onyx headings, premium feel === */
 .tab-content h2,
