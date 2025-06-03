@@ -118,17 +118,22 @@ body {
 }
 
 body::before {
-  /* Ambient olive/gold overlay top left (subtle movement) */
+  /* Subtle ambient gold-olive glow—adds luxury touch, avoids harshness */
   content: "";
   pointer-events: none;
   position: fixed;
-  top: -90px; left: -80px;
+  top: -92px; left: -82px;
   width: 520px; height: 410px;
-  background: radial-gradient(ellipse 58% 44% at 37% 33%, #ede2b647 0%, transparent 90%);
-  filter: blur(84px);
-  opacity: 0.18;
+  background: radial-gradient(
+    ellipse 60% 46% at 37% 33%,
+    #edead6aa 0%,
+    #f7f4e10c 67%,
+    transparent 99%
+  );
+  filter: blur(86px);
+  opacity: 0.14;
   mix-blend-mode: lighten;
-  animation: goldGlowMove 18s linear infinite alternate;
+  animation: goldGlowMove 19s linear infinite alternate;
   z-index: 0;
 }
 @keyframes goldGlowMove {
