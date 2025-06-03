@@ -478,6 +478,140 @@ body {
   z-index: 1;
 }
 
+/* =================
+   LUXURY HORIZONTAL HEADER (Full-Width Bar)
+   - Full width, sits at top of scroll viewport
+   - Champagne background, maroon&gold accents, onyx highlight for title/logo
+   - Uses flexbox: center logo/title, user profile right; all perfectly vertical/horizontal centered
+   - Ensures no overlap with sidebar, adapts for narrow screen
+   - Branding elements moved from sidebar to .lux-header
+   ================= */
+.lux-header {
+  width: 100vw;
+  min-height: 70px;
+  background: var(--lux-bg-champagne-grad), var(--lux-bg-champagne);
+  border-bottom: 2.6px solid var(--lux-gold-soft);
+  box-shadow: 0 2px 16px #bfa14b15; /* subtle gold shadow for depth */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  /* Design rationale: Full width, always on top for brand presence, visually separated from sidebar */
+}
+.lux-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 16px;
+}
+.lux-header-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+}
+.lux-header-title {
+  font-family: var(--lux-font-heading);
+  font-size: 1.55rem;
+  letter-spacing: .09em;
+  color: var(--lux-maroon);
+  font-weight: 700;
+  display: flex;
+  gap: 7px;
+}
+.lux-header-title .branding-main {
+  color: var(--lux-maroon-dark);
+}
+.lux-header-title .branding-sub {
+  color: var(--lux-gold-main);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-left: 2.5px;
+  letter-spacing: .15em;
+}
+.lux-header-profile {
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .lux-header {
+    min-height: 58px;
+    padding: 0 12vw;
+  }
+  .lux-header-title { font-size: 1.11rem; }
+  .lux-header-profile { right: 8vw; }
+}
+@media (max-width: 600px) {
+  .lux-header {
+    min-height: 42px;
+    padding: 0 2vw;
+  }
+  .lux-header-profile { right: 2vw; }
+}
+
+/* 
+Hide old branding panel in sidebar -- now only in .lux-header
+*/
+.sidebar-branding-panel {
+  display: none !important;
+}
+
+/* =================
+   LUXURY HORIZONTAL FOOTER (Full-Width Bar)
+   - Full width, fixed to bottom of viewport
+   - Onyx background, gold/maroon accent, text centered
+   - Uses flexbox for perfect centering
+   - Content distinct from sidebar
+   ================= */
+.lux-footer {
+  width: 100vw;
+  min-height: 54px;
+  background: var(--lux-onyx);
+  color: var(--lux-gold-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2.2px solid var(--lux-gold-soft);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
+  letter-spacing: .045em;
+  font-family: var(--lux-font-heading);
+  font-size: 1.13rem;
+  box-shadow: 0 -2px 16px #bfa14b25;
+  /* Design rationale: Visual weight at base, grounds the page elegantly */
+}
+.lux-footer-content {
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1em;
+}
+@media (max-width: 600px) {
+  .lux-footer { font-size: 0.96rem; min-height: 38px; }
+}
+
+.main-container.app.sidebar-layout {
+  /* Offset padding-top and padding-bottom for fixed header/footer */
+  padding-top: 70px;
+  padding-bottom: 56px;
+}
+@media (max-width: 900px) {
+  .main-container.app.sidebar-layout { padding-top: 58px; padding-bottom: 39px; }
+}
+@media (max-width: 600px) {
+  .main-container.app.sidebar-layout { padding-top: 42px; padding-bottom: 28px; }
+}
+
 /* ... Existing premium header/navbar, button, content, card, banner, badge, and footer styles omitted for brevity.
    -- All styles from previous template should be preserved unless the navigation layout is related.
    -- If porting manually, keep all text color, outline, card, notification, and utility class definitions.
