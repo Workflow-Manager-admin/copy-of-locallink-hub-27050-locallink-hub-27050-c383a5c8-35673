@@ -405,7 +405,7 @@ body::after {
 
 /* Fancy button for beige/gold theme */
 .btn-ghost {
-  background: linear-gradient(95deg, #fcfbf4 68%, #b1b4831c 110%);
+  background: linear-gradient(96deg, var(--beige-surface) 72%, var(--beige-cream) 113%);
   color: var(--primary);
   font-family: var(--font-display);
   font-weight: 700;
@@ -416,21 +416,21 @@ body::after {
   padding: 7px 22px;
   margin-left: auto;
   margin-right: 0;
-  transition: background var(--transition-main), color .14s, box-shadow .14s, border-color .16s;
-  box-shadow: 0 2px 14px 0 #b1b48310;
+  transition: background var(--transition-main), color .17s, box-shadow .16s, border-color .2s;
+  box-shadow: 0 2px 14px 0 #cab48d14;
   outline: none;
   position: relative;
   z-index: 1;
 }
 .btn-ghost:hover, .btn-ghost:focus {
-  color: #fcfbf4;
+  color: var(--text-on-primary);
   border-color: var(--accent);
-  background: var(--accent);
+  background: linear-gradient(95deg, var(--accent) 90%, var(--primary) 120%);
   text-decoration: none;
-  box-shadow: 0 0 11px 2px #b1b48338, var(--shadow-card);
+  box-shadow: 0 0 13px 3px #b1b4832b, var(--shadow-card);
 }
 .btn-ghost:focus-visible {
-  box-shadow: var(--focus-glow), 0 2px 10px 0 var(--beige-secondary);
+  box-shadow: var(--focus-glow), 0 2px 11px 0 var(--beige-secondary);
   border-color: var(--accent);
 }
 
