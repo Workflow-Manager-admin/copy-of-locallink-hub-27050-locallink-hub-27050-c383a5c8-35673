@@ -173,14 +173,14 @@ body::after {
   display: flex;
   flex-direction: column;
   background: var(--surface-glass);
-  box-shadow: var(--shadow-main), 0 0px 64px 0 #e4d5ba40 inset;
-  border-radius: 34px 34px 0 0;
+  box-shadow: var(--shadow-main), 0 0px 64px 0 #e4d5ba30 inset;
+  border-radius: 36px 36px 0 0;
   margin: 0 auto;
   max-width: 1280px;
-  animation: gradient-appear .8s cubic-bezier(.48,.87,.37,1.03);
+  animation: gradient-appear .65s cubic-bezier(.48,.87,.37,1.03);
   position: relative;
   z-index: 1;
-  border: 2px solid var(--border-strong);
+  border: 2.2px solid var(--border-strong);
 }
 
 @keyframes gradient-appear {
@@ -202,8 +202,8 @@ body::after {
   box-sizing: border-box;
   position: fixed;
   z-index: 110;
-  border-bottom: 2px solid var(--nav-border);
-  box-shadow: 0 2px 14px 0 #c1b68415, 0 1px 2px #b1b48313;
+  border-bottom: 2.2px solid var(--nav-border);
+  box-shadow: 0 2px 16px 0 #cab48d2a, 0 1px 2px #b1b48318;
   backdrop-filter: blur(var(--glass-blur));
   background-blend-mode: lighten, normal;
 }
