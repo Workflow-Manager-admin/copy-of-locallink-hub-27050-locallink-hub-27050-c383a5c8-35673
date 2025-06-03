@@ -4,12 +4,22 @@ import "./App.css";
 // PUBLIC_INTERFACE
 function MainNavigation({ activeTab, onSelectTab }) {
   const tabs = [
-    { name: "Map", key: "map", icon: "🗺️" },
-    { name: "Skill Exchange", key: "skills", icon: "🏅" },
-    { name: "Resource Re‑Up", key: "resource", icon: "🔄" },
-    { name: "Community Fund", key: "fund", icon: "💳" },
-    { name: "AI Matchmaking", key: "ai", icon: "🤖" },
-    { name: "Crisis Support", key: "crisis", icon: "🚨" },
+    { name: "Dashboard", key: "dashboard", icon: "🏠" },
+    { name: "Skill Bartering", key: "skillbarter", icon: "⏳" },
+    { name: "Pay-It-Forward", key: "payforward", icon: "🔗" },
+    { name: "Emergency", key: "emergency", icon: "📢" },
+    { name: "Aid Hub", key: "aidhub", icon: "🤝" },
+    { name: "Resource Tracker", key: "resources", icon: "🔄" },
+    { name: "Eco Recs", key: "eco", icon: "🌱" },
+    { name: "Impact Score", key: "impact", icon: "🏆" },
+    { name: "Groups", key: "groups", icon: "👥" },
+    { name: "Events", key: "events", icon: "📅" },
+    { name: "Mental Health", key: "mental", icon: "🧠" },
+    { name: "Wellness", key: "wellness", icon: "💚" },
+    { name: "Knowledge", key: "knowledge", icon: "📚" },
+    { name: "Skill Recommender", key: "recommender", icon: "🤖" },
+    { name: "Impact Tracker", key: "tracker", icon: "📊" },
+    { name: "Disaster Tools", key: "disaster", icon: "🛡️" },
   ];
   return (
     <nav className="main-nav" aria-label="Main Navigation">
@@ -56,21 +66,32 @@ function AIBannerSuggestion() {
       <span className="ai-icon">🤖</span>
       <div>
         <strong>AI Suggestion:</strong>{" "}
-        <span>Need a ladder swap? Sarah (2 blocks away) has one for lending!</span>
+        <span>Need eco-advice? Check the community’s latest zero-waste tips!</span>
       </div>
-      <button className="btn-ghost" tabIndex={0}>View Detail</button>
+      <button className="btn-ghost" tabIndex={0}>See Tips</button>
     </div>
   );
 }
 
 // PUBLIC_INTERFACE
 function AlertBanner() {
-  // Placeholder: Show if crisis mode is active.
+  // Crisis broadcast placeholder
   return (
     <div className="alert-banner" aria-live="polite">
       <span className="alert-icon" role="img" aria-label="Alert">🚨</span>
-      <span><strong>Crisis/Disaster Mode Active:</strong> Local storm—4 urgent requests nearby.</span>
-      <button className="btn-ghost" tabIndex={0}>View Requests</button>
+      <span><strong>Crisis/Disaster:</strong> Severe weather—2 urgent safety messages nearby.</span>
+      <button className="btn-ghost" tabIndex={0}>Read Broadcasts</button>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function DashboardTab() {
+  return (
+    <div className="dashboard">
+      <AIBannerSuggestion />
+      <AlertBanner />
+      <MapView />
     </div>
   );
 }
@@ -81,20 +102,22 @@ function MapView() {
     <div className="map-view">
       <div className="map-placeholder">
         {/* Placeholder for a Map (interactive when implemented) */}
-        <div className="map-legend">[Map showing 2km micro-community radius]</div>
+        <div className="map-legend">[Map showing your micro-community]</div>
         <div className="map-skeleton"></div>
       </div>
       <div className="micro-community-info">
         <h3>Your Micro‑Community</h3>
-        <p>You're in the <strong>Westside Oakridge</strong> micro‑community (1.4km radius, 189 neighbors).</p>
+        <p>
+          You're in <strong>Westside Oakridge</strong> (<strong>1.4km</strong> radius, 189 neighbors).
+        </p>
         <p>
           <span className="map-pin-emoji" role="img" aria-label="Pin">📍</span>
           Location: Oakridge Park, 0.3 km from you
         </p>
-        {/* Place for community metrics/stats */}
         <div className="community-metrics">
           <span>Trust Level: <strong>4.8</strong>/5</span>
-          <span>Active Exchanges: <strong>32</strong></span>
+          <span>Exchanges: <strong>32</strong></span>
+          <span>Impact Score: <strong>4205</strong></span>
         </div>
       </div>
     </div>
@@ -102,73 +125,225 @@ function MapView() {
 }
 
 // PUBLIC_INTERFACE
-function SkillExchangeTab() {
+function SkillBarterTab() {
   return (
     <div className="tab-content">
-      <h2>Skill Exchange</h2>
+      <h2>Skill Bartering Tokens</h2>
       <p>
-        Browse neighbors' skills or offer your own. Earn badges through peer verifications or upload certificates!
+        Trade time or credits—exchange your skills for hours or community barter tokens. Track your balance and history.
       </p>
       <div className="placeholder-box">
-        <div className="placeholder-label">Skill cards & filters come here.</div>
+        <div className="placeholder-label">Barter wallet, transaction feed, offer/earn forms (placeholder).</div>
       </div>
     </div>
   );
 }
 
 // PUBLIC_INTERFACE
-function ResourceReupTab() {
+function PayItForwardTab() {
   return (
     <div className="tab-content">
-      <h2>Resource Re‑Up</h2>
-      <p>Give away or exchange items like books, tools, produce, etc.</p>
+      <h2>Pay-It-Forward Chain</h2>
+      <p>
+        Visualize the generosity chain—see who’s helped whom and inspire more good deeds in the community.
+      </p>
       <div className="placeholder-box">
-        <div className="placeholder-label">Resource list/feed comes here.</div>
+        <div className="placeholder-label">Chain visualization, gratitude stories (placeholder).</div>
       </div>
     </div>
   );
 }
 
 // PUBLIC_INTERFACE
-function CommunityFundTab() {
+function EmergencyTab() {
   return (
     <div className="tab-content">
-      <h2>Community Fund</h2>
+      <h2>Emergency Broadcasts</h2>
       <p>
-        Earn or contribute credits and support micro‑grants for neighbors in need.
+        Receive urgent messages (within your geofence) from neighbors or authorities. Broadcast requests for help fast.
       </p>
       <div className="placeholder-box">
-        <div className="placeholder-label">Fund interface & grant requests here.</div>
+        <div className="placeholder-label">Broadcast feed, create/view requests interface (placeholder).</div>
       </div>
     </div>
   );
 }
 
 // PUBLIC_INTERFACE
-function AIMatchmakingTab() {
+function AidHubTab() {
   return (
     <div className="tab-content">
-      <h2>AI Matchmaking</h2>
+      <h2>Local Aid Coordination Hub</h2>
       <p>
-        Smart suggestions for exchanges and matches powered by local needs & AI!
+        Connect with NGOs, see volunteer needs, and coordinate local efforts. Post or find aid requests.
       </p>
       <div className="placeholder-box">
-        <div className="placeholder-label">Suggested matches and requests here.</div>
+        <div className="placeholder-label">NGO/Org postings, volunteer signups, event list (placeholder).</div>
       </div>
     </div>
   );
 }
 
 // PUBLIC_INTERFACE
-function CrisisSupportTab() {
+function ResourceTrackerTab() {
   return (
     <div className="tab-content">
-      <h2>Crisis/Disaster Support</h2>
+      <h2>Resource Lifecycle Tracker</h2>
       <p>
-        Rapidly connect with verified neighbors for urgent help in emergencies.
+        Track the lifecycle of shared items—reused, donated, recycled. Help reduce local waste.
       </p>
       <div className="placeholder-box">
-        <div className="placeholder-label">Urgent help requests/offerings listed here.</div>
+        <div className="placeholder-label">Item histories, recycling leaderboards, stats (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function EcoRecsTab() {
+  return (
+    <div className="tab-content">
+      <h2>Eco-Friendly Recommendations</h2>
+      <p>
+        Suggestions for making posts, exchanges, and community actions greener and more sustainable.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Green tips, eco-impact cards, actionable advice (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function ImpactScoreTab() {
+  return (
+    <div className="tab-content">
+      <h2>Community Impact Score</h2>
+      <p>
+        See your personal, group, and neighborhood stats: exchanges, hours, eco-points, and leaderboard ranking.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Score dashboard, badges, leaderboard (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function GroupsTab() {
+  return (
+    <div className="tab-content">
+      <h2>Skill Circles & Interest Groups</h2>
+      <p>
+        Join, manage, or found groups: skill teams, eco clubs, volunteer crews, and more.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Group directory, join/leave, chat (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function EventsTab() {
+  return (
+    <div className="tab-content">
+      <h2>Local Event Calendar</h2>
+      <p>
+        View and RSVP for community events, workshops, meetups, and drives.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Event list, calendar, RSVP forms (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function MentalHealthTab() {
+  return (
+    <div className="tab-content">
+      <h2>Mental Health First-Aid Connect</h2>
+      <p>
+        Confidentially find volunteers or professionals for mental health support.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Help directory, opt-in system, safety resources (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function WellnessTab() {
+  return (
+    <div className="tab-content">
+      <h2>Wellness & Check-In</h2>
+      <p>
+        Daily/weekly prompts for self check-in, mood tracking, peer wellness nudges.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Mood tracker, check-in log, prompt generator (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function KnowledgeArchiveTab() {
+  return (
+    <div className="tab-content">
+      <h2>Local Knowledge Archive</h2>
+      <p>
+        Browse tips, tutorials, hacks, and Q&A. Search and add local knowledge.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Search/browse UI for knowledge cards, post Q&A (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function SkillRecommenderTab() {
+  return (
+    <div className="tab-content">
+      <h2>AI-Powered Skill Recommender</h2>
+      <p>
+        Get personalized skill recommendations based on your interests, needs, and neighborhood gaps.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Recommended skill cards, AI explainer (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function TrackerTab() {
+  return (
+    <div className="tab-content">
+      <h2>Impact Tracker Dashboard</h2>
+      <p>
+        Visual stats: your skill hours, eco impact, volunteering, and community milestones.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Impact charts, milestones visualization (placeholder).</div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
+function DisasterToolsTab() {
+  return (
+    <div className="tab-content">
+      <h2>Disaster Readiness Tools</h2>
+      <p>
+        Quickly prep for emergencies—access checklists, shelter maps, and volunteer dashboards.
+      </p>
+      <div className="placeholder-box">
+        <div className="placeholder-label">Guide/checklist cards, live shelter map (placeholder).</div>
       </div>
     </div>
   );
@@ -176,7 +351,7 @@ function CrisisSupportTab() {
 
 // PUBLIC_INTERFACE
 function MainContainer() {
-  const [activeTab, setActiveTab] = useState("map");
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   return (
     <div className="main-container app">
@@ -190,16 +365,22 @@ function MainContainer() {
       <div className="spacer-navbar" />
       <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
       <main className="main-content" tabIndex={0}>
-        <div className="dashboard">
-          <AIBannerSuggestion />
-          <AlertBanner />
-          {activeTab === "map" && <MapView />}
-          {activeTab === "skills" && <SkillExchangeTab />}
-          {activeTab === "resource" && <ResourceReupTab />}
-          {activeTab === "fund" && <CommunityFundTab />}
-          {activeTab === "ai" && <AIMatchmakingTab />}
-          {activeTab === "crisis" && <CrisisSupportTab />}
-        </div>
+        {activeTab === "dashboard" && <DashboardTab />}
+        {activeTab === "skillbarter" && <SkillBarterTab />}
+        {activeTab === "payforward" && <PayItForwardTab />}
+        {activeTab === "emergency" && <EmergencyTab />}
+        {activeTab === "aidhub" && <AidHubTab />}
+        {activeTab === "resources" && <ResourceTrackerTab />}
+        {activeTab === "eco" && <EcoRecsTab />}
+        {activeTab === "impact" && <ImpactScoreTab />}
+        {activeTab === "groups" && <GroupsTab />}
+        {activeTab === "events" && <EventsTab />}
+        {activeTab === "mental" && <MentalHealthTab />}
+        {activeTab === "wellness" && <WellnessTab />}
+        {activeTab === "knowledge" && <KnowledgeArchiveTab />}
+        {activeTab === "recommender" && <SkillRecommenderTab />}
+        {activeTab === "tracker" && <TrackerTab />}
+        {activeTab === "disaster" && <DisasterToolsTab />}
       </main>
       <footer className="footer">
         &copy; {new Date().getFullYear()} LocalLink Hub – Fostering hyper-local connections
