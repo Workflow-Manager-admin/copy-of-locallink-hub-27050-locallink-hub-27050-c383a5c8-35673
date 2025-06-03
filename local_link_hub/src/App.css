@@ -77,10 +77,19 @@ body {
   font-family: var(--lux-font-body);
   min-height: 100vh;
   letter-spacing: 0.012em;
-  background: 
+  background:
     var(--lux-bg-champagne-grad),
     var(--lux-bg-champagne);
   background-blend-mode: normal;
+  /* 
+    === BACKGROUND RATIONALE ===
+    - The main surface is #faf8f3: barely warmer than pure white, reading as "cream" in all light.
+    - Minimal gradient provides only the softest depth—visually, background appears flat from normal viewing.
+    - No visible or tactile shimmer, pattern, or glitter.
+    - This near-monochrome base prevents distraction and foregrounds luxury maroon/gold/onyx accent elements.
+    - This unobtrusive surface aligns with modern luxury web/brand design (see Cartier, Audemars Piguet, Hermès digital).
+    - The goal: the background is never noticed, just felt as calm and "expensive"—it allows accents and UI to glow.
+  */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
@@ -88,19 +97,14 @@ body {
   z-index: 0;
 }
 
-/* Subtle tactile gold shimmer/noise overlay for a physical premium feel */
+/* Removed tactile shimmer/noise overlay: 
+   - Background should be as flat and undistracting as possible.
+   - If a tactile layer is ever reintroduced, opacity should be <0.015 and must NOT create visible movement, texture, or color cast.
+*/
 body::before {
+  /* EMPTY -- NO OVERLAY (deliberate minimalist choice for subtle luxury) */
   content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.055;
-  /* SVG-generated gold shimmer + gold fade over champagne */
-  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.10'/></svg>"),
-    linear-gradient(99deg, #FFEFCF11 5%, #FFD70006 92%);
-  background-size: 160px 160px, 100% 100%;
-  mix-blend-mode: lighten;
+  display: none;
 }
 
 
