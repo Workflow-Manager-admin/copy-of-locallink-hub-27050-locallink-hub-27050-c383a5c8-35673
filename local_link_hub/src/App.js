@@ -28,15 +28,77 @@ function MainNavigation({ activeTab, onSelectTab }) {
     { name: "Impact Tracker", key: "tracker", icon: "📊" },
     { name: "Disaster Tools", key: "disaster", icon: "🛡️" },
   ];
+
+  // PUBLIC_INTERFACE
+  // SidebarBrandingPanel: Luxury logo/icon and slender vertical flourish for subtle sidebar branding.
+  // - Design rationale: Fills negative empty space, reinforces brand, adds gold/maroon accent without visual weight.
+  function SidebarBrandingPanel() {
+    return (
+      <div className="sidebar-branding-panel" aria-label="Brand Logo Panel">
+        {/* Abstract compass/star SVG as logo-emblem; gold line as flourish */}
+        <span className="branding-logo" aria-label="Brand Emblem">
+          {/* Abstract emblem using SVG, matching luxury maroon/gold tone */}
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+            <circle cx="19" cy="19" r="18" stroke="#BFA14B" strokeWidth="2.3" fill="#faf8f3" />
+            <path d="M19 11 L21.8 27 L19 24.5 L16.2 27 Z" fill="#921d36" />
+            <circle cx="19" cy="19" r="4" fill="#BFA14B" />
+          </svg>
+        </span>
+        <div className="branding-name">
+          <span className="branding-main">LocalLink</span>
+          <span className="branding-sub">Hub</span>
+        </div>
+        <span className="branding-flourish" aria-hidden="true"></span>
+      </div>
+    );
+  }
+
+  // PUBLIC_INTERFACE
+  // SidebarQuickLinks: Minimal luxury quick-action and summary stats panel for sidebar base
+  // - Design rationale: Fills bottom sidebar space with muted, quick-access features and stats aligned to luxury whitespace ethic.
+  function SidebarQuickLinks() {
+    return (
+      <div className="sidebar-quicklinks" aria-label="Sidebar Quick Links Panel">
+        <div className="quick-summary">
+          <span>
+            <span role="img" aria-label="Community size">👥</span>
+            <strong>189</strong>
+            <span className="quick-label">Neighbors</span>
+          </span>
+          <span>
+            <span role="img" aria-label="Impact Points">🏆</span>
+            <strong>4205</strong>
+            <span className="quick-label">Impact</span>
+          </span>
+        </div>
+        <div className="quick-actions">
+          <button className="quicklink-btn" tabIndex={0} title="Invite Neighbor">
+            <span role="img" aria-label="Invite">✉️</span>
+          </button>
+          <button className="quicklink-btn" tabIndex={0} title="Settings">
+            <span role="img" aria-label="Settings">⚙️</span>
+          </button>
+          <button className="quicklink-btn" tabIndex={0} title="Motivation">
+            <span role="img" aria-label="Inspire">💡</span>
+          </button>
+        </div>
+        {/* Slim inspirational callout for premium effect */}
+        <div className="quick-motivation" aria-label="Motivational Callout">
+          <span>“Luxury is a state of community & trust.”</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <nav className="sidebar-nav" aria-label="Main Navigation">
       {/* 
         Sidebar Container:
         - visually separate, fixed on left (on desktop/tablet), collapses elegantly for mobile.
         - Champagne as core bg, gold trim, maroon accent for hover/active.
-        - ARIA/keyboard nav for screen reader usability.
-        - Scrollable if nav list exceeds visible height.
+        - Added: Luxury branding/logo panel above nav-list, quick-stat and subtle quick-links panel at base.
       */}
+      <SidebarBrandingPanel />
       <ul role="tablist" className="sidebar-nav-list">
         {tabs.map((tab, idx) => (
           <li
@@ -61,6 +123,7 @@ function MainNavigation({ activeTab, onSelectTab }) {
           </li>
         ))}
       </ul>
+      <SidebarQuickLinks />
     </nav>
   );
 }
@@ -811,6 +874,20 @@ function DisasterToolsTab() {
 function MainContainer() {
   const [activeTab, setActiveTab] = useState("dashboard");
 
+  // PUBLIC_INTERFACE
+  // InfobarPanel: slim info panel beneath nav, fills header-content dead space, shows user or app context in a luxury way.
+  // - Design rationale: Gives continuous flow between nav, header, and content, subtly reinforcing premium branding or connection status.
+  function InfobarPanel() {
+    return (
+      <div className="infobar-panel" role="status">
+        {/* App branding, luxury motto, or session info, elegantly styled */}
+        <span className="infobar-highlight">Connected as <b>Alex P.</b></span>
+        <span className="infobar-divider"></span>
+        <span className="infobar-msg">Welcome to <b>LocalLink Hub</b> — “Luxury is quietly local.”</span>
+      </div>
+    );
+  }
+
   return (
     <div className="main-container app sidebar-layout">
       {/* Luxury Header (Champagne, Gold, Maroon accent, logo+profile row) */}
@@ -821,6 +898,8 @@ function MainContainer() {
         </div>
         <UserProfileMini />
       </header>
+      {/* Decorative/Brand Infobar (fills space under nav, between blocks) */}
+      <InfobarPanel />
       <div className="spacer-navbar" />
 
       <div className="core-layout">
