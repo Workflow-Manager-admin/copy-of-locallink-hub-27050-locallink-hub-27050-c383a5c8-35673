@@ -21,9 +21,9 @@
 
   /* --- METALLIC & GOLDEN HIGHLIGHTS --- */
   --lux-gold-main: #ecd08c;         /* Champagne Gold: refined, soft metallic */
-  --lux-gold-leaf: #f8e7ae;         /* Brighter gold for glowing effects */
+  --lux-gold-leaf: #f8e7ae;         /* Brighter gold for focus/hilight (NO glow now) */
   --lux-gold-deep: #bfa14b;         /* Aged gold: metallic trimmings, depth */
-  --lux-gold-glow: #fffbe7;         /* Lush pale-gold glow for micro-interactions */
+  --lux-gold-glow: #fffbe7;         /* Deprecated: No more glows */
   --lux-platinum: #e7e9ee;          /* For cool metallic/white elements */
   
   /* --- OPULENT ACCENTS --- */
