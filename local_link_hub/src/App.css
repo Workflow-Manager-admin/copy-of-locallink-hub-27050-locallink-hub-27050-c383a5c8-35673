@@ -138,7 +138,7 @@ body::before {
   100% { opacity: 1; filter: blur(0);}
 }
 
-/* === NAVIGATION BAR: luxe onyx font, soft gold trims, high legibility === */
+/* === NAVIGATION BAR: luxe onyx font, gold trims, MAROON call-to-action highlights === */
 .navbar {
   font-family: var(--lux-font-heading);
   background: #fffcee88;
@@ -154,6 +154,8 @@ body::before {
   z-index: 110;
   border-bottom: 3px solid var(--lux-gold-main);
   box-shadow: 0 3px 11px #f1e1c684, 0 1.5px 5px #FFD70018;
+  /* Subtle maroon glint on shadow to reinforce theme */
+  box-shadow: 0 3px 11px #980c2c18, 0 1.5px 5px #FFD70018;
   backdrop-filter: blur(var(--lux-glass-blur));
 }
 .spacer-navbar { height: 64px; }
@@ -168,7 +170,8 @@ body::before {
   font-family: var(--lux-font-heading);
   font-weight: 700;
   font-size: 1.36rem;
-  background: linear-gradient(94deg, #bfa14b 80%, #e5c97b 120%);
+  /* MAROON/gold rich gradient for brand logo text */
+  background: linear-gradient(94deg, #921d36 32%, #bfa14b 75%, #e5c97b 120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 2.5px;
