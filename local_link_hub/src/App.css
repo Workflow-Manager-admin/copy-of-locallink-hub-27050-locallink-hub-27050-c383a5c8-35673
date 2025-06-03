@@ -65,8 +65,8 @@
   --lux-font-body: 'Inter', Arial, sans-serif;
 
   /* --- MICRO-INTERACTION EFFECTS --- */
-  --lux-gold-focus: 0 0 0 3px #ecd08cbb, 0 0 0 8px #fffde31e;
-  --lux-press-inset-shadow: 0 4px 16px #ecd08c38 inset;
+  --lux-gold-focus: 0 0 0 2.5px #ecd08c, 0 0 0 0 #1110; /* No glow, just gold ring */
+  --lux-press-inset-shadow: 0 2px 8px #ecd08c32 inset;  /* Soft metallic inset */
 
   /* --- FAST, REFINED TRANSITIONS --- */
   --lux-transition: 0.17s cubic-bezier(.47,.93,.27,1.09);
