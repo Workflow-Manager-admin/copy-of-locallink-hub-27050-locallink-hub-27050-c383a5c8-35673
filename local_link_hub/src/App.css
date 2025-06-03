@@ -216,7 +216,8 @@ body::after {
   background: var(--lux-card-gradient);
   padding: 9px 20px 8px 13px;
   border-radius: 999px;
-  box-shadow: 0 3px 14px 0 var(--lux-gold-main), 0 1.5px 7px #1c1e2935;
+  /* Remove all colored glows, use deep shadow for depth only */
+  box-shadow: 0 2px 8px 0 #0005, 0 1.5px 6px #ecd08c1a;
   border: 2px solid var(--lux-gold-main);
   backdrop-filter: blur(12px);
   font-family: var(--lux-font-body);
@@ -227,14 +228,13 @@ body::after {
   width: 38px; height: 38px; border-radius: 50%;
   background: linear-gradient(142deg, #ecd08c 62%, #bfa14b 162%);
   border: 3.1px solid #fffde3;
-  box-shadow: 0 2px 9px 0 #ecd08c44, 0 1px 2px #ecd08c14;
+  box-shadow: 0 2px 7px 0 #0004, 0 1px 2px #ecd08c12;
   position: relative;
   overflow: hidden;
-  animation: avatar-luxury-vibe 3.8s infinite alternate;
+  /* Remove glow keyframes/animation for avatars */
 }
 @keyframes avatar-luxury-vibe {
-  0%   { box-shadow: 0 1.5px 9px 0 #ecd08c32; }
-  100% { box-shadow: 0 3.8px 22px 0 #ecd08c61; }
+  /* No longer used */
 }
 .user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 2px;}
 .user-name {
