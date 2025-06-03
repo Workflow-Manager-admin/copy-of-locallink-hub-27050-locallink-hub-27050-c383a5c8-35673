@@ -268,9 +268,20 @@ function MapView() {
   );
 }
 
-// PUBLIC_INTERFACE
+/**
+ * Align and polish DashboardTab. Add clear, luxury toasts/inline feedback for all buttons.
+ */
 function DashboardTab() {
   const { showToast } = React.useContext(ToastContext);
+
+  // Handler examples for all dashboard buttons.
+  const handleVerifySkill = () =>
+    showToast("Request sent for luxury skill badge verification! 👑", "info");
+  const handleRSVP = () =>
+    showToast("You RSVP’d with style. See you at the luxury Compost Workshop! 🥂", "success");
+  const handleMoreTips = () =>
+    showToast("More luxury eco tips will be revealed soon. 🌿", "info");
+
   return (
     <div className="dashboard luxury-dashboard">
       <section className="lux-row luxury-dashboard-row" aria-label="Quick Stats and Welcome Panel">
@@ -328,7 +339,8 @@ function DashboardTab() {
           <span className="widget-desc">Gardening</span>
           <button
             className="widget-action-btn"
-            onClick={() => showToast("Request sent to verify a new luxury skill.", "info")}
+            onClick={handleVerifySkill}
+            aria-label="Request verification for luxury skill badge"
           >
             Verify Skill
           </button>
@@ -339,7 +351,8 @@ function DashboardTab() {
           <span className="widget-desc">Compost Workshop, Mon 27th</span>
           <button
             className="widget-action-btn"
-            onClick={() => showToast("RSVP’d in luxury for Compost Workshop.", "success")}
+            onClick={handleRSVP}
+            aria-label="RSVP to Compost Workshop with luxury"
           >
             RSVP
           </button>
@@ -350,7 +363,8 @@ function DashboardTab() {
           <span className="widget-desc">Reuse containers with neighbors</span>
           <button
             className="widget-action-btn"
-            onClick={() => showToast("Another luxury eco tip coming soon!", "info")}
+            onClick={handleMoreTips}
+            aria-label="Get more luxury-themed eco tips"
           >
             More Tips
           </button>
