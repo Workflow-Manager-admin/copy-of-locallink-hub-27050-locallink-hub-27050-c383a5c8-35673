@@ -759,158 +759,18 @@ function MainContainer() {
           {/* Populate each tab with 3-4 demo luxury cards/min-widgets, richly styled */}
           {activeTab === "dashboard" && <DashboardTab />}
           {activeTab === "skillbarter" && <SkillBadgesMockups />}
-          {activeTab === "payforward" && (() => {
-            // === LUXURY THEMED TOAST HANDLERS FOR PAY IT FORWARD TAB ===
-            const { showToast } = React.useContext(ToastContext);
-            const handleSignUp = () =>
-              showToast("Thank you for bringing luxury care to a neighbor's table! 🍽️", "success");
-            const handleFlowerRequest = () =>
-              showToast("A luxury bouquet will brighten someone's day. 💐", "info");
-            const handleCarpoolJoin = () =>
-              showToast("Carpool slot secured! Ride in comfort with your community. 🚗", "success");
-            return (
-              <div>
-                <h2>Pay-It-Forward</h2>
-                <p>Give and receive - spread kindness through neighborly actions and community credits.</p>
-                <div className="lux-info-row" style={{gap: "24px", flexWrap:"wrap"}}>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🥘</span>
-                    <span className="widget-title">Meal for a Neighbor</span>
-                    <span className="widget-desc">Give: Sign up to bring dinner tonight</span>
-                    <button className="widget-action-btn" onClick={handleSignUp}>Sign Up</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">💐</span>
-                    <span className="widget-title">Free Flower Delivery</span>
-                    <span className="widget-desc">Request or surprise a friend</span>
-                    <button className="widget-action-btn" onClick={handleFlowerRequest}>Request</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🚗</span>
-                    <span className="widget-title">Carpool Slot</span>
-                    <span className="widget-desc">Oakridge to Downtown</span>
-                    <button className="widget-action-btn" onClick={handleCarpoolJoin}>Join</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
+          {activeTab === "payforward" && <PayItForwardTab />}
           {activeTab === "emergency" && <CrisisOverlayMockups />}
           {activeTab === "aidhub" && <CommunityFundMockups />}
           {activeTab === "resources" && <ResourceReupMockups />}
           {activeTab === "eco" && <EcoRecsMockups />}
           {activeTab === "impact" && <ImpactTrackerMockups />}
-          {activeTab === "groups" && (() => {
-            // === GROUPS TAB BUTTON HANDLERS ===
-            const { showToast } = React.useContext(ToastContext);
-            const handleJoinHistory = () =>
-              showToast("Welcome to History Buffs! The story is richer together. 🏛️", "success");
-            const handleLearnArts = () =>
-              showToast("Arts Collective: Details coming soon. Celebrate creativity! 🎭", "info");
-            const handleJoinCycling = () =>
-              showToast("Pedaling into luxury adventures. Cycling Crew joined! 🚴‍♂️", "success");
-            return (
-              <div>
-                <h2>Groups</h2>
-                <p>Find and join local micro-groups for shared interests and collaboration.</p>
-                <div className="lux-info-row" style={{gap:"26px",flexWrap:"wrap"}}>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🏛️</span>
-                    <span className="widget-title">History Buffs</span>
-                    <span className="widget-desc">Weekly meetups, Fridays</span>
-                    <button className="widget-action-btn" onClick={handleJoinHistory}>Join</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🎭</span>
-                    <span className="widget-title">Arts Collective</span>
-                    <span className="widget-desc">Pop-up exhibitions</span>
-                    <button className="widget-action-btn" onClick={handleLearnArts}>Learn More</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🚴‍♂️</span>
-                    <span className="widget-title">Cycling Crew</span>
-                    <span className="widget-desc">Sat rides, all ages welcome</span>
-                    <button className="widget-action-btn" onClick={handleJoinCycling}>Join</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
+          {activeTab === "groups" && <GroupsTab />}
           {activeTab === "events" && <EventsMockups />}
           {activeTab === "mental" && <MentalHealthMockups />}
           {activeTab === "wellness" && <WellnessMockups />}
-          {activeTab === "knowledge" && (() => {
-            // === KNOWLEDGE TAB BUTTON HANDLERS ===
-            const { showToast } = React.useContext(ToastContext);
-            const handleReadCompost = () =>
-              showToast("Luxury compost guide unlocked. Your garden will thank you! 🌱", "info");
-            const handleReadBattery = () =>
-              showToast("Premium DIY: Battery backup blueprints ready. Stay powered! 🔋", "success");
-            const handleReadPlanters = () =>
-              showToast("Expert guide opened: Grow pollinator planters in luxury style. 🐝", "info");
-            return (
-              <div>
-                <h2>Community Knowledge</h2>
-                <p>Share, find, and request local how-to guides.</p>
-                <div className="lux-info-row" style={{gap:"22px",flexWrap:"wrap"}}>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">📄</span>
-                    <span className="widget-title">How-to: Compost Properly</span>
-                    <span className="widget-desc">Step-by-step, local soil types</span>
-                    <button className="widget-action-btn" onClick={handleReadCompost}>Read</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🔌</span>
-                    <span className="widget-title">DIY: Home Battery Backup</span>
-                    <span className="widget-desc">Crowdsourced, local supplies</span>
-                    <button className="widget-action-btn" onClick={handleReadBattery}>Read</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🌱</span>
-                    <span className="widget-title">Urban Pollinator Planters</span>
-                    <span className="widget-desc">Guide by neighbor expert Alicia</span>
-                    <button className="widget-action-btn" onClick={handleReadPlanters}>Read</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-          {activeTab === "recommender" && (() => {
-            // === SKILL RECOMMENDER TAB BUTTON HANDLERS ===
-            const { showToast } = React.useContext(ToastContext);
-            const handleViewBaking = () =>
-              showToast("Luxury baking courses previewed — let them eat cake! 🧑‍🍳", "success");
-            const handleStartGardening = () =>
-              showToast("Green thumb level-up started. Urban Gardening course initiated! 🪴", "success");
-            const handleConnectMusic = () =>
-              showToast("Music Collaboration: Your peers are ready to play! 🎼", "info");
-            return (
-              <div>
-                <h2>Skill Recommender</h2>
-                <p>Personalized AI skill suggestions based on your community profile.</p>
-                <div className="lux-info-row" style={{gap:"22px",flexWrap:"wrap"}}>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🧑‍🍳</span>
-                    <span className="widget-title">Recommended: Baking Courses</span>
-                    <span className="widget-desc">High local demand</span>
-                    <button className="widget-action-btn" onClick={handleViewBaking}>View</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🪴</span>
-                    <span className="widget-title">Recommended: Urban Gardening</span>
-                    <span className="widget-desc">Matches your badge</span>
-                    <button className="widget-action-btn" onClick={handleStartGardening}>Start</button>
-                  </div>
-                  <div className="lux-mini-widget">
-                    <span className="widget-icon" aria-hidden="true">🎼</span>
-                    <span className="widget-title">Music Collaboration</span>
-                    <span className="widget-desc">Peers nearby</span>
-                    <button className="widget-action-btn" onClick={handleConnectMusic}>Connect</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
+          {activeTab === "knowledge" && <KnowledgeTab />}
+          {activeTab === "recommender" && <SkillRecommenderTab />}
           {activeTab === "tracker" && <ImpactTrackerMockups />}
           {activeTab === "disaster" && <CrisisOverlayMockups />}
         </main>
