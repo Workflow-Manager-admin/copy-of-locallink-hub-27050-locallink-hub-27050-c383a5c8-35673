@@ -1,37 +1,37 @@
 :root {
-  /* === LUXURY/PREMIUM "ONYX & GOLD" UI PALETTE for LocalLink Hub ===
-     - Rationale: Classic black (#111111) conveys timeless luxury and seriousness, while gold overlays and accents (#FFD700, #E5C97B, #BFA14B) create a sense of premium warmth, focus, and exclusivity associated with high-end experiences. 
-     - Black backgrounds maximize contrast for signature golds and provide a modern, high-impact look.
-     - Gold accents are used (never backgrounds) to guide user attention, highlight key elements, and reinforce trust and achievement.
+  /* === LUXURY "ONYX & GOLD" PREMIUM UI PALETTE (Revised) ===
+     - Now uses deep onyx/charcoal base (#181a1b) for ultra-premium, modern aesthetic with gold accents. 
+     - Rationale: A true deep onyx background (#181a1b) yields maximum contrast against metallic golds (#FFD700, #E5C97B, #BFA14B), enhancing readability and reinforcing exclusivity.
+     - All variable names are preserved, but dark values now harmonize with onyx for greater depth.
   */
-  --lux-black: #111111;                         /* True classic black, premium-grade */
-  --lux-black-radial: radial-gradient(circle at 40% 30%, #29220a25 0%, #111111 80%);
-  --lux-black-gradient: linear-gradient(135deg, #111111 72%, #282114 110%);
-  --lux-gradient-gold-subtle: radial-gradient(circle at 70% 15%, #FFD70030 1%, #E5C97B19 35%, #11111144 80%);
-  --lux-gold-main: #FFD700;                     /* Gold primary accent (luxury standard) */
-  --lux-gold-soft: #E5C97B;                     /* Softer, champagne gold, for backgrounds & trims */
-  --lux-gold-deep: #BFA14B;                     /* Deeper gold for contrast and depth */
-  --lux-gold-radial: radial-gradient(circle at 70% 10%, #FFD70044 0%, #BFA14B19 60%, #11111100 100%);
+  --lux-black: #181a1b;                         /* Deep onyx charcoal – foundation of the new luxury look */
+  --lux-black-radial: radial-gradient(circle at 40% 30%, #29220a22 0%, #181a1b 80%);
+  --lux-black-gradient: linear-gradient(135deg, #181a1b 72%, #232323 110%);
+  --lux-gradient-gold-subtle: radial-gradient(circle at 70% 15%, #FFD70030 1%, #E5C97B19 35%, #181a1b44 80%);
+  --lux-gold-main: #FFD700;                     /* Gold primary accent */
+  --lux-gold-soft: #E5C97B;                     /* Soft/champagne gold for trims */
+  --lux-gold-deep: #BFA14B;                     /* Deeper metallic gold for structure */
+  --lux-gold-radial: radial-gradient(circle at 70% 10%, #FFD70044 0%, #BFA14B19 60%, #181a1b00 100%);
   --lux-gold-border: #FFD700;
   --lux-gold-faint: #E5C97B58;
-  --lux-gold-fade: linear-gradient(120deg, #FFD70022 0%, #BFA14B19 55%, #11111100 95%);
+  --lux-gold-fade: linear-gradient(120deg, #FFD70022 0%, #BFA14B19 55%, #181a1b00 95%);
 
-  --lux-card-bg: #181818;
-  --lux-card-gradient: linear-gradient(115deg, #191C1C 82%, #292114 130%);
-  --lux-scroll-bg: #181716;
+  --lux-card-bg: #232323;                        /* Slightly lighter than the background, maintains contrast */
+  --lux-card-gradient: linear-gradient(115deg, #23292b 82%, #292114 130%);
+  --lux-scroll-bg: #222222;
   --lux-shadow-main: 0 6px 38px 0 #00000028, 0 2px 16px #FFD70011;
   --lux-shadow-card: 0 3px 16px #00000018, 0 2px 10px #FFD70008;
 
-  --lux-text-main: #F9F6ED;
-  --lux-text-heading: #FFD700;
-  --lux-text-secondary: #E5C97BCC;
-  --lux-text-muted: #BFA14B60;
+  --lux-text-main: #F9F6ED;                    /* Premium off-white */
+  --lux-text-heading: #FFD700;                  /* Gold headings */
+  --lux-text-secondary: #E5C97BCC;              /* Muted gold secondary text */
+  --lux-text-muted: #BFA14B60;                  /* Faint metallic gold for muted states */
   --lux-success: #8ECF7B;
   --lux-warn: #FFE471;
   --lux-info: #80A6F1;
   --lux-error: #FF8E64;
 
-  --lux-border-main: #333024;
+  --lux-border-main: #232325;
   --lux-border-gold: var(--lux-gold-main);
   --lux-border-radius: 20px;
   --lux-glass-blur: 20px;
@@ -52,13 +52,14 @@
   --warn: var(--lux-warn);
   --info: var(--lux-info);
   --border: var(--lux-border-main);
-  --nav-hover: linear-gradient(97deg, #FFD70010 22%, #181818 88%);
+  --nav-hover: linear-gradient(97deg, #FFD70010 22%, #232323 88%);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
 
 /* === BASE BODY & BACKGROUND ===
-   Actual background: #111111 "classic black" underneath, with a very subtle gold radial and diagonal gradient.
+   Background: Deep onyx (#181a1b) as base, overlaid with subtle gold gradients/accents.
+   Gold gradients are controlled, never overwhelming.
 */
 body {
   margin: 0;
@@ -66,7 +67,7 @@ body {
   font-family: var(--lux-font-body);
   min-height: 100vh;
   letter-spacing: 0.012em;
-  background: 
+  background:
     var(--lux-gradient-gold-subtle),
     var(--lux-gold-radial),
     var(--lux-black-gradient),
@@ -79,7 +80,7 @@ body {
   z-index: 0;
 }
 
-/* Add a very subtle tactile gold shimmer/noise overlay */
+/* Subtle tactile gold shimmer/noise overlay for a physical premium feel */
 body::before {
   content: "";
   position: fixed;
@@ -87,12 +88,14 @@ body::before {
   pointer-events: none;
   z-index: 0;
   opacity: 0.09;
-  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.23'/></svg>"), var(--lux-gold-fade);
+  /* SVG-generated gold-faint shimmer + gold gradient */
+  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.23'/></svg>"),
+    var(--lux-gold-fade);
   background-size: 160px 160px, 100% 100%;
   mix-blend-mode: lighten;
 }
 
-/* === Scrollbar: Black base, gold thumb === */
+/* === Scrollbar: deep base, metallic gold thumb === */
 ::-webkit-scrollbar {
   background: var(--lux-scroll-bg);
   width: 10px;
@@ -108,7 +111,7 @@ body::before {
   background: var(--lux-gold-main);
 }
 
-/* === MAIN APP CONTAINER with faint gold border and black glass === */
+/* === MAIN APP CONTAINER: black glass with gold trim, now onyx base === */
 .main-container {
   min-height: 100vh;
   background: var(--lux-black-radial), var(--lux-card-gradient), var(--lux-black-gradient);
@@ -126,7 +129,7 @@ body::before {
   100% { opacity: 1; filter: blur(0);}
 }
 
-/* === NAVIGATION BAR: Black with gold trims, gold text highlights === */
+/* === NAVIGATION BAR: Onyx background, gold trims/highlights === */
 .navbar {
   font-family: var(--lux-font-heading);
   background: var(--lux-black-gradient);
@@ -137,21 +140,16 @@ body::before {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0; left: 0; width: 100%;
   box-sizing: border-box;
   z-index: 110;
   border-bottom: 3px solid var(--lux-gold-main);
-  box-shadow: 0 3px 15px #0004, 0 1.5px 6px #FFD70011;
+  box-shadow: 0 3px 15px #0008, 0 1.5px 6px #FFD70011;
   backdrop-filter: blur(var(--lux-glass-blur));
 }
-
 .spacer-navbar { height: 64px; }
 
-.navbar-left {
-  display: flex; align-items: center; gap: 17px;
-  font-family: var(--lux-font-heading);
-}
+.navbar-left { display: flex; align-items: center; gap: 17px; font-family: var(--lux-font-heading);}
 .logo-symbol {
   font-size: 2.12rem;
   color: var(--lux-gold-main);
@@ -168,14 +166,14 @@ body::before {
   padding-left: 2px;
 }
 
-/* === USER PROFILE MINI: Gold/black-glass card, buttons === */
+/* === USER PROFILE MINI: Gold trimmed black glass, crisp contrast === */
 .user-profile-mini {
   display: flex; align-items: center; gap: 16px;
-  background: linear-gradient(120deg, #191812 80%, #FFD7000B 120%);
+  background: linear-gradient(120deg, #23231a 80%, #FFD7000B 120%);
   padding: 9px 19px 8px 13px;
   border-radius: 999px;
   border: 2px solid var(--lux-gold-main);
-  box-shadow: 0 3px 10px #0006, 0 1.5px 7px #FFD70016;
+  box-shadow: 0 3px 10px #0007, 0 1.5px 7px #FFD70016;
   min-width: 210px;
   font-family: var(--lux-font-body);
   transition: box-shadow .19s, border .17s;
@@ -211,14 +209,14 @@ body::before {
   color: var(--lux-success);
   margin-left: 14px;
   padding: 2px 12px;
-  background: #15110dA0;
+  background: #181a1bA0;
   border-radius: 10px;
   border: 1.3px solid var(--lux-gold-main);
   font-weight: 700;
   box-shadow: none;
 }
 
-/* === MAIN NAVIGATION BAR === */
+/* === MAIN NAVIGATION BAR: Onyx with gold, active states bold for accessibility === */
 .main-nav {
   position: sticky;
   top: 64px;
@@ -246,17 +244,15 @@ body::before {
   transition: 
     background .13s,
     color .16s, box-shadow .18s, border-color .15s;
-  display: flex;
-  align-items: center;
-  gap: 13px;
+  display: flex; align-items: center; gap: 13px;
   user-select: none;
   font-size: 1.11rem;
   font-weight: 600;
   letter-spacing: .031em;
   border: 1.5px solid transparent;
-  background: linear-gradient(96deg, #FFD7000E 32%, #181818 100%);
+  background: linear-gradient(96deg, #FFD7000E 32%, #232323 100%);
   outline: none;
-  box-shadow: 0 1.5px 7px 0 #0006;
+  box-shadow: 0 1.5px 7px 0 #0008;
   position: relative;
   z-index: 2;
 }
@@ -272,10 +268,10 @@ body::before {
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(91deg, #FFD70022 52%, #1C1A1A 130%);
+  background: linear-gradient(91deg, #FFD70022 52%, #222222 130%);
   color: var(--lux-gold-main);
   border-color: var(--lux-gold-main);
-  box-shadow: 0 5px 13px -3px #0005, 0 2px 7px #FFD70029;
+  box-shadow: 0 5px 13px -3px #0008, 0 2px 7px #FFD70029;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -286,15 +282,13 @@ body::before {
 }
 .main-nav li:focus-visible {
   border-color: var(--lux-gold-main);
-  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #0005;
+  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #0008;
 }
-.nav-icon {
-  font-size: 1.19em;
-}
+.nav-icon { font-size: 1.19em; }
 
-/* === GOLD-LUXURY BUTTONS === */
+/* === LUX GOLD BUTTONS: big contrast on onyx === */
 .btn-ghost, .btn-ghost:visited {
-  background: linear-gradient(95deg, #FFD70010 80%, #111111 120%);
+  background: linear-gradient(95deg, #FFD70010 80%, #181a1b 120%);
   color: var(--lux-gold-main);
   font-family: var(--lux-font-heading);
   font-weight: 700;
@@ -305,7 +299,7 @@ body::before {
   padding: 8px 24px;
   margin-left: auto;
   margin-right: 0;
-  box-shadow: 0 2px 8px 0 #0003;
+  box-shadow: 0 2px 8px 0 #0006;
   outline: none;
   position: relative;
   z-index: 1;
@@ -317,15 +311,15 @@ body::before {
 }
 .btn-ghost:focus,
 .btn-ghost:hover {
-  color: #15120d;
+  color: #1c1814;
   background: linear-gradient(95deg, #FFD700 91%, #E5C97B 122%);
   text-decoration: none;
   border-color: var(--lux-gold-deep);
-  box-shadow: 0 2px 7px #FFD70029 inset, 0 2px 10px #0002;
+  box-shadow: 0 2px 7px #FFD70029 inset, 0 2px 10px #0001;
 }
 .btn-ghost:active {
   background: linear-gradient(101deg, #BFA14B 65%, #FFD700 150%);
-  color: var(--lux-text-secondary);
+  color: var(--text-secondary);
   box-shadow: 0 1px 6px #23232511 inset;
   border-color: var(--lux-gold-main);
 }
@@ -334,14 +328,14 @@ body::before {
   border-color: var(--lux-gold-soft);
 }
 
-/* === LUX GOLD/BLACK CARDS === */
+/* === GOLD/ONYX CARDS: onyx base, gold trims, see-through overlays === */
 .tab-content,
 .map-view,
 .micro-community-info {
-  background: rgba(24,17,9,0.68);
+  background: rgba(30,27,34,0.80); /* Deep onyx glass */
   border-radius: var(--lux-border-radius);
   border: 1.7px solid var(--lux-gold-main);
-  box-shadow: 0 5px 18px 0 #0002, 0 2px 10px #FFD70009;
+  box-shadow: 0 5px 18px 0 #0003, 0 2px 10px #FFD70009;
   padding: 26px 31px;
   margin: 14px 0;
   transition: 
@@ -353,13 +347,13 @@ body::before {
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 7px 23px 0 #0004, 0 1.4px 10px #FFD70015 inset;
+  box-shadow: 0 7px 23px 0 #0006, 0 1.4px 10px #FFD70015 inset;
   border-color: var(--lux-gold-soft);
-  background: var(--lux-black-radial), rgba(24,17,9,0.87);
+  background: var(--lux-black-radial), rgba(30,27,34,0.93);
   transform: translateY(-2.5px) scale(1.015);
 }
 
-/* === CARDS HEADINGS & INFO === */
+/* === HEADINGS & INFO: gold or premium faint golds only === */
 .tab-content h2,
 .micro-community-info h3 {
   color: var(--lux-gold-main);
@@ -382,21 +376,21 @@ body::before {
 .map-skeleton {
   height: 120px;
   border-radius: 10px;
-  background: linear-gradient(109deg, #FFD70044 11%, #181716dd 75%);
+  background: linear-gradient(109deg, #FFD70044 11%, #232323dd 75%);
   margin-bottom: 12px;
   box-shadow: 0 2px 15px #FFD70014, 0 4px 13px #FFD7001D inset;
 }
 
-/* === FOCUS STATES/ACCESSIBILITY: Glow-free, only gold crisp border === */
+/* === FOCUS STATES: Only solid gold border, NO blur === */
 *:focus-visible {
   outline: none;
   border-color: var(--lux-gold-main) !important;
   box-shadow: 0 0 0 2.5px #FFD700;
 }
 
-/* === FOOTER: Faint gold on black === */
+/* === FOOTER: Deep onyx with faint gold top border, premium style === */
 .footer {
-  background: linear-gradient(91deg, #181818 85%, #FFD70008 139%);
+  background: linear-gradient(91deg, #222222 85%, #FFD70008 139%);
   color: var(--lux-gold-main);
   border-top: 2px solid var(--lux-gold-main);
   padding: 17px 0 15px;
@@ -407,7 +401,7 @@ body::before {
   letter-spacing: .038em;
 }
 
-/* === MOBILE & RESPONSIVE ADJUSTMENTS === */
+/* === RESPONSIVE ADJUSTMENTS - Minimize radii and padding for smaller screens === */
 @media (max-width: 980px) {
   .main-container { 
     border-radius: 0; 
@@ -436,14 +430,14 @@ a:hover, .main-nav li.active .nav-label, a:focus {
 }
 
 /*
-  === DESIGNER/DEV NOTES: BLACK & GOLD LUXURY COLOR SYSTEM RATIONALE ===
-  - #111111 classic black is the base for deep, infinite luxury and max contrast.
-  - Golds are reserved for NON-background trims, gradients, and interface guides.
-  - All gradients are subtle—not harsh—so the black/space remains dominant with just enough golden radiance for "living" light.
-  - Glow effects are avoided (no blurred golds) for "real" luxury, not video-game; all highlights are solid, controlled, and crisp for accessibility.
-  - Playfair Display (headings) lends opulence and letterform contrast. Inter (body) maintains clean modernity.
-  - The palette ensures all style elements and tokens are in harmony (cards, scrollbars, badges, buttons).
-  - Only gold + white text is used atop black backgrounds to guarantee accessibility (WCAG AA+).
-  - Decorative overlays/noise used sparingly for a tactile, artisanal finish, not for decoration.
-  - Generous contrast, consistent card radius, and whitespace reinforce clarity and exclusivity.
-*/
+  === DESIGNER/DEV NOTES: ONYX & GOLD LUXURY COLOR SYSTEM RATIONALE ===
+  - #181a1b onyx is the anchor color, lighter than pure #000, but still ultra-dark for an upscale feel.
+  - Gold is reserved for accents, trims, headings, and action highlights—backgrounds never use harsh yellows.
+  - All gradients are subtle, so the space of the UI remains dark and exclusive, only accented by gold.
+  - No gold glows - only crisp, controlled highlights.
+  - Playfair Display (headings) for signature premium, Inter for body for legibility.
+  - All cards, overlays, and navigation use variably opaque black/charcoal glass for layering.
+  - Text is exclusively gold or white for maximum accessibility (passes WCAG AA/AAA).
+  - Decorative overlays (noise, shimmer) are kept faint for a tactile, not decorative, finish.
+  - Contrast is maximized for navigation, tab, and CTA focus states.
+ */
