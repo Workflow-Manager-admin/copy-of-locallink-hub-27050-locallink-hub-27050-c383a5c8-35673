@@ -1,155 +1,135 @@
 :root {
-  /* === LUXURY/PREMIUM "ONYX & CHAMPAGNE" UI PALETTE === */
-  --lux-base-dark: #141620;
-  --lux-deepnavy: #172135;
-  --lux-card-surface: #222738;
-  --lux-glass-overlay: rgba(28, 30, 41, 0.65);
+  /* === LUXURY/PREMIUM "ONYX & GOLD" UI PALETTE for LocalLink Hub ===
+     - Rationale: Classic black (#111111) conveys timeless luxury and seriousness, while gold overlays and accents (#FFD700, #E5C97B, #BFA14B) create a sense of premium warmth, focus, and exclusivity associated with high-end experiences. 
+     - Black backgrounds maximize contrast for signature golds and provide a modern, high-impact look.
+     - Gold accents are used (never backgrounds) to guide user attention, highlight key elements, and reinforce trust and achievement.
+  */
+  --lux-black: #111111;                         /* True classic black, premium-grade */
+  --lux-black-radial: radial-gradient(circle at 40% 30%, #29220a25 0%, #111111 80%);
+  --lux-black-gradient: linear-gradient(135deg, #111111 72%, #282114 110%);
+  --lux-gradient-gold-subtle: radial-gradient(circle at 70% 15%, #FFD70030 1%, #E5C97B19 35%, #11111144 80%);
+  --lux-gold-main: #FFD700;                     /* Gold primary accent (luxury standard) */
+  --lux-gold-soft: #E5C97B;                     /* Softer, champagne gold, for backgrounds & trims */
+  --lux-gold-deep: #BFA14B;                     /* Deeper gold for contrast and depth */
+  --lux-gold-radial: radial-gradient(circle at 70% 10%, #FFD70044 0%, #BFA14B19 60%, #11111100 100%);
+  --lux-gold-border: #FFD700;
+  --lux-gold-faint: #E5C97B58;
+  --lux-gold-fade: linear-gradient(120deg, #FFD70022 0%, #BFA14B19 55%, #11111100 95%);
 
-  /* --- METALLIC & GOLDEN HIGHLIGHTS (NO glow variants used) --- */
-  --lux-gold-main: #ecd08c;
-  --lux-gold-leaf: #f8e7ae;        /* Brighter gold for highligh, NOT for glow */
-  --lux-gold-deep: #bfa14b;
-  --lux-gold-glow: #fffbe7;        /* Deprecated: No glows used */
-  --lux-platinum: #e7e9ee;
+  --lux-card-bg: #181818;
+  --lux-card-gradient: linear-gradient(115deg, #191C1C 82%, #292114 130%);
+  --lux-scroll-bg: #181716;
+  --lux-shadow-main: 0 6px 38px 0 #00000028, 0 2px 16px #FFD70011;
+  --lux-shadow-card: 0 3px 16px #00000018, 0 2px 10px #FFD70008;
 
-  /* --- OPULENT ACCENTS --- */
-  --lux-opal: #8fe8e4;
-  --lux-sapphire: #4078cc;
-  --lux-velvet: #3e2335;
+  --lux-text-main: #F9F6ED;
+  --lux-text-heading: #FFD700;
+  --lux-text-secondary: #E5C97BCC;
+  --lux-text-muted: #BFA14B60;
+  --lux-success: #8ECF7B;
+  --lux-warn: #FFE471;
+  --lux-info: #80A6F1;
+  --lux-error: #FF8E64;
 
-  /* --- NEUTRAL TEXTS --- */
-  --lux-text-light: #f9f6f2;
-  --lux-text-alt: #ded3b7;
-  --lux-text-subtle: #a19786;
-
-  /* --- SYSTEM FEEDBACK --- */
-  --lux-success: #98f5b0;
-  --lux-error: #ffb6a0;
-  --lux-info: #99cffe;
-  --lux-warning: #ffe6a5;
-
-  /* --- BOX SHADOWS: All deep and crisp, NO light/yellow glow --- */
-  --lux-shadow-main: 0 6px 38px 0 #00000031, 0 1.5px 16px #ecd08c08;
-  --lux-shadow-card: 0 4px 18px 0 #00000018, 0 2px 10px #ecd08c06;
-
-  /* --- BORDER & RADIUS --- */
-  --lux-border: #5c5455;
+  --lux-border-main: #333024;
   --lux-border-gold: var(--lux-gold-main);
-  --lux-radius-main: 22px;
-
-  /* --- GLASS BLUR --- */
+  --lux-border-radius: 20px;
   --lux-glass-blur: 20px;
 
-  /* --- GRADIENTS --- */
-  --lux-bg-gradient: linear-gradient(135deg, #141620 70%, #222738 105%);
-  --lux-gold-gradient: linear-gradient(88deg, #ecd08c 66%, #bfa14b 119%);
-  --lux-card-gradient: linear-gradient(125deg, #1c1e29 80%, #2d2d3a 120%);
-  --lux-overlay-gradient: linear-gradient(112deg, #222738bb 55%, #ecd08c21 120%);
-
-  /* --- FONTS --- */
   --lux-font-heading: 'Playfair Display', Georgia, serif;
   --lux-font-body: 'Inter', Arial, sans-serif;
 
-  /* --- MICRO-INTERACTION EFFECTS: NO glows, only solid crisp --- */
-  --lux-gold-focus: 0 0 0 2.5px #ecd08c, 0 0 0 0 #1110;
-  --lux-press-inset-shadow: 0 2px 8px #ecd08c32 inset;
-
-  /* --- TRANSITIONS --- */
-  --lux-transition: 0.17s cubic-bezier(.47,.93,.27,1.09);
-  --lux-transition-slow: 0.38s cubic-bezier(.41,.9,.21,.9);
-
-  /* DEPRECATED/legacy variable mapping */
+  /* Legacy variable mapping for compatibility */
   --primary: var(--lux-gold-main);
-  --secondary: var(--lux-gold-deep);
-  --accent: var(--lux-opal);
-  --surface: var(--lux-card-surface);
-  --text-main: var(--lux-text-light);
+  --secondary: var(--lux-gold-soft);
+  --accent: var(--lux-gold-deep);
+  --surface: var(--lux-card-bg);
+  --text-main: var(--lux-text-main);
+  --text-heading: var(--lux-text-heading);
+  --text-secondary: var(--lux-text-secondary);
+  --text-faint: var(--lux-text-muted);
+  --success: var(--lux-success);
+  --warn: var(--lux-warn);
+  --info: var(--lux-info);
+  --border: var(--lux-border-main);
+  --nav-hover: linear-gradient(97deg, #FFD70010 22%, #181818 88%);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
 
-/* === BASE BODY & BACKGROUND === */
+/* === BASE BODY & BACKGROUND ===
+   Actual background: #111111 "classic black" underneath, with a very subtle gold radial and diagonal gradient.
+*/
 body {
   margin: 0;
+  color: var(--lux-text-main);
   font-family: var(--lux-font-body);
-  background: var(--lux-bg-gradient), var(--lux-overlay-gradient);
-  color: var(--lux-text-light);
   min-height: 100vh;
   letter-spacing: 0.012em;
+  background: 
+    var(--lux-gradient-gold-subtle),
+    var(--lux-gold-radial),
+    var(--lux-black-gradient),
+    var(--lux-black);
+  background-blend-mode: lighten, soft-light, normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow-x: hidden;
-}
-
-/* Remove animated gold glow effect, use subtle luxury gradient only */
-body::before {
-  content: "";
-  position: fixed;
-  top: -80px; left: -80px;
-  width: 540px; height: 410px;
-  background: linear-gradient(114deg, #ecd08c22 0%, #14162055 100%);
-  opacity: 0.14;
-  pointer-events: none;
   z-index: 0;
 }
 
-body::after {
+/* Add a very subtle tactile gold shimmer/noise overlay */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: .11;
-  /* Subtle custom SVG noise layer for tactile crispness */
-  background: url("data:image/svg+xml;utf8,<svg width='120' height='120' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23f)' opacity='0.16'/></svg>");
-  background-size: 120px 120px;
+  opacity: 0.09;
+  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.23'/></svg>"), var(--lux-gold-fade);
+  background-size: 160px 160px, 100% 100%;
+  mix-blend-mode: lighten;
 }
 
-/* ===================== SCROLLBAR LUXURY STYLING ================== */
+/* === Scrollbar: Black base, gold thumb === */
 ::-webkit-scrollbar {
-  background: var(--lux-card-surface);
+  background: var(--lux-scroll-bg);
   width: 10px;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--lux-gold-main);
+  background: var(--lux-gold-faint);
   border-radius: 7px;
-  border: 1.5px solid var(--lux-gold-deep);
-  box-shadow: none;
-  transition: background .18s, border .17s;
+  border: 1.5px solid var(--lux-gold-border);
+  transition: background .18s, border .14s;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--lux-gold-leaf);
-  border-color: var(--lux-gold-main);
+  background: var(--lux-gold-main);
 }
 
-/* ============= MAIN APP CONTAINER ============= */
+/* === MAIN APP CONTAINER with faint gold border and black glass === */
 .main-container {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--lux-overlay-gradient);
+  background: var(--lux-black-radial), var(--lux-card-gradient), var(--lux-black-gradient);
   box-shadow: var(--lux-shadow-main);
   border-radius: 32px 32px 0 0;
   margin: 0 auto;
   max-width: 1260px;
-  border: 2.5px solid var(--lux-border-gold);
-  /* Remove glow animation, just fade in */
-  animation: luxury-gradient-fade .97s cubic-bezier(.38,1,.29,1.04);
+  border: 2.5px solid var(--lux-gold-border);
+  animation: gradient-fadein-app .97s cubic-bezier(.38,1,.29,1.04);
   position: relative;
   z-index: 1;
 }
-
-@keyframes luxury-gradient-fade { 
-  0% { opacity: 0; filter: blur(6px);}
-  100% { opacity:1; filter: blur(0);}
+@keyframes gradient-fadein-app { 
+  0% { opacity: 0; filter: blur(12px);}
+  100% { opacity: 1; filter: blur(0);}
 }
 
-/* ============= NAVIGATION BAR (Gold/Platinum/Onyx) ============= */
+/* === NAVIGATION BAR: Black with gold trims, gold text highlights === */
 .navbar {
   font-family: var(--lux-font-heading);
-  background: var(--lux-bg-gradient);
+  background: var(--lux-black-gradient);
   color: var(--lux-gold-main);
   height: 64px;
   padding: 0 38px;
@@ -162,8 +142,7 @@ body::after {
   box-sizing: border-box;
   z-index: 110;
   border-bottom: 3px solid var(--lux-gold-main);
-  /* No colored/yellow glows, keep luxe subtle elevation */
-  box-shadow: 0 2.5px 16px 0 #0003, 0 2px 7px #ecd08c19;
+  box-shadow: 0 3px 15px #0004, 0 1.5px 6px #FFD70011;
   backdrop-filter: blur(var(--lux-glass-blur));
 }
 
@@ -174,57 +153,55 @@ body::after {
   font-family: var(--lux-font-heading);
 }
 .logo-symbol {
-  font-size: 2.08rem;
-  color: var(--lux-gold-leaf);
-  /* No drop-shadow/glow */
-  padding-right: .24em;
+  font-size: 2.12rem;
+  color: var(--lux-gold-main);
+  padding-right: .25em;
 }
 .app-title {
   font-family: var(--lux-font-heading);
   font-weight: 700;
-  font-size: 1.39rem;
-  background: var(--lux-gold-gradient);
+  font-size: 1.36rem;
+  background: linear-gradient(94deg, #FFD700 80%, #E5C97B 120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 2.5px;
   padding-left: 2px;
 }
 
+/* === USER PROFILE MINI: Gold/black-glass card, buttons === */
 .user-profile-mini {
   display: flex; align-items: center; gap: 16px;
-  background: var(--lux-card-gradient);
-  padding: 9px 20px 8px 13px;
+  background: linear-gradient(120deg, #191812 80%, #FFD7000B 120%);
+  padding: 9px 19px 8px 13px;
   border-radius: 999px;
-  /* Remove all colored glows, use deep shadow for depth only */
-  box-shadow: 0 2px 8px 0 #0005, 0 1.5px 6px #ecd08c1a;
   border: 2px solid var(--lux-gold-main);
-  backdrop-filter: blur(12px);
-  font-family: var(--lux-font-body);
+  box-shadow: 0 3px 10px #0006, 0 1.5px 7px #FFD70016;
   min-width: 210px;
-  transition: box-shadow var(--lux-transition), border var(--lux-transition);
+  font-family: var(--lux-font-body);
+  transition: box-shadow .19s, border .17s;
 }
 .avatar-skeleton {
-  width: 38px; height: 38px; border-radius: 50%;
-  background: linear-gradient(142deg, #ecd08c 62%, #bfa14b 162%);
-  border: 3.1px solid #fffde3;
-  box-shadow: 0 2px 7px 0 #0004, 0 1px 2px #ecd08c12;
+  width: 39px; height: 39px; border-radius: 50%;
+  background: radial-gradient(circle at 60% 35%, #FFD700 75%, #BFA14B 150%);
+  border: 3.1px solid #fffcec;
+  box-shadow: 0 2px 9px #FFD70025, 0 1.5px 5px #FFE47114;
   position: relative;
   overflow: hidden;
 }
-.user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 2px;}
+.user-info { display: flex; flex-direction: column; line-height: 1.05; gap: 2px;}
 .user-name {
   font-family: var(--lux-font-heading);
   font-weight: 700;
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   color: var(--lux-gold-main);
   letter-spacing: 0.07em;
 }
 .badge-row { display: flex; gap: 2px;}
 .badge {
-  font-size: 1.13rem;
+  font-size: 1.17rem;
   margin-left: 4px;
-  /* No drop-shadow/glow on badges */
-  opacity: .92;
+  color: var(--lux-gold-soft);
+  opacity: .93;
   transition: filter .17s;
 }
 .badge.verified { color: var(--lux-success);}
@@ -234,24 +211,24 @@ body::after {
   color: var(--lux-success);
   margin-left: 14px;
   padding: 2px 12px;
-  background: var(--lux-glass-overlay);
+  background: #15110dA0;
   border-radius: 10px;
   border: 1.3px solid var(--lux-gold-main);
   font-weight: 700;
   box-shadow: none;
 }
 
-/* ============= MAIN NAVIGATION BAR ============= */
+/* === MAIN NAVIGATION BAR === */
 .main-nav {
   position: sticky;
   top: 64px;
-  background: var(--lux-bg-gradient);
+  background: var(--lux-black-gradient);
   border-bottom: 2.5px solid var(--lux-gold-main);
   z-index: 98;
   width: 100%;
-  box-shadow: 0 2px 20px 0 #ecd08c12;
+  box-shadow: 0 2px 20px 0 #FFD7001B;
   backdrop-filter: blur(var(--lux-glass-blur));
-  animation: luxury-gradient-fade .69s cubic-bezier(.51,.95,.22,1.07);
+  animation: gradient-fadein-app .69s cubic-bezier(.51,.95,.22,1.07);
 }
 .main-nav ul {
   display: flex; flex-direction: row; gap: 5px;
@@ -261,44 +238,44 @@ body::after {
 }
 .main-nav li {
   cursor: pointer;
-  padding: 13px 23px 11px 15px;
+  padding: 12px 22px 11px 14px;
   margin: 2px 0;
-  color: var(--lux-gold-leaf);
+  color: var(--lux-gold-main);
   font-family: var(--lux-font-heading);
-  border-radius: 16px 16px 0 0;
+  border-radius: 17px 17px 0 0;
   transition: 
-    background var(--lux-transition),
-    color .16s, box-shadow .16s, border-color .16s;
+    background .13s,
+    color .16s, box-shadow .18s, border-color .15s;
   display: flex;
   align-items: center;
   gap: 13px;
   user-select: none;
   font-size: 1.11rem;
   font-weight: 600;
-  letter-spacing: .033em;
-  border: 1.7px solid transparent;
-  background: linear-gradient(93deg, var(--lux-card-surface) 80%, #ecd08c19 120%);
+  letter-spacing: .031em;
+  border: 1.5px solid transparent;
+  background: linear-gradient(96deg, #FFD7000E 32%, #181818 100%);
   outline: none;
-  box-shadow: 0 1.5px 7px 0 #0004;
+  box-shadow: 0 1.5px 7px 0 #0006;
   position: relative;
   z-index: 2;
 }
 .main-nav li::after {
   content: '';
-  position: absolute; left: 14px; right: 16px; bottom: 2px; height: 3px;
-  background: var(--lux-gold-gradient);
+  position: absolute; left: 12px; right: 15px; bottom: 1px; height: 3px;
+  background: linear-gradient(93deg, #FFD700 68%, #E5C97B 120%);
   border-radius: 10px;
   opacity: 0;
-  transform: scaleX(0.66);
+  transform: scaleX(0.67);
   transition: opacity .14s, transform .19s;
 }
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(94deg, #ecd08c27 82%, #222738bb 152%);
+  background: linear-gradient(91deg, #FFD70022 52%, #1C1A1A 130%);
   color: var(--lux-gold-main);
-  border-color: var(--lux-gold-leaf);
-  box-shadow: 0 5px 13px -3px #0005, 0 2px 6px var(--lux-gold-main) inset;
+  border-color: var(--lux-gold-main);
+  box-shadow: 0 5px 13px -3px #0005, 0 2px 7px #FFD70029;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -309,160 +286,133 @@ body::after {
 }
 .main-nav li:focus-visible {
   border-color: var(--lux-gold-main);
-  box-shadow: 0 0 0 3px #ecd08c, 0 2px 5px #0005;
+  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #0005;
 }
 .nav-icon {
   font-size: 1.19em;
 }
 
-/* ============= LUXURY BUTTONS ============= */
+/* === GOLD-LUXURY BUTTONS === */
 .btn-ghost, .btn-ghost:visited {
-  background: linear-gradient(96deg, #ecd08c22 80%, #22273888 120%);
+  background: linear-gradient(95deg, #FFD70010 80%, #111111 120%);
   color: var(--lux-gold-main);
   font-family: var(--lux-font-heading);
   font-weight: 700;
   cursor: pointer;
-  font-size: 1.09rem;
+  font-size: 1.07rem;
   border-radius: 11px;
   border: 2.3px solid var(--lux-gold-main);
-  padding: 8px 25px;
+  padding: 8px 24px;
   margin-left: auto;
   margin-right: 0;
-  box-shadow: 0 1.5px 7px 0 #0004;
+  box-shadow: 0 2px 8px 0 #0003;
   outline: none;
   position: relative;
   z-index: 1;
   transition: 
-    background var(--lux-transition),
-    color var(--lux-transition),
-    box-shadow var(--lux-transition),
-    border-color var(--lux-transition);
+    background .12s,
+    color .13s,
+    box-shadow .13s,
+    border-color .14s;
 }
-
 .btn-ghost:focus,
 .btn-ghost:hover {
   color: #15120d;
-  background: linear-gradient(97deg, #ecd08c 91%, #bfa14b 122%);
+  background: linear-gradient(95deg, #FFD700 91%, #E5C97B 122%);
   text-decoration: none;
   border-color: var(--lux-gold-deep);
-  box-shadow: 0 2px 7px #0005 inset;
+  box-shadow: 0 2px 7px #FFD70029 inset, 0 2px 10px #0002;
 }
-
 .btn-ghost:active {
-  background: linear-gradient(97deg, #bfa14b 82%, #ecd08c 150%);
-  color: var(--lux-text-alt);
-  box-shadow: 0 1px 6px #22232518 inset;
+  background: linear-gradient(101deg, #BFA14B 65%, #FFD700 150%);
+  color: var(--lux-text-secondary);
+  box-shadow: 0 1px 6px #23232511 inset;
   border-color: var(--lux-gold-main);
 }
-
 .btn-ghost:focus-visible {
-  box-shadow: 0 0 0 3px #ecd08c;
-  border-color: var(--lux-platinum);
+  box-shadow: 0 0 0 3px #FFD700;
+  border-color: var(--lux-gold-soft);
 }
 
-/* ============= SECTION CARDS, GLASS SURFACES ============= */
+/* === LUX GOLD/BLACK CARDS === */
 .tab-content,
 .map-view,
 .micro-community-info {
-  background: var(--lux-glass-overlay);
-  border-radius: var(--lux-radius-main);
-  border: 1.9px solid var(--lux-gold-main);
-  box-shadow: 0 4px 16px 0 #0002, 0 2px 10px #ecd08c0a;
-  padding: 24px 30px;
-  margin: 12px 0;
+  background: rgba(24,17,9,0.68);
+  border-radius: var(--lux-border-radius);
+  border: 1.7px solid var(--lux-gold-main);
+  box-shadow: 0 5px 18px 0 #0002, 0 2px 10px #FFD70009;
+  padding: 26px 31px;
+  margin: 14px 0;
   transition: 
-    box-shadow .23s, 
-    border .19s, 
-    background .16s,
-    transform .21s;
+    box-shadow .22s, 
+    border .17s, 
+    background .15s,
+    transform .19s;
 }
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 7px 27px 0 #0004, 0 1.4px 5px #ecd08c0a inset;
-  border-color: var(--lux-gold-leaf);
-  background: var(--lux-overlay-gradient);
-  transform: translateY(-2.5px) scale(1.018);
+  box-shadow: 0 7px 23px 0 #0004, 0 1.4px 10px #FFD70015 inset;
+  border-color: var(--lux-gold-soft);
+  background: var(--lux-black-radial), rgba(24,17,9,0.87);
+  transform: translateY(-2.5px) scale(1.015);
 }
 
-/* ============= CARDS HEADINGS & INFO ============= */
+/* === CARDS HEADINGS & INFO === */
 .tab-content h2,
 .micro-community-info h3 {
-  color: var(--lux-gold-leaf);
+  color: var(--lux-gold-main);
   font-family: var(--lux-font-heading);
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  font-size: 1.7em;
-  transition: color .19s;
+  font-size: 1.67em;
+  transition: color .18s;
 }
 .tab-content p, .micro-community-info p,
 .tab-content ul, .tab-content li, 
 .tab-content b, .tab-content span,
 .map-legend {
-  color: var(--lux-text-alt);
+  color: var(--lux-text-secondary);
   font-family: var(--lux-font-body);
 }
 
-/* ============= MAP DEMO SKELETON & INFO CARDS ============= */
+/* === MAP DEMO SKELETON CARD === */
 .map-skeleton {
   height: 120px;
   border-radius: 10px;
-  background: linear-gradient(109deg, #ecd08c33 15%, #222738dd 75%);
+  background: linear-gradient(109deg, #FFD70044 11%, #181716dd 75%);
   margin-bottom: 12px;
-  box-shadow: 0 2px 13px #ecd08c18, 0 8px 20px #ecd08c22 inset;
+  box-shadow: 0 2px 15px #FFD70014, 0 4px 13px #FFD7001D inset;
 }
 
-/* ============= INFO CARDS / ECO TIPS / OTHER MODULES ============= */
-.eco-tip-card, .skeleton-card {
-  background: linear-gradient(103deg, #ecd08c1f 88%, #222738 149%);
-  border-radius: 13px;
-  border: 1.8px solid var(--lux-gold-main);
-  box-shadow: 0 1.5px 11px 0 #ecd08c20;
-  color: var(--lux-gold-main);
-}
-
-/* ============= FOCUS & ACCESSIBILITY ============= */
+/* === FOCUS STATES/ACCESSIBILITY: Glow-free, only gold crisp border === */
 *:focus-visible {
   outline: none;
-  border-color: var(--lux-gold-leaf);
-  box-shadow: 0 0 0 2.5px #ecd08c;
+  border-color: var(--lux-gold-main) !important;
+  box-shadow: 0 0 0 2.5px #FFD700;
 }
 
-/* ============= DASHBOARD/PAGE LAYOUT ============= */
-.dashboard {
-  max-width: 1120px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 54px 20px 60px 20px;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-  min-height: 540px;
-  background: none !important;
-  z-index: 4;
-}
-
-/* ============= FOOTER ============= */
+/* === FOOTER: Faint gold on black === */
 .footer {
-  background: linear-gradient(91deg, #222738 66%, #ecd08c10 139%);
-  color: var(--lux-gold-leaf);
-  border-top: 2px solid var(--lux-gold-leaf);
-  padding: 18px 0 17px 0;
+  background: linear-gradient(91deg, #181818 85%, #FFD70008 139%);
+  color: var(--lux-gold-main);
+  border-top: 2px solid var(--lux-gold-main);
+  padding: 17px 0 15px;
   font-size: 1.1rem;
   margin-top: 32px;
   text-align: center;
   font-family: var(--lux-font-heading);
-  letter-spacing: .04em;
+  letter-spacing: .038em;
 }
 
-/* ============= MOBILE & RESPONSIVE ADJUSTMENTS ============= */
+/* === MOBILE & RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 980px) {
   .main-container { 
     border-radius: 0; 
     max-width: 100vw; 
-    border-width: 0 0 2.3px 0; 
+    border-width: 0 0 2.2px 0; 
   }
   .dashboard { padding: 18px 4px 28px 4px; }
   .main-nav ul { height: 42px;}
@@ -473,57 +423,11 @@ body::after {
   .ai-banner-suggestion, .alert-banner, .tab-content, .map-view, .micro-community-info {padding: 8px 5px;}
 }
 
-/* ============= AI SUGGESTION & ALERT BANNERS ============= */
-.ai-banner-suggestion {
-  background: linear-gradient(96deg, #ecd08c17 61%, #222738 113%);
-  border-left: 6px solid var(--lux-gold-main);
-  color: var(--lux-gold-main);
-  display: flex;
-  align-items: center;
-  gap: 26px;
-  padding: 17px 26px;
-  border-radius: 13px;
-  font-size: 1.16rem;
-  box-shadow: var(--lux-shadow-card), 0 1.5px 6px 0 #ecd08c2a;
-  font-family: var(--lux-font-body);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(16px);
-  animation: card-luxury-appear .51s cubic-bezier(.42,.88,.31,1.08);
-}
-@keyframes card-luxury-appear { 
-  0% { opacity: 0; filter: blur(12px) scale(.97);} 
-  100% { opacity: 1; filter: blur(0) scale(1);} 
-}
-.ai-icon {
-  font-size: 1.65em;
-  background: #fffde3;
-  border-radius: 50%;
-  padding: 0.2em 0.25em;
-  color: var(--lux-gold-deep);
-  box-shadow: none;
-}
-.alert-banner {
-  background: linear-gradient(98deg, #ecd08c13 65%, #ffe6a519 112%);
-  color: #d7270d;
-  border-left: 6px solid var(--lux-warning);
-  box-shadow: 0 5px 18px 0 #ffefc027;
-  border-radius: 13px;
-  padding: 15px 25px;
-  margin-bottom: 14px;
-  font-size: 1.13rem;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-family: var(--lux-font-body);
-}
-.alert-icon { font-size: 1.34em; }
-
-/* ============= ACCESSIBLE LINKS/STATES ============= */
+/* === ACCESSIBLE LINKS === */
 a, .main-nav li .nav-label {
-  color: var(--lux-sapphire);
+  color: var(--lux-gold-soft);
   text-decoration: underline;
-  font-weight: 540;
+  font-weight: 530;
   transition: color .18s;
 }
 a:hover, .main-nav li.active .nav-label, a:focus {
@@ -531,23 +435,15 @@ a:hover, .main-nav li.active .nav-label, a:focus {
   text-decoration: underline;
 }
 
-/* ============= GOLD FOCUS/ACTIVE STATES (NO glow) ============= */
-*:focus-visible,
-.btn-ghost:focus-visible,
-.main-nav li:focus-visible {
-  outline: none;
-  border-color: var(--lux-gold-leaf) !important;
-  box-shadow: 0 0 0 2.5px #ecd08c;
-}
-
-/* 
-  === DESIGNER/DEV NOTES: LUXURY COLOR & FONT SYSTEM RATIONALE ===
-  - Onyx/Dark Navy/Charcoal establish a base of luxury depth and "infinite" space, maximizing contrast and evoking exclusivity.
-  - Champagne and metallic golds accentuate and guide user focus—never primary backgrounds, always trims, NOT glows (no glowing effects remain), or calls-to-action.
-  - Opal and platinum touches offer secondary, rare highlights for particular features (e.g., trust/verified, micro-interactions).
-  - Card and glass overlays let "light" float over ultra-dark — the glass blurs let gold shimmer gently but never glow.
-  - Font pairing: Playfair Display achieves luxury, sophistication, and high legibility for headers; Inter provides modern, crisp body-readable context.
-  - Focus states and tactile shadows are high-contrast and visually obvious: luxury must always be accessible, with no reliance on glow or blur.
-  - All interactive elements maintain WCAG AA or better: gold is used on darkest backgrounds to maximize accessibility.
-  - Luxury branding comes as much from restraint (ample whitespace, few borders, minimalist icons) as from embellishment (gold trims, deep shadows, and gradients — NOT soft glows).
+/*
+  === DESIGNER/DEV NOTES: BLACK & GOLD LUXURY COLOR SYSTEM RATIONALE ===
+  - #111111 classic black is the base for deep, infinite luxury and max contrast.
+  - Golds are reserved for NON-background trims, gradients, and interface guides.
+  - All gradients are subtle—not harsh—so the black/space remains dominant with just enough golden radiance for "living" light.
+  - Glow effects are avoided (no blurred golds) for "real" luxury, not video-game; all highlights are solid, controlled, and crisp for accessibility.
+  - Playfair Display (headings) lends opulence and letterform contrast. Inter (body) maintains clean modernity.
+  - The palette ensures all style elements and tokens are in harmony (cards, scrollbars, badges, buttons).
+  - Only gold + white text is used atop black backgrounds to guarantee accessibility (WCAG AA+).
+  - Decorative overlays/noise used sparingly for a tactile, artisanal finish, not for decoration.
+  - Generous contrast, consistent card radius, and whitespace reinforce clarity and exclusivity.
 */
