@@ -354,7 +354,7 @@ body::after {
   padding: 8px 25px;
   margin-left: auto;
   margin-right: 0;
-  box-shadow: 0 2px 13px 0 #ecd08c24, 0 0.5px 4px #0001;
+  box-shadow: 0 1.5px 7px 0 #0004;
   outline: none;
   position: relative;
   z-index: 1;
@@ -371,18 +371,18 @@ body::after {
   background: linear-gradient(97deg, #ecd08c 91%, #bfa14b 122%);
   text-decoration: none;
   border-color: var(--lux-gold-deep);
-  box-shadow: 0 0 28px 6px #ecd08c2a, var(--lux-press-inset-shadow);
+  box-shadow: 0 2px 7px #0005 inset; /* No gold/yellow glow! */
 }
 
 .btn-ghost:active {
   background: linear-gradient(97deg, #bfa14b 82%, #ecd08c 150%);
   color: var(--lux-text-alt);
-  box-shadow: 0 1px 12px #ecd08c14 inset;
+  box-shadow: 0 1px 6px #22232518 inset;
   border-color: var(--lux-gold-main);
 }
 
 .btn-ghost:focus-visible {
-  box-shadow: var(--lux-gold-focus), 0 2px 12px 0 #ecd08c40;
+  box-shadow: 0 0 0 3px #ecd08c;
   border-color: var(--lux-platinum);
 }
 
