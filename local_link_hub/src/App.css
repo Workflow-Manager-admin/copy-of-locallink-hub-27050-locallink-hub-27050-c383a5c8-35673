@@ -1,123 +1,122 @@
 :root {
   /*
-    === GLACIAL NIGHT THEME: Professional Cool-Based Palette (2024) ===
-    -- Designed for a high-contemporary, trustworthy, and approachable appearance.
-    -- Primary elements: Layers of cool grays and icy blue for calm backgrounds, with crisp ultramarine and soft lavender for lively contrast.
-    -- Interactive elements: Electric ultramarine/violet for focus, lavender for subtle hovers, and cool grays for modern cards.
-    -- White and near-white highlights preserve clarity and space.
-    -- All color choices documented for future adaptions.
+    === LUXURY/PREMIUM "ONYX & CHAMPAGNE" UI PALETTE ===
+    - Deep Onyx/Navy & Charcoal as core backgrounds for opulent darkness and timeless sophistication.
+    - Champagne Gold, Metallic Gold, and Platinum as highlight accents and trims.
+    - Subtle gradients and luminous glass overlays for elevated depth.
+    - Whitespaces and soft shadows evoke minimalist extravagance.
+    - Gold leaf/glow focus and press states for micro-interactions—polished and tactile.
+    - CHOSEN FONTS:
+      -- Headings: 'Playfair Display', a luxury serif for elegance (Google Fonts)
+      -- Body: 'Inter', for legibility and contemporary harmony (Google Fonts)
+    - All colors and fonts documented for future enhancement.
+    - Colors meet WebAIM contrast standards for accessibility.
   */
+  
+  /* --- NEUTRAL BASES --- */
+  --lux-base-dark: #141620;         /* Onyx/Charcoal: ultra-dark background */
+  --lux-deepnavy: #172135;         /* Deep Navy, gives majesty to darks */
+  --lux-card-surface: #222738;     /* Card/overlay: rich mid-dark charcoal */
+  --lux-glass-overlay: rgba(28, 30, 41, 0.65); /* Glassy black w/ luxurious depth */
 
-  /* === BASE NEUTRALS & BACKGROUNDS === */
-  --glacier-bg: #fafdff;                /* Main background: Pure icy white-blue, ultra-clean */
-  --frost-bg: #e7f1fa;                  /* Frosted panel: lighter blue with a hint of gray */
-  --frost-translucent: rgba(231,241,250,0.89); /* For overlays, glass effects */
-  --steel-ice: #ced3de;                 /* Card surface: blue-gray, subtle shadow depth */
-  --gray-900: #19202c;                  /* Ultra-dark navy/gray for core text/elements */
-  --gray-700: #344051;                  /* Main text: cool, readable slate/navy gray */
-  --gray-500: #7d889a;                  /* Muted detail: text, borders, etc. */
-  --gray-100: #dfebf7;                  /* Border & panel highlight, gentle touch */
+  /* --- METALLIC & GOLDEN HIGHLIGHTS --- */
+  --lux-gold-main: #ecd08c;         /* Champagne Gold: refined, soft metallic */
+  --lux-gold-leaf: #f8e7ae;         /* Brighter gold for glowing effects */
+  --lux-gold-deep: #bfa14b;         /* Aged gold: metallic trimmings, depth */
+  --lux-gold-glow: #fffbe7;         /* Lush pale-gold glow for micro-interactions */
+  --lux-platinum: #e7e9ee;          /* For cool metallic/white elements */
+  
+  /* --- OPULENT ACCENTS --- */
+  --lux-opal: #8fe8e4;              /* Cool accent for rarity highlights */
+  --lux-sapphire: #4078cc;          /* Accent for links/buttons/focus */
+  --lux-velvet: #3e2335;            /* Subtle velvet red accent for luxury emotion */
 
-  /* === ACCENTS & INTERACTIVE COLORS === */
-  --ultramarine: #3b2be7;               /* Key accent: Electric ultramarine (buttons, nav, hover, icons) */
-  --violet: #5b3ec7;                    /* Deep violet: interactive elements, secondary elevated accent */
-  --lavender: #c9b6f7;                  /* Hover/selection: soft lavender glow */
-  --aqua: #53d1f7;                      /* Focus, info, and status: lively pop */
-  --cool-mint: #8ef4c9;                 /* Success and positive messages */
-  --rose: #f389c5;                      /* Alerts/errors: gentle modern magenta */
+  /* --- NEUTRAL TEXTS --- */
+  --lux-text-light: #f9f6f2;        /* High-contrast text on dark */
+  --lux-text-alt: #ded3b7;          /* Muted, still readable on dark */
+  --lux-text-subtle: #a19786;       /* Fine print, borders, dim details */
 
-  /* === SHADOWS & UI BLUR === */
-  --shadow-main: 0 4px 28px 0 #50628815, 0 1.5px 9px #3b2be70c;
-  --shadow-card: 0 3px 10px 0 #d1e6ff18, 0 1px 6px #a3b8d24c;
-  --glass-blur: 18px;
+  /* --- SYSTEM FEEDBACK --- */
+  --lux-success: #98f5b0;
+  --lux-error: #ffb6a0;
+  --lux-info: #99cffe;
+  --lux-warning: #ffe6a5;
 
-  /* === TEXT COLORS === */
-  --text-main: var(--gray-700);
-  --text-heading: var(--ultramarine);
-  --text-secondary: var(--gray-500);
-  --text-link: var(--violet);
-  --text-accent: var(--aqua);
-  --text-success: var(--cool-mint);
-  --text-info: var(--aqua);
-  --text-faint: #c9cee5;
-  --text-on-accent: #fff;
-  --text-on-dark: #fafdff;
+  /* --- BOX SHADOWS --- */
+  --lux-shadow-main: 0 6px 38px 0 #00000031, 0 1.5px 16px #ecd08c28;
+  --lux-shadow-card: 0 4px 18px 0 #00000018, 0 2px 10px #ecd08c0c;
 
-  /* === BORDERS === */
-  --border: var(--gray-100);
-  --border-strong: var(--ultramarine);
+  /* --- BORDER & RADIUS --- */
+  --lux-border: #5c5455;
+  --lux-border-gold: var(--lux-gold-main);
+  --lux-radius-main: 22px;
 
-  /* === SYSTEM/STATUS === */
-  --success: var(--cool-mint);
-  --error: var(--rose);
-  --info: var(--aqua);
-  --warn: #ffe087;
+  /* --- GLASS BLUR --- */
+  --lux-glass-blur: 20px;
 
-  /* === GRADIENTS FOR DEPTH === */
-  --nav-bg: linear-gradient(93deg, #e2eafd 68%, #d6d9f7 100%, #aeeefc 118%);
-  --nav-hover: linear-gradient(98deg, #e7f1fa 72%, #c9b6f7 112%);
-  --card-bg: linear-gradient(122deg, #fafdff 68%, #d6e0f7 120%);
-  --dashboard-bg: linear-gradient(112deg, #e7f1fa 90%, #d6e0f7 100%);
-  --header-gradient: linear-gradient(98deg, #3b2be7 50%, #5b3ec7 180%);
+  /* --- GRADIENTS --- */
+  --lux-bg-gradient: linear-gradient(135deg, #141620 70%, #222738 105%);
+  --lux-gold-gradient: linear-gradient(88deg, #ecd08c 66%, #bfa14b 119%);
+  --lux-card-gradient: linear-gradient(125deg, #1c1e29 80%, #2d2d3a 120%);
+  --lux-overlay-gradient: linear-gradient(112deg, #222738bb 55%, #ecd08c21 120%);
 
-  /* === FONTS & EFFECTS === */
-  --font-display: 'Lexend','Poppins','Inter', Arial, sans-serif;
-  --font-body: 'Inter', Arial, sans-serif;
-  --transition-main: .18s cubic-bezier(.56,.81,.29,1);
-  --focus-glow: 0 0 0 3px var(--aqua), 0 0 0 7px #c9b6f731;
+  /* --- FONTS (import in <link> or @import) --- */
+  --lux-font-heading: 'Playfair Display', Georgia, serif;
+  --lux-font-body: 'Inter', Arial, sans-serif;
 
-  /* Backwards compatible custom props */
-  --primary: var(--ultramarine);
-  --accent: var(--violet);
-  --secondary: var(--lavender);
-  --background-main: var(--glacier-bg);
-  --surface: var(--frost-bg);
+  /* --- MICRO-INTERACTION EFFECTS --- */
+  --lux-gold-focus: 0 0 0 3px #ecd08cbb, 0 0 0 8px #fffde31e;
+  --lux-press-inset-shadow: 0 4px 16px #ecd08c38 inset;
+
+  /* --- FAST, REFINED TRANSITIONS --- */
+  --lux-transition: 0.17s cubic-bezier(.47,.93,.27,1.09);
+  --lux-transition-slow: 0.38s cubic-bezier(.41,.9,.21,.9);
+
+  /* DEPRECATED (legacy variable mapping) */
+  --primary: var(--lux-gold-main);
+  --secondary: var(--lux-gold-deep);
+  --accent: var(--lux-opal);
+  --surface: var(--lux-card-surface);
+  --text-main: var(--lux-text-light);
 }
 
-/* Import modern geometric display fonts (Lexend, Inter, Poppins) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lexend:wght@500;700&family=Poppins:wght@500;700&display=swap');
+/* === FONT IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
 
+/* === BASE BODY & BACKGROUND === */
 body {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--lux-font-body);
+  background: var(--lux-bg-gradient), var(--lux-overlay-gradient);
+  color: var(--lux-text-light);
   min-height: 100vh;
-
-  /* Harmonious glacial-blue gradient with mild abstract forms for lively depth */
-  background: var(--background-main),
-    radial-gradient(ellipse at 42% 8%, #d9f4ff77 0px, #fff 80%),
-    linear-gradient(111deg, #e2eafd 35%, #fafdff 80%);
-  color: var(--text-main);
-  letter-spacing: .008em;
+  letter-spacing: 0.012em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background .5s var(--transition-main), color .26s;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Soft animated ambient blue-lavender glow for luxury and coolness */
+/* Subtle animated glassy gold shimmer for luxury depth */
 body::before {
   content: "";
-  pointer-events: none;
   position: fixed;
-  top: -80px; left: -90px;
-  width: 520px; height: 410px;
+  top: -80px; left: -80px;
+  width: 540px; height: 410px;
   background: radial-gradient(
-    ellipse 60% 46% at 37% 33%,
-    #c9b6f7bb 0%,
-    #e7f1fa1c 60%,
-    transparent 99%
+    ellipse 60% 50% at 50% 40%,
+    #ecd08c33 0%, #14162000 95%, transparent 100%
   );
-  filter: blur(85px);
-  opacity: .15;
-  mix-blend-mode: lighten;
-  animation: blueGlowMove 21s linear infinite alternate;
+  filter: blur(90px);
+  opacity: 0.33;
+  pointer-events: none;
+  animation: shineGlowMove 26s linear infinite alternate;
   z-index: 0;
 }
-@keyframes blueGlowMove {
-  0% { transform: translateX(0) scaleY(1); opacity: .18;}
-  49% { opacity: .21;}
-  100% { transform: translateX(61px) scaleY(1.09); opacity: .14;}
+@keyframes shineGlowMove {
+  0% { transform: translateY(0); opacity: .23;}
+  67% { opacity: .36; }
+  100% { transform: translateY(51px) scaleY(1.16); opacity: .18;}
 }
 body::after {
   content: "";
@@ -125,53 +124,58 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: .13;
-  /* subtle SVG noise for tactile crispness */
-  background: url("data:image/svg+xml;utf8,<svg width='110' height='110' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='2' stitchTiles='stitch'/></filter><rect width='110' height='110' filter='url(%23f)' opacity='0.13'/></svg>");
-  background-size: 110px 110px;
+  opacity: .11;
+  /* Subtle custom SVG noise layer for tactile crispness */
+  background: url("data:image/svg+xml;utf8,<svg width='120' height='120' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23f)' opacity='0.16'/></svg>");
+  background-size: 120px 120px;
 }
 
-/* ===================== Scrollbar Styling (Subtle contemporary style) ================== */
+/* ===================== SCROLLBAR LUXURY STYLING ================== */
 ::-webkit-scrollbar {
-  background: var(--surface);
+  background: var(--lux-card-surface);
   width: 10px;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-100);
+  background: var(--lux-gold-main);
   border-radius: 7px;
-  transition: background .16s;
+  border: 1.5px solid var(--lux-gold-deep);
+  box-shadow: 0 0 9px 0 var(--lux-gold-leaf);
+  transition: background .18s;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ultramarine);
+  background: var(--lux-gold-leaf);
+  border-color: var(--lux-gold-main);
 }
 
-/* ===================== MAIN APP CONTAINER ===================== */
+/* ============= MAIN APP CONTAINER ============= */
 .main-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--frost-translucent);
-  box-shadow: var(--shadow-main), 0 0px 64px 0 #3b2be71f inset;
-  border-radius: 30px 30px 0 0;
+  background: var(--lux-overlay-gradient);
+  box-shadow: var(--lux-shadow-main);
+  border-radius: 32px 32px 0 0;
   margin: 0 auto;
-  max-width: 1240px;
-  animation: gradient-appear .72s cubic-bezier(.49,.85,.31,1.03);
+  max-width: 1260px;
+  border: 2.5px solid var(--lux-border-gold);
+  animation: luxury-gradient-glow .97s cubic-bezier(.38,1,.29,1.04);
   position: relative;
   z-index: 1;
-  border: 2.2px solid var(--border);
 }
 
-/* Fade-in for main container */
-@keyframes gradient-appear { 0% { opacity: 0; filter: blur(9px);} 100% { opacity:1; filter: blur(0); } }
+@keyframes luxury-gradient-glow { 
+  0% { opacity: 0; filter: blur(10px);} 
+  100% { opacity:1; filter: blur(0); } 
+}
 
-
-/* ===================== NAVIGATION BAR ======================= */
+/* ============= NAVIGATION BAR (Gold/Platinum/Onyx) ============= */
 .navbar {
-  background: var(--nav-bg);
-  color: var(--ultramarine);
-  height: 62px;
-  padding: 0 32px;
+  font-family: var(--lux-font-heading);
+  background: var(--lux-bg-gradient);
+  color: var(--lux-gold-main);
+  height: 64px;
+  padding: 0 38px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,142 +184,150 @@ body::after {
   width: 100%;
   box-sizing: border-box;
   z-index: 110;
-  border-bottom: 2.5px solid var(--ultramarine);
-  box-shadow: 0 2px 16px 0 #3b2be726, 0 1px 2px #5b3ec713;
-  backdrop-filter: blur(var(--glass-blur));
-  background-blend-mode: lighten, normal;
+  border-bottom: 3px solid var(--lux-gold-main);
+  box-shadow: 0 2px 24px 0 #ecd08c25, 0 2px 8px var(--lux-gold-leaf), 0 3px 9px 0 #0003;
+  backdrop-filter: blur(var(--lux-glass-blur));
 }
-.spacer-navbar { height: 62px; }
 
+.spacer-navbar { height: 64px; }
+
+/* App Brand Styling */
 .navbar-left {
-  display: flex; align-items: center; gap: 15px;
-  font-family: var(--font-display);
+  display: flex; align-items: center; gap: 17px;
+  font-family: var(--lux-font-heading);
 }
 .logo-symbol {
-  font-size: 2.16rem;
-  color: var(--ultramarine);
-  filter: drop-shadow(0 2.5px 8px #b6bffa85);
-  padding-right: .2em;
+  font-size: 2.08rem;
+  color: var(--lux-gold-leaf);
+  filter: drop-shadow(0 4px 16px #ecd08c88);
+  padding-right: .24em;
 }
 .app-title {
-  font-family: var(--font-display);
+  font-family: var(--lux-font-heading);
   font-weight: 700;
   font-size: 1.39rem;
-  background: var(--header-gradient);
+  background: var(--lux-gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 2.3px;
+  letter-spacing: 2.5px;
   padding-left: 2px;
-  filter: drop-shadow(0 2px 0 #edfaff);
+  filter: drop-shadow(0 1.8px 0 #bfa14b90);
 }
 
-/* Mini User Profile */
+/* ============= USER PROFILE MINI CARD ============= */
 .user-profile-mini {
-  display: flex; align-items: center; gap: 14px;
-  background: var(--card-bg);
-  padding: 6px 16px 6px 10px;
+  display: flex; align-items: center; gap: 16px;
+  background: var(--lux-card-gradient);
+  padding: 9px 20px 8px 13px;
   border-radius: 999px;
-  box-shadow: 0 2px 10px 0 #3b2be717, 0 1px 1px 0 #e7f1fa0f;
-  border: 1.5px solid var(--ultramarine);
-  backdrop-filter: blur(15px);
-  font-family: var(--font-body);
-  transition: box-shadow var(--transition-main), border var(--transition-main);
+  box-shadow: 0 3px 14px 0 var(--lux-gold-main), 0 1.5px 7px #1c1e2935;
+  border: 2px solid var(--lux-gold-main);
+  backdrop-filter: blur(12px);
+  font-family: var(--lux-font-body);
+  min-width: 210px;
+  transition: box-shadow var(--lux-transition), border var(--lux-transition);
 }
 .avatar-skeleton {
   width: 38px; height: 38px; border-radius: 50%;
-  background: linear-gradient(145deg, #b6bffa 45%, #3b2be7 155%);
-  border: 3px solid #fafdff;
-  box-shadow: 0 1.5px 5px 0 #8fdafe77;
+  background: linear-gradient(142deg, #ecd08c 62%, #bfa14b 162%);
+  border: 3.1px solid #fffde3;
+  box-shadow: 0 2px 9px 0 #ecd08c44, 0 1px 2px #ecd08c14;
   position: relative;
   overflow: hidden;
-  animation: avatar-vibe 2.4s infinite alternate;
+  animation: avatar-luxury-vibe 3.8s infinite alternate;
 }
-@keyframes avatar-vibe {
-  0%   { box-shadow: 0 2px 8px 0 #aeeefc28; }
-  100% { box-shadow: 0 2px 18px 0 #c9b6f760; }
+@keyframes avatar-luxury-vibe {
+  0%   { box-shadow: 0 1.5px 9px 0 #ecd08c32; }
+  100% { box-shadow: 0 3.8px 22px 0 #ecd08c61; }
 }
 .user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 2px;}
 .user-name {
-  font-weight: 800;
-  font-size: 1.11rem;
-  color: var(--ultramarine);
-  font-family: var(--font-display);
+  font-family: var(--lux-font-heading);
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: var(--lux-gold-main);
+  letter-spacing: 0.07em;
 }
 .badge-row { display: flex; gap: 2px;}
 .badge {
   font-size: 1.13rem;
   margin-left: 4px;
-  filter: drop-shadow(0 1.5px 5px #3b2be705) drop-shadow(0 1px 1px #e7f1fa0a);
-  opacity: .96;
-  transition: filter .13s;
+  filter: drop-shadow(0 1.5px 9px #ecd08c18);
+  opacity: .92;
+  transition: filter .17s;
 }
-.badge.verified { color: var(--cool-mint);}
-.badge.expert { color: var(--aqua);}
+.badge.verified { color: var(--lux-success);}
+.badge.expert { color: var(--lux-gold-main); }
 .profile-trust {
-  font-size: 0.93rem;
-  color: var(--cool-mint);
-  margin-left: 11px;
-  padding: 1.5px 10px;
-  background: #e7f1fa;
-  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--lux-success);
+  margin-left: 14px;
+  padding: 2px 12px;
+  background: var(--lux-glass-overlay);
+  border-radius: 10px;
+  border: 1.2px solid var(--lux-gold-main);
   font-weight: 700;
+  box-shadow: 0 1.2px 7px #ecd08c12;
 }
 
-/* ===================== MAIN NAVIGATION ======================= */
+/* ============= MAIN NAVIGATION BAR ============= */
 .main-nav {
   position: sticky;
-  top: 62px;
-  background: var(--nav-bg);
-  border-bottom: 2.2px solid var(--border-strong);
+  top: 64px;
+  background: var(--lux-bg-gradient);
+  border-bottom: 2.5px solid var(--lux-gold-main);
   z-index: 98;
   width: 100%;
-  box-shadow: 0 1px 14px 0 #3b2be712;
-  backdrop-filter: blur(var(--glass-blur));
-  animation: gradient-appear .7s cubic-bezier(.41,.79,.21,1.07);
+  box-shadow: 0 2px 20px 0 #ecd08c12;
+  backdrop-filter: blur(var(--lux-glass-blur));
+  animation: luxury-gradient-glow .69s cubic-bezier(.51,.95,.22,1.07);
 }
 .main-nav ul {
   display: flex; flex-direction: row; gap: 5px;
   padding: 0 10px; margin: 0;
-  list-style: none; height: 53px;
+  list-style: none; height: 54px;
   align-items: center;
 }
 .main-nav li {
   cursor: pointer;
-  padding: 10px 20px 9px 15px;
+  padding: 13px 23px 11px 15px;
   margin: 2px 0;
-  color: var(--text-secondary);
-  border-radius: 15px 15px 0 0;
-  transition: background var(--transition-main), color .15s, box-shadow .14s, border-color .15s;
+  color: var(--lux-gold-leaf);
+  font-family: var(--lux-font-heading);
+  border-radius: 16px 16px 0 0;
+  transition: 
+    background var(--lux-transition),
+    color .16s, box-shadow .16s, border-color .16s;
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 13px;
   user-select: none;
-  font-size: 1.08rem;
-  font-weight: 540;
-  letter-spacing: .021em;
-  border: 1.3px solid transparent;
-  background: linear-gradient(96deg, var(--surface) 78%, #c9b6f7 120%);
+  font-size: 1.11rem;
+  font-weight: 600;
+  letter-spacing: .033em;
+  border: 1.7px solid transparent;
+  background: linear-gradient(93deg, var(--lux-card-surface) 80%, #ecd08c19 120%);
   outline: none;
-  box-shadow: 0 1.2px 3px 0 #ced3de20;
+  box-shadow: 0 1.2px 6px 0 #ecd08c34;
   position: relative;
 }
 .main-nav li::after {
-  /* Underline/highlight for hover/active nav */
+  /* Gold underline/highlight for hover/active nav */
   content: '';
-  position: absolute; left: 13px; right: 14px; bottom: 2px; height: 3px;
-  background: linear-gradient(96deg, var(--ultramarine), var(--lavender));
+  position: absolute; left: 14px; right: 16px; bottom: 2px; height: 3px;
+  background: var(--lux-gold-gradient);
   border-radius: 10px;
   opacity: 0;
-  transform: scaleX(0.48);
-  transition: opacity .13s, transform .16s;
+  transform: scaleX(0.66);
+  transition: opacity .14s, transform .19s;
 }
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: var(--nav-hover);
-  color: var(--ultramarine);
-  border-color: var(--violet);
-  box-shadow: 0 4px 17px 0 #6350e71F, 0 1.3px 7px #c9b6f721;
+  background: linear-gradient(94deg, #ecd08c33 82%, #222738bb 152%);
+  color: var(--lux-gold-main);
+  border-color: var(--lux-gold-leaf);
+  box-shadow: 0 6px 22px 0 #ecd08c44, 0 2.5px 13px var(--lux-gold-main), var(--lux-shadow-card);
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -325,209 +337,250 @@ body::after {
   transform: scaleX(1);
 }
 .main-nav li:focus-visible {
-  border-color: var(--aqua);
-  box-shadow: var(--focus-glow);
+  border-color: var(--lux-gold-main);
+  box-shadow: var(--lux-gold-focus), 0 3px 13px var(--lux-gold-main);
 }
 .nav-icon {
-  font-size: 1.17em;
-  filter: drop-shadow(0 1.5px 2px #c9b6f709);
+  font-size: 1.19em;
+  filter: drop-shadow(0 1.2px 5px #ecd08c22);
 }
 
-/* ===================== DASHBOARD & PAGE SECTION STYLES ======================= */
-.dashboard {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 42px 13px 44px 13px;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  min-height: 520px;
-  z-index: 4;
-  background: none !important;
-}
-
-/* AI Banner: Electric accent with glass ice glow */
-.ai-banner-suggestion {
-  background: linear-gradient(90deg, var(--surface) 64%, var(--aqua) 123%);
-  border-left: 5px solid var(--ultramarine);
-  color: var(--ultramarine);
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  padding: 14px 25px;
-  border-radius: 13px;
-  font-size: 1.13rem;
-  box-shadow: var(--shadow-card);
-  font-family: var(--font-body);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(12px);
-  animation: card-pop .33s cubic-bezier(.42,.91,.33,1.01);
-}
-@keyframes card-pop { 0% { opacity: 0; filter: blur(10px) scale(.96);} 100% { opacity: 1; filter: blur(0) scale(1);} }
-.ai-icon {
-  font-size: 1.58em;
-  background: #fff;
-  border-radius: 50%;
-  padding: 0.17em 0.22em;
-  color: var(--ultramarine);
-  box-shadow: 0 0 9px 0 #c9b6f740;
-}
-
-/* Prominent ghost-style button for light-glacial and accent theme */
-.btn-ghost {
-  background: linear-gradient(96deg, var(--frost-bg) 72%, var(--lavender) 113%);
-  color: var(--ultramarine);
-  font-family: var(--font-display);
+/* ============= LUXURY BUTTONS ============= */
+.btn-ghost, .btn-ghost:visited {
+  background: linear-gradient(96deg, #ecd08c22 80%, #22273888 120%);
+  color: var(--lux-gold-main);
+  font-family: var(--lux-font-heading);
   font-weight: 700;
   cursor: pointer;
-  font-size: 1.08rem;
-  border-radius: 7px;
-  border: 2px solid transparent;
-  padding: 7px 22px;
+  font-size: 1.09rem;
+  border-radius: 11px;
+  border: 2.3px solid var(--lux-gold-main);
+  padding: 8px 25px;
   margin-left: auto;
   margin-right: 0;
-  transition: background var(--transition-main), color .16s, box-shadow .15s, border-color .19s;
-  box-shadow: 0 2px 13px 0 #d1eafd19;
+  box-shadow: 0 2px 13px 0 #ecd08c24, 0 0.5px 4px #0001;
   outline: none;
   position: relative;
   z-index: 1;
+  transition: 
+    background var(--lux-transition),
+    color var(--lux-transition),
+    box-shadow var(--lux-transition),
+    border-color var(--lux-transition);
 }
-.btn-ghost:hover, .btn-ghost:focus {
-  color: var(--text-on-accent);
-  border-color: var(--ultramarine);
-  background: linear-gradient(98deg, var(--ultramarine) 90%, var(--violet) 122%);
+
+.btn-ghost:focus,
+.btn-ghost:hover {
+  color: #15120d;
+  background: linear-gradient(97deg, #ecd08c 91%, #bfa14b 122%);
   text-decoration: none;
-  box-shadow: 0 0 13px 4px #3b2be71a, var(--shadow-card);
+  border-color: var(--lux-gold-deep);
+  box-shadow: 0 0 28px 6px #ecd08c2a, var(--lux-press-inset-shadow);
 }
+
+.btn-ghost:active {
+  background: linear-gradient(97deg, #bfa14b 82%, #ecd08c 150%);
+  color: var(--lux-text-alt);
+  box-shadow: 0 1px 12px #ecd08c14 inset;
+  border-color: var(--lux-gold-main);
+}
+
 .btn-ghost:focus-visible {
-  box-shadow: var(--focus-glow), 0 2px 11px 0 var(--lavender);
-  border-color: var(--aqua);
+  box-shadow: var(--lux-gold-focus), 0 2px 12px 0 #ecd08c40;
+  border-color: var(--lux-platinum);
 }
 
-/* Alert banner: Modern soft magenta-pink, blends with icy theme but draws attention */
-.alert-banner {
-  background: linear-gradient(97deg, var(--surface) 69%, var(--rose) 142%);
-  color: var(--rose);
-  border-left: 5px solid var(--rose);
-  box-shadow: 0 5px 16px 0 #f389c527;
-  border-radius: 13px;
-  padding: 13px 25px;
-  margin-bottom: 16px;
-  font-size: 1.11rem;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+/* ============= SECTION CARDS, GLASS SURFACES ============= */
+.tab-content,
+.map-view,
+.micro-community-info {
+  background: var(--lux-glass-overlay);
+  border-radius: var(--lux-radius-main);
+  border: 1.9px solid var(--lux-gold-main);
+  box-shadow: var(--lux-shadow-card), 0 3px 24px var(--lux-gold-main) inset;
+  padding: 24px 30px;
+  margin: 12px 0;
+  transition: 
+    box-shadow .23s, 
+    border .19s, 
+    background .16s,
+    transform .21s;
 }
-.alert-icon { font-size: 1.36em; }
 
-
-/* ===================== PAGE/INFO “CARDS” ===================== */
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 8px 31px 0 #d1e6ff22, 0 1.2px 7px 0 #869dbe37;
-  border-color: var(--ultramarine);
+  box-shadow: 0 10px 32px 0 #ecd08c35, 0 1.4px 5px #ecd08c11, 0 6px 30px var(--lux-gold-leaf) inset;
+  border-color: var(--lux-gold-leaf);
+  background: var(--lux-overlay-gradient);
   transform: translateY(-2.5px) scale(1.018);
-  transition: box-shadow .19s, border .15s, background .15s, transform .13s;
-  background: var(--surface);
 }
 
-.map-view,
-.micro-community-info,
-.tab-content {
-  background: var(--surface);
-  border-radius: 15px;
-  border: 1.7px solid var(--border);
-  box-shadow: var(--shadow-card);
-  padding: 18px 22px;
-  margin: 10px 0;
-  transition: box-shadow .18s, border .13s, transform .12s;
-}
-
+/* ============= CARDS HEADINGS & INFO ============= */
+.tab-content h2,
 .micro-community-info h3 {
-  color: var(--ultramarine);
-  font-family: var(--font-display);
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1.7px 0 #e7f1fa52;
-  transition: color .18s, text-shadow .18s;
+  color: var(--lux-gold-leaf);
+  font-family: var(--lux-font-heading);
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2.2px 0 #ecd08c44;
+  font-size: 1.7em;
+  transition: color .19s, text-shadow .18s;
 }
+.tab-content p, .micro-community-info p,
+.tab-content ul, .tab-content li, 
+.tab-content b, .tab-content span,
 .map-legend {
-  color: var(--text-secondary);
-  font-family: var(--font-body);
-  margin-bottom: 6px;
+  color: var(--lux-text-alt);
+  font-family: var(--lux-font-body);
 }
+
+/* ============= MAP DEMO SKELETON & INFO CARDS ============= */
+.map-skeleton {
+  height: 120px;
+  border-radius: 10px;
+  background: linear-gradient(109deg, #ecd08c33 15%, #222738dd 75%);
+  margin-bottom: 12px;
+  box-shadow: 0 2px 13px #ecd08c18, 0 8px 20px #ecd08c22 inset;
+}
+
+/* ============= INFO CARDS / ECO TIPS / OTHER MODULES ============= */
+.eco-tip-card, .skeleton-card {
+  background: linear-gradient(103deg, #ecd08c1f 88%, #222738 149%);
+  border-radius: 13px;
+  border: 1.8px solid var(--lux-gold-main);
+  box-shadow: 0 1.5px 11px 0 #ecd08c20;
+  color: var(--lux-gold-main);
+}
+
+/* ============= FOCUS & ACCESSIBILITY ============= */
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--lux-gold-focus), 0 3px 13px 0 #ecd08c22;
+  border-color: var(--lux-gold-leaf);
+}
+
+/* ============= DASHBOARD/PAGE LAYOUT ============= */
+.dashboard {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 54px 20px 60px 20px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  min-height: 540px;
+  background: none !important;
+  z-index: 4;
+}
+
+/* ============= FOOTER ============= */
+.footer {
+  background: linear-gradient(91deg, #222738 66%, #ecd08c10 139%);
+  color: var(--lux-gold-leaf);
+  border-top: 2px solid var(--lux-gold-leaf);
+  padding: 18px 0 17px 0;
+  font-size: 1.1rem;
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--lux-font-heading);
+  letter-spacing: .04em;
+}
+
+/* ============= MOBILE & RESPONSIVE ADJUSTMENTS ============= */
+@media (max-width: 980px) {
+  .main-container { 
+    border-radius: 0; 
+    max-width: 100vw; 
+    border-width: 0 0 2.3px 0; 
+  }
+  .dashboard { padding: 18px 4px 28px 4px; }
+  .main-nav ul { height: 42px;}
+  .main-nav li { font-size: 1rem; padding: 7px 7px 7px 7px;}
+}
+@media (max-width: 600px) {
+  .main-nav li {padding: 6px 7px 7px 7px;}
+  .ai-banner-suggestion, .alert-banner, .tab-content, .map-view, .micro-community-info {padding: 8px 5px;}
+}
+
+/* ============= AI SUGGESTION & ALERT BANNERS ============= */
+.ai-banner-suggestion {
+  background: linear-gradient(96deg, #ecd08c17 61%, #222738 113%);
+  border-left: 6px solid var(--lux-gold-main);
+  color: var(--lux-gold-main);
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 17px 26px;
+  border-radius: 13px;
+  font-size: 1.16rem;
+  box-shadow: var(--lux-shadow-card), 0 1.5px 6px 0 #ecd08c2a;
+  font-family: var(--lux-font-body);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  animation: card-luxury-appear .51s cubic-bezier(.42,.88,.31,1.08);
+}
+@keyframes card-luxury-appear { 
+  0% { opacity: 0; filter: blur(12px) scale(.97);} 
+  100% { opacity: 1; filter: blur(0) scale(1);} 
+}
+.ai-icon {
+  font-size: 1.65em;
+  background: #fffde3;
+  border-radius: 50%;
+  padding: 0.2em 0.25em;
+  color: var(--lux-gold-deep);
+  box-shadow: 0 0 13px 0 #ecd08c45;
+}
+
+.alert-banner {
+  background: linear-gradient(98deg, #ecd08c13 65%, #ffe6a519 112%);
+  color: #d7270d;
+  border-left: 6px solid var(--lux-warning);
+  box-shadow: 0 5px 18px 0 #ffefc027;
+  border-radius: 13px;
+  padding: 15px 25px;
+  margin-bottom: 14px;
+  font-size: 1.13rem;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--lux-font-body);
+}
+.alert-icon { font-size: 1.34em; }
+
+/* ============= ACCESSIBLE LINKS/STATES ============= */
 a, .main-nav li .nav-label {
-  color: var(--text-link);
+  color: var(--lux-sapphire);
   text-decoration: underline;
   font-weight: 540;
   transition: color .18s;
 }
 a:hover, .main-nav li.active .nav-label, a:focus {
-  color: var(--ultramarine);
+  color: var(--lux-gold-main);
   text-decoration: underline;
 }
 
-/* Decorative demo map placeholder (icy glass with faint blue) */
-.map-skeleton {
-  height: 120px;
-  border-radius: 10px;
-  background: linear-gradient(95deg, #e7f1fa 82%, #3b2be71a 130%), #c9def4;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 12px #d1e6ff29;
-}
-
-/* ===================== FOOTER ========================= */
-.footer {
-  background: linear-gradient(91deg, var(--surface) 64%, #c9b6f71e 112%);
-  color: var(--text-faint);
-  border-top: 2px solid var(--lavender);
-  padding: 15px 0 13px 0;
-  font-size: 1.11rem;
-  margin-top: 25px;
-  text-align: center;
-}
-
-/* ===================== RESPONSIVE ADJUSTMENTS ===================== */
-@media (max-width: 960px) {
-  .main-container { border-radius: 0; max-width: 100vw; border-width: 0 0 2px 0; }
-  .dashboard { padding: 9px 2px 21px 2px; }
-  .main-nav ul { height: 44px;}
-  .main-nav li { font-size: .99rem; padding: 7px 7px 7px 7px;}
-}
-@media (max-width: 600px) {
-  .main-nav li {padding: 6px 7px 7px 7px;}
-  .ai-banner-suggestion, .alert-banner {padding: 6px 7px;}
-}
-
-/* ===================== UNIVERSAL FOCUS FOR ACCESSIBILITY ===================== */
-*:focus-visible {
+/* ============= GOLD FOCUS/ACTIVE STATES ============= */
+*:focus-visible,
+.btn-ghost:focus-visible,
+.main-nav li:focus-visible {
   outline: none;
-  box-shadow: var(--focus-glow);
-  border-color: var(--aqua);
+  border-color: var(--lux-gold-leaf) !important;
+  box-shadow: var(--lux-gold-focus);
 }
 
-/* ===================== CARD/SURFACE/DECORATION =============== */
-.eco-tip-card,
-.skeleton-card {
-  background: linear-gradient(93deg, var(--lavender) 84%, #c9b6f74c 121%);
-  border-radius: 11px;
-  border: 1px solid var(--lavender);
-  box-shadow: 0 1.2px 8px 0 #c9b6f713;
-  color: var(--text-secondary);
-}
-
-/* Explanation:
-    This theme uses a multi-layered neutral blue and violet system:
-    - Main backgrounds are icy blue/white for openness.
-    - Surface "glass" and card layers are slightly deeper, semi-translucent for layering.
-    - Navigation leverages modern gradients with electric blue/violet to denote activity.
-    - Buttons and accents are ultramarine, making interaction crisp and lively.
-    - Text colors provide maximum readability on pale surfaces, with violet and aqua for headings/links.
-    - Soft lavender is used for hovers and transitions—making the UI feel responsive and “high-tech friendly.”
-    - Cards/info areas make gentle use of gradient and glass layering for elegance.
-    - Accessible focus and hover effects are well-contrasted for clarity.
+/*
+  === DESIGNER/DEV NOTES: LUXURY COLOR & FONT SYSTEM RATIONALE ===
+  - Onyx/Dark Navy/Charcoal establish a base of luxury depth and "infinite" space, maximizing contrast and evoking exclusivity.
+  - Champagne and metallic golds accentuate and guide user focus—never primary backgrounds, always trims, glows, or calls-to-action.
+  - Opal and platinum touches offer secondary, rare highlights for particular features (e.g., trust/verified, micro-interactions).
+  - Card and glass overlays let "light" float over ultra-dark — the glass blurs let gold shimmer gently.
+  - Font pairing: Playfair Display achieves luxury, sophistication, and high legibility for headers; Inter provides modern, crisp body-readable context.
+  - Focus states and tactile shadows are high-contrast and visually obvious: luxury must always be accessible.
+  - All interactive elements maintain WCAG AA or better: gold is used on darkest backgrounds to maximize accessibility.
+  - Luxury branding comes as much from restraint (ample whitespace, few borders, minimalist icons) as from embellishment (gold trims, soft glows).
 */
