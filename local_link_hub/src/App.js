@@ -23,7 +23,13 @@ function MainNavigation({ activeTab, onSelectTab }) {
   ];
   return (
     <nav className="main-nav" aria-label="Main Navigation">
-      <ul>
+      {/* 
+        Layout: 
+        - The <ul> acts as a horizontally scrollable row, never wraps to next line.
+        - Extra nav items slide in via horizontal scroll, preserving luxury visual rhythm.
+        - ARIA role set to tablist for accessibility. 
+      */}
+      <ul data-nav-scrollable role="tablist">
         {tabs.map((tab) => (
           <li
             key={tab.key}
@@ -31,6 +37,8 @@ function MainNavigation({ activeTab, onSelectTab }) {
             onClick={() => onSelectTab(tab.key)}
             tabIndex={0}
             aria-label={tab.name}
+            role="tab"
+            aria-selected={activeTab === tab.key}
           >
             <span className="nav-icon">{tab.icon}</span>
             <span className="nav-label">{tab.name}</span>
