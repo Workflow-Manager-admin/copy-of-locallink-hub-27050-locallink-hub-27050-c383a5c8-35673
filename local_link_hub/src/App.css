@@ -195,7 +195,7 @@ body::after {
 .logo-symbol {
   font-size: 2.08rem;
   color: var(--lux-gold-leaf);
-  filter: drop-shadow(0 4px 16px #ecd08c88);
+  /* No drop-shadow/glow */
   padding-right: .24em;
 }
 .app-title {
@@ -207,7 +207,7 @@ body::after {
   -webkit-text-fill-color: transparent;
   letter-spacing: 2.5px;
   padding-left: 2px;
-  filter: drop-shadow(0 1.8px 0 #bfa14b90);
+  /* No glow/soft shadow */
 }
 
 /* ============= USER PROFILE MINI CARD ============= */
