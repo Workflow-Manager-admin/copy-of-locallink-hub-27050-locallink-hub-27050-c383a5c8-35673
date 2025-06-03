@@ -572,11 +572,11 @@ a:hover, .main-nav li.active .nav-label, a:focus {
 /*
   === DESIGNER/DEV NOTES: LUXURY COLOR & FONT SYSTEM RATIONALE ===
   - Onyx/Dark Navy/Charcoal establish a base of luxury depth and "infinite" space, maximizing contrast and evoking exclusivity.
-  - Champagne and metallic golds accentuate and guide user focus—never primary backgrounds, always trims, glows, or calls-to-action.
+  - Champagne and metallic golds accentuate and guide user focus—never primary backgrounds, always trims, NOT glows (no glowing effects remain), or calls-to-action.
   - Opal and platinum touches offer secondary, rare highlights for particular features (e.g., trust/verified, micro-interactions).
-  - Card and glass overlays let "light" float over ultra-dark — the glass blurs let gold shimmer gently.
+  - Card and glass overlays let "light" float over ultra-dark — the glass blurs let gold shimmer gently but never glow.
   - Font pairing: Playfair Display achieves luxury, sophistication, and high legibility for headers; Inter provides modern, crisp body-readable context.
-  - Focus states and tactile shadows are high-contrast and visually obvious: luxury must always be accessible.
+  - Focus states and tactile shadows are high-contrast and visually obvious: luxury must always be accessible, with no reliance on glow or blur.
   - All interactive elements maintain WCAG AA or better: gold is used on darkest backgrounds to maximize accessibility.
-  - Luxury branding comes as much from restraint (ample whitespace, few borders, minimalist icons) as from embellishment (gold trims, soft glows).
+  - Luxury branding comes as much from restraint (ample whitespace, few borders, minimalist icons) as from embellishment (gold trims, deep shadows, and gradients — NOT soft glows).
 */
