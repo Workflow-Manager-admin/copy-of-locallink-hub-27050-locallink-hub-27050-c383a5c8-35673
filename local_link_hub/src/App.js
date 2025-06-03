@@ -30,7 +30,9 @@ function ToastProvider({ children }) {
 
   // Clean up timer on unmount
   useEffect(() => {
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   return (
@@ -107,11 +109,11 @@ function MainNavigation({ activeTab, onSelectTab }) {
         </div>
         <div className="quick-actions">
           <button className="quicklink-btn" tabIndex={0} title="Invite Neighbor"
-            onClick={() => showToast("Invite link sent to your neighbor!", "info")}>
+            onClick={() => showToast("Invite link sent to your neighbor!", "success")}>
             <span role="img" aria-label="Invite">✉️</span>
           </button>
           <button className="quicklink-btn" tabIndex={0} title="Settings"
-            onClick={() => showToast("Settings coming soon!", "info")}>
+            onClick={() => showToast("Settings will arrive in a premium update.", "info")}>
             <span role="img" aria-label="Settings">⚙️</span>
           </button>
           <button className="quicklink-btn" tabIndex={0} title="Motivation"
@@ -165,6 +167,7 @@ function MainNavigation({ activeTab, onSelectTab }) {
 
 // PUBLIC_INTERFACE
 function UserProfileMini() {
+  const { showToast } = React.useContext(ToastContext);
   return (
     <div className="user-profile-mini" tabIndex={0}>
       <div className="avatar-skeleton" aria-label="User Avatar"></div>
@@ -176,6 +179,17 @@ function UserProfileMini() {
         </span>
       </div>
       <span className="profile-trust">Neighborhood Trust: <strong>High</strong></span>
+      <button
+        className="user-profile-action-btn"
+        style={{
+          marginLeft: 12, background: "var(--lux-gold-main)",
+          color: "var(--lux-maroon-dark)", border: "none", borderRadius: 12, padding: "5px 14px",
+          fontFamily: "var(--lux-font-body)", fontWeight: 600, fontSize: "0.97em", cursor: "pointer"
+        }}
+        onClick={() => showToast("Viewing luxury profile (coming soon)...", "info")}
+      >
+        Profile
+      </button>
     </div>
   );
 }
@@ -184,7 +198,7 @@ function UserProfileMini() {
 function AIBannerSuggestion() {
   const { showToast } = React.useContext(ToastContext);
   return (
-    <div className="ai-banner-suggestion flex-row-center">
+    <div className="ai-banner-suggestion flex-row-center info-panel-lux">
       <span className="ai-icon">🤖</span>
       <div>
         <strong>AI Suggestion:</strong>{" "}
@@ -193,7 +207,7 @@ function AIBannerSuggestion() {
       <button
         className="btn-ghost"
         tabIndex={0}
-        onClick={() => showToast("Showing latest zero-waste tips!", "info")}
+        onClick={() => showToast("Displaying latest zero-waste tips!", "success")}
       >
         See Tips
       </button>
@@ -205,13 +219,13 @@ function AIBannerSuggestion() {
 function AlertBanner() {
   const { showToast } = React.useContext(ToastContext);
   return (
-    <div className="alert-banner flex-row-center" aria-live="polite">
+    <div className="alert-banner flex-row-center info-panel-lux" aria-live="polite">
       <span className="alert-icon" role="img" aria-label="Alert">🚨</span>
       <span><strong>Crisis/Disaster:</strong> Severe weather—2 urgent safety messages nearby.</span>
       <button
         className="btn-ghost"
         tabIndex={0}
-        onClick={() => showToast("Reading latest local broadcasts.", "warn")}
+        onClick={() => showToast("Reading the latest luxury local broadcasts.", "warn")}
       >
         Read Broadcasts
       </button>
@@ -219,16 +233,21 @@ function AlertBanner() {
   );
 }
 
-// ... All Tab Components Below. They follow similar button wrapping logic ...
-
 // PUBLIC_INTERFACE
 function MapView() {
+  const { showToast } = React.useContext(ToastContext);
   return (
-    <div className="map-view">
+    <div className="map-view lux-box-wrap">
       <div className="map-placeholder">
         {/* Placeholder for a Map (interactive when implemented) */}
         <div className="map-legend">[Map showing your micro-community]</div>
         <div className="map-skeleton"></div>
+        <button
+          className="map-refresh-btn"
+          onClick={() => showToast("Refreshing your luxury micro-community map…", "info")}
+        >
+          Refresh
+        </button>
       </div>
       <div className="micro-community-info">
         <h3>Your Micro‑Community</h3>
@@ -251,7 +270,7 @@ function MapView() {
 
 // PUBLIC_INTERFACE
 function DashboardTab() {
-  // No buttons needing toast in dashboard hero; AIBannerSuggestion & AlertBanner already handled.
+  const { showToast } = React.useContext(ToastContext);
   return (
     <div className="dashboard luxury-dashboard">
       <section className="lux-row luxury-dashboard-row" aria-label="Quick Stats and Welcome Panel">
@@ -307,31 +326,39 @@ function DashboardTab() {
           <span className="widget-icon" aria-hidden="true">🔖</span>
           <span className="widget-title">Verified Skill</span>
           <span className="widget-desc">Gardening</span>
+          <button
+            className="widget-action-btn"
+            onClick={() => showToast("Request sent to verify a new luxury skill.", "info")}
+          >
+            Verify Skill
+          </button>
         </div>
         <div className="lux-mini-widget">
           <span className="widget-icon" aria-hidden="true">🕒</span>
           <span className="widget-title">Next Event</span>
           <span className="widget-desc">Compost Workshop, Mon 27th</span>
+          <button
+            className="widget-action-btn"
+            onClick={() => showToast("RSVP’d in luxury for Compost Workshop.", "success")}
+          >
+            RSVP
+          </button>
         </div>
         <div className="lux-mini-widget">
           <span className="widget-icon" aria-hidden="true">💡</span>
           <span className="widget-title">Eco Tip</span>
           <span className="widget-desc">Reuse containers with neighbors</span>
+          <button
+            className="widget-action-btn"
+            onClick={() => showToast("Another luxury eco tip coming soon!", "info")}
+          >
+            More Tips
+          </button>
         </div>
       </section>
     </div>
   );
 }
-
-// ---- SNIPPET: All other tab/panel components below are similar: see next cell due to size ---
-
-// For every button in all other panels, wrap with:
-//   onClick={() => showToast("Contextual Message", "type")}
-// Use info, success, error, or warn as needed for the type.
-
-// For space: Show at top of content area, don't overlap header/footer/side, align center/right for luxury feel. 
-
-// The rest of the file, including the layout/structure, remains as in your current version (with similar minor tweaks for perfect alignment where beneficial).
 
 // PUBLIC_INTERFACE
 function MainContainer() {
@@ -371,7 +398,7 @@ function MainContainer() {
         <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
         <main className="main-content" tabIndex={0}>
           {activeTab === "dashboard" && <DashboardTab />}
-          {/* ...all other tab content components... */}
+          {/* ...all other tab content components would be rendered here in a real app... */}
         </main>
       </div>
       <footer className="lux-footer" role="contentinfo">
