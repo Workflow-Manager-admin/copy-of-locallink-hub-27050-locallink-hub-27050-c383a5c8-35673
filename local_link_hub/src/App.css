@@ -529,7 +529,7 @@ body::after {
   border-radius: 50%;
   padding: 0.2em 0.25em;
   color: var(--lux-gold-deep);
-  box-shadow: 0 0 13px 0 #ecd08c45;
+  box-shadow: none;
 }
 
 .alert-banner {
