@@ -478,6 +478,238 @@ body {
   z-index: 1;
 }
 
+/* === LUXURY DASHBOARD WIDGETS, HERO SECTIONS & MOCKUP CARDS === */
+/* Root override for premium margin/padding/alignment on dashboard */
+.luxury-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 24px 0 18px 0;
+  background: none;
+}
+
+/* Row containing stat cards and badge */
+.luxury-dashboard-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 34px;
+  justify-content: flex-start;
+  margin-bottom: 11px;
+  margin-top: 6px;
+}
+
+.lux-stat-card {
+  background: linear-gradient(107deg, #fffbe3e6 70%, #f9eabe 110%);
+  border-radius: 19px 31px 19px 31px;
+  border: 2.5px solid var(--lux-gold-soft);
+  box-shadow: 0 6px 22px -10px #bfa14b26;
+  min-width: 154px;
+  min-height: 70px;
+  padding: 18px 22px 14px 17px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+}
+.lux-stat-icon {
+  font-size: 2em;
+  color: var(--lux-maroon);
+  background: var(--lux-gold-soft);
+  border-radius: 10px;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.83;
+  box-shadow: 0 1.5px 7px #FFD70044;
+}
+.lux-stat-label {
+  font-size: 1.02rem;
+  letter-spacing: .06em;
+  font-family: var(--lux-font-body);
+  display: block;
+  color: var(--lux-text-muted);
+}
+.lux-stat-value {
+  font-family: var(--lux-font-heading);
+  font-size: 1.49rem;
+  font-weight: 700;
+  color: var(--lux-maroon-dark);
+  letter-spacing: .03em;
+}
+
+.lux-badge-panel {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-left: auto;
+  padding-bottom: 8px;
+}
+.lux-badge {
+  background: var(--lux-maroon-light);
+  color: var(--lux-gold-main);
+  font-family: var(--lux-font-heading);
+  font-size: 1.08rem;
+  letter-spacing: .1em;
+  border-radius: 15px 16px 16px 15px;
+  border: 1.2px solid var(--lux-gold-main);
+  box-shadow: 0 1.5px 7px #FFD70033;
+  padding: 5px 19px 5px 13px;
+  font-weight: 600;
+  margin-right: 4px;
+  display: inline-block;
+}
+.lux-badge.verified {
+  color: var(--lux-onyx);
+  background: var(--lux-gold-main);
+  border-color: var(--lux-maroon);
+}
+.lux-badge.elite {
+  color: var(--lux-gold-main);
+  background: var(--lux-maroon-dark);
+  border-color: var(--lux-gold-main);
+}
+
+/* Hero area (welcome + decorative illustration) */
+.lux-dashboard-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: linear-gradient(89deg, #fffbe3dd 68%, #FFD70018 147%);
+  border-radius: 28px;
+  margin-bottom: 12px;
+  box-shadow: 0 1.5px 12px #FFD70022;
+  padding: 32px 34px 20px 38px;
+  position: relative;
+  z-index: 2;
+  min-height: 110px;
+  gap: 27px;
+}
+.lux-welcome-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 2 1 60%;
+}
+.lux-welcome-text h2 {
+  color: var(--lux-maroon);
+  font-family: var(--lux-font-heading);
+  font-size: 2.15rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+  line-height: 1.12;
+  letter-spacing: .06em;
+}
+.lux-welcome-text p {
+  color: var(--lux-text-secondary);
+  font-size: 1.17rem;
+  margin: 0;
+}
+.lux-welcome-text .lux-emphasize {
+  color: var(--lux-gold-main);
+  font-weight: 700;
+  font-size: 1.06em;
+}
+.lux-welcome-text .lux-quote {
+  display: block;
+  color: var(--lux-maroon-light);
+  font-style: italic;
+  margin-top: 8px;
+  font-size: 0.99em;
+  letter-spacing: .04em;
+}
+
+.lux-illustration {
+  flex: 1 1 36%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  max-width: 170px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Mini widgets/info blocks in dashboard */
+.lux-info-row {
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+  margin: 19px 0 3px 0;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.lux-mini-widget {
+  flex: 1 1 34%;
+  background: linear-gradient(93deg, #faf8f3dd 80%, #ffd7000c 124%);
+  border-radius: 13px 19px 12px 25px;
+  box-shadow: 0 0.8px 6px #FFD70026;
+  border: 1.5px solid var(--lux-gold-soft);
+  min-width: 170px;
+  padding: 14px 19px 10px 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--lux-font-body);
+  color: var(--lux-maroon-dark);
+  font-size: 0.99em;
+  transition: box-shadow 0.21s;
+}
+.lux-mini-widget .widget-icon {
+  font-size: 1.46em;
+  margin-bottom: 5px;
+  color: var(--lux-gold-main);
+  opacity: 0.87;
+}
+.lux-mini-widget .widget-title {
+  font-weight: 700;
+}
+.lux-mini-widget .widget-desc {
+  color: var(--lux-text-faint);
+  font-size: 0.98em;
+}
+
+/* Responsive: Make layout vertical and stack widgets on small screens */
+@media (max-width: 900px) {
+  .luxury-dashboard-row,
+  .lux-info-row {
+    flex-direction: column;
+    gap: 19px;
+  }
+  .lux-stat-card,
+  .lux-mini-widget {
+    min-width: 0;
+    width: 100%;
+  }
+  .lux-dashboard-hero {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 19px 7vw 15px 7vw;
+    min-height: 70px;
+    gap: 13px;
+  }
+  .lux-illustration {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 7px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .luxury-dashboard {
+    padding-left: 0; padding-right: 0;
+  }
+  .lux-dashboard-hero {
+    border-radius: 13px;
+    padding: 9px 3vw 7px 3vw;
+  }
+  .luxury-dashboard-row, .lux-info-row {
+    gap: 8px;
+  }
+}
+
 /* =================
    LUXURY HORIZONTAL HEADER (Full-Width Bar)
    - Full width, sits at top of scroll viewport
