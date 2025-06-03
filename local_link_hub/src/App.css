@@ -1,145 +1,123 @@
 :root {
   /*
-    === BEIGE-BASED COLOR PALETTE: Polished Premium Theme (2024) ===
-    - Primary Beige: #f5f5dc       [background, main canvas, elegance, inviting]
-    - Surface Cream/Ivory: #fdfbf6 [cards, surfaces—lifted with shadow, continuity]
-    - Glass Surface: rgba(245,245,220,0.90) [glass/translucency look]
-    - Soft Gold Beige: #edead6     [secondary sections, alt highlights, subtle layers]
-    - Deep Brown: #332918          [main body text—max contrast, premium coffee]
-    - Muted Terracotta: #aa6f57    [CTA hover states, secondary accents—warmth/ground]
-    - Olive/Forest Green: #627a3a  [success, accent, rare buttons — organic/professional]
-    - Soft Navy: #295c62           [links, info, modern editorial accents—tailored contrast]
-    - Pale Gold: #d6cdb4           [borders/very subtle backgrounds, premium highlight]
-    - Oxblood/Mahogany: #8f0a0a    [Primary highlights: main actions, nav, badge]
-    - Taupe/Sandstone: #b1b483     [soft accent, nav gradients, balance tones]
-    - Accent Gold-Olive: #685808   [buttons, icons, focus, micro details]
-    - Faint Cream: #f7f4e1         [hover/active background & subtle elevation for cards]
-    - Info Blue: #6f7e96           [transient info banners, rare]
-    - Error Brick: #ba4428         [error, alert stripes, rare]
-    - Success Green: #419a78       [success, badges, icons]
-    - Warn Yellow: #c5aa4c         [warning, less used]
-    - Subtle Shadow Mocha: #cab48d4d, #b1b4832c [shadows with gold softness]
-    - Gradients: for nav, surface, and card pop—mixing beige, pale gold, taupe.
-    - Fonts: Modern sans-serif (Poppins, Inter, Lexend)—premium, legibility
-    - All colors tested for accessible contrast; hover/active states with elevated clarity.
-
-    COLOR SYSTEM RATIONALE:
-    * Warm, harmonious beige foundation avoids starkness and feels inviting and local-communal.
-    * Surfaces separated with gentle elevation (soft gradients, gold-hued borders/shadows).
-    * Accents drawn from earthy palette—deep brown, olive, soft navy, terracotta—for trusted/composed feel.
-    * Primary CTA (buttons, nav highlight) is a sophisticated oxblood, offset by olive-gold for focus & actions.
-    * Focus, active, and hover states well-pronounced for clarity and accessibility.
-    * Subtle glass & blurring effects for layered visual richness.
-    * CSS custom props named for semantic reusability.
+    === GLACIAL NIGHT THEME: Professional Cool-Based Palette (2024) ===
+    -- Designed for a high-contemporary, trustworthy, and approachable appearance.
+    -- Primary elements: Layers of cool grays and icy blue for calm backgrounds, with crisp ultramarine and soft lavender for lively contrast.
+    -- Interactive elements: Electric ultramarine/violet for focus, lavender for subtle hovers, and cool grays for modern cards.
+    -- White and near-white highlights preserve clarity and space.
+    -- All color choices documented for future adaptions.
   */
 
-  /* === BEIGE & NEUTRALS === */
-  --beige-main: #f5f5dc;              /* Primary background—evokes premium, trust, invitation */
-  --beige-surface: #fdfbf6;           /* Card/Surface, slightly lighter but warm */
-  --beige-secondary: #edead6;         /* Subtle contrast, secondary backgrounds/sections */
-  --beige-cream: #faf8e2;             /* Used for gradients, hovers, borders */
-  --beige-glass: rgba(245,245,220,0.90); /* For glass/overlay effects */
-  --faint-cream: #f7f4e1;             /* Touch of elevation for active/hover cards */
+  /* === BASE NEUTRALS & BACKGROUNDS === */
+  --glacier-bg: #fafdff;                /* Main background: Pure icy white-blue, ultra-clean */
+  --frost-bg: #e7f1fa;                  /* Frosted panel: lighter blue with a hint of gray */
+  --frost-translucent: rgba(231,241,250,0.89); /* For overlays, glass effects */
+  --steel-ice: #ced3de;                 /* Card surface: blue-gray, subtle shadow depth */
+  --gray-900: #19202c;                  /* Ultra-dark navy/gray for core text/elements */
+  --gray-700: #344051;                  /* Main text: cool, readable slate/navy gray */
+  --gray-500: #7d889a;                  /* Muted detail: text, borders, etc. */
+  --gray-100: #dfebf7;                  /* Border & panel highlight, gentle touch */
 
-  /* === ACCENT COLORS === */
-  --primary: #8f0a0a;                 /* Main actions/nav/badges—oxblood, sophisticated, branded */
-  --secondary: #b1b483;               /* Taupe/Sandstone for nav, gradients, icons */
-  --accent: #685808;                  /* Accent gold-olive: buttons, icons, focus */
-  --terracotta: #aa6f57;              /* For muted warmth: badge/cta hover, muted stripes */
-  --navy: #295c62;                    /* Links and info, deeper contrast on light bg */
-  --olive: #627a3a;                   /* Deep olive—success/rare buttons */
-  --pale-gold: #d6cdb4;               /* Gold for borders, minimal backgrounds */
+  /* === ACCENTS & INTERACTIVE COLORS === */
+  --ultramarine: #3b2be7;               /* Key accent: Electric ultramarine (buttons, nav, hover, icons) */
+  --violet: #5b3ec7;                    /* Deep violet: interactive elements, secondary elevated accent */
+  --lavender: #c9b6f7;                  /* Hover/selection: soft lavender glow */
+  --aqua: #53d1f7;                      /* Focus, info, and status: lively pop */
+  --cool-mint: #8ef4c9;                 /* Success and positive messages */
+  --rose: #f389c5;                      /* Alerts/errors: gentle modern magenta */
 
-  /* === GRADIENTS for premium feel === */
-  --nav-bg: linear-gradient(90deg, #f7f4e1 60%, #edead6 89%, #b1b483 100%);
-  --nav-border: #d6cdb4;
-  --nav-hover: linear-gradient(93deg, #faf8e2 62%, #edead6 115%);
-  --card-bg: linear-gradient(135deg, #fdfbf6 70%, #f7f4e1 115%);
-  --dashboard-bg: linear-gradient(110deg, #f5f5dc 70%, #edead6 100%);
-  --header-gradient: linear-gradient(95deg, #8f0a0a 40%, #685808 120%);
-
-  /* === SHADOWS for depth (soft, gold-infused) === */
-  --shadow-main: 0 4px 32px 0 #cab48d29, 0 1.5px 9px #68580817;
-  --shadow-card: 0 4px 14px 0 #b1b48314, 0 1px 6px #d6cdb44c;
+  /* === SHADOWS & UI BLUR === */
+  --shadow-main: 0 4px 28px 0 #50628815, 0 1.5px 9px #3b2be70c;
+  --shadow-card: 0 3px 10px 0 #d1e6ff18, 0 1px 6px #a3b8d24c;
+  --glass-blur: 18px;
 
   /* === TEXT COLORS === */
-  --text-main: #332918;               /* Body/main text: deep brown for high legible contrast */
-  --text-heading: #8f0a0a;            /* Headings—brand Oxblood for clear typographic hierarchy */
-  --text-secondary: #665f41;          /* Muted taupe—for tabs, minor details, less contrast */
-  --text-accent: #685808;             /* Icons, highlights—gold-olive accent */
-  --text-link: #295c62;               /* Modern/navy blue for actionable text/links, always underlined */
-  --text-success: #419a78;            /* Green success */
-  --text-info: #6f7e96;
-  --text-faint: #a59e83;
-  --text-on-primary: #fdfbf6;         /* For contrast on primary-colored buttons/badges */
+  --text-main: var(--gray-700);
+  --text-heading: var(--ultramarine);
+  --text-secondary: var(--gray-500);
+  --text-link: var(--violet);
+  --text-accent: var(--aqua);
+  --text-success: var(--cool-mint);
+  --text-info: var(--aqua);
+  --text-faint: #c9cee5;
+  --text-on-accent: #fff;
+  --text-on-dark: #fafdff;
 
   /* === BORDERS === */
-  --border: #d6cdb4;
-  --border-strong: #b1b483;
+  --border: var(--gray-100);
+  --border-strong: var(--ultramarine);
 
-  /* === SYSTEM/STATE COLORS === */
-  --success: #419a78;                 /* Icon, badge, backgrounds for success states */
-  --error: #ba4428;                   /* Used sparingly—for error, alert stripes */
-  --info: #6f7e96;                    /* Cool supporting blue for info banners */
-  --warn: #c5aa4c;                    /* Gentle yellow for warnings */
+  /* === SYSTEM/STATUS === */
+  --success: var(--cool-mint);
+  --error: var(--rose);
+  --info: var(--aqua);
+  --warn: #ffe087;
 
-  /* === MISC === */
-  --surface: var(--beige-surface);
-  --surface-glass: var(--beige-glass);        /* Consistent glass for overlays/dialogs */
-  --background-main: var(--beige-main);
-  --background-abstract:
-    radial-gradient(ellipse at 47% 10%, #ece7d88a 0px, #0000 90%),
-    radial-gradient(ellipse at 58% 88%, #fff9e1b2 0px, #0000 94%),
-    linear-gradient(107deg, #faf8e3 12%, #f7f4e1 95%);
-  --glass-blur: 13px;
+  /* === GRADIENTS FOR DEPTH === */
+  --nav-bg: linear-gradient(93deg, #e2eafd 68%, #d6d9f7 100%, #aeeefc 118%);
+  --nav-hover: linear-gradient(98deg, #e7f1fa 72%, #c9b6f7 112%);
+  --card-bg: linear-gradient(122deg, #fafdff 68%, #d6e0f7 120%);
+  --dashboard-bg: linear-gradient(112deg, #e7f1fa 90%, #d6e0f7 100%);
+  --header-gradient: linear-gradient(98deg, #3b2be7 50%, #5b3ec7 180%);
 
-  --font-display: 'Poppins', 'Lexend', 'Inter', Arial, sans-serif;
+  /* === FONTS & EFFECTS === */
+  --font-display: 'Lexend','Poppins','Inter', Arial, sans-serif;
   --font-body: 'Inter', Arial, sans-serif;
-  --transition-main: .17s cubic-bezier(.58,.78,.24,1);
+  --transition-main: .18s cubic-bezier(.56,.81,.29,1);
+  --focus-glow: 0 0 0 3px var(--aqua), 0 0 0 7px #c9b6f731;
 
-  --focus-glow: 0 0 0 3px var(--accent), 0 0 0 8px #eadfba76;
+  /* Backwards compatible custom props */
+  --primary: var(--ultramarine);
+  --accent: var(--violet);
+  --secondary: var(--lavender);
+  --background-main: var(--glacier-bg);
+  --surface: var(--frost-bg);
 }
 
+/* Import modern geometric display fonts (Lexend, Inter, Poppins) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lexend:wght@500;700&family=Poppins:wght@500;700&display=swap');
 
 body {
   margin: 0;
   font-family: var(--font-body);
   min-height: 100vh;
-  /* Polished beige background with abstract gradients and subtle tactile noise for depth */
-  background: var(--background-main), var(--background-abstract), #ece7d8;
+
+  /* Harmonious glacial-blue gradient with mild abstract forms for lively depth */
+  background: var(--background-main),
+    radial-gradient(ellipse at 42% 8%, #d9f4ff77 0px, #fff 80%),
+    linear-gradient(111deg, #e2eafd 35%, #fafdff 80%);
   color: var(--text-main);
-  letter-spacing: .007em;
+  letter-spacing: .008em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background .45s var(--transition-main), color .23s;
+  transition: background .5s var(--transition-main), color .26s;
   position: relative;
   overflow-x: hidden;
 }
 
+/* Soft animated ambient blue-lavender glow for luxury and coolness */
 body::before {
-  /* Subtle ambient gold-olive glow—adds luxury touch, avoids harshness */
   content: "";
   pointer-events: none;
   position: fixed;
-  top: -92px; left: -82px;
+  top: -80px; left: -90px;
   width: 520px; height: 410px;
   background: radial-gradient(
     ellipse 60% 46% at 37% 33%,
-    #edead6aa 0%,
-    #f7f4e10c 67%,
+    #c9b6f7bb 0%,
+    #e7f1fa1c 60%,
     transparent 99%
   );
-  filter: blur(86px);
-  opacity: 0.14;
+  filter: blur(85px);
+  opacity: .15;
   mix-blend-mode: lighten;
-  animation: goldGlowMove 19s linear infinite alternate;
+  animation: blueGlowMove 21s linear infinite alternate;
   z-index: 0;
 }
-@keyframes goldGlowMove {
-  0% { transform: translateX(0) scaleY(1); opacity: .115;}
-  50% {opacity: .22;}
-  100% { transform: translateX(65px) scaleY(1.08); opacity: .16;}
+@keyframes blueGlowMove {
+  0% { transform: translateX(0) scaleY(1); opacity: .18;}
+  49% { opacity: .21;}
+  100% { transform: translateX(61px) scaleY(1.09); opacity: .14;}
 }
 body::after {
   content: "";
@@ -147,199 +125,197 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
-  /* low-opacity SVG noise for tactile subtlety */
+  opacity: .13;
+  /* subtle SVG noise for tactile crispness */
   background: url("data:image/svg+xml;utf8,<svg width='110' height='110' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='2' stitchTiles='stitch'/></filter><rect width='110' height='110' filter='url(%23f)' opacity='0.13'/></svg>");
   background-size: 110px 110px;
 }
 
+/* ===================== Scrollbar Styling (Subtle contemporary style) ================== */
 ::-webkit-scrollbar {
-  background: #edead6;
-  width: 11px;
+  background: var(--surface);
+  width: 10px;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #b1b483;
-  border-radius: 6px;
+  background: var(--gray-100);
+  border-radius: 7px;
   transition: background .16s;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--ultramarine);
 }
 
-/* Main App Container */
+/* ===================== MAIN APP CONTAINER ===================== */
 .main-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--surface-glass);
-  box-shadow: var(--shadow-main), 0 0px 64px 0 #e4d5ba30 inset;
-  border-radius: 36px 36px 0 0;
+  background: var(--frost-translucent);
+  box-shadow: var(--shadow-main), 0 0px 64px 0 #3b2be71f inset;
+  border-radius: 30px 30px 0 0;
   margin: 0 auto;
-  max-width: 1280px;
-  animation: gradient-appear .65s cubic-bezier(.48,.87,.37,1.03);
+  max-width: 1240px;
+  animation: gradient-appear .72s cubic-bezier(.49,.85,.31,1.03);
   position: relative;
   z-index: 1;
-  border: 2.2px solid var(--border-strong);
+  border: 2.2px solid var(--border);
 }
 
-@keyframes gradient-appear {
-  0% { opacity: 0; filter: blur(10px);}
-  100% { opacity:1; filter: blur(0);}
-}
+/* Fade-in for main container */
+@keyframes gradient-appear { 0% { opacity: 0; filter: blur(9px);} 100% { opacity:1; filter: blur(0); } }
 
-/* Navigation Bar */
+
+/* ===================== NAVIGATION BAR ======================= */
 .navbar {
   background: var(--nav-bg);
-  color: var(--primary);
+  color: var(--ultramarine);
   height: 62px;
   padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
   top: 0; left: 0;
   width: 100%;
   box-sizing: border-box;
-  position: fixed;
   z-index: 110;
-  border-bottom: 2.2px solid var(--nav-border);
-  box-shadow: 0 2px 16px 0 #cab48d2a, 0 1px 2px #b1b48318;
+  border-bottom: 2.5px solid var(--ultramarine);
+  box-shadow: 0 2px 16px 0 #3b2be726, 0 1px 2px #5b3ec713;
   backdrop-filter: blur(var(--glass-blur));
   background-blend-mode: lighten, normal;
 }
 .spacer-navbar { height: 62px; }
 
 .navbar-left {
-  display: flex; align-items: center; gap: 16px;
+  display: flex; align-items: center; gap: 15px;
   font-family: var(--font-display);
 }
 .logo-symbol {
-  font-size: 2.18rem;
-  color: var(--accent);
-  filter: drop-shadow(0 2.5px 8px #cfc18a70);
+  font-size: 2.16rem;
+  color: var(--ultramarine);
+  filter: drop-shadow(0 2.5px 8px #b6bffa85);
   padding-right: .2em;
 }
 .app-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.42rem;
-  background: linear-gradient(95deg, #8f0a0a 40%, #685808 110%);
+  font-size: 1.39rem;
+  background: var(--header-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 2.2px;
+  letter-spacing: 2.3px;
   padding-left: 2px;
-  filter: drop-shadow(0 2px 0 #fcfbf4);
+  filter: drop-shadow(0 2px 0 #edfaff);
 }
 
 /* Mini User Profile */
 .user-profile-mini {
   display: flex; align-items: center; gap: 14px;
   background: var(--card-bg);
-  padding: 6px 15px 6px 10px;
+  padding: 6px 16px 6px 10px;
   border-radius: 999px;
-  box-shadow: 0 2px 10px 0 #b1b48316, 0 1px 1px 0 #edead610;
-  border: 1.7px solid var(--secondary);
+  box-shadow: 0 2px 10px 0 #3b2be717, 0 1px 1px 0 #e7f1fa0f;
+  border: 1.5px solid var(--ultramarine);
   backdrop-filter: blur(15px);
   font-family: var(--font-body);
   transition: box-shadow var(--transition-main), border var(--transition-main);
 }
 .avatar-skeleton {
   width: 38px; height: 38px; border-radius: 50%;
-  background: linear-gradient(151deg, #b1b483 45%, #8f0a0a 155%);
-  border: 3px solid #edead6;
-  box-shadow: 0 1.5px 5px 0 #a59e8388;
+  background: linear-gradient(145deg, #b6bffa 45%, #3b2be7 155%);
+  border: 3px solid #fafdff;
+  box-shadow: 0 1.5px 5px 0 #8fdafe77;
   position: relative;
   overflow: hidden;
-  animation: avatar-vibe 2.7s infinite alternate;
+  animation: avatar-vibe 2.4s infinite alternate;
 }
 @keyframes avatar-vibe {
-  0%   { box-shadow: 0 2px 8px 0 #c5aa4c24; }
-  100% { box-shadow: 0 2px 18px 0 #419a7860; }
+  0%   { box-shadow: 0 2px 8px 0 #aeeefc28; }
+  100% { box-shadow: 0 2px 18px 0 #c9b6f760; }
 }
-.user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 1px;}
+.user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 2px;}
 .user-name {
-  font-weight: 900;
-  font-size: 1.13rem;
-  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.11rem;
+  color: var(--ultramarine);
   font-family: var(--font-display);
 }
 .badge-row { display: flex; gap: 2px;}
 .badge {
-  font-size: 1.14rem; margin-left: 4px;
-  filter: drop-shadow(0 1.5px 5px #8f0a0a05) drop-shadow(0 1px 1px #edead60a);
-  opacity: .97;
+  font-size: 1.13rem;
+  margin-left: 4px;
+  filter: drop-shadow(0 1.5px 5px #3b2be705) drop-shadow(0 1px 1px #e7f1fa0a);
+  opacity: .96;
   transition: filter .13s;
 }
-.badge.verified { color: var(--success);}
-.badge.expert { color: var(--accent);}
+.badge.verified { color: var(--cool-mint);}
+.badge.expert { color: var(--aqua);}
 .profile-trust {
   font-size: 0.93rem;
-  color: var(--success);
-  margin-left: 10px;
-  padding: 2px 10px;
-  background: #ece0c3;
+  color: var(--cool-mint);
+  margin-left: 11px;
+  padding: 1.5px 10px;
+  background: #e7f1fa;
   border-radius: 8px;
   font-weight: 700;
 }
 
-/* Main Navigation */
+/* ===================== MAIN NAVIGATION ======================= */
 .main-nav {
   position: sticky;
   top: 62px;
   background: var(--nav-bg);
-  border-bottom: 2.2px solid var(--nav-border);
-  z-index: 99;
+  border-bottom: 2.2px solid var(--border-strong);
+  z-index: 98;
   width: 100%;
-  box-shadow: 0 1px 16px 0 #b1b48310;
+  box-shadow: 0 1px 14px 0 #3b2be712;
   backdrop-filter: blur(var(--glass-blur));
-  animation: gradient-appear .7s cubic-bezier(.39,.81,.29,1.11);
+  animation: gradient-appear .7s cubic-bezier(.41,.79,.21,1.07);
 }
 .main-nav ul {
-  display: flex; flex-direction: row; gap: 4px;
-  padding: 0 12px; margin: 0;
-  list-style: none; height: 52px;
+  display: flex; flex-direction: row; gap: 5px;
+  padding: 0 10px; margin: 0;
+  list-style: none; height: 53px;
   align-items: center;
 }
 .main-nav li {
   cursor: pointer;
-  padding: 10px 21px 8px 15px;
+  padding: 10px 20px 9px 15px;
   margin: 2px 0;
   color: var(--text-secondary);
-  border-radius: 14px 14px 0 0;
-  transition: background var(--transition-main), color .13s, box-shadow .15s, border-color .15s;
+  border-radius: 15px 15px 0 0;
+  transition: background var(--transition-main), color .15s, box-shadow .14s, border-color .15s;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   user-select: none;
-  font-size: 1.07rem;
+  font-size: 1.08rem;
   font-weight: 540;
-  letter-spacing: .02em;
-  border: 1.5px solid transparent;
-  background: linear-gradient(93deg, var(--beige-cream) 78%, var(--beige-secondary) 120%);
+  letter-spacing: .021em;
+  border: 1.3px solid transparent;
+  background: linear-gradient(96deg, var(--surface) 78%, #c9b6f7 120%);
   outline: none;
-  box-shadow: 0 1.5px 4px 0 #cab48d17;
+  box-shadow: 0 1.2px 3px 0 #ced3de20;
   position: relative;
 }
 .main-nav li::after {
+  /* Underline/highlight for hover/active nav */
   content: '';
-  position: absolute;
-  left: 13px;
-  right: 14px;
-  bottom: 2px;
-  height: 3px;
-  background: linear-gradient(92deg, var(--accent), var(--secondary));
+  position: absolute; left: 13px; right: 14px; bottom: 2px; height: 3px;
+  background: linear-gradient(96deg, var(--ultramarine), var(--lavender));
   border-radius: 10px;
   opacity: 0;
-  transform: scaleX(0.49);
-  transition: opacity .13s, transform .17s;
+  transform: scaleX(0.48);
+  transition: opacity .13s, transform .16s;
 }
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
   background: var(--nav-hover);
-  color: var(--primary);
-  border-color: var(--secondary);
-  box-shadow: 0 5px 15px 0 #d6cdb41e, 0 1.5px 4px #b1b48315;
+  color: var(--ultramarine);
+  border-color: var(--violet);
+  box-shadow: 0 4px 17px 0 #6350e71F, 0 1.3px 7px #c9b6f721;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -349,38 +325,38 @@ body::after {
   transform: scaleX(1);
 }
 .main-nav li:focus-visible {
-  border-color: var(--accent);
+  border-color: var(--aqua);
   box-shadow: var(--focus-glow);
 }
 .nav-icon {
-  font-size: 1.18em;
-  filter: drop-shadow(0 1px 2px #b1b48308);
+  font-size: 1.17em;
+  filter: drop-shadow(0 1.5px 2px #c9b6f709);
 }
 
-/* Dashboard and Page Sections */
+/* ===================== DASHBOARD & PAGE SECTION STYLES ======================= */
 .dashboard {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  padding: 44px 13px 45px 13px;
+  padding: 42px 13px 44px 13px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   min-height: 520px;
   z-index: 4;
   background: none !important;
 }
 
-/* AI banner with gold accent + glass */
+/* AI Banner: Electric accent with glass ice glow */
 .ai-banner-suggestion {
-  background: linear-gradient(90deg, var(--beige-cream) 64%, var(--secondary) 123%);
-  border-left: 5px solid var(--accent);
-  color: var(--text-accent);
+  background: linear-gradient(90deg, var(--surface) 64%, var(--aqua) 123%);
+  border-left: 5px solid var(--ultramarine);
+  color: var(--ultramarine);
   display: flex;
   align-items: center;
-  gap: 26px;
-  padding: 13px 25px;
+  gap: 25px;
+  padding: 14px 25px;
   border-radius: 13px;
   font-size: 1.13rem;
   box-shadow: var(--shadow-card);
@@ -388,103 +364,75 @@ body::after {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(12px);
-  animation: card-pop .36s cubic-bezier(.35,.9,.44,1.02);
+  animation: card-pop .33s cubic-bezier(.42,.91,.33,1.01);
 }
-@keyframes card-pop {
-  0% { opacity: 0; filter: blur(8px) scale(.97);}
-  100% { opacity: 1; filter: blur(0) scale(1);}
-}
+@keyframes card-pop { 0% { opacity: 0; filter: blur(10px) scale(.96);} 100% { opacity: 1; filter: blur(0) scale(1);} }
 .ai-icon {
-  font-size: 1.67em;
-  background: #edead6;
+  font-size: 1.58em;
+  background: #fff;
   border-radius: 50%;
-  padding: 0.13em 0.22em;
-  color: var(--accent);
-  box-shadow: 0 0 7px 0 #b1b48336;
+  padding: 0.17em 0.22em;
+  color: var(--ultramarine);
+  box-shadow: 0 0 9px 0 #c9b6f740;
 }
 
-/* Fancy button for beige/gold theme */
+/* Prominent ghost-style button for light-glacial and accent theme */
 .btn-ghost {
-  background: linear-gradient(96deg, var(--beige-surface) 72%, var(--beige-cream) 113%);
-  color: var(--primary);
+  background: linear-gradient(96deg, var(--frost-bg) 72%, var(--lavender) 113%);
+  color: var(--ultramarine);
   font-family: var(--font-display);
   font-weight: 700;
   cursor: pointer;
-  font-size: 1.07rem;
+  font-size: 1.08rem;
   border-radius: 7px;
   border: 2px solid transparent;
   padding: 7px 22px;
   margin-left: auto;
   margin-right: 0;
-  transition: background var(--transition-main), color .17s, box-shadow .16s, border-color .2s;
-  box-shadow: 0 2px 14px 0 #cab48d14;
+  transition: background var(--transition-main), color .16s, box-shadow .15s, border-color .19s;
+  box-shadow: 0 2px 13px 0 #d1eafd19;
   outline: none;
   position: relative;
   z-index: 1;
 }
 .btn-ghost:hover, .btn-ghost:focus {
-  color: var(--text-on-primary);
-  border-color: var(--accent);
-  background: linear-gradient(95deg, var(--accent) 90%, var(--primary) 120%);
+  color: var(--text-on-accent);
+  border-color: var(--ultramarine);
+  background: linear-gradient(98deg, var(--ultramarine) 90%, var(--violet) 122%);
   text-decoration: none;
-  box-shadow: 0 0 13px 3px #b1b4832b, var(--shadow-card);
+  box-shadow: 0 0 13px 4px #3b2be71a, var(--shadow-card);
 }
 .btn-ghost:focus-visible {
-  box-shadow: var(--focus-glow), 0 2px 11px 0 var(--beige-secondary);
-  border-color: var(--accent);
+  box-shadow: var(--focus-glow), 0 2px 11px 0 var(--lavender);
+  border-color: var(--aqua);
 }
 
+/* Alert banner: Modern soft magenta-pink, blends with icy theme but draws attention */
 .alert-banner {
-  background: linear-gradient(95deg, var(--beige-cream) 72%, #ba44281d 128%);
-  color: var(--error);
-  border-left: 5px solid var(--primary);
-  box-shadow: 0 6px 18px 0 #ba442829;
+  background: linear-gradient(97deg, var(--surface) 69%, var(--rose) 142%);
+  color: var(--rose);
+  border-left: 5px solid var(--rose);
+  box-shadow: 0 5px 16px 0 #f389c527;
   border-radius: 13px;
-  padding: 13px 26px;
-  margin-bottom: 15px;
+  padding: 13px 25px;
+  margin-bottom: 16px;
   font-size: 1.11rem;
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 15px;
 }
-.alert-icon {
-  font-size: 1.44em;
-}
+.alert-icon { font-size: 1.36em; }
 
-.footer {
-  background: linear-gradient(91deg, var(--beige-cream) 61%, #b1b4831d 112%);
-  color: var(--text-faint);
-  border-top: 2px solid var(--secondary);
-  padding: 15px 0 13px 0;
-  font-size: 1.08rem;
-  margin-top: 32px;
-  text-align: center;
-}
 
-/* Responsive adjustments */
-@media (max-width: 960px) {
-  .main-container {
-    border-radius: 0;
-    max-width: 100vw;
-    border-width: 0 0 2px 0;
-  }
-  .dashboard { padding: 7px 2px 19px 2px; }
-  .main-nav ul { height: 44px;}
-  .main-nav li { font-size: 0.99rem; padding: 8px 8px 8px 8px;}
-}
-@media (max-width: 600px) {
-  .main-nav li {padding: 7px 7px 7px 7px;}
-  .ai-banner-suggestion, .alert-banner {padding: 7px 7px;}
-}
-
-/* Page "cards" */
+/* ===================== PAGE/INFO “CARDS” ===================== */
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 7px 28px 0 #edead62a, 0 1.3px 7px 0 #b1b4832c;
-  border-color: var(--accent);
-  transform: translateY(-2px) scale(1.015);
-  transition: box-shadow .18s, border .10s, transform .14s;
+  box-shadow: 0 8px 31px 0 #d1e6ff22, 0 1.2px 7px 0 #869dbe37;
+  border-color: var(--ultramarine);
+  transform: translateY(-2.5px) scale(1.018);
+  transition: box-shadow .19s, border .15s, background .15s, transform .13s;
+  background: var(--surface);
 }
 
 .map-view,
@@ -496,33 +444,22 @@ body::after {
   box-shadow: var(--shadow-card);
   padding: 18px 22px;
   margin: 10px 0;
-  transition: box-shadow .20s, border .13s, transform .12s;
-}
-
-.tab-content:hover,
-.map-view:hover,
-.micro-community-info:hover {
-  background: var(--faint-cream);
-  box-shadow: 0 8px 32px 0 #d6cdb433, 0 1.3px 7px 0 #b1b48328;
-  border-color: var(--accent);
-  transform: translateY(-2.5px) scale(1.018);
-  transition: box-shadow .23s, border .14s, background .17s, transform .16s;
+  transition: box-shadow .18s, border .13s, transform .12s;
 }
 
 .micro-community-info h3 {
-  color: var(--text-heading);
+  color: var(--ultramarine);
   font-family: var(--font-display);
   margin-bottom: 8px;
   letter-spacing: 0.02em;
-  text-shadow: 0 1.5px 0 #f7f4e145;
-  transition: color .17s, text-shadow .19s;
+  text-shadow: 0 1.7px 0 #e7f1fa52;
+  transition: color .18s, text-shadow .18s;
 }
 .map-legend {
   color: var(--text-secondary);
   font-family: var(--font-body);
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
-
 a, .main-nav li .nav-label {
   color: var(--text-link);
   text-decoration: underline;
@@ -530,70 +467,67 @@ a, .main-nav li .nav-label {
   transition: color .18s;
 }
 a:hover, .main-nav li.active .nav-label, a:focus {
-  color: var(--primary);
+  color: var(--ultramarine);
   text-decoration: underline;
 }
+
+/* Decorative demo map placeholder (icy glass with faint blue) */
 .map-skeleton {
   height: 120px;
   border-radius: 10px;
-  background: linear-gradient(93deg, #edead6 85%, #b1b48323 130%), #e3dbc4;
+  background: linear-gradient(95deg, #e7f1fa 82%, #3b2be71a 130%), #c9def4;
   margin-bottom: 8px;
-  box-shadow: 0 2px 10px #b1b48317;
+  box-shadow: 0 2px 12px #d1e6ff29;
 }
+
+/* ===================== FOOTER ========================= */
 .footer {
-  background: linear-gradient(91deg, #faf5e4 61%, #b1b4831c 112%);
+  background: linear-gradient(91deg, var(--surface) 64%, #c9b6f71e 112%);
   color: var(--text-faint);
-  border-top: 2px solid var(--secondary);
+  border-top: 2px solid var(--lavender);
   padding: 15px 0 13px 0;
-  font-size: 1.08rem;
-  margin-top: 32px;
+  font-size: 1.11rem;
+  margin-top: 25px;
   text-align: center;
 }
 
-/* Universal focus style for accessibility */
+/* ===================== RESPONSIVE ADJUSTMENTS ===================== */
+@media (max-width: 960px) {
+  .main-container { border-radius: 0; max-width: 100vw; border-width: 0 0 2px 0; }
+  .dashboard { padding: 9px 2px 21px 2px; }
+  .main-nav ul { height: 44px;}
+  .main-nav li { font-size: .99rem; padding: 7px 7px 7px 7px;}
+}
+@media (max-width: 600px) {
+  .main-nav li {padding: 6px 7px 7px 7px;}
+  .ai-banner-suggestion, .alert-banner {padding: 6px 7px;}
+}
+
+/* ===================== UNIVERSAL FOCUS FOR ACCESSIBILITY ===================== */
 *:focus-visible {
   outline: none;
   box-shadow: var(--focus-glow);
-  border-color: var(--accent);
+  border-color: var(--aqua);
 }
 
-/* Demo map/info card hover */
-.tab-content:hover,
-.map-view:hover,
-.micro-community-info:hover {
-  box-shadow: 0 7px 28px 0 #edead62a, 0 1.3px 7px 0 #b1b4832c;
-  border-color: var(--accent);
-  transform: translateY(-2px) scale(1.015);
-  transition: box-shadow .18s, border .10s, transform .14s;
-}
-
-/* Universal “pane/card” surface for beige: */
-.map-view,
-.micro-community-info,
-.tab-content {
-  background: var(--surface);
-  border-radius: 15px;
-  border: 1.65px solid var(--border);
-  box-shadow: var(--shadow-card);
-  padding: 18px 21px;
-  margin: 11px 0;
-  transition: box-shadow .19s, border .12s, transform .16s;
-}
-
-/* Example: Decorative elements (e.g., skeleton for loading, avatars, or eco tips) */
+/* ===================== CARD/SURFACE/DECORATION =============== */
 .eco-tip-card,
 .skeleton-card {
-  background: linear-gradient(92deg, var(--beige-secondary) 87%, #b1b4832c 121%);
-  border-radius: 10px;
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 1.2px 8px 0 #b1b48313;
+  background: linear-gradient(93deg, var(--lavender) 84%, #c9b6f74c 121%);
+  border-radius: 11px;
+  border: 1px solid var(--lavender);
+  box-shadow: 0 1.2px 8px 0 #c9b6f713;
   color: var(--text-secondary);
 }
 
-/*
-  All "decorative" panels/cards, info boxes inherit the base beige/cream palette for consistency,
-  using taupe/gold/terracotta for accents, and olive/navy for action or info messages.
-  Color choices and transitions are tested for contrast and clarity.
+/* Explanation:
+    This theme uses a multi-layered neutral blue and violet system:
+    - Main backgrounds are icy blue/white for openness.
+    - Surface "glass" and card layers are slightly deeper, semi-translucent for layering.
+    - Navigation leverages modern gradients with electric blue/violet to denote activity.
+    - Buttons and accents are ultramarine, making interaction crisp and lively.
+    - Text colors provide maximum readability on pale surfaces, with violet and aqua for headings/links.
+    - Soft lavender is used for hovers and transitions—making the UI feel responsive and “high-tech friendly.”
+    - Cards/info areas make gentle use of gradient and glass layering for elegance.
+    - Accessible focus and hover effects are well-contrasted for clarity.
 */
-
-/* Many cards inherit beige + cocoa/brown accent palette by default due to variables! */
