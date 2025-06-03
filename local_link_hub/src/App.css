@@ -374,7 +374,7 @@ body::after {
 
 /* AI banner with gold accent + glass */
 .ai-banner-suggestion {
-  background: linear-gradient(89deg, #edead6 65%, #b1b48333 120%);
+  background: linear-gradient(90deg, var(--beige-cream) 64%, var(--secondary) 123%);
   border-left: 5px solid var(--accent);
   color: var(--text-accent);
   display: flex;
