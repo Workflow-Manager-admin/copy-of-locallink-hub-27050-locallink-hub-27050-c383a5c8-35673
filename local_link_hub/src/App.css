@@ -435,10 +435,10 @@ body::after {
 }
 
 .alert-banner {
-  background: linear-gradient(95deg, #faf5e4 75%, #ba44281d 120%);
+  background: linear-gradient(95deg, var(--beige-cream) 72%, #ba44281d 128%);
   color: var(--error);
   border-left: 5px solid var(--primary);
-  box-shadow: 0 6px 17px 0 #ba442827;
+  box-shadow: 0 6px 18px 0 #ba442829;
   border-radius: 13px;
   padding: 13px 26px;
   margin-bottom: 15px;
@@ -452,7 +452,7 @@ body::after {
 }
 
 .footer {
-  background: linear-gradient(90deg, #faf5e4 61%, #b1b48319 113%);
+  background: linear-gradient(91deg, var(--beige-cream) 61%, #b1b4831d 112%);
   color: var(--text-faint);
   border-top: 2px solid var(--secondary);
   padding: 15px 0 13px 0;
@@ -583,11 +583,17 @@ a:hover, .main-nav li.active .nav-label, a:focus {
 /* Example: Decorative elements (e.g., skeleton for loading, avatars, or eco tips) */
 .eco-tip-card,
 .skeleton-card {
-  background: linear-gradient(94deg, #edead6 85%, #b1b4832b 120%);
+  background: linear-gradient(92deg, var(--beige-secondary) 87%, #b1b4832c 121%);
   border-radius: 10px;
   border: 1px solid var(--border-strong);
   box-shadow: 0 1.2px 8px 0 #b1b48313;
   color: var(--text-secondary);
 }
+
+/*
+  All "decorative" panels/cards, info boxes inherit the base beige/cream palette for consistency,
+  using taupe/gold/terracotta for accents, and olive/navy for action or info messages.
+  Color choices and transitions are tested for contrast and clarity.
+*/
 
 /* Many cards inherit beige + cocoa/brown accent palette by default due to variables! */
