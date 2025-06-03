@@ -1,45 +1,45 @@
 :root {
-  /* === LUXURY "ONYX & GOLD" PREMIUM UI PALETTE (Revised) ===
-     - Now uses deep onyx/charcoal base (#181a1b) for ultra-premium, modern aesthetic with gold accents. 
-     - Rationale: A true deep onyx background (#181a1b) yields maximum contrast against metallic golds (#FFD700, #E5C97B, #BFA14B), enhancing readability and reinforcing exclusivity.
-     - All variable names are preserved, but dark values now harmonize with onyx for greater depth.
+  /* === LUXE CHAMPAGNE/THE NEW PREMIUM "SOFT LIGHT" PALETTE ===
+     - Core background is a sophisticated champagne (#eee2c6, soft, inviting, universally neutral luxury).
+     - Accent trims remain warm metallic gold (#E5C97B, #FFD700, #BFA14B).
+     - Contrasting text/UI details use luxe onyx (#181a1b) or subtly richer brown-black (#312d1a).
+     - Rationale: #eee2c6 is light enough for luxury, reduces fatigue vs. stark white, and gold/onyx balance gorgeously.
+     - All variables (and usage) include comments on purpose for maintainability and design reasoning.
   */
-  --lux-black: #181a1b;                         /* Deep onyx charcoal – foundation of the new luxury look */
-  --lux-black-radial: radial-gradient(circle at 40% 30%, #29220a22 0%, #181a1b 80%);
-  --lux-black-gradient: linear-gradient(135deg, #181a1b 72%, #232323 110%);
-  --lux-gradient-gold-subtle: radial-gradient(circle at 70% 15%, #FFD70030 1%, #E5C97B19 35%, #181a1b44 80%);
-  --lux-gold-main: #FFD700;                     /* Gold primary accent */
-  --lux-gold-soft: #E5C97B;                     /* Soft/champagne gold for trims */
-  --lux-gold-deep: #BFA14B;                     /* Deeper metallic gold for structure */
-  --lux-gold-radial: radial-gradient(circle at 70% 10%, #FFD70044 0%, #BFA14B19 60%, #181a1b00 100%);
+  --lux-bg-champagne: #eee2c6;                         /* Main luxury background (champagne/warm taupe) */
+  --lux-bg-champagne-dark: #e5d5b8;                    /* Slightly deeper for gradients; retains softness */
+  --lux-bg-champagne-grad: linear-gradient(111deg, #f1e1c6 95%, #e5d5b8 140%);
+  --lux-onyx: #181a1b;                                 /* Core deep accent – used for text/headings/nav bar for sharp contrast */
+  --lux-onyx-soft: #312d1a;                            /* Warm, brown-tinted onyx for certain UI elements/cards */
+
+  --lux-gold-main: #FFD700;                            /* Bold gold: buttons, headings, and action highlights */
+  --lux-gold-soft: #E5C97B;                            /* Champagne gold trim: borders, nav, secondary highlights */
+  --lux-gold-deep: #BFA14B;                            /* Deep metallic gold: for richer borders, shadows, hover states */
   --lux-gold-border: #FFD700;
-  --lux-gold-faint: #E5C97B58;
-  --lux-gold-fade: linear-gradient(120deg, #FFD70022 0%, #BFA14B19 55%, #181a1b00 95%);
 
-  --lux-card-bg: #232323;                        /* Slightly lighter than the background, maintains contrast */
-  --lux-card-gradient: linear-gradient(115deg, #23292b 82%, #292114 130%);
-  --lux-scroll-bg: #222222;
-  --lux-shadow-main: 0 6px 38px 0 #00000028, 0 2px 16px #FFD70011;
-  --lux-shadow-card: 0 3px 16px #00000018, 0 2px 10px #FFD70008;
+  --lux-card-bg: #f8f4ea;                              /* Card/overlay: just a bit lighter than bg for separation */
+  --lux-card-shadow: 0 5px 30px 0 #BFA14B20, 0 2px 6px #180e0270;
+  --lux-card-grad: linear-gradient(117deg, #f6efd9 80%, #f1e1c6 120%);
 
-  --lux-text-main: #F9F6ED;                    /* Premium off-white */
-  --lux-text-heading: #FFD700;                  /* Gold headings */
-  --lux-text-secondary: #E5C97BCC;              /* Muted gold secondary text */
-  --lux-text-muted: #BFA14B60;                  /* Faint metallic gold for muted states */
-  --lux-success: #8ECF7B;
-  --lux-warn: #FFE471;
-  --lux-info: #80A6F1;
-  --lux-error: #FF8E64;
+  --lux-text-main: #181a1b;                            /* Onyx for main text, maximizing legibility on the soft bg */
+  --lux-text-heading: #BFA14B;                         /* Deep gold for H1/H2, premium but readable */
+  --lux-text-secondary: #725C2F;                       /* Champagne-taupe brown, subtle for muted elements */
+  --lux-text-muted: #BFA14B88;                         /* Muted gold for helper text, dividers */
 
-  --lux-border-main: #232325;
+  --lux-success: #477829;
+  --lux-warn: #CBA228;
+  --lux-info: #4689b9;
+  --lux-error: #CA5240;
+
+  --lux-border-main: #e3d7ac;
   --lux-border-gold: var(--lux-gold-main);
   --lux-border-radius: 20px;
-  --lux-glass-blur: 20px;
+  --lux-glass-blur: 20px; /* Still used for nav, but minimal effect */
 
   --lux-font-heading: 'Playfair Display', Georgia, serif;
   --lux-font-body: 'Inter', Arial, sans-serif;
 
-  /* Legacy variable mapping for compatibility */
+  /* Legacy variable map for capabilities/components that use generic names */
   --primary: var(--lux-gold-main);
   --secondary: var(--lux-gold-soft);
   --accent: var(--lux-gold-deep);
@@ -52,14 +52,14 @@
   --warn: var(--lux-warn);
   --info: var(--lux-info);
   --border: var(--lux-border-main);
-  --nav-hover: linear-gradient(97deg, #FFD70010 22%, #232323 88%);
+  --nav-hover: linear-gradient(97deg, #fdeec0 22%, #fffbe3 88%);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
 
 /* === BASE BODY & BACKGROUND ===
-   Background: Deep onyx (#181a1b) as base, overlaid with subtle gold gradients/accents.
-   Gold gradients are controlled, never overwhelming.
+   - Rich champagne as main backdrop, using gradients for depth, never stark white
+   - Shadow overlays are faint and gold-inflected for luxury "lift" 
 */
 body {
   margin: 0;
@@ -67,12 +67,10 @@ body {
   font-family: var(--lux-font-body);
   min-height: 100vh;
   letter-spacing: 0.012em;
-  background:
-    var(--lux-gradient-gold-subtle),
-    var(--lux-gold-radial),
-    var(--lux-black-gradient),
-    var(--lux-black);
-  background-blend-mode: lighten, soft-light, normal;
+  background: 
+    var(--lux-bg-champagne-grad),
+    var(--lux-bg-champagne);
+  background-blend-mode: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
@@ -87,53 +85,55 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.09;
-  /* SVG-generated gold-faint shimmer + gold gradient */
-  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.23'/></svg>"),
-    var(--lux-gold-fade);
+  opacity: 0.055;
+  /* SVG-generated gold shimmer + gold fade over champagne */
+  background: url("data:image/svg+xml;utf8,<svg width='160' height='160' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='1' seed='3'/></filter><rect width='160' height='160' filter='url(%23f)' opacity='0.10'/></svg>"),
+    linear-gradient(99deg, #FFEFCF11 5%, #FFD70006 92%);
   background-size: 160px 160px, 100% 100%;
   mix-blend-mode: lighten;
 }
 
-/* === Scrollbar: deep base, metallic gold thumb === */
+
+/* === Scrollbar: gold metallic thumb over champagne track === */
 ::-webkit-scrollbar {
-  background: var(--lux-scroll-bg);
+  background: #f4ecd5;
   width: 10px;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--lux-gold-faint);
+  background: var(--lux-gold-soft);
   border-radius: 7px;
-  border: 1.5px solid var(--lux-gold-border);
-  transition: background .18s, border .14s;
+  border: 1.7px solid var(--lux-gold-border);
+  transition: background .17s, border .16s;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--lux-gold-main);
 }
 
-/* === MAIN APP CONTAINER: black glass with gold trim, now onyx base === */
+/* === MAIN APP CONTAINER: champagne card with gold trim, soft shadows === */
 .main-container {
   min-height: 100vh;
-  background: var(--lux-black-radial), var(--lux-card-gradient), var(--lux-black-gradient);
-  box-shadow: var(--lux-shadow-main);
+  background: var(--lux-card-grad), var(--lux-card-bg);
+  box-shadow: var(--lux-card-shadow);
   border-radius: 32px 32px 0 0;
   margin: 0 auto;
   max-width: 1260px;
-  border: 2.5px solid var(--lux-gold-border);
+  border: 2.5px solid var(--lux-gold-soft);
   animation: gradient-fadein-app .97s cubic-bezier(.38,1,.29,1.04);
   position: relative;
   z-index: 1;
 }
+
 @keyframes gradient-fadein-app { 
   0% { opacity: 0; filter: blur(12px);}
   100% { opacity: 1; filter: blur(0);}
 }
 
-/* === NAVIGATION BAR: Onyx background, gold trims/highlights === */
+/* === NAVIGATION BAR: luxe onyx font, soft gold trims, high legibility === */
 .navbar {
   font-family: var(--lux-font-heading);
-  background: var(--lux-black-gradient);
-  color: var(--lux-gold-main);
+  background: #fffcee88;
+  color: var(--lux-onyx);
   height: 64px;
   padding: 0 38px;
   display: flex;
@@ -144,7 +144,7 @@ body::before {
   box-sizing: border-box;
   z-index: 110;
   border-bottom: 3px solid var(--lux-gold-main);
-  box-shadow: 0 3px 15px #0008, 0 1.5px 6px #FFD70011;
+  box-shadow: 0 3px 11px #f1e1c684, 0 1.5px 5px #FFD70018;
   backdrop-filter: blur(var(--lux-glass-blur));
 }
 .spacer-navbar { height: 64px; }
@@ -159,30 +159,30 @@ body::before {
   font-family: var(--lux-font-heading);
   font-weight: 700;
   font-size: 1.36rem;
-  background: linear-gradient(94deg, #FFD700 80%, #E5C97B 120%);
+  background: linear-gradient(94deg, #bfa14b 80%, #e5c97b 120%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 2.5px;
   padding-left: 2px;
 }
 
-/* === USER PROFILE MINI: Gold trimmed black glass, crisp contrast === */
+/* === USER PROFILE MINI: Soft card with gold trim, luxury accent === */
 .user-profile-mini {
   display: flex; align-items: center; gap: 16px;
-  background: linear-gradient(120deg, #23231a 80%, #FFD7000B 120%);
+  background: linear-gradient(120deg, #fcf5ea 80%, #FFD7000B 120%);
   padding: 9px 19px 8px 13px;
   border-radius: 999px;
-  border: 2px solid var(--lux-gold-main);
-  box-shadow: 0 3px 10px #0007, 0 1.5px 7px #FFD70016;
+  border: 2px solid var(--lux-gold-soft);
+  box-shadow: 0 3px 10px #ceb46e29, 0 1.5px 7px #FFD7001B;
   min-width: 210px;
   font-family: var(--lux-font-body);
   transition: box-shadow .19s, border .17s;
 }
 .avatar-skeleton {
   width: 39px; height: 39px; border-radius: 50%;
-  background: radial-gradient(circle at 60% 35%, #FFD700 75%, #BFA14B 150%);
-  border: 3.1px solid #fffcec;
-  box-shadow: 0 2px 9px #FFD70025, 0 1.5px 5px #FFE47114;
+  background: radial-gradient(circle at 60% 35%, #FFD700 74%, #BFA14B 140%);
+  border: 3.1px solid #f6e6c3;
+  box-shadow: 0 2px 9px #FFD70016, 0 1.5px 5px #FFE4710C;
   position: relative;
   overflow: hidden;
 }
@@ -191,14 +191,14 @@ body::before {
   font-family: var(--lux-font-heading);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--lux-gold-main);
+  color: var(--lux-gold-deep);
   letter-spacing: 0.07em;
 }
 .badge-row { display: flex; gap: 2px;}
 .badge {
   font-size: 1.17rem;
   margin-left: 4px;
-  color: var(--lux-gold-soft);
+  color: var(--lux-gold-main);
   opacity: .93;
   transition: filter .17s;
 }
@@ -209,22 +209,22 @@ body::before {
   color: var(--lux-success);
   margin-left: 14px;
   padding: 2px 12px;
-  background: #181a1bA0;
+  background: #eee2c680;
   border-radius: 10px;
   border: 1.3px solid var(--lux-gold-main);
   font-weight: 700;
   box-shadow: none;
 }
 
-/* === MAIN NAVIGATION BAR: Onyx with gold, active states bold for accessibility === */
+/* === MAIN NAVIGATION BAR: luxury background, elegant gold trims === */
 .main-nav {
   position: sticky;
   top: 64px;
-  background: var(--lux-black-gradient);
-  border-bottom: 2.5px solid var(--lux-gold-main);
+  background: #f6efd9b9;
+  border-bottom: 2.5px solid var(--lux-gold-deep);
   z-index: 98;
   width: 100%;
-  box-shadow: 0 2px 20px 0 #FFD7001B;
+  box-shadow: 0 2px 20px 0 #bfa14b1d;
   backdrop-filter: blur(var(--lux-glass-blur));
   animation: gradient-fadein-app .69s cubic-bezier(.51,.95,.22,1.07);
 }
@@ -238,7 +238,7 @@ body::before {
   cursor: pointer;
   padding: 12px 22px 11px 14px;
   margin: 2px 0;
-  color: var(--lux-gold-main);
+  color: var(--lux-gold-deep);
   font-family: var(--lux-font-heading);
   border-radius: 17px 17px 0 0;
   transition: 
@@ -250,9 +250,9 @@ body::before {
   font-weight: 600;
   letter-spacing: .031em;
   border: 1.5px solid transparent;
-  background: linear-gradient(96deg, #FFD7000E 32%, #232323 100%);
+  background: linear-gradient(96deg, #fff6db 32%, #eee2c6 100%);
   outline: none;
-  box-shadow: 0 1.5px 7px 0 #0008;
+  box-shadow: 0 1.5px 7px 0 #f4ecd45d;
   position: relative;
   z-index: 2;
 }
@@ -268,10 +268,10 @@ body::before {
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(91deg, #FFD70022 52%, #222222 130%);
-  color: var(--lux-gold-main);
+  background: linear-gradient(91deg, #fdebb9 52%, #fffbe3 130%);
+  color: var(--lux-onyx);
   border-color: var(--lux-gold-main);
-  box-shadow: 0 5px 13px -3px #0008, 0 2px 7px #FFD70029;
+  box-shadow: 0 5px 12px -2px #d6c27875, 0 2px 5px #FFD70019;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -282,14 +282,14 @@ body::before {
 }
 .main-nav li:focus-visible {
   border-color: var(--lux-gold-main);
-  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #0008;
+  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #f1e1c629;
 }
 .nav-icon { font-size: 1.19em; }
 
-/* === LUX GOLD BUTTONS: big contrast on onyx === */
+/* === LUX GOLD BUTTONS: gold text, champagne bordered, black hover === */
 .btn-ghost, .btn-ghost:visited {
-  background: linear-gradient(95deg, #FFD70010 80%, #181a1b 120%);
-  color: var(--lux-gold-main);
+  background: linear-gradient(95deg, #fff5d382 80%, #eee2c6 120%);
+  color: var(--lux-gold-deep);
   font-family: var(--lux-font-heading);
   font-weight: 700;
   cursor: pointer;
@@ -299,7 +299,7 @@ body::before {
   padding: 8px 24px;
   margin-left: auto;
   margin-right: 0;
-  box-shadow: 0 2px 8px 0 #0006;
+  box-shadow: 0 2px 8px 0 #e3d7ac58;
   outline: none;
   position: relative;
   z-index: 1;
@@ -311,31 +311,31 @@ body::before {
 }
 .btn-ghost:focus,
 .btn-ghost:hover {
-  color: #1c1814;
-  background: linear-gradient(95deg, #FFD700 91%, #E5C97B 122%);
+  color: var(--lux-bg-champagne);
+  background: linear-gradient(98deg, #BFA14B 88%, #FFD700 122%);
   text-decoration: none;
   border-color: var(--lux-gold-deep);
-  box-shadow: 0 2px 7px #FFD70029 inset, 0 2px 10px #0001;
+  box-shadow: 0 2px 7px #FFD70018 inset, 0 2px 10px #e6dcc21b;
 }
 .btn-ghost:active {
-  background: linear-gradient(101deg, #BFA14B 65%, #FFD700 150%);
+  background: linear-gradient(101deg, #FFD700 65%, #BFA14B 150%);
   color: var(--text-secondary);
-  box-shadow: 0 1px 6px #23232511 inset;
+  box-shadow: 0 1px 6px #e5d5b841 inset;
   border-color: var(--lux-gold-main);
 }
 .btn-ghost:focus-visible {
-  box-shadow: 0 0 0 3px #FFD700;
+  box-shadow: 0 0 0 3px #FFD700, 0 0 0 7px #fffbe358;
   border-color: var(--lux-gold-soft);
 }
 
-/* === GOLD/ONYX CARDS: onyx base, gold trims, see-through overlays === */
+/* === GOLD/ONYX CARDS: champagne base, gold trims, see-through overlays === */
 .tab-content,
 .map-view,
 .micro-community-info {
-  background: rgba(30,27,34,0.80); /* Deep onyx glass */
+  background: rgba(246,243,230,0.93); /* premium card on champagne bg */
   border-radius: var(--lux-border-radius);
-  border: 1.7px solid var(--lux-gold-main);
-  box-shadow: 0 5px 18px 0 #0003, 0 2px 10px #FFD70009;
+  border: 1.7px solid var(--lux-gold-deep);
+  box-shadow: 0 5px 15px 0 #f6efd99f, 0 2px 8px #BFA14B0a;
   padding: 26px 31px;
   margin: 14px 0;
   transition: 
@@ -347,22 +347,22 @@ body::before {
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 7px 23px 0 #0006, 0 1.4px 10px #FFD70015 inset;
-  border-color: var(--lux-gold-soft);
-  background: var(--lux-black-radial), rgba(30,27,34,0.93);
-  transform: translateY(-2.5px) scale(1.015);
+  box-shadow: 0 9px 28px 0 #f6efd9a2, 0 1.6px 10px #FFD70016 inset;
+  border-color: var(--lux-gold-main);
+  background: linear-gradient(115deg, #fffbe3 90%, #f6efd9 110%);
+  transform: translateY(-2.5px) scale(1.012);
 }
 
-/* === HEADINGS & INFO: gold or premium faint golds only === */
+/* === HEADINGS & INFO: deep gold or onyx headings, premium feel === */
 .tab-content h2,
 .micro-community-info h3 {
-  color: var(--lux-gold-main);
+  color: var(--lux-text-heading);
   font-family: var(--lux-font-heading);
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
   font-size: 1.67em;
-  transition: color .18s;
+  transition: color .16s;
 }
 .tab-content p, .micro-community-info p,
 .tab-content ul, .tab-content li, 
@@ -376,9 +376,9 @@ body::before {
 .map-skeleton {
   height: 120px;
   border-radius: 10px;
-  background: linear-gradient(109deg, #FFD70044 11%, #232323dd 75%);
+  background: linear-gradient(109deg, #FFD70044 11%, #faecce 75%);
   margin-bottom: 12px;
-  box-shadow: 0 2px 15px #FFD70014, 0 4px 13px #FFD7001D inset;
+  box-shadow: 0 2px 15px #FFD70013, 0 4px 13px #ffd70024 inset;
 }
 
 /* === FOCUS STATES: Only solid gold border, NO blur === */
@@ -388,9 +388,9 @@ body::before {
   box-shadow: 0 0 0 2.5px #FFD700;
 }
 
-/* === FOOTER: Deep onyx with faint gold top border, premium style === */
+/* === FOOTER: subtle champagne bg, gold top border, luxe style === */
 .footer {
-  background: linear-gradient(91deg, #222222 85%, #FFD70008 139%);
+  background: linear-gradient(91deg, #faf7ee 85%, #FFD70008 139%);
   color: var(--lux-gold-main);
   border-top: 2px solid var(--lux-gold-main);
   padding: 17px 0 15px;
@@ -401,7 +401,7 @@ body::before {
   letter-spacing: .038em;
 }
 
-/* === RESPONSIVE ADJUSTMENTS - Minimize radii and padding for smaller screens === */
+/* === RESPONSIVE ADJUSTMENTS === */
 @media (max-width: 980px) {
   .main-container { 
     border-radius: 0; 
@@ -419,25 +419,24 @@ body::before {
 
 /* === ACCESSIBLE LINKS === */
 a, .main-nav li .nav-label {
-  color: var(--lux-gold-soft);
+  color: var(--lux-gold-main);
   text-decoration: underline;
   font-weight: 530;
   transition: color .18s;
 }
 a:hover, .main-nav li.active .nav-label, a:focus {
-  color: var(--lux-gold-main);
+  color: var(--lux-gold-deep);
   text-decoration: underline;
 }
 
 /*
-  === DESIGNER/DEV NOTES: ONYX & GOLD LUXURY COLOR SYSTEM RATIONALE ===
-  - #181a1b onyx is the anchor color, lighter than pure #000, but still ultra-dark for an upscale feel.
-  - Gold is reserved for accents, trims, headings, and action highlights—backgrounds never use harsh yellows.
-  - All gradients are subtle, so the space of the UI remains dark and exclusive, only accented by gold.
-  - No gold glows - only crisp, controlled highlights.
-  - Playfair Display (headings) for signature premium, Inter for body for legibility.
-  - All cards, overlays, and navigation use variably opaque black/charcoal glass for layering.
-  - Text is exclusively gold or white for maximum accessibility (passes WCAG AA/AAA).
-  - Decorative overlays (noise, shimmer) are kept faint for a tactile, not decorative, finish.
-  - Contrast is maximized for navigation, tab, and CTA focus states.
+  === DESIGNER/DEV NOTES: LUXE CHAMPAGNE COLOR SYSTEM RATIONALE ===
+  - #eee2c6 is the main visual anchor for a premium, soft, inviting luxury (not cold clinical white).
+  - Deep onyx/soft brown-black offers modern contrast for headings, cards, navigation.
+  - Gold (main/soft/deep) is for highlights, calls-to-action, trims, and "specialness"—never overwhelming.
+  - All gradients/overlays are subdued for tactile feel, not decoration.
+  - Headings use Playfair Display for upscale, text uses Inter for legibility.
+  - Cards, nav, overlays are layered in slightly contrasting soft shades for reward clarity, universal accessibility, and luxury.
+  - All color combinations pass large-text WCAG AA; don't use #FFD700 for body text.
+  - Maintain strong spacing, soft radius, rich shadow for depth on light background.
  */
