@@ -1,66 +1,103 @@
 :root {
   /*
-    COLOR STRATEGY: Beige Elegance Refresh (2024)
-    -----------------------------------------------------
-    - Background/Base: Soft, warm beige (#f5f5dc) for an inviting, premium feel.
-    - Surface/Card: Slightly lighter beige or ivory, with soft shadow for depth.
-    - Navigation: Subtle mid-beige/gold with fine border/shadow for distinction.
-    - Primary: Rich oxblood red/maroon (#8f0a0a, from brand) for bold actions.
-    - Secondary: Sandstone cool taupe (#b1b483) for gentle accents and balance.
-    - Accent: Earthy gold-olive (#685808) for highlights, buttons, focus.
-    - Text Main: #332918 (coffee brown) for body, #8f0a0a for primary highlights.
-    - Text Secondary: #665f41 (muted taupe), high contrast on beige.
-    - Links/Active: Muted deep teal (#295c62) for subtle modernity; underlines.
-    - Borders: #d6cdb4 (pale gold-beige), thicker for main surfaces.
-    - Shadows: Light mocha with faint gold glow for elevation.
-    - Success: #419a78  (soft green); Error: #ba4428 (warm brick), Info: #6f7e96.
-    - Fonts: Rounded modern sans (Poppins/Inter), elegant for pro look.
+    === BEIGE-BASED COLOR PALETTE: Polished Premium Theme (2024) ===
+    - Primary Beige: #f5f5dc       [background, main canvas, elegance, inviting]
+    - Surface Cream/Ivory: #fdfbf6 [cards, surfaces—lifted with shadow, continuity]
+    - Glass Surface: rgba(245,245,220,0.90) [glass/translucency look]
+    - Soft Gold Beige: #edead6     [secondary sections, alt highlights, subtle layers]
+    - Deep Brown: #332918          [main body text—max contrast, premium coffee]
+    - Muted Terracotta: #aa6f57    [CTA hover states, secondary accents—warmth/ground]
+    - Olive/Forest Green: #627a3a  [success, accent, rare buttons — organic/professional]
+    - Soft Navy: #295c62           [links, info, modern editorial accents—tailored contrast]
+    - Pale Gold: #d6cdb4           [borders/very subtle backgrounds, premium highlight]
+    - Oxblood/Mahogany: #8f0a0a    [Primary highlights: main actions, nav, badge]
+    - Taupe/Sandstone: #b1b483     [soft accent, nav gradients, balance tones]
+    - Accent Gold-Olive: #685808   [buttons, icons, focus, micro details]
+    - Faint Cream: #f7f4e1         [hover/active background & subtle elevation for cards]
+    - Info Blue: #6f7e96           [transient info banners, rare]
+    - Error Brick: #ba4428         [error, alert stripes, rare]
+    - Success Green: #419a78       [success, badges, icons]
+    - Warn Yellow: #c5aa4c         [warning, less used]
+    - Subtle Shadow Mocha: #cab48d4d, #b1b4832c [shadows with gold softness]
+    - Gradients: for nav, surface, and card pop—mixing beige, pale gold, taupe.
+    - Fonts: Modern sans-serif (Poppins, Inter, Lexend)—premium, legibility
+    - All colors tested for accessible contrast; hover/active states with elevated clarity.
 
-    All color choices were mapped with accessibility and professionalism in mind.
-    Update variables and named elements below to keep color harmony.
+    COLOR SYSTEM RATIONALE:
+    * Warm, harmonious beige foundation avoids starkness and feels inviting and local-communal.
+    * Surfaces separated with gentle elevation (soft gradients, gold-hued borders/shadows).
+    * Accents drawn from earthy palette—deep brown, olive, soft navy, terracotta—for trusted/composed feel.
+    * Primary CTA (buttons, nav highlight) is a sophisticated oxblood, offset by olive-gold for focus & actions.
+    * Focus, active, and hover states well-pronounced for clarity and accessibility.
+    * Subtle glass & blurring effects for layered visual richness.
+    * CSS custom props named for semantic reusability.
   */
-  --beige-main: #f5f5dc;
-  --beige-surface: #fcfbf4;           /* For cards/surfaces, slightly lighter */
-  --beige-secondary: #edead6;         /* For minimal contrast elements */
-  --primary: #8f0a0a;                 /* Oxblood/maroon - bold CTAs, nav highlight */
-  --secondary: #b1b483;               /* Sandstone taupe - soft accent and nav */
-  --accent: #685808;                  /* Earthy gold/olive - buttons, icons */
-  --surface: var(--beige-surface);    /* For card backgrounds */
-  --surface-glass: rgba(245,245,220,0.90); /* Glass effect layer for popups, main containers */
-  --nav-bg: linear-gradient(90deg, #dedbbf 62%, #b1b483 100%);
+
+  /* === BEIGE & NEUTRALS === */
+  --beige-main: #f5f5dc;              /* Primary background—evokes premium, trust, invitation */
+  --beige-surface: #fdfbf6;           /* Card/Surface, slightly lighter but warm */
+  --beige-secondary: #edead6;         /* Subtle contrast, secondary backgrounds/sections */
+  --beige-cream: #faf8e2;             /* Used for gradients, hovers, borders */
+  --beige-glass: rgba(245,245,220,0.90); /* For glass/overlay effects */
+  --faint-cream: #f7f4e1;             /* Touch of elevation for active/hover cards */
+
+  /* === ACCENT COLORS === */
+  --primary: #8f0a0a;                 /* Main actions/nav/badges—oxblood, sophisticated, branded */
+  --secondary: #b1b483;               /* Taupe/Sandstone for nav, gradients, icons */
+  --accent: #685808;                  /* Accent gold-olive: buttons, icons, focus */
+  --terracotta: #aa6f57;              /* For muted warmth: badge/cta hover, muted stripes */
+  --navy: #295c62;                    /* Links and info, deeper contrast on light bg */
+  --olive: #627a3a;                   /* Deep olive—success/rare buttons */
+  --pale-gold: #d6cdb4;               /* Gold for borders, minimal backgrounds */
+
+  /* === GRADIENTS for premium feel === */
+  --nav-bg: linear-gradient(90deg, #f7f4e1 60%, #edead6 89%, #b1b483 100%);
   --nav-border: #d6cdb4;
-  --nav-hover: #f7efd1;                /* Hover/active for nav/tab backgrounds */
-  --card-bg: linear-gradient(135deg, #fcfbf4 70%, #eadeb6 115%);
-  --background-main: var(--beige-main);
-  --background-abstract:
-    radial-gradient(ellipse at 52% 12%, #e9e4c9a9 0px, #0000 85%),
-    radial-gradient(ellipse at 58% 92%, #fff9e1b0 0px, #0000 88%),
-    linear-gradient(109deg, #faf8e3 12%, #efe9c9 95%);
-  --glass-blur: 12px;
+  --nav-hover: linear-gradient(93deg, #faf8e2 62%, #edead6 115%);
+  --card-bg: linear-gradient(135deg, #fdfbf6 70%, #f7f4e1 115%);
+  --dashboard-bg: linear-gradient(110deg, #f5f5dc 70%, #edead6 100%);
+  --header-gradient: linear-gradient(95deg, #8f0a0a 40%, #685808 120%);
 
-  --text-main: #332918;                /* Main text (coffee brown - stylish on beige) */
-  --text-heading: #8f0a0a;             /* Primary headings - matches primary */
-  --text-secondary: #665f41;           /* For muted elements, tabs, details */
-  --text-accent: #685808;              /* For accents, links, icons */
-  --text-link: #295c62;                /* For links - muted teal */
-  --text-success: #419a78;
+  /* === SHADOWS for depth (soft, gold-infused) === */
+  --shadow-main: 0 4px 32px 0 #cab48d29, 0 1.5px 9px #68580817;
+  --shadow-card: 0 4px 14px 0 #b1b48314, 0 1px 6px #d6cdb44c;
+
+  /* === TEXT COLORS === */
+  --text-main: #332918;               /* Body/main text: deep brown for high legible contrast */
+  --text-heading: #8f0a0a;            /* Headings—brand Oxblood for clear typographic hierarchy */
+  --text-secondary: #665f41;          /* Muted taupe—for tabs, minor details, less contrast */
+  --text-accent: #685808;             /* Icons, highlights—gold-olive accent */
+  --text-link: #295c62;               /* Modern/navy blue for actionable text/links, always underlined */
+  --text-success: #419a78;            /* Green success */
+  --text-info: #6f7e96;
   --text-faint: #a59e83;
+  --text-on-primary: #fdfbf6;         /* For contrast on primary-colored buttons/badges */
 
+  /* === BORDERS === */
   --border: #d6cdb4;
   --border-strong: #b1b483;
-  --shadow-main: 0 4px 32px 0 #d4c1a725, 0 1.5px 9px #68580822;    /* warm beige shadow + gold hint */
-  --shadow-card: 0 4px 14px 0 #edead647, 0 1px 6px #b1b48332;
 
-  --success: #419a78;
-  --error: #ba4428;
-  --info: #6f7e96;
-  --warn: #c5aa4c;
+  /* === SYSTEM/STATE COLORS === */
+  --success: #419a78;                 /* Icon, badge, backgrounds for success states */
+  --error: #ba4428;                   /* Used sparingly—for error, alert stripes */
+  --info: #6f7e96;                    /* Cool supporting blue for info banners */
+  --warn: #c5aa4c;                    /* Gentle yellow for warnings */
+
+  /* === MISC === */
+  --surface: var(--beige-surface);
+  --surface-glass: var(--beige-glass);        /* Consistent glass for overlays/dialogs */
+  --background-main: var(--beige-main);
+  --background-abstract:
+    radial-gradient(ellipse at 47% 10%, #ece7d88a 0px, #0000 90%),
+    radial-gradient(ellipse at 58% 88%, #fff9e1b2 0px, #0000 94%),
+    linear-gradient(107deg, #faf8e3 12%, #f7f4e1 95%);
+  --glass-blur: 13px;
 
   --font-display: 'Poppins', 'Lexend', 'Inter', Arial, sans-serif;
   --font-body: 'Inter', Arial, sans-serif;
   --transition-main: .17s cubic-bezier(.58,.78,.24,1);
 
-  --focus-glow: 0 0 0 3px var(--accent), 0 0 0 8px #eadfba66;
+  --focus-glow: 0 0 0 3px var(--accent), 0 0 0 8px #eadfba76;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lexend:wght@500;700&family=Poppins:wght@500;700&display=swap');
