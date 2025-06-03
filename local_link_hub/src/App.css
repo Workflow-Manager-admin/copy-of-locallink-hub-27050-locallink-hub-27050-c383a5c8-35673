@@ -513,12 +513,25 @@ body::after {
   color: var(--text-heading);
   font-family: var(--font-display);
   margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1.5px 0 #f7f4e145;
+  transition: color .17s, text-shadow .19s;
 }
-
 .map-legend {
   color: var(--text-secondary);
   font-family: var(--font-body);
   margin-bottom: 7px;
+}
+
+a, .main-nav li .nav-label {
+  color: var(--text-link);
+  text-decoration: underline;
+  font-weight: 540;
+  transition: color .18s;
+}
+a:hover, .main-nav li.active .nav-label, a:focus {
+  color: var(--primary);
+  text-decoration: underline;
 }
 .map-skeleton {
   height: 120px;
