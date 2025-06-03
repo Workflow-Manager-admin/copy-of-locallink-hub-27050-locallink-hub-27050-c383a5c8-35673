@@ -496,7 +496,17 @@ body::after {
   box-shadow: var(--shadow-card);
   padding: 18px 22px;
   margin: 10px 0;
-  transition: box-shadow .18s, border .13s, transform .12s;
+  transition: box-shadow .20s, border .13s, transform .12s;
+}
+
+.tab-content:hover,
+.map-view:hover,
+.micro-community-info:hover {
+  background: var(--faint-cream);
+  box-shadow: 0 8px 32px 0 #d6cdb433, 0 1.3px 7px 0 #b1b48328;
+  border-color: var(--accent);
+  transform: translateY(-2.5px) scale(1.018);
+  transition: box-shadow .23s, border .14s, background .17s, transform .16s;
 }
 
 .micro-community-info h3 {
