@@ -609,14 +609,14 @@ a:hover, .main-nav li.active .nav-label, a:focus {
   box-shadow: 0 2px 15px #FFD70013, 0 4px 13px #ffd70024 inset;
 }
 
-/* === FOCUS STATES: Only solid gold border, NO blur === */
+/* === FOCUS STATES: Maroon for interactive focus, gold for action/CTA focus; maroon assists accessibility and contrast === */
 *:focus-visible {
   outline: none;
-  border-color: var(--lux-gold-main) !important;
-  box-shadow: 0 0 0 2.5px #FFD700;
+  border-color: var(--lux-maroon-dark) !important;
+  box-shadow: 0 0 0 3px #921d36cc, 0 0 0 5.5px #FFD70033;
 }
 
-/* === FOOTER: subtle champagne bg, gold top border, luxe style === */
+/* === FOOTER: subtle champagne bg, gold top border, luxe style; consider maroon for footer icons or section separators if footer expands === */
 .footer {
   background: linear-gradient(91deg, #faf7ee 85%, #FFD70008 139%);
   color: var(--lux-gold-main);
