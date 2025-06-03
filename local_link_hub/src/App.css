@@ -83,6 +83,89 @@ body {
   z-index: 0;
 }
 
+/* LUXURY TOAST/MESSAGE STYLES */
+.lux-toast-msg {
+  position: fixed;
+  top: 78px;
+  right: 36px;
+  min-width: 278px;
+  max-width: 96vw;
+  z-index: 1103;
+  background:
+    linear-gradient(97deg, #fffbe3 88%, #ffd70022 160%),
+    var(--lux-gold-main);
+  color: var(--lux-maroon-dark);
+  font-family: var(--lux-font-heading);
+  font-size: 1.11em;
+  font-weight: 600;
+  border-radius: 13px 27px 13px 27px;
+  border: 2.1px solid var(--lux-gold-main);
+  box-shadow: 0 7px 40px #BFA14B38, 0 1.5px 8px #921d3611;
+  padding: 16px 38px 14px 22px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-32px) scale(.96);
+  transition: opacity 0.19s, transform .18s;
+}
+
+.lux-toast-msg[data-type="warn"] {
+  border-color: var(--lux-maroon-dark);
+  color: var(--lux-maroon-dark);
+  background: linear-gradient(99deg, #f7e2df 65%, #bfa14b22 140%);
+}
+.lux-toast-msg[data-type="success"] {
+  border-color: var(--lux-success);
+  color: var(--lux-success);
+  background: linear-gradient(97deg, #e9f9e3 70%, #bfa14b23 140%);
+}
+.lux-toast-msg[data-type="error"] {
+  border-color: var(--lux-error);
+  color: var(--lux-error);
+  background: linear-gradient(99deg, #ffcfc0 70%, #bfa14b22 140%);
+}
+.lux-toast-msg.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1.01);
+  animation: toastpoplux .7s cubic-bezier(.5,.93,.39,1.12);
+}
+@keyframes toastpoplux {
+  from { opacity: 0; transform: translateY(-32px) scale(.96);}
+  60%  { opacity: 1; transform: translateY(6px) scale(1.02);}
+  to   { opacity: 1; transform: translateY(0) scale(1.01);}
+}
+
+@media (max-width: 900px) {
+  .lux-toast-msg {
+    top: 64px;
+    right: 10vw;
+    padding: 12px 18px 11px 12px;
+    font-size: 0.98em;
+  }
+}
+@media (max-width: 600px) {
+  .lux-toast-msg {
+    top: 47px;
+    right: 4vw;
+    left: 4vw;
+    min-width: 0;
+    font-size: 0.97em;
+    padding: 10px 6vw 10px 6vw;
+    text-align: center;
+    max-width: 92vw;
+  }
+}
+
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+
 /* == SIDEBAR NAVIGATION LUXURY STYLES ==
    - Champagne/cream ultra-soft background for sidebar (lux-bg-champagne)
    - Maroon + gold for focus and selected highlight
