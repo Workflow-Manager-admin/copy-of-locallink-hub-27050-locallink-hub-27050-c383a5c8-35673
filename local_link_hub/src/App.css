@@ -420,9 +420,9 @@ body::after {
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  text-shadow: 0 2.2px 0 #ecd08c44;
+  /* Remove text-shadow glowing effect */
   font-size: 1.7em;
-  transition: color .19s, text-shadow .18s;
+  transition: color .19s;
 }
 .tab-content p, .micro-community-info p,
 .tab-content ul, .tab-content li, 
@@ -453,8 +453,8 @@ body::after {
 /* ============= FOCUS & ACCESSIBILITY ============= */
 *:focus-visible {
   outline: none;
-  box-shadow: var(--lux-gold-focus), 0 3px 13px 0 #ecd08c22;
   border-color: var(--lux-gold-leaf);
+  box-shadow: 0 0 0 2.5px #ecd08c;
 }
 
 /* ============= DASHBOARD/PAGE LAYOUT ============= */
