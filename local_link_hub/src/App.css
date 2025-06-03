@@ -278,6 +278,21 @@ body::before {
   position: relative;
   z-index: 1;
 }
+.sidebar-layout .main-content {
+  margin-left: 230px;
+  margin-right: 0;
+  /* Soft padding to preserve luxury whitespace */
+  padding: 35px 2vw 5vw 2vw;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100vw;
+}
+@media (max-width: 900px) {
+  .sidebar-layout .main-content {
+    margin-left: 0;
+    padding-left: 3vw;
+  }
+}
 
 @keyframes gradient-fadein-app { 
   0% { opacity: 0; filter: blur(12px);}
