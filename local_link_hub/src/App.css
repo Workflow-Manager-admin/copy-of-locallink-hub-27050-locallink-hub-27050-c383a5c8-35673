@@ -320,10 +320,10 @@ body::after {
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(94deg, #ecd08c33 82%, #222738bb 152%);
+  background: linear-gradient(94deg, #ecd08c27 82%, #222738bb 152%);
   color: var(--lux-gold-main);
   border-color: var(--lux-gold-leaf);
-  box-shadow: 0 6px 22px 0 #ecd08c44, 0 2.5px 13px var(--lux-gold-main), var(--lux-shadow-card);
+  box-shadow: 0 5px 13px -3px #0005, 0 2px 6px var(--lux-gold-main) inset;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -334,11 +334,11 @@ body::after {
 }
 .main-nav li:focus-visible {
   border-color: var(--lux-gold-main);
-  box-shadow: var(--lux-gold-focus), 0 3px 13px var(--lux-gold-main);
+  box-shadow: 0 0 0 3px #ecd08c, 0 2px 5px #0005; /* crisp gold, no glow */
 }
 .nav-icon {
   font-size: 1.19em;
-  filter: drop-shadow(0 1.2px 5px #ecd08c22);
+  /* No drop-shadow on icons */
 }
 
 /* ============= LUXURY BUTTONS ============= */
