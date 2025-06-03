@@ -172,13 +172,93 @@ function AlertBanner() {
   );
 }
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * LuxuryDashboardEnhanced: Replaces/extends DashboardTab for a richer, well-aligned luxury dashboard.
+ * - Closes empty spaces with stat cards, trust badges, welcome area, and subtle illustration.
+ * - Mock KPI cards and illustration area are commented for future modularization.
+ * - Layout flex/grid ensures balanced premium feel on all screens.
+ */
 function DashboardTab() {
   return (
-    <div className="dashboard">
+    <div className="dashboard luxury-dashboard">
+
+      {/* Top luxury welcome & stat row */}
+      <section className="lux-row luxury-dashboard-row" aria-label="Quick Stats and Welcome Panel">
+        {/* Elegant stat cards with subtle gold/maroon frame */}
+        <div className="lux-stat-card">
+          <div className="lux-stat-icon" aria-hidden="true">🪙</div>
+          <div>
+            <span className="lux-stat-label">Barter Tokens</span>
+            <div className="lux-stat-value">6.5</div>
+          </div>
+        </div>
+        <div className="lux-stat-card">
+          <div className="lux-stat-icon" aria-hidden="true">👥</div>
+          <div>
+            <span className="lux-stat-label">Your Neighbors</span>
+            <div className="lux-stat-value">189</div>
+          </div>
+        </div>
+        <div className="lux-stat-card">
+          <div className="lux-stat-icon" aria-hidden="true">🏆</div>
+          <div>
+            <span className="lux-stat-label">Impact Score</span>
+            <div className="lux-stat-value">4,205</div>
+          </div>
+        </div>
+        {/* Mock premium badge panel fills right of row */}
+        <div className="lux-badge-panel">
+          <span className="lux-badge verified" title="Verified Neighborhood Trust">✔️ Trusted</span>
+          <span className="lux-badge elite" title="Elite Contributor">🌟 Elite</span>
+        </div>
+      </section>
+      {/* Welcome & Profile Hero section */}
+      <section className="lux-dashboard-hero" aria-label="Profile Hero, Welcome, and Decorative Illustration">
+        <div className="lux-welcome-text">
+          <h2>Welcome back, <span style={{ color: "var(--lux-maroon)" }}>Alex</span>!</h2>
+          <p>
+            You are at the heart of <span className="lux-emphasize">Westside Oakridge</span>'s micro‑community.<br />
+            <span className="lux-quote">"Luxury is quietly local."</span>
+          </p>
+        </div>
+        {/* Decorative abstract luxury illustration panel (non-functional, for layout balance) */}
+        <div className="lux-illustration" aria-label="Luxury Illustration">
+          {/* Premium SVG, faint gold/maroon luxury swirls (editable for branding) */}
+          <svg width="128" height="72" viewBox="0 0 128 72" fill="none" style={{ opacity: 0.23 }}>
+            <ellipse cx="64" cy="36" rx="60" ry="18" fill="#FFD70033" />
+            <ellipse cx="39" cy="38" rx="16" ry="5" fill="#921d3622" />
+            <ellipse cx="89" cy="33" rx="12" ry="7" fill="#BFA14B33" />
+            <ellipse cx="64" cy="47" rx="32" ry="7" fill="#EDD9A477" />
+            <path d="M24,54 Q54,36 104,56" stroke="#BFA14B" strokeWidth="2" fill="none" opacity="0.19" />
+          </svg>
+        </div>
+      </section>
+      {/* Banner Components as before */}
       <AIBannerSuggestion />
       <AlertBanner />
+      {/* Main content (MapView) */}
       <MapView />
+
+      {/* Subsection: Luxury Info Widgets Row */}
+      <section className="lux-info-row">
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">🔖</span>
+          <span className="widget-title">Verified Skill</span>
+          <span className="widget-desc">Gardening</span>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">🕒</span>
+          <span className="widget-title">Next Event</span>
+          <span className="widget-desc">Compost Workshop, Mon 27th</span>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">💡</span>
+          <span className="widget-title">Eco Tip</span>
+          <span className="widget-desc">Reuse containers with neighbors</span>
+        </div>
+        {/* Room for dynamic API widgets */}
+      </section>
     </div>
   );
 }
