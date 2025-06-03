@@ -1,13 +1,14 @@
 :root {
-  /* === LUXE CHAMPAGNE/THE NEW PREMIUM "SOFT LIGHT" PALETTE WITH MAROON ACCENTS ===
-     - Core background is a sophisticated champagne (#eee2c6).
-     - New: Maroon (#800000 / #921d36) as secondary color for navigation, buttons, tabs, highlights.
-     - Accent trims: Gold family. Contrasting: Onyx. Maroon used for active, interactive, or highlighted states.
-     - All variables (and usage) include comments for maintainability and design reasoning.
+  /* === ULTRA-SOFT CHAMPAGNE/CREAM "QUIET LUXURY" BASE PALETTE ===
+     - EXTREMELY understated, low-contrast background: #faf8f3 (champagne-cream) for a nearly-white but warm/luxurious backdrop.
+     - NO strong gradients, overt patterns, or visible texture—only a barely-noticeable, luminous surface.
+     - Maroon/gold/onyx accents appear more vivid on softly luminous background, never clash or overpower.
+     - All color rationale is documented for easy future adjustment.
+     - Use gradients/overlay ONLY for minimal tactile depth, almost invisible to the eye.
   */
-  --lux-bg-champagne: #eee2c6;            /* Main luxury background (champagne/warm taupe) */
-  --lux-bg-champagne-dark: #e5d5b8;       /* Slightly deeper for gradients; retains softness */
-  --lux-bg-champagne-grad: linear-gradient(111deg, #f1e1c6 95%, #e5d5b8 140%);
+  --lux-bg-champagne: #faf8f3;                 /* Ultra-subtle, elegant cream/champagne (main background surface) */
+  --lux-bg-champagne-dark: #f8f5ef;            /* Slight depth for theoretical shadow, barely visible */
+  --lux-bg-champagne-grad: linear-gradient(108deg, #faf8f3 85%, #f8f5ef 105%);
   --lux-onyx: #181a1b;                    /* Core deep accent – used for text/headings/nav bar for sharp contrast */
   --lux-onyx-soft: #312d1a;               /* Warm, brown-tinted onyx for certain UI elements/cards */
 
