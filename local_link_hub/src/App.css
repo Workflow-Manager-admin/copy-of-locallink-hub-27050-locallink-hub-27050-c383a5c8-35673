@@ -99,24 +99,18 @@ body {
 
 /* Subtle animated glassy gold shimmer for luxury depth */
 body::before {
+  /* Remove animated glow overlay, switch to luxury subtle gradient only */
   content: "";
   position: fixed;
   top: -80px; left: -80px;
   width: 540px; height: 410px;
-  background: radial-gradient(
-    ellipse 60% 50% at 50% 40%,
-    #ecd08c33 0%, #14162000 95%, transparent 100%
-  );
-  filter: blur(90px);
-  opacity: 0.33;
+  background: linear-gradient(114deg, #ecd08c22 0%, #14162055 100%);
+  opacity: 0.14;
   pointer-events: none;
-  animation: shineGlowMove 26s linear infinite alternate;
   z-index: 0;
 }
 @keyframes shineGlowMove {
-  0% { transform: translateY(0); opacity: .23;}
-  67% { opacity: .36; }
-  100% { transform: translateY(51px) scaleY(1.16); opacity: .18;}
+  /* Deprecated - no longer used, no glows */
 }
 body::after {
   content: "";
@@ -140,8 +134,8 @@ body::after {
   background: var(--lux-gold-main);
   border-radius: 7px;
   border: 1.5px solid var(--lux-gold-deep);
-  box-shadow: 0 0 9px 0 var(--lux-gold-leaf);
-  transition: background .18s;
+  box-shadow: none;
+  transition: background .18s, border .17s;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--lux-gold-leaf);
