@@ -106,13 +106,13 @@ body {
   margin: 0;
   font-family: var(--font-body);
   min-height: 100vh;
-  /* Main beige background, abstract pastel layers for depth */
+  /* Polished beige background with abstract gradients and subtle tactile noise for depth */
   background: var(--background-main), var(--background-abstract), #ece7d8;
   color: var(--text-main);
   letter-spacing: .007em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background .4s;
+  transition: background .45s var(--transition-main), color .23s;
   position: relative;
   overflow-x: hidden;
 }
