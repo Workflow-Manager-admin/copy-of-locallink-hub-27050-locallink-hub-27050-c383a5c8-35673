@@ -566,7 +566,7 @@ a:hover, .main-nav li.active .nav-label, a:focus {
 .main-nav li:focus-visible {
   outline: none;
   border-color: var(--lux-gold-leaf) !important;
-  box-shadow: var(--lux-gold-focus);
+  box-shadow: 0 0 0 2.5px #ecd08c;
 }
 
 /*
