@@ -153,14 +153,15 @@ body::after {
   margin: 0 auto;
   max-width: 1260px;
   border: 2.5px solid var(--lux-border-gold);
-  animation: luxury-gradient-glow .97s cubic-bezier(.38,1,.29,1.04);
+  /* Remove glow animation, just fade in */
+  animation: luxury-gradient-fade .97s cubic-bezier(.38,1,.29,1.04);
   position: relative;
   z-index: 1;
 }
 
-@keyframes luxury-gradient-glow { 
-  0% { opacity: 0; filter: blur(10px);} 
-  100% { opacity:1; filter: blur(0); } 
+@keyframes luxury-gradient-fade { 
+  0% { opacity: 0; filter: blur(6px);}
+  100% { opacity:1; filter: blur(0);}
 }
 
 /* ============= NAVIGATION BAR (Gold/Platinum/Onyx) ============= */
