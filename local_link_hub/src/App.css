@@ -180,7 +180,8 @@ body::after {
   box-sizing: border-box;
   z-index: 110;
   border-bottom: 3px solid var(--lux-gold-main);
-  box-shadow: 0 2px 24px 0 #ecd08c25, 0 2px 8px var(--lux-gold-leaf), 0 3px 9px 0 #0003;
+  /* Remove all glow/soft/light shadows, keep luxe subtle elevation */
+  box-shadow: 0 2.5px 16px 0 #0003, 0 2px 7px #ecd08c19;
   backdrop-filter: blur(var(--lux-glass-blur));
 }
 
