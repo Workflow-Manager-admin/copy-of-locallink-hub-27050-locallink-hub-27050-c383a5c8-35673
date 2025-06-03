@@ -666,9 +666,22 @@ a:hover, .main-nav li.active .nav-label, a:focus {
   - #eee2c6 is the main visual anchor for a premium, soft, inviting luxury (not cold clinical white).
   - Deep onyx/soft brown-black offers modern contrast for headings, cards, navigation.
   - Gold (main/soft/deep) is for highlights, calls-to-action, trims, and "specialness"—never overwhelming.
+  - Maroon (#921d36 and variants) is used for:
+      - Section/page headers (headline left border and text color)
+      - Card outlines and major container separation (visual luxury)
+      - Notification banners, badges, and icon accents (emphasis, urgency, or selection)
+      - Dividers and section lines (subtlety and richness)
+      - Highlighting important or active states (selection, error, informational banners)
+      - Navigation bar, tab selection, and interactive focus state outlines
+      - Badges, important status pills, and iconography
+      - Maintaining a warm, accessible, luxurious, but not overwhelming secondary brand presence
+  - Avoid overpowering gold/maroon overlays, always backdrop on champagne or soft card for readability and subtlety.
   - All gradients/overlays are subdued for tactile feel, not decoration.
   - Headings use Playfair Display for upscale, text uses Inter for legibility.
   - Cards, nav, overlays are layered in slightly contrasting soft shades for reward clarity, universal accessibility, and luxury.
   - All color combinations pass large-text WCAG AA; don't use #FFD700 for body text.
   - Maintain strong spacing, soft radius, rich shadow for depth on light background.
+  - For future color system adjustments, increase/decrease maroon by raising/lowering borders, outlines, and headline color;
+    gold should remain for key CTAs, interaction, and rewards, while maroon provides rhythm, warmth, and luxe accent throughout the app.
+  === END MAROON GUIDELINE ===
  */
