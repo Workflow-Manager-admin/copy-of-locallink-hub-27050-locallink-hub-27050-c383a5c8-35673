@@ -834,6 +834,15 @@ body {
   align-items: stretch;
 }
 
+/* === LUXURY MINI WIDGET/MOCKUP CARD SYSTEM (for demo/example content in each major tab) === */
+/*
+  - Used for all mockup demo cards: Resource Re-Up, Skill Badges, Crisis Overlay, Community Fund, etc.
+  - Widgets lay out responsively, wrap elegantly on smaller screens, and maintain visual rhythm/luxury spacing
+  - Each section can use .lux-info-row or .luxury-dashboard-row with increased flexWrap/gap as needed
+  - Rich badges and accent colors reinforce the quiet luxury motif for all new example content
+*/
+/* You may add .lux-mini-widget style customizations here for finer-grained future branding (e.g., shadow, border, hover effects) */
+
 /* Info panel-lux - used on alert/ai/banner style */
 .info-panel-lux {
   background: linear-gradient(99deg, #fffbe399 70%, #bfa14b12 138%);

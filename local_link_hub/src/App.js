@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import "./App.css";
 
-/**
- * ToastContext & toast system for luxury app
- * - Allows any child to show a contextual message or status with premium styling.
+/*
+ * Luxury Toast System Context for full-app status messages:
+ * Allows any component to invoke luxury-styled floating toasts for rich feedback.
  */
 // PUBLIC_INTERFACE
 const ToastContext = React.createContext({
@@ -28,7 +28,6 @@ function ToastProvider({ children }) {
     }, 2700);
   }, []);
 
-  // Clean up timer on unmount
   useEffect(() => {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -50,8 +49,7 @@ function ToastProvider({ children }) {
   );
 }
 
-// ============ UI COMPONENTS (WRAPPED FOR CONTEXT USAGE) ============
-
+/* === Main Sidebar Navigation: Luxury Style, Accessible === */
 function MainNavigation({ activeTab, onSelectTab }) {
   const { showToast } = React.useContext(ToastContext);
   const tabs = [
@@ -194,7 +192,9 @@ function UserProfileMini() {
   );
 }
 
-// PUBLIC_INTERFACE
+/**
+ * Luxury banner for AI suggestion, crisis, etc.
+ */
 function AIBannerSuggestion() {
   const { showToast } = React.useContext(ToastContext);
   return (
@@ -215,7 +215,6 @@ function AIBannerSuggestion() {
   );
 }
 
-// PUBLIC_INTERFACE
 function AlertBanner() {
   const { showToast } = React.useContext(ToastContext);
   return (
@@ -233,13 +232,12 @@ function AlertBanner() {
   );
 }
 
-// PUBLIC_INTERFACE
+/* Map Display Widget for Dashboard */
 function MapView() {
   const { showToast } = React.useContext(ToastContext);
   return (
     <div className="map-view lux-box-wrap">
       <div className="map-placeholder">
-        {/* Placeholder for a Map (interactive when implemented) */}
         <div className="map-legend">[Map showing your micro-community]</div>
         <div className="map-skeleton"></div>
         <button
@@ -268,13 +266,15 @@ function MapView() {
   );
 }
 
+
 /**
- * Align and polish DashboardTab. Add clear, luxury toasts/inline feedback for all buttons.
+ * DASHBOARD TAB - Main Widget Row (untouched)
+ * See further down for other tab mockups.
  */
 function DashboardTab() {
   const { showToast } = React.useContext(ToastContext);
 
-  // Handler examples for all dashboard buttons.
+  // Dashboard interactions
   const handleVerifySkill = () =>
     showToast("Request sent for luxury skill badge verification! 👑", "info");
   const handleRSVP = () =>
@@ -374,6 +374,351 @@ function DashboardTab() {
   );
 }
 
+/* === Helper Components for Tab Demos/Mockups: These showcase luxury cards/listings/widgets for each tab. === */
+
+// Resource Re-Up Tab Mockup Cards: Luxury trading/upcycling mini-listings
+function ResourceReupMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Resource Re‑Up</h2>
+      <p>List spare items, upcycle, or request resources from neighbors. All exchanges are trust-verified—for a circular, luxury economy.</p>
+      <div className="lux-info-row" style={{flexWrap: "wrap", gap: "28px"}}>
+        {/* Rich mockup card #1 */}
+        <div className="lux-mini-widget" style={{minWidth: 230}}>
+          <span className="widget-icon" aria-hidden="true">📚</span>
+          <span className="widget-title">Antique Cookbooks (Set of 4)</span>
+          <span className="widget-desc">Like new — available for swap or gift.</span>
+          <span className="lux-badge" style={{margin: "8px 0 3px 0"}}>Collection</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Request sent for cookbook exchange!", "success")}>Request</button>
+        </div>
+        {/* Rich mockup card #2 */}
+        <div className="lux-mini-widget" style={{minWidth: 230}}>
+          <span className="widget-icon" aria-hidden="true">🧰</span>
+          <span className="widget-title">Brass Gardening Tools</span>
+          <span className="widget-desc">Vintage luxury, pick up in Oakridge.</span>
+          <span className="lux-badge elite" style={{margin: "8px 0 3px 0"}}>Elite Member's Item</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("You're set to pick up: Brass Gardening Tools", "success")}>Arrange</button>
+        </div>
+        {/* Rich mockup card #3 */}
+        <div className="lux-mini-widget" style={{minWidth: 230}}>
+          <span className="widget-icon" aria-hidden="true">🍎</span>
+          <span className="widget-title">Organic Fuji Apples, 12ct</span>
+          <span className="widget-desc">Locally grown, available this Saturday.</span>
+          <span className="lux-badge verified" style={{margin: "8px 0 3px 0"}}>Fresh</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Apple box reserved! Enjoy your local bounty.", "success")}>Reserve</button>
+        </div>
+        {/* Rich mockup card #4 */}
+        <div className="lux-mini-widget" style={{minWidth: 230}}>
+          <span className="widget-icon" aria-hidden="true">🪑</span>
+          <span className="widget-title">Designer Patio Chair</span>
+          <span className="widget-desc">Lightly used, pick up after 4pm daily.</span>
+          <span className="lux-badge" style={{margin: "8px 0"}}>Upcycle</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Pickup arranged for Designer Patio Chair.", "success")}>Pickup</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Skill Badges Tab: 3 luxury-styled badges with peer-verify option
+function SkillBadgesMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Skill Badges</h2>
+      <p>Earn luxury skill badges via community or certificate upload. Skills are trust-verified for hyperlocal expertise.</p>
+      <div className="luxury-dashboard-row" style={{gap: "27px", flexWrap: "wrap"}}>
+        {/* Badge Card 1 */}
+        <div className="lux-mini-widget" style={{minWidth:180}}>
+          <span className="widget-icon" aria-hidden="true">🌿</span>
+          <span className="widget-title">Gardening Guru</span>
+          <span className="widget-desc">Peer-verified, active volunteer</span>
+          <span className="lux-badge verified">Verified</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Badge peer verification requested!", "info")}>Get Verified</button>
+        </div>
+        {/* Badge Card 2 */}
+        <div className="lux-mini-widget" style={{minWidth:180}}>
+          <span className="widget-icon" aria-hidden="true">🎹</span>
+          <span className="widget-title">Music Instruction</span>
+          <span className="widget-desc">Piano & voice, 8 years</span>
+          <span className="lux-badge elite">Elite</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Certificate upload required for badge.", "info")}>Upload Certificate</button>
+        </div>
+        {/* Badge Card 3 */}
+        <div className="lux-mini-widget" style={{minWidth:180}}>
+          <span className="widget-icon" aria-hidden="true">👩‍🍳</span>
+          <span className="widget-title">Luxury Baking</span>
+          <span className="widget-desc">Shared masterclasses</span>
+          <span className="lux-badge">Community Skill</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Baking: peer nomination sent!", "success")}>Nominate</button>
+        </div>
+        {/* Badge Card 4 */}
+        <div className="lux-mini-widget" style={{minWidth:180}}>
+          <span className="widget-icon" aria-hidden="true">🎨</span>
+          <span className="widget-title">Fine Arts</span>
+          <span className="widget-desc">Oil, watercolor, sculpture</span>
+          <span className="lux-badge" style={{background: "var(--lux-gold-main)", color: "var(--lux-onyx)", borderColor: "var(--lux-maroon)"}}>Verified</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Fine Arts badge: verifying documents...", "info")}>Verify Docs</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Crisis Overlay Tab: 3-4 urgent/crisis widgets, styled for urgency but retaining luxury cues
+function CrisisOverlayMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Crisis / Disaster Support</h2>
+      <p>Local emergency? Instantly request or offer critical help to neighbors—safely and confidentially. Only available to trust-verified users.</p>
+      <div className="lux-info-row" style={{gap: "26px", flexWrap: "wrap"}}>
+        <div className="lux-mini-widget" style={{minWidth:230, borderColor:"#CA5240"}}>
+          <span className="widget-icon" aria-hidden="true" style={{color:"#CA5240"}}>🚨</span>
+          <span className="widget-title">Urgent Shelter Needed</span>
+          <span className="widget-desc">3 requests nearby</span>
+          <button className="widget-action-btn"
+            style={{background: "#CA5240", color:"#fff"}}
+            onClick={() => showToast("Volunteer info sent!", "success")}>Offer Help</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:230}}>
+          <span className="widget-icon" aria-hidden="true">🩺</span>
+          <span className="widget-title">First Aid Offered</span>
+          <span className="widget-desc">On-call, 750m from you</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Request sent for first aid!", "success")}>Request Aid</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:230}}>
+          <span className="widget-icon" aria-hidden="true">🍲</span>
+          <span className="widget-title">Hot Meals Provided</span>
+          <span className="widget-desc">Community kitchen (4 spots left)</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("You reserved a hot meal.", "success")}>Reserve Spot</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:230}}>
+          <span className="widget-icon" aria-hidden="true">🧃</span>
+          <span className="widget-title">Water Distribution</span>
+          <span className="widget-desc">Next delivery: 1:30pm</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Pickup reminder set for water.", "info")}>Remind Me</button>
+        </div>
+      </div>
+      <AlertBanner />
+    </div>
+  );
+}
+
+// Community Fund Tab: Micro-Grant cards, rich styles
+function CommunityFundMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Community Aid Hub (Micro‑Grants)</h2>
+      <p>Request or provide micro-grants/credits — neighbors can anonymously contribute, or you can see who helped for greater trust.</p>
+      <div className="lux-info-row" style={{gap: "28px", flexWrap: "wrap"}}>
+        <div className="lux-mini-widget" style={{minWidth:260}}>
+          <span className="widget-icon" aria-hidden="true" style={{color:"var(--lux-gold-main)"}}>💵</span>
+          <span className="widget-title">Aid Request: School Supplies</span>
+          <span className="widget-desc">Needed: $32 for Emma (Grade 3)</span>
+          <span className="lux-badge verified">Verified</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Thanks for your contribution!", "success")}>Contribute</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:260}}>
+          <span className="widget-icon" aria-hidden="true" style={{color:"var(--lux-maroon-dark)"}}>🎸</span>
+          <span className="widget-title">Support: Youth Music Lessons</span>
+          <span className="widget-desc">Goal: $100 • Progress: $82</span>
+          <span className="lux-badge">Open</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("You pledged for music lessons!", "success")}>Pledge</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:260}}>
+          <span className="widget-icon" aria-hidden="true" style={{color:"var(--lux-gold-deep)"}}>🧑‍🦯</span>
+          <span className="widget-title">Mobility Aid for Senior</span>
+          <span className="widget-desc">Requested by: Community Nurse (24h left)</span>
+          <span className="lux-badge" style={{background:"var(--lux-maroon-dark)", color:"var(--lux-gold-main)"}}>Urgent</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Contact info provided for delivery coordination.", "info")}>Arrange Delivery</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Impact Score / Tracker Tab: Demo of luxury badges & stats
+function ImpactTrackerMockups() {
+  return (
+    <div>
+      <h2>Impact Score & Community Tracker</h2>
+      <p>Track your total impact, badges, and milestones within the hyper-local network.</p>
+      <div className="luxury-dashboard-row" style={{flexWrap:'wrap', gap:'28px'}}>
+        <div className="lux-mini-widget" style={{minWidth:200}}>
+          <span className="widget-icon" aria-hidden="true">🌟</span>
+          <span className="widget-title">Milestone: 4000+ Impact</span>
+          <span className="widget-desc">Community Leader</span>
+          <span className="lux-badge elite" style={{marginTop:5}}>Elite</span>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:200}}>
+          <span className="widget-icon" aria-hidden="true">🤩</span>
+          <span className="widget-title">Recent: Most Trusted</span>
+          <span className="widget-desc">Avg Trust Score: 4.8/5</span>
+          <span className="lux-badge verified" style={{marginTop:5}}>Verified</span>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:200}}>
+          <span className="widget-icon" aria-hidden="true">🌱</span>
+          <span className="widget-title">Eco Actions: Top 1%</span>
+          <span className="widget-desc">30+ eco-swaps, 15 posts</span>
+          <span className="lux-badge" style={{marginTop:5}}>Eco Leader</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Eco Recommendations: Premium AI eco-tips cards
+function EcoRecsMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Eco Recommendations</h2>
+      <p>AI-powered zero-waste and eco-action tips tailored for your micro-community.</p>
+      <div className="lux-info-row" style={{gap: "26px", flexWrap:"wrap"}}>
+        <div className="lux-mini-widget" style={{minWidth:210}}>
+          <span className="widget-icon" aria-hidden="true">♻️</span>
+          <span className="widget-title">Upcycle Tip</span>
+          <span className="widget-desc">Use glass jars as luxury pantry storage.</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("More upcycle tips on the way!", "info")}>See More</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:210}}>
+          <span className="widget-icon" aria-hidden="true">🌳</span>
+          <span className="widget-title">Eco Garden</span>
+          <span className="widget-desc">Plant native maroon camellias for beauty + habitat.</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Garden AI tips delivered!", "success")}>Get Tips</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:210}}>
+          <span className="widget-icon" aria-hidden="true">🪴</span>
+          <span className="widget-title">Houseplant Swap</span>
+          <span className="widget-desc">Join swap event, 9am Sat, Plaza Pavilion</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("See events calendar for more.", "info")}>Event Info</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Wellness: Showcase luxury wellness cards (mind, body, habits)
+function WellnessMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Wellness</h2>
+      <p>Wellness recommendations and healthy habits from your neighbors.</p>
+      <div className="lux-info-row" style={{gap: "29px", flexWrap:"wrap"}}>
+        <div className="lux-mini-widget" style={{minWidth:205}}>
+          <span className="widget-icon" aria-hidden="true">🧘‍♂️</span>
+          <span className="widget-title">Sunrise Yoga</span>
+          <span className="widget-desc">Oakridge Park, Sat 7am</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Yoga RSVP sent!", "success")}>RSVP</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:205}}>
+          <span className="widget-icon" aria-hidden="true">🥗</span>
+          <span className="widget-title">Healthy Recipe: Quinoa Bowl</span>
+          <span className="widget-desc">Shared by neighbor Julia</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Recipe opened in luxury mode.", "info")}>Open</button>
+        </div>
+        <div className="lux-mini-widget" style={{minWidth:205}}>
+          <span className="widget-icon" aria-hidden="true">😌</span>
+          <span className="widget-title">Mindfulness Minute</span>
+          <span className="widget-desc">Play audio session (3min)</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Audio session started!", "success")}>Play</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Events: List upcoming events with RSVP mini-cards
+function EventsMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Upcoming Events</h2>
+      <div className="lux-info-row" style={{gap: "28px", flexWrap:"wrap"}}>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
+          <span className="widget-title">Block BBQ Bash</span>
+          <span className="widget-desc">Sun June 3, 3-7pm</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("RSVP confirmed!", "success")}>RSVP</button>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">👩‍🏫</span>
+          <span className="widget-title">Emergency Prep Seminar</span>
+          <span className="widget-desc">Weds June 6, 7pm</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Seminar reminder set!", "info")}>Remind Me</button>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">🍀</span>
+          <span className="widget-title">Eco Fair</span>
+          <span className="widget-desc">Plaza Pavilion, Sat June 10</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Eco Fair calendar link sent.", "success")}>Add to Calendar</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Mental Health: Resource mockups
+function MentalHealthMockups() {
+  const { showToast } = React.useContext(ToastContext);
+  return (
+    <div>
+      <h2>Mental Health Support</h2>
+      <div className="lux-info-row" style={{gap: "25px", flexWrap:"wrap"}}>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">🫂</span>
+          <span className="widget-title">Support Circles</span>
+          <span className="widget-desc">Biweekly, neighbor-facilitated</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Support circle RSVP sent.", "success")}>RSVP</button>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">📞</span>
+          <span className="widget-title">Wellness Hotline</span>
+          <span className="widget-desc">24/7 peer support</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Call initiated. Help is on the way.", "info")}>Call Now</button>
+        </div>
+        <div className="lux-mini-widget">
+          <span className="widget-icon" aria-hidden="true">🌅</span>
+          <span className="widget-title">Morning Check-Ins</span>
+          <span className="widget-desc">AI well-being bot, 8am</span>
+          <button className="widget-action-btn"
+            onClick={() => showToast("Notified for tomorrow's check-in.", "success")}>Notify Me</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** === MainContainer handles all composition, tab switching, infobar === */
 // PUBLIC_INTERFACE
 function MainContainer() {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -388,7 +733,7 @@ function MainContainer() {
     );
   }
 
-  // Layout polished: Remove dead space, perfect align.
+  // === Per-tab luxury widget injection ===
   return (
     <div className="main-container app sidebar-layout">
       <header className="lux-header" role="banner">
@@ -411,98 +756,123 @@ function MainContainer() {
       <div className="core-layout">
         <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
         <main className="main-content" tabIndex={0}>
+          {/* Populate each tab with 3-4 demo luxury cards/min-widgets, richly styled */}
           {activeTab === "dashboard" && <DashboardTab />}
-          {activeTab === "skillbarter" && (
-            <div>
-              <h2>Skill Bartering</h2>
-              <p>Barter your skills with trusted neighbors. Exchange time, help, and expertise in a luxury context.</p>
-              <button className="btn-ghost" onClick={() => alert("Skill Barter Matchmaking coming soon!")}>Find Match</button>
-            </div>
-          )}
+          {activeTab === "skillbarter" && <SkillBadgesMockups />}
           {activeTab === "payforward" && (
             <div>
               <h2>Pay-It-Forward</h2>
               <p>Give and receive - spread kindness through neighborly actions and community credits.</p>
+              <div className="lux-info-row" style={{gap: "24px", flexWrap:"wrap"}}>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🥘</span>
+                  <span className="widget-title">Meal for a Neighbor</span>
+                  <span className="widget-desc">Give: Sign up to bring dinner tonight</span>
+                  <button className="widget-action-btn">Sign Up</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">💐</span>
+                  <span className="widget-title">Free Flower Delivery</span>
+                  <span className="widget-desc">Request or surprise a friend</span>
+                  <button className="widget-action-btn">Request</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🚗</span>
+                  <span className="widget-title">Carpool Slot</span>
+                  <span className="widget-desc">Oakridge to Downtown</span>
+                  <button className="widget-action-btn">Join</button>
+                </div>
+              </div>
             </div>
           )}
-          {activeTab === "emergency" && (
-            <div>
-              <h2>Emergency / Crisis Support</h2>
-              <p>Activate local crisis response. Request urgent help or offer aid instantly.</p>
-            </div>
-          )}
-          {activeTab === "aidhub" && (
-            <div>
-              <h2>Community Aid Hub</h2>
-              <p>Micro-grant and support system: Request or offer resources and credits.</p>
-            </div>
-          )}
-          {activeTab === "resources" && (
-            <div>
-              <h2>Resource Re-Up</h2>
-              <p>List spare items, upcycle, or request resources from neighbors.</p>
-            </div>
-          )}
-          {activeTab === "eco" && (
-            <div>
-              <h2>Eco Recommendations</h2>
-              <p>AI-powered zero-waste and eco-action tips tailored for your micro-community.</p>
-            </div>
-          )}
-          {activeTab === "impact" && (
-            <div>
-              <h2>Impact Score</h2>
-              <p>Track your trust and impact ratings within the LocalLink network.</p>
-            </div>
-          )}
+          {activeTab === "emergency" && <CrisisOverlayMockups />}
+          {activeTab === "aidhub" && <CommunityFundMockups />}
+          {activeTab === "resources" && <ResourceReupMockups />}
+          {activeTab === "eco" && <EcoRecsMockups />}
+          {activeTab === "impact" && <ImpactTrackerMockups />}
           {activeTab === "groups" && (
             <div>
               <h2>Groups</h2>
               <p>Find and join local micro-groups for shared interests and collaboration.</p>
+              <div className="lux-info-row" style={{gap:"26px",flexWrap:"wrap"}}>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🏛️</span>
+                  <span className="widget-title">History Buffs</span>
+                  <span className="widget-desc">Weekly meetups, Fridays</span>
+                  <button className="widget-action-btn">Join</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🎭</span>
+                  <span className="widget-title">Arts Collective</span>
+                  <span className="widget-desc">Pop-up exhibitions</span>
+                  <button className="widget-action-btn">Learn More</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🚴‍♂️</span>
+                  <span className="widget-title">Cycling Crew</span>
+                  <span className="widget-desc">Sat rides, all ages welcome</span>
+                  <button className="widget-action-btn">Join</button>
+                </div>
+              </div>
             </div>
           )}
-          {activeTab === "events" && (
-            <div>
-              <h2>Events</h2>
-              <p>View and RSVP to upcoming local events and workshops.</p>
-            </div>
-          )}
-          {activeTab === "mental" && (
-            <div>
-              <h2>Mental Health</h2>
-              <p>Access resilience resources and stress relief support circles.</p>
-            </div>
-          )}
-          {activeTab === "wellness" && (
-            <div>
-              <h2>Wellness</h2>
-              <p>Wellness recommendations and healthy habits from your neighbors.</p>
-            </div>
-          )}
+          {activeTab === "events" && <EventsMockups />}
+          {activeTab === "mental" && <MentalHealthMockups />}
+          {activeTab === "wellness" && <WellnessMockups />}
           {activeTab === "knowledge" && (
             <div>
-              <h2>Knowledge</h2>
-              <p>Community knowledge base: share, find, and request how-to guides.</p>
+              <h2>Community Knowledge</h2>
+              <p>Share, find, and request local how-to guides.</p>
+              <div className="lux-info-row" style={{gap:"22px",flexWrap:"wrap"}}>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">📄</span>
+                  <span className="widget-title">How-to: Compost Properly</span>
+                  <span className="widget-desc">Step-by-step, local soil types</span>
+                  <button className="widget-action-btn">Read</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🔌</span>
+                  <span className="widget-title">DIY: Home Battery Backup</span>
+                  <span className="widget-desc">Crowdsourced, local supplies</span>
+                  <button className="widget-action-btn">Read</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🌱</span>
+                  <span className="widget-title">Urban Pollinator Planters</span>
+                  <span className="widget-desc">Guide by neighbor expert Alicia</span>
+                  <button className="widget-action-btn">Read</button>
+                </div>
+              </div>
             </div>
           )}
           {activeTab === "recommender" && (
             <div>
               <h2>Skill Recommender</h2>
               <p>Personalized AI skill suggestions based on your community profile.</p>
+              <div className="lux-info-row" style={{gap:"22px",flexWrap:"wrap"}}>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🧑‍🍳</span>
+                  <span className="widget-title">Recommended: Baking Courses</span>
+                  <span className="widget-desc">High local demand</span>
+                  <button className="widget-action-btn">View</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🪴</span>
+                  <span className="widget-title">Recommended: Urban Gardening</span>
+                  <span className="widget-desc">Matches your badge</span>
+                  <button className="widget-action-btn">Start</button>
+                </div>
+                <div className="lux-mini-widget">
+                  <span className="widget-icon" aria-hidden="true">🎼</span>
+                  <span className="widget-title">Music Collaboration</span>
+                  <span className="widget-desc">Peers nearby</span>
+                  <button className="widget-action-btn">Connect</button>
+                </div>
+              </div>
             </div>
           )}
-          {activeTab === "tracker" && (
-            <div>
-              <h2>Impact Tracker</h2>
-              <p>Detailed analytics and milestones of your impact journey.</p>
-            </div>
-          )}
-          {activeTab === "disaster" && (
-            <div>
-              <h2>Disaster Tools</h2>
-              <p>Local disaster toolkits: preparedness, real-time updates, and support channels.</p>
-            </div>
-          )}
+          {activeTab === "tracker" && <ImpactTrackerMockups />}
+          {activeTab === "disaster" && <CrisisOverlayMockups />}
         </main>
       </div>
       <footer className="lux-footer" role="contentinfo">
