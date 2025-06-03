@@ -890,15 +890,25 @@ function MainContainer() {
 
   return (
     <div className="main-container app sidebar-layout">
-      {/* Luxury Header (Champagne, Gold, Maroon accent, logo+profile row) */}
-      <header className="navbar">
-        <div className="navbar-left">
-          <span className="logo-symbol" aria-label="LocalLink Hub Logo">🧭</span>
-          <span className="app-title" style={{ letterSpacing: 2 }}>LocalLink Hub</span>
+      {/* 
+        LUXURY HEADER (Horizontal Full-Width Bar)
+        - Sits flush top, full width of viewport.
+        - Uses luxury theme: champagne background, maroon/gold/onyx accents.
+        - Uses flexbox for horizontal and vertical centering.
+        - No overlap with sidebar. 
+        - All relevant branding (logo and title) moved here, user mini-profile right-aligned.
+      */}
+      <header className="lux-header" role="banner">
+        <div className="lux-header-content">
+          <span className="lux-header-logo"><svg width="30" height="30" viewBox="0 0 38 38" fill="none" aria-hidden="true" style={{verticalAlign:'middle'}}><circle cx="19" cy="19" r="18" stroke="#BFA14B" strokeWidth="2.3" fill="#faf8f3" /><path d="M19 11 L21.8 27 L19 24.5 L16.2 27 Z" fill="#921d36" /><circle cx="19" cy="19" r="4" fill="#BFA14B" /></svg></span>
+          <span className="lux-header-title"><span className="branding-main">LocalLink</span> <span className="branding-sub">Hub</span></span>
         </div>
-        <UserProfileMini />
+        <div className="lux-header-profile"><UserProfileMini /></div>
       </header>
-      {/* Decorative/Brand Infobar (fills space under nav, between blocks) */}
+      {/*
+        Decorative/Brand Infobar (fills space under nav, between blocks)
+        - Remains between header and main content, does not conflict with new horizontal nav
+      */}
       <InfobarPanel />
       <div className="spacer-navbar" />
 
@@ -926,8 +936,17 @@ function MainContainer() {
         </main>
       </div>
 
-      <footer className="footer">
-        &copy; {new Date().getFullYear()} LocalLink Hub – Fostering hyper-local connections
+      {/* 
+        LUXURY FOOTER (Horizontal Full-Width Bar)
+        - Sits flush bottom, full width.
+        - Uses luxury theme: onyx with gold/maroon highlights.
+        - Uses flexbox for center alignment (text centered).
+        - Stays visually distinct from sidebar and header.
+      */}
+      <footer className="lux-footer" role="contentinfo">
+        <span className="lux-footer-content">
+          &copy; {new Date().getFullYear()} LocalLink Hub — Fostering hyper-local connections
+        </span>
       </footer>
     </div>
   );
