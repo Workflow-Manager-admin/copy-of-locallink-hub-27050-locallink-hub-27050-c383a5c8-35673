@@ -228,7 +228,7 @@ body::before {
   box-shadow: none;
 }
 
-/* === MAIN NAVIGATION BAR: luxury background, elegant gold trims === */
+/* === MAIN NAVIGATION BAR: luxury champagne/gold base, MAROON for active/highlight states === */
 .main-nav {
   position: sticky;
   top: 64px;
@@ -240,20 +240,23 @@ body::before {
   backdrop-filter: blur(var(--lux-glass-blur));
   animation: gradient-fadein-app .69s cubic-bezier(.51,.95,.22,1.07);
 }
+
+/* Main nav ~ tab bar - use MAROON for active/hover, champagne/gold for default */
 .main-nav ul {
   display: flex; flex-direction: row; gap: 5px;
   padding: 0 10px; margin: 0;
   list-style: none; height: 54px;
   align-items: center;
 }
+/* Tabs: maroon for accent, gold for background, onyx/gold for text */
 .main-nav li {
   cursor: pointer;
   padding: 12px 22px 11px 14px;
   margin: 2px 0;
-  color: var(--lux-gold-deep);
+  color: var(--lux-maroon); /* ← Maroon text for resting tab for subtle brand accent */
   font-family: var(--lux-font-heading);
   border-radius: 17px 17px 0 0;
-  transition: 
+  transition:
     background .13s,
     color .16s, box-shadow .18s, border-color .15s;
   display: flex; align-items: center; gap: 13px;
@@ -271,19 +274,22 @@ body::before {
 .main-nav li::after {
   content: '';
   position: absolute; left: 12px; right: 15px; bottom: 1px; height: 3px;
-  background: linear-gradient(93deg, #FFD700 68%, #E5C97B 120%);
+  /* MAROON underline bar for active tab */
+  background: linear-gradient(93deg, #921d36 66%, #FFD700 120%);
   border-radius: 10px;
   opacity: 0;
   transform: scaleX(0.67);
   transition: opacity .14s, transform .19s;
 }
+/* MAROON accent for active/highlighted/nav hover tab */
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(91deg, #fdebb9 52%, #fffbe3 130%);
+  background: linear-gradient(91deg, #ffe6ea 42%, #f6efd9 130%);
   color: var(--lux-onyx);
-  border-color: var(--lux-gold-main);
-  box-shadow: 0 5px 12px -2px #d6c27875, 0 2px 5px #FFD70019;
+  border-color: var(--lux-maroon);
+  /* Maroon shadow for deeper highlight */
+  box-shadow: 0 5px 12px -2px #921d3655, 0 2px 5px #FFD70019;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -293,8 +299,8 @@ body::before {
   transform: scaleX(1);
 }
 .main-nav li:focus-visible {
-  border-color: var(--lux-gold-main);
-  box-shadow: 0 0 0 3px #FFD700, 0 2px 5px #f1e1c629;
+  border-color: var(--lux-maroon-dark);
+  box-shadow: 0 0 0 3px #921d36cc, 0 2px 5px #f1e1c629;
 }
 .nav-icon { font-size: 1.19em; }
 
