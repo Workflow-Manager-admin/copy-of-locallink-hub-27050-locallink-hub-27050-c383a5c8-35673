@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * MainNavigation (Sidebar Version)
+ * Vertically oriented sidebar for premium luxury UX
+ * - Sits flush left, with champagne background, gold/maroon highlights, and gold hover/focus.
+ * - Uses <nav> and <ul> for accessibility/ARIA, keyboard navigable.
+ * - Rationale: Vertical nav is non-intrusive, clear, and creates spatial luxury on wide and small screens.
+ */
 function MainNavigation({ activeTab, onSelectTab }) {
   const tabs = [
     { name: "Dashboard", key: "dashboard", icon: "🏠" },
@@ -22,25 +29,34 @@ function MainNavigation({ activeTab, onSelectTab }) {
     { name: "Disaster Tools", key: "disaster", icon: "🛡️" },
   ];
   return (
-    <nav className="main-nav" aria-label="Main Navigation">
+    <nav className="sidebar-nav" aria-label="Main Navigation">
       {/* 
-        Layout: 
-        - The <ul> acts as a horizontally scrollable row, never wraps to next line.
-        - Extra nav items slide in via horizontal scroll, preserving luxury visual rhythm.
-        - ARIA role set to tablist for accessibility. 
+        Sidebar Container:
+        - visually separate, fixed on left (on desktop/tablet), collapses elegantly for mobile.
+        - Champagne as core bg, gold trim, maroon accent for hover/active.
+        - ARIA/keyboard nav for screen reader usability.
+        - Scrollable if nav list exceeds visible height.
       */}
-      <ul data-nav-scrollable role="tablist">
-        {tabs.map((tab) => (
+      <ul role="tablist" className="sidebar-nav-list">
+        {tabs.map((tab, idx) => (
           <li
             key={tab.key}
-            className={activeTab === tab.key ? "active" : ""}
+            className={
+              "sidebar-nav-item" +
+              (activeTab === tab.key ? " active" : "") +
+              (idx === 0 ? " first" : "")
+            }
             onClick={() => onSelectTab(tab.key)}
             tabIndex={0}
             aria-label={tab.name}
             role="tab"
             aria-selected={activeTab === tab.key}
+            onKeyDown={e => {
+              // Enable Enter/Space or arrow key selection for accessibility
+              if (["Enter", " "].includes(e.key)) onSelectTab(tab.key);
+            }}
           >
-            <span className="nav-icon">{tab.icon}</span>
+            <span className="nav-icon" aria-hidden="true">{tab.icon}</span>
             <span className="nav-label">{tab.name}</span>
           </li>
         ))}
@@ -784,12 +800,20 @@ function DisasterToolsTab() {
   );
 }
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * MainContainer (Sidebar Layout)
+ * - Integrates vertical sidebar and reorients layout to a two-column structure.
+ * - Sidebar is fixed/flexible on desktop, collapses above on mobile.
+ * - Preserves header with logo/profile for luxury branding.
+ * - Rationale: Premium layouts use side navigation for a modern, unintrusive, yet prominent luxury feel.
+ */
 function MainContainer() {
   const [activeTab, setActiveTab] = useState("dashboard");
 
   return (
-    <div className="main-container app">
+    <div className="main-container app sidebar-layout">
+      {/* Luxury Header (Champagne, Gold, Maroon accent, logo+profile row) */}
       <header className="navbar">
         <div className="navbar-left">
           <span className="logo-symbol" aria-label="LocalLink Hub Logo">🧭</span>
@@ -798,25 +822,31 @@ function MainContainer() {
         <UserProfileMini />
       </header>
       <div className="spacer-navbar" />
-      <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
-      <main className="main-content" tabIndex={0}>
-        {activeTab === "dashboard" && <DashboardTab />}
-        {activeTab === "skillbarter" && <SkillBarterTab />}
-        {activeTab === "payforward" && <PayItForwardTab />}
-        {activeTab === "emergency" && <EmergencyTab />}
-        {activeTab === "aidhub" && <AidHubTab />}
-        {activeTab === "resources" && <ResourceTrackerTab />}
-        {activeTab === "eco" && <EcoRecsTab />}
-        {activeTab === "impact" && <ImpactScoreTab />}
-        {activeTab === "groups" && <GroupsTab />}
-        {activeTab === "events" && <EventsTab />}
-        {activeTab === "mental" && <MentalHealthTab />}
-        {activeTab === "wellness" && <WellnessTab />}
-        {activeTab === "knowledge" && <KnowledgeArchiveTab />}
-        {activeTab === "recommender" && <SkillRecommenderTab />}
-        {activeTab === "tracker" && <TrackerTab />}
-        {activeTab === "disaster" && <DisasterToolsTab />}
-      </main>
+
+      <div className="core-layout">
+        {/* Sidebar: visually rooted, not intrusive */}
+        <MainNavigation activeTab={activeTab} onSelectTab={setActiveTab} />
+        {/* Main area: contextual content flows beside sidebar */}
+        <main className="main-content" tabIndex={0}>
+          {activeTab === "dashboard" && <DashboardTab />}
+          {activeTab === "skillbarter" && <SkillBarterTab />}
+          {activeTab === "payforward" && <PayItForwardTab />}
+          {activeTab === "emergency" && <EmergencyTab />}
+          {activeTab === "aidhub" && <AidHubTab />}
+          {activeTab === "resources" && <ResourceTrackerTab />}
+          {activeTab === "eco" && <EcoRecsTab />}
+          {activeTab === "impact" && <ImpactScoreTab />}
+          {activeTab === "groups" && <GroupsTab />}
+          {activeTab === "events" && <EventsTab />}
+          {activeTab === "mental" && <MentalHealthTab />}
+          {activeTab === "wellness" && <WellnessTab />}
+          {activeTab === "knowledge" && <KnowledgeArchiveTab />}
+          {activeTab === "recommender" && <SkillRecommenderTab />}
+          {activeTab === "tracker" && <TrackerTab />}
+          {activeTab === "disaster" && <DisasterToolsTab />}
+        </main>
+      </div>
+
       <footer className="footer">
         &copy; {new Date().getFullYear()} LocalLink Hub – Fostering hyper-local connections
       </footer>
