@@ -1,30 +1,33 @@
 :root {
-  /* === LUXE CHAMPAGNE/THE NEW PREMIUM "SOFT LIGHT" PALETTE ===
-     - Core background is a sophisticated champagne (#eee2c6, soft, inviting, universally neutral luxury).
-     - Accent trims remain warm metallic gold (#E5C97B, #FFD700, #BFA14B).
-     - Contrasting text/UI details use luxe onyx (#181a1b) or subtly richer brown-black (#312d1a).
-     - Rationale: #eee2c6 is light enough for luxury, reduces fatigue vs. stark white, and gold/onyx balance gorgeously.
-     - All variables (and usage) include comments on purpose for maintainability and design reasoning.
+  /* === LUXE CHAMPAGNE/THE NEW PREMIUM "SOFT LIGHT" PALETTE WITH MAROON ACCENTS ===
+     - Core background is a sophisticated champagne (#eee2c6).
+     - New: Maroon (#800000 / #921d36) as secondary color for navigation, buttons, tabs, highlights.
+     - Accent trims: Gold family. Contrasting: Onyx. Maroon used for active, interactive, or highlighted states.
+     - All variables (and usage) include comments for maintainability and design reasoning.
   */
-  --lux-bg-champagne: #eee2c6;                         /* Main luxury background (champagne/warm taupe) */
-  --lux-bg-champagne-dark: #e5d5b8;                    /* Slightly deeper for gradients; retains softness */
+  --lux-bg-champagne: #eee2c6;            /* Main luxury background (champagne/warm taupe) */
+  --lux-bg-champagne-dark: #e5d5b8;       /* Slightly deeper for gradients; retains softness */
   --lux-bg-champagne-grad: linear-gradient(111deg, #f1e1c6 95%, #e5d5b8 140%);
-  --lux-onyx: #181a1b;                                 /* Core deep accent – used for text/headings/nav bar for sharp contrast */
-  --lux-onyx-soft: #312d1a;                            /* Warm, brown-tinted onyx for certain UI elements/cards */
+  --lux-onyx: #181a1b;                    /* Core deep accent – used for text/headings/nav bar for sharp contrast */
+  --lux-onyx-soft: #312d1a;               /* Warm, brown-tinted onyx for certain UI elements/cards */
 
-  --lux-gold-main: #FFD700;                            /* Bold gold: buttons, headings, and action highlights */
-  --lux-gold-soft: #E5C97B;                            /* Champagne gold trim: borders, nav, secondary highlights */
-  --lux-gold-deep: #BFA14B;                            /* Deep metallic gold: for richer borders, shadows, hover states */
+  --lux-gold-main: #FFD700;               /* Bold gold: buttons, headings, and action highlights */
+  --lux-gold-soft: #E5C97B;               /* Champagne gold trim: borders, nav, secondary highlights */
+  --lux-gold-deep: #BFA14B;               /* Deep metallic gold: for richer borders, shadows, hover states */
   --lux-gold-border: #FFD700;
 
-  --lux-card-bg: #f8f4ea;                              /* Card/overlay: just a bit lighter than bg for separation */
+  --lux-maroon: #921d36;                  /* Maroon as luxury secondary color for highlights, buttons, nav, and accents */
+  --lux-maroon-dark: #800000;             /* Deeper maroon for contrast and hover/focus states */
+  --lux-maroon-light: #a84560;            /* Softer/gradient end-point, rarely used */
+
+  --lux-card-bg: #f8f4ea;                 /* Card/overlay: just a bit lighter than bg for separation */
   --lux-card-shadow: 0 5px 30px 0 #BFA14B20, 0 2px 6px #180e0270;
   --lux-card-grad: linear-gradient(117deg, #f6efd9 80%, #f1e1c6 120%);
 
-  --lux-text-main: #181a1b;                            /* Onyx for main text, maximizing legibility on the soft bg */
-  --lux-text-heading: #BFA14B;                         /* Deep gold for H1/H2, premium but readable */
-  --lux-text-secondary: #725C2F;                       /* Champagne-taupe brown, subtle for muted elements */
-  --lux-text-muted: #BFA14B88;                         /* Muted gold for helper text, dividers */
+  --lux-text-main: #181a1b;               /* Onyx for main text, maximizing legibility on the soft bg */
+  --lux-text-heading: #BFA14B;            /* Deep gold for H1/H2, premium but readable */
+  --lux-text-secondary: #725C2F;
+  --lux-text-muted: #BFA14B88;            /* Muted gold for helper text, dividers */
 
   --lux-success: #477829;
   --lux-warn: #CBA228;
@@ -34,15 +37,15 @@
   --lux-border-main: #e3d7ac;
   --lux-border-gold: var(--lux-gold-main);
   --lux-border-radius: 20px;
-  --lux-glass-blur: 20px; /* Still used for nav, but minimal effect */
+  --lux-glass-blur: 20px;
 
   --lux-font-heading: 'Playfair Display', Georgia, serif;
   --lux-font-body: 'Inter', Arial, sans-serif;
 
-  /* Legacy variable map for capabilities/components that use generic names */
-  --primary: var(--lux-gold-main);
-  --secondary: var(--lux-gold-soft);
-  --accent: var(--lux-gold-deep);
+  /* Brand/utility color aliases using maroon for secondary/accent where appropriate */
+  --primary: var(--lux-gold-main);                          /* Remains gold: brand highlight */
+  --secondary: var(--lux-maroon);                           /* Maroon: all interactive, accent, selection */
+  --accent: var(--lux-maroon-dark);                         /* Deep maroon for accent strokes, btn hover, tab highlight */
   --surface: var(--lux-card-bg);
   --text-main: var(--lux-text-main);
   --text-heading: var(--lux-text-heading);
@@ -54,6 +57,12 @@
   --border: var(--lux-border-main);
   --nav-hover: linear-gradient(97deg, #fdeec0 22%, #fffbe3 88%);
 }
+
+/* Maroon highlights and accent notes:
+   - Use --secondary for navigation highlights, button backgrounds, active tab backgrounds, and main links.
+   - Use --accent (deep maroon) for hover/active highlights and interactive strokes.
+   - Gold/onyx borders and text remain for balance; champagne stays as root background.
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
 
