@@ -222,6 +222,34 @@ function AlertBanner() {
 // ... All Tab Components Below. They follow similar button wrapping logic ...
 
 // PUBLIC_INTERFACE
+function MapView() {
+  return (
+    <div className="map-view">
+      <div className="map-placeholder">
+        {/* Placeholder for a Map (interactive when implemented) */}
+        <div className="map-legend">[Map showing your micro-community]</div>
+        <div className="map-skeleton"></div>
+      </div>
+      <div className="micro-community-info">
+        <h3>Your Micro‑Community</h3>
+        <p>
+          You're in <strong>Westside Oakridge</strong> (<strong>1.4km</strong> radius, 189 neighbors).
+        </p>
+        <p>
+          <span className="map-pin-emoji" role="img" aria-label="Pin">📍</span>
+          Location: Oakridge Park, 0.3 km from you
+        </p>
+        <div className="community-metrics">
+          <span>Trust Level: <strong>4.8</strong>/5</span>
+          <span>Exchanges: <strong>32</strong></span>
+          <span>Impact Score: <strong>4205</strong></span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// PUBLIC_INTERFACE
 function DashboardTab() {
   // No buttons needing toast in dashboard hero; AIBannerSuggestion & AlertBanner already handled.
   return (
