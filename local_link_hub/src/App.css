@@ -1,99 +1,66 @@
 :root {
   /*
-    COLOR STRATEGY (revamped!):
-    Palette: Modern dark blue/teal + rich gold/orange highlights + accessible contrasts
-    - Primary: Deep blue/teal gradients for surfaces, major UI containers
-    - Accent: Elegant golds/oranges for CTAs, active states, and energy
-    - Secondary: Muted emeralds and cool purples for secondary actions/info
-    - Background: Rich, subtly-patterned near-black, with teal gradients for glow
-    - Surfaces (cards, navs): Polished navy overlays with soft inner shadows for depth
-    - Text: Creamy white and off-gold on dark, strong gold for headings, soft teal for links
-    - Accessibility: Colors tuned for high contrast & WCAG AA/AAA; interactive cues never rely only on color
-    - Shadows & borders: Deep navy with teal/orange glows for modern vibrancy
-    - Font: Luxurious geometric sans for personality, modern system fallback
+    COLOR STRATEGY: Beige Elegance Refresh (2024)
+    -----------------------------------------------------
+    - Background/Base: Soft, warm beige (#f5f5dc) for an inviting, premium feel.
+    - Surface/Card: Slightly lighter beige or ivory, with soft shadow for depth.
+    - Navigation: Subtle mid-beige/gold with fine border/shadow for distinction.
+    - Primary: Rich oxblood red/maroon (#8f0a0a, from brand) for bold actions.
+    - Secondary: Sandstone cool taupe (#b1b483) for gentle accents and balance.
+    - Accent: Earthy gold-olive (#685808) for highlights, buttons, focus.
+    - Text Main: #332918 (coffee brown) for body, #8f0a0a for primary highlights.
+    - Text Secondary: #665f41 (muted taupe), high contrast on beige.
+    - Links/Active: Muted deep teal (#295c62) for subtle modernity; underlines.
+    - Borders: #d6cdb4 (pale gold-beige), thicker for main surfaces.
+    - Shadows: Light mocha with faint gold glow for elevation.
+    - Success: #419a78  (soft green); Error: #ba4428 (warm brick), Info: #6f7e96.
+    - Fonts: Rounded modern sans (Poppins/Inter), elegant for pro look.
 
-    Example palette:
-      --primary:    #193655   (deep blue)
-      --primary-dark: #0e2232
-      --accent:     #fab948   (warm gold)
-      --accent-strong: #ee860c
-      --accent-soft: #ffe7b4
-      --secondary:  #3fe0e3   (teal) 
-      --secondary-dark: #289aab
-      --purple:     #5c62e8
-      --surface:    #262d39   (dark navy)
-      --surface-glass: rgba(25,44,66,0.85)
-      --nav-bg:     linear-gradient(90deg, #13303d 65%, #26313e 100%)
-      --card-bg:    linear-gradient(131deg, #24313e 65%, #213448 100%)
-      --background-main: linear-gradient(130deg, #1b2536 0%, #151a28 100%)
-      --background-abstract: 
-        radial-gradient(ellipse at 40% 22%, #1ea3a34a 0px, #0000 85%),
-        radial-gradient(ellipse at 64% 70%, #ffe7b470 0px, #0000 88%),
-        linear-gradient(110deg, #1b233a 10%, #171c2c 100%);
-
-      --text-main: #f8f5e7
-      --text-heading: #ffd079
-      --text-secondary: #abbbd9
-      --text-accent: #fab948
-      --text-link: #41e8ed
-
-      --border: #334965
-      --border-strong: #fab948
-      --shadow-main: 0 8px 32px 0 #19365533, 0 2px 10px #ee860c22;
-      --shadow-card: 0 6px 24px 0 #0e223230, 0 2px 10px #fab94822;
-
-      --success: #39e799
-      --error: #f65959
-      --info: #3fe0e3
-      --warn: #ffd86b
-
-      --font-display: 'Poppins', 'Lexend', 'Inter', Arial, sans-serif;
-      --font-body: 'Inter', Arial, sans-serif;
-
-      --focus-glow: 0 0 0 3px var(--accent-strong),0 0 0 6px #fab94845;
+    All color choices were mapped with accessibility and professionalism in mind.
+    Update variables and named elements below to keep color harmony.
   */
-  --primary: #193655;
-  --primary-dark: #0e2232;
-  --accent: #fab948;
-  --accent-strong: #ee860c;
-  --accent-soft: #ffe7b4;
-  --secondary: #28c7ba;
-  --secondary-dark: #0b4b63;
-  --purple: #5c62e8;
-  --surface: #262d39;
-  --surface-glass: rgba(25,44,66,0.85);
-  --nav-bg: linear-gradient(90deg, #13303d 65%, #26313e 100%);
-  --card-bg: linear-gradient(131deg, #24313e 65%, #213448 100%);
-  --background-main: linear-gradient(120deg, #222e44 0%, #181c29 80%);
-  --background-abstract: 
-    radial-gradient(ellipse at 55% 17%, #1ea3a34a 0px, #0000 80%),
-    radial-gradient(ellipse at 23% 77%, #ffe7b430 0px, #0000 90%),
-    linear-gradient(110deg, #1b233a 3%, #171c2c 100%);
-  --glass-blur: 14px;
+  --beige-main: #f5f5dc;
+  --beige-surface: #fcfbf4;           /* For cards/surfaces, slightly lighter */
+  --beige-secondary: #edead6;         /* For minimal contrast elements */
+  --primary: #8f0a0a;                 /* Oxblood/maroon - bold CTAs, nav highlight */
+  --secondary: #b1b483;               /* Sandstone taupe - soft accent and nav */
+  --accent: #685808;                  /* Earthy gold/olive - buttons, icons */
+  --surface: var(--beige-surface);    /* For card backgrounds */
+  --surface-glass: rgba(245,245,220,0.90); /* Glass effect layer for popups, main containers */
+  --nav-bg: linear-gradient(90deg, #dedbbf 62%, #b1b483 100%);
+  --nav-border: #d6cdb4;
+  --nav-hover: #f7efd1;                /* Hover/active for nav/tab backgrounds */
+  --card-bg: linear-gradient(135deg, #fcfbf4 70%, #eadeb6 115%);
+  --background-main: var(--beige-main);
+  --background-abstract:
+    radial-gradient(ellipse at 52% 12%, #e9e4c9a9 0px, #0000 85%),
+    radial-gradient(ellipse at 58% 92%, #fff9e1b0 0px, #0000 88%),
+    linear-gradient(109deg, #faf8e3 12%, #efe9c9 95%);
+  --glass-blur: 12px;
 
-  --text-main: #f8f5e7;
-  --text-heading: #ffd079;
-  --text-secondary: #a2b1c9;
-  --text-accent: #fab948;
-  --text-link: #41e8ed;
-  --text-success: #39e799;
-  --text-faint: #6a85ad;
+  --text-main: #332918;                /* Main text (coffee brown - stylish on beige) */
+  --text-heading: #8f0a0a;             /* Primary headings - matches primary */
+  --text-secondary: #665f41;           /* For muted elements, tabs, details */
+  --text-accent: #685808;              /* For accents, links, icons */
+  --text-link: #295c62;                /* For links - muted teal */
+  --text-success: #419a78;
+  --text-faint: #a59e83;
 
-  --border: #334965;
-  --border-strong: #fab948;
-  --shadow-main: 0 8px 30px 0 #19365533, 0 1px 4px #ee860c17;
-  --shadow-card: 0 4px 16px 0 #1ea3a319, 0 1px 8px #fab94825;
+  --border: #d6cdb4;
+  --border-strong: #b1b483;
+  --shadow-main: 0 4px 32px 0 #d4c1a725, 0 1.5px 9px #68580822;    /* warm beige shadow + gold hint */
+  --shadow-card: 0 4px 14px 0 #edead647, 0 1px 6px #b1b48332;
 
-  --success: #39e799;
-  --error: #f65959;
-  --info: #3fe0e3;
-  --warn: #ffd86b;
+  --success: #419a78;
+  --error: #ba4428;
+  --info: #6f7e96;
+  --warn: #c5aa4c;
 
   --font-display: 'Poppins', 'Lexend', 'Inter', Arial, sans-serif;
   --font-body: 'Inter', Arial, sans-serif;
-  --transition-main: .18s cubic-bezier(.49,.84,.21,1.03);
+  --transition-main: .17s cubic-bezier(.58,.78,.24,1);
 
-  --focus-glow: 0 0 0 3px var(--accent-strong), 0 0 0 6px #fab94833;
+  --focus-glow: 0 0 0 3px var(--accent), 0 0 0 8px #eadfba66;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lexend:wght@500;700&family=Poppins:wght@500;700&display=swap');
@@ -102,10 +69,10 @@ body {
   margin: 0;
   font-family: var(--font-body);
   min-height: 100vh;
-  /* Layered dark blue/teal with gold/teal glows + subtle pattern */
-  background: var(--background-main), var(--background-abstract), #151b25;
+  /* Main beige background, abstract pastel layers for depth */
+  background: var(--background-main), var(--background-abstract), #ece7d8;
   color: var(--text-main);
-  letter-spacing: .005em;
+  letter-spacing: .007em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background .4s;
@@ -114,23 +81,23 @@ body {
 }
 
 body::before {
-  /* Animated gold accent glow overlay (top left) */
+  /* Ambient olive/gold overlay top left (subtle movement) */
   content: "";
   pointer-events: none;
   position: fixed;
-  top: -140px; left: -120px;
-  width: 680px; height: 510px;
-  background: radial-gradient(ellipse 55% 42% at 37% 33%, #fab94826 0%, transparent 90%);
-  filter: blur(80px);
-  opacity: 0.22;
-  mix-blend-mode: screen;
-  animation: goldGlowMove 12s linear infinite alternate;
+  top: -90px; left: -80px;
+  width: 520px; height: 410px;
+  background: radial-gradient(ellipse 58% 44% at 37% 33%, #ede2b647 0%, transparent 90%);
+  filter: blur(84px);
+  opacity: 0.18;
+  mix-blend-mode: lighten;
+  animation: goldGlowMove 18s linear infinite alternate;
   z-index: 0;
 }
 @keyframes goldGlowMove {
-  0% { transform: translateX(0) scaleY(1); opacity: .15;}
-  55% {opacity: .33;}
-  100% { transform: translateX(95px) scaleY(1.12); opacity:.24;}
+  0% { transform: translateX(0) scaleY(1); opacity: .115;}
+  50% {opacity: .22;}
+  100% { transform: translateX(65px) scaleY(1.08); opacity: .16;}
 }
 body::after {
   content: "";
@@ -138,25 +105,24 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.10;
-  /* Modern geometric SVG noise for depth */
-  background: url("data:image/svg+xml;utf8,<svg width='110' height='110' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/></filter><rect width='110' height='110' filter='url(%23f)' opacity='0.16'/></svg>");
+  opacity: 0.12;
+  /* low-opacity SVG noise for tactile subtlety */
+  background: url("data:image/svg+xml;utf8,<svg width='110' height='110' xmlns='http://www.w3.org/2000/svg'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='2' stitchTiles='stitch'/></filter><rect width='110' height='110' filter='url(%23f)' opacity='0.13'/></svg>");
   background-size: 110px 110px;
 }
 
-/* Scrollbar restyled for dark theme with accent hover */
 ::-webkit-scrollbar {
-  background: #232a37;
+  background: #edead6;
   width: 11px;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #314c2e;
+  background: #b1b483;
   border-radius: 6px;
   transition: background .16s;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #fab948;
+  background: var(--accent);
 }
 
 /* Main App Container */
@@ -165,26 +131,25 @@ body::after {
   display: flex;
   flex-direction: column;
   background: var(--surface-glass);
-  box-shadow: var(--shadow-main), 0 0px 80px 0 #0e223250 inset;
-  border-radius: 36px 36px 0 0;
+  box-shadow: var(--shadow-main), 0 0px 64px 0 #e4d5ba40 inset;
+  border-radius: 34px 34px 0 0;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1280px;
   animation: gradient-appear .8s cubic-bezier(.48,.87,.37,1.03);
   position: relative;
   z-index: 1;
-  border: 1.5px solid var(--border-strong);
+  border: 2px solid var(--border-strong);
 }
 
-/* App fade-in animation */
 @keyframes gradient-appear {
-  0% { opacity: 0; filter: blur(14px);}
+  0% { opacity: 0; filter: blur(10px);}
   100% { opacity:1; filter: blur(0);}
 }
 
 /* Navigation Bar */
 .navbar {
   background: var(--nav-bg);
-  color: var(--text-heading);
+  color: var(--primary);
   height: 62px;
   padding: 0 32px;
   display: flex;
@@ -195,10 +160,10 @@ body::after {
   box-sizing: border-box;
   position: fixed;
   z-index: 110;
-  border-bottom: 1.8px solid var(--border);
-  box-shadow: 0 2px 14px 0 #fab94813, 0 1px 2px #1ea3a315;
+  border-bottom: 2px solid var(--nav-border);
+  box-shadow: 0 2px 14px 0 #c1b68415, 0 1px 2px #b1b48313;
   backdrop-filter: blur(var(--glass-blur));
-  background-blend-mode: lighten, normal, color-burn;
+  background-blend-mode: lighten, normal;
 }
 .spacer-navbar { height: 62px; }
 
@@ -209,82 +174,83 @@ body::after {
 .logo-symbol {
   font-size: 2.18rem;
   color: var(--accent);
-  filter: drop-shadow(0 3px 10px var(--primary));
+  filter: drop-shadow(0 2.5px 8px #cfc18a70);
   padding-right: .2em;
 }
 .app-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.45rem;
-  background: linear-gradient(92deg, #fab948 30%, #28c7ba 110%);
+  font-size: 1.42rem;
+  background: linear-gradient(95deg, #8f0a0a 40%, #685808 110%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.2px;
   padding-left: 2px;
-  filter: drop-shadow(0 2px 0 #262d39);
+  filter: drop-shadow(0 2px 0 #fcfbf4);
 }
 
 /* Mini User Profile */
 .user-profile-mini {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 14px;
   background: var(--card-bg);
   padding: 6px 15px 6px 10px;
   border-radius: 999px;
-  box-shadow: 0 6px 19px 0 #1ea3a328, 0 1px 2px 0 #fab94810;
-  border: 1.6px solid var(--accent-soft);
-  backdrop-filter: blur(16px);
+  box-shadow: 0 2px 10px 0 #b1b48316, 0 1px 1px 0 #edead610;
+  border: 1.7px solid var(--secondary);
+  backdrop-filter: blur(15px);
   font-family: var(--font-body);
   transition: box-shadow var(--transition-main), border var(--transition-main);
 }
 .avatar-skeleton {
   width: 38px; height: 38px; border-radius: 50%;
-  background: linear-gradient(147deg, #0e2232 45%, #fab948 145%);
-  border: 3px solid #23395d;
-  box-shadow: 0 2px 7px 0 #fab94827;
+  background: linear-gradient(151deg, #b1b483 45%, #8f0a0a 155%);
+  border: 3px solid #edead6;
+  box-shadow: 0 1.5px 5px 0 #a59e8388;
   position: relative;
   overflow: hidden;
-  animation: avatar-vibe 2.6s infinite alternate;
+  animation: avatar-vibe 2.7s infinite alternate;
 }
 @keyframes avatar-vibe {
-  0%   { box-shadow: 0 2px 8px 0 #ffd86b2e; }
-  100% { box-shadow: 0 2px 22px 0 #28c7ba60; }
+  0%   { box-shadow: 0 2px 8px 0 #c5aa4c24; }
+  100% { box-shadow: 0 2px 18px 0 #419a7860; }
 }
-.user-info { display: flex; flex-direction: column; line-height: 1.03; gap: 1px;}
+.user-info { display: flex; flex-direction: column; line-height: 1.08; gap: 1px;}
 .user-name {
   font-weight: 900;
-  font-size: 1.12rem;
-  color: var(--accent);
+  font-size: 1.13rem;
+  color: var(--primary);
   font-family: var(--font-display);
 }
 .badge-row { display: flex; gap: 2px;}
 .badge {
   font-size: 1.14rem; margin-left: 4px;
-  filter: drop-shadow(0 1px 5px #5c62e825) drop-shadow(0 1px 1px #fab94812);
-  opacity: .93;
-  transition: filter .18s;
+  filter: drop-shadow(0 1.5px 5px #8f0a0a05) drop-shadow(0 1px 1px #edead60a);
+  opacity: .97;
+  transition: filter .13s;
 }
 .badge.verified { color: var(--success);}
 .badge.expert { color: var(--accent);}
 .profile-trust {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   color: var(--success);
   margin-left: 10px;
   padding: 2px 10px;
-  background: #22395a;
+  background: #ece0c3;
   border-radius: 8px;
   font-weight: 700;
 }
 
+/* Main Navigation */
 .main-nav {
   position: sticky;
   top: 62px;
-  background: linear-gradient(94deg, #1b2634 72%, #232837 120%);
-  border-bottom: 2px solid var(--border);
+  background: linear-gradient(94deg, #f7efd1 76%, #b1b483 128%);
+  border-bottom: 2px solid var(--nav-border);
   z-index: 99;
   width: 100%;
-  box-shadow: 0 1px 13px 0 #fab9480e;
+  box-shadow: 0 1px 14px 0 #b1b48310;
   backdrop-filter: blur(var(--glass-blur));
-  animation: gradient-appear .8s cubic-bezier(.39,.81,.29,1.11);
+  animation: gradient-appear .7s cubic-bezier(.39,.81,.29,1.11);
 }
 .main-nav ul {
   display: flex; flex-direction: row; gap: 4px;
@@ -298,40 +264,40 @@ body::after {
   margin: 2px 0;
   color: var(--text-secondary);
   border-radius: 14px 14px 0 0;
-  transition: background var(--transition-main), color .13s, box-shadow .15s;
+  transition: background var(--transition-main), color .11s, box-shadow .12s;
   display: flex;
   align-items: center;
   gap: 10px;
   user-select: none;
-  font-size: 1.08rem;
+  font-size: 1.07rem;
   font-weight: 540;
-  letter-spacing: .025em;
-  border: 1.5px solid transparent;
-  background: linear-gradient(91deg,#212a36 80%, #fab9480c 120%);
+  letter-spacing: .02em;
+  border: 1.4px solid transparent;
+  background: linear-gradient(93deg,#f3eed2 75%, #edead6 120%);
   outline: none;
-  box-shadow: 0 1px 3px 0 #28497414;
+  box-shadow: 0 1px 3px 0 #cec4aa0e;
   position: relative;
 }
-.main-nav li:after {
+.main-nav li::after {
   content: '';
   position: absolute;
-  left: 10px;
-  right: 12px;
+  left: 13px;
+  right: 14px;
   bottom: 2px;
   height: 3px;
-  background: linear-gradient(92deg, var(--accent-strong), var(--secondary));
+  background: linear-gradient(92deg, var(--accent), var(--secondary));
   border-radius: 10px;
   opacity: 0;
-  transform: scaleX(0.48);
-  transition: opacity .14s, transform .22s;
+  transform: scaleX(0.49);
+  transition: opacity .13s, transform .17s;
 }
 .main-nav li.active,
 .main-nav li:focus,
 .main-nav li:hover {
-  background: linear-gradient(89deg,#24313e 55%, #fab94823 110%);
-  color: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 3px 11px 0 #fab9482f;
+  background: var(--nav-hover);
+  color: var(--primary);
+  border-color: var(--secondary);
+  box-shadow: 0 3px 11px 0 #b1b48313;
   z-index: 2;
 }
 .main-nav li.active:after,
@@ -345,28 +311,28 @@ body::after {
   box-shadow: var(--focus-glow);
 }
 .nav-icon {
-  font-size: 1.23em;
-  filter: drop-shadow(0 1px 2px #fab9480c);
+  font-size: 1.18em;
+  filter: drop-shadow(0 1px 2px #b1b48308);
 }
 
-/* DASHBOARD & PAGE SECTIONS */
+/* Dashboard and Page Sections */
 .dashboard {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  padding: 45px 13px 46px 13px;
+  padding: 44px 13px 45px 13px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-height: 530px;
+  min-height: 520px;
   z-index: 4;
   background: none !important;
 }
 
-/* AI banner with gradient, glass, and gold accent */
+/* AI banner with gold accent + glass */
 .ai-banner-suggestion {
-  background: linear-gradient(97deg, #212a36 60%, #ffe7b433 120%);
+  background: linear-gradient(89deg, #edead6 65%, #b1b48333 120%);
   border-left: 5px solid var(--accent);
   color: var(--text-accent);
   display: flex;
@@ -379,116 +345,106 @@ body::after {
   font-family: var(--font-body);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(16px);
-  animation: card-pop .44s cubic-bezier(.35,.9,.44,1.02);
+  backdrop-filter: blur(12px);
+  animation: card-pop .36s cubic-bezier(.35,.9,.44,1.02);
 }
 @keyframes card-pop {
-  0% { opacity: 0; filter: blur(8px) scale(.96);}
+  0% { opacity: 0; filter: blur(8px) scale(.97);}
   100% { opacity: 1; filter: blur(0) scale(1);}
 }
 .ai-icon {
-  font-size: 1.65em;
-  background: #232a36;
+  font-size: 1.67em;
+  background: #edead6;
   border-radius: 50%;
-  padding: 0.14em 0.21em;
-  color: var(--accent-strong);
-  box-shadow: 0 0 7px 0 #fab94834;
+  padding: 0.13em 0.22em;
+  color: var(--accent);
+  box-shadow: 0 0 7px 0 #b1b48336;
 }
 
-/* Vibrant ghost-style button */
+/* Fancy button for beige/gold theme */
 .btn-ghost {
-  background: linear-gradient(101deg, #294253 70%, #fab94816 100%);
-  color: var(--accent);
+  background: linear-gradient(95deg, #fcfbf4 68%, #b1b4831c 110%);
+  color: var(--primary);
   font-family: var(--font-display);
   font-weight: 700;
   cursor: pointer;
-  font-size: 1.06rem;
+  font-size: 1.07rem;
   border-radius: 7px;
   border: 2px solid transparent;
   padding: 7px 22px;
   margin-left: auto;
   margin-right: 0;
-  transition: background var(--transition-main), color .17s, box-shadow .17s, border-color .17s;
-  box-shadow: 0 2px 14px 0 #fab94815;
+  transition: background var(--transition-main), color .14s, box-shadow .14s, border-color .16s;
+  box-shadow: 0 2px 14px 0 #b1b48310;
   outline: none;
   position: relative;
   z-index: 1;
 }
 .btn-ghost:hover, .btn-ghost:focus {
-  color: #262d39;
+  color: #fcfbf4;
   border-color: var(--accent);
   background: var(--accent);
   text-decoration: none;
-  box-shadow: 0 0 10px 2px #fab94834, var(--shadow-card);
+  box-shadow: 0 0 11px 2px #b1b48338, var(--shadow-card);
 }
 .btn-ghost:focus-visible {
-  box-shadow: var(--focus-glow), 0 2px 10px 0 var(--accent-soft);
+  box-shadow: var(--focus-glow), 0 2px 10px 0 var(--beige-secondary);
   border-color: var(--accent);
 }
 
 .alert-banner {
-  background: linear-gradient(95deg, #242a3e 75%, #fab94824 120%);
+  background: linear-gradient(95deg, #faf5e4 75%, #ba44281d 120%);
   color: var(--error);
   border-left: 5px solid var(--primary);
-  box-shadow: 0 6px 20px 0 #f6595927;
+  box-shadow: 0 6px 17px 0 #ba442827;
   border-radius: 13px;
   padding: 13px 26px;
-  margin-bottom: 17px;
-  font-size: 1.10rem;
+  margin-bottom: 15px;
+  font-size: 1.11rem;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 17px;
 }
 .alert-icon {
-  font-size: 1.45em;
+  font-size: 1.44em;
 }
 
 .footer {
-  background: linear-gradient(91deg, #20273f 61%, #fab9481c 112%);
+  background: linear-gradient(90deg, #faf5e4 61%, #b1b48319 113%);
   color: var(--text-faint);
-  border-top: 2px solid var(--accent-soft);
-  padding: 18px 0 14px 0;
+  border-top: 2px solid var(--secondary);
+  padding: 15px 0 13px 0;
   font-size: 1.08rem;
   margin-top: 32px;
   text-align: center;
 }
 
-/* Responsive adjustments for mobile & tablet */
+/* Responsive adjustments */
 @media (max-width: 960px) {
   .main-container {
     border-radius: 0;
     max-width: 100vw;
-    border-width: 0 0 1.5px 0;
+    border-width: 0 0 2px 0;
   }
-  .dashboard {
-    padding: 9px 2px 25px 2px;
-  }
-  .main-nav ul { height: 42px;}
+  .dashboard { padding: 7px 2px 19px 2px; }
+  .main-nav ul { height: 44px;}
   .main-nav li { font-size: 0.99rem; padding: 8px 8px 8px 8px;}
 }
 @media (max-width: 600px) {
-  .main-nav li {padding: 8px 8px 7px 7px;}
+  .main-nav li {padding: 7px 7px 7px 7px;}
   .ai-banner-suggestion, .alert-banner {padding: 7px 7px;}
 }
 
-/* Universal focus style for accessibility */
-*:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-glow);
-  border-color: var(--accent);
-}
-
-/* Decorative hover effects for components/cards */
+/* Page "cards" */
 .tab-content:hover,
 .map-view:hover,
 .micro-community-info:hover {
-  box-shadow: 0 8px 32px 0 #1936552a, 0 2px 8px 0 #fab94829;
+  box-shadow: 0 7px 28px 0 #edead62a, 0 1.3px 7px 0 #b1b4832c;
   border-color: var(--accent);
-  transform: translateY(-2px) scale(1.019);
-  transition: box-shadow .20s, border .14s, transform .19s;
+  transform: translateY(-2px) scale(1.015);
+  transition: box-shadow .18s, border .10s, transform .14s;
 }
 
-/* Example: Style cards and map/info views (customize as needed!) */
 .map-view,
 .micro-community-info,
 .tab-content {
@@ -498,7 +454,7 @@ body::after {
   box-shadow: var(--shadow-card);
   padding: 18px 22px;
   margin: 10px 0;
-  transition: box-shadow .20s, border .14s, transform .19s;
+  transition: box-shadow .18s, border .13s, transform .12s;
 }
 
 .micro-community-info h3 {
@@ -515,9 +471,58 @@ body::after {
 .map-skeleton {
   height: 120px;
   border-radius: 10px;
-  background: linear-gradient(95deg, #233449 70%, #28c7ba29 130%), #194867;
+  background: linear-gradient(93deg, #edead6 85%, #b1b48323 130%), #e3dbc4;
   margin-bottom: 8px;
-  box-shadow: 0 2px 12px #1ea3a328;
+  box-shadow: 0 2px 10px #b1b48317;
+}
+.footer {
+  background: linear-gradient(91deg, #faf5e4 61%, #b1b4831c 112%);
+  color: var(--text-faint);
+  border-top: 2px solid var(--secondary);
+  padding: 15px 0 13px 0;
+  font-size: 1.08rem;
+  margin-top: 32px;
+  text-align: center;
 }
 
-/* Many “cards”/panes will inherit these dark navy + teal & gold accents by default due to palette! */
+/* Universal focus style for accessibility */
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-glow);
+  border-color: var(--accent);
+}
+
+/* Demo map/info card hover */
+.tab-content:hover,
+.map-view:hover,
+.micro-community-info:hover {
+  box-shadow: 0 7px 28px 0 #edead62a, 0 1.3px 7px 0 #b1b4832c;
+  border-color: var(--accent);
+  transform: translateY(-2px) scale(1.015);
+  transition: box-shadow .18s, border .10s, transform .14s;
+}
+
+/* Universal “pane/card” surface for beige: */
+.map-view,
+.micro-community-info,
+.tab-content {
+  background: var(--surface);
+  border-radius: 15px;
+  border: 1.65px solid var(--border);
+  box-shadow: var(--shadow-card);
+  padding: 18px 21px;
+  margin: 11px 0;
+  transition: box-shadow .19s, border .12s, transform .16s;
+}
+
+/* Example: Decorative elements (e.g., skeleton for loading, avatars, or eco tips) */
+.eco-tip-card,
+.skeleton-card {
+  background: linear-gradient(94deg, #edead6 85%, #b1b4832b 120%);
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 1.2px 8px 0 #b1b48313;
+  color: var(--text-secondary);
+}
+
+/* Many cards inherit beige + cocoa/brown accent palette by default due to variables! */
