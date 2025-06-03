@@ -248,7 +248,7 @@ body::after {
 .badge {
   font-size: 1.13rem;
   margin-left: 4px;
-  filter: drop-shadow(0 1.5px 9px #ecd08c18);
+  /* No drop-shadow/glow on badges */
   opacity: .92;
   transition: filter .17s;
 }
@@ -261,9 +261,9 @@ body::after {
   padding: 2px 12px;
   background: var(--lux-glass-overlay);
   border-radius: 10px;
-  border: 1.2px solid var(--lux-gold-main);
+  border: 1.3px solid var(--lux-gold-main);
   font-weight: 700;
-  box-shadow: 0 1.2px 7px #ecd08c12;
+  box-shadow: none;
 }
 
 /* ============= MAIN NAVIGATION BAR ============= */
