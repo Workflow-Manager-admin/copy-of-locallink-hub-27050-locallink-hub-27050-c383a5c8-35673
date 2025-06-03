@@ -19,14 +19,14 @@
 
   --lux-maroon: #921d36;                  /* Maroon as luxury secondary color for highlights, buttons, nav, and accents */
   --lux-maroon-dark: #800000;             /* Deeper maroon for contrast and hover/focus states */
-  --lux-maroon-light: #a84560;            /* Softer/gradient end-point, rarely used */
+  --lux-maroon-light: #a84560;            /* Softer/gradient end-point for subtle section dividers, secondary badges */
 
   --lux-card-bg: #f8f4ea;                 /* Card/overlay: just a bit lighter than bg for separation */
   --lux-card-shadow: 0 5px 30px 0 #BFA14B20, 0 2px 6px #180e0270;
   --lux-card-grad: linear-gradient(117deg, #f6efd9 80%, #f1e1c6 120%);
 
   --lux-text-main: #181a1b;               /* Onyx for main text, maximizing legibility on the soft bg */
-  --lux-text-heading: #BFA14B;            /* Deep gold for H1/H2, premium but readable */
+  --lux-text-heading: #921d36;            /* Maroon now used on section/page headers for stronger accent */
   --lux-text-secondary: #725C2F;
   --lux-text-muted: #BFA14B88;            /* Muted gold for helper text, dividers */
 
@@ -35,7 +35,7 @@
   --lux-info: #4689b9;
   --lux-error: #CA5240;
 
-  --lux-border-main: #e3d7ac;
+  --lux-border-main: #921d36;             /* Outline key cards, banners, and badge containers in maroon (used instead of gold in many places) */
   --lux-border-gold: var(--lux-gold-main);
   --lux-border-radius: 20px;
   --lux-glass-blur: 20px;
@@ -43,10 +43,11 @@
   --lux-font-heading: 'Playfair Display', Georgia, serif;
   --lux-font-body: 'Inter', Arial, sans-serif;
 
-  /* Brand/utility color aliases using maroon for secondary/accent where appropriate */
-  --primary: var(--lux-gold-main);                          /* Remains gold: brand highlight */
-  --secondary: var(--lux-maroon);                           /* Maroon: all interactive, accent, selection */
-  --accent: var(--lux-maroon-dark);                         /* Deep maroon for accent strokes, btn hover, tab highlight */
+  /* Brand/utility color aliases with increased maroon use for secondary/accent, and gold/onyx for luxury/rich contrast */
+  --primary: var(--lux-gold-main);
+  --secondary: var(--lux-maroon);            /* Maroon for main CTA, icons, and badges */
+  --accent: var(--lux-maroon-dark);          /* Deep maroon for accent strokes, btn hover, important highlights, and active elements */
+  --badge-highlight: var(--lux-maroon-light);/* Lighter maroon for secondary badges and subtle backgrounds */
   --surface: var(--lux-card-bg);
   --text-main: var(--lux-text-main);
   --text-heading: var(--lux-text-heading);
@@ -55,14 +56,27 @@
   --success: var(--lux-success);
   --warn: var(--lux-warn);
   --info: var(--lux-info);
-  --border: var(--lux-border-main);
+  --border: var(--lux-border-main);          /* Maroon is the default border for cards and banners */
   --nav-hover: linear-gradient(97deg, #fdeec0 22%, #fffbe3 88%);
+  --section-divider: linear-gradient(90deg, #921d3622 45%, #bfa14b44 55%, #faf8f3 90%); /* Maroon/gold fade for section separators */
 }
+
+/* 
+   Maroon Integration Rationale:
+   - Section/page headers now use maroon (var(--lux-text-heading)), replacing gold, to bring warmth and authority.
+   - Card outlines/containers, banners, and important state borders now use maroon for strong visual identity.
+   - Badges use maroon with gold for dual highlight: maroon for accent/selection, gold for achievement/success.
+   - Icon accents and key notification icons leverage maroon for immediacy and richness.
+   - Section dividers/lines subtly blend maroon with gold for premium and readable separation.
+   - Notification/important states (e.g. alert, selection) use maroon backgrounds/outlines, gold/onyx for CTAs/text.
+   - Gold is still primary for CTA buttons and flashes of luxury, but maroon is more visually integrated throughout core UI.
+*/
 
 /* Maroon highlights and accent notes:
    - Use --secondary for navigation highlights, button backgrounds, active tab backgrounds, and main links.
-   - Use --accent (deep maroon) for hover/active highlights and interactive strokes.
-   - Gold/onyx borders and text remain for balance; champagne stays as root background.
+   - Use --accent (deep maroon) for hover/active highlights, interactive strokes, and important state outlines.
+   - Section headers now utilize maroon for page identity; card and section outlines get maroon for harmony.
+   - Gold/onyx borders and text remain for contrast; champagne stays as root background.
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap');
