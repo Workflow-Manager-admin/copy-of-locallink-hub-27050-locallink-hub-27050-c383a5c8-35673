@@ -286,11 +286,11 @@ body::after {
 .main-nav {
   position: sticky;
   top: 62px;
-  background: linear-gradient(94deg, #f7efd1 76%, #b1b483 128%);
-  border-bottom: 2px solid var(--nav-border);
+  background: var(--nav-bg);
+  border-bottom: 2.2px solid var(--nav-border);
   z-index: 99;
   width: 100%;
-  box-shadow: 0 1px 14px 0 #b1b48310;
+  box-shadow: 0 1px 16px 0 #b1b48310;
   backdrop-filter: blur(var(--glass-blur));
   animation: gradient-appear .7s cubic-bezier(.39,.81,.29,1.11);
 }
@@ -306,7 +306,7 @@ body::after {
   margin: 2px 0;
   color: var(--text-secondary);
   border-radius: 14px 14px 0 0;
-  transition: background var(--transition-main), color .11s, box-shadow .12s;
+  transition: background var(--transition-main), color .13s, box-shadow .15s, border-color .15s;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -314,10 +314,10 @@ body::after {
   font-size: 1.07rem;
   font-weight: 540;
   letter-spacing: .02em;
-  border: 1.4px solid transparent;
-  background: linear-gradient(93deg,#f3eed2 75%, #edead6 120%);
+  border: 1.5px solid transparent;
+  background: linear-gradient(93deg, var(--beige-cream) 78%, var(--beige-secondary) 120%);
   outline: none;
-  box-shadow: 0 1px 3px 0 #cec4aa0e;
+  box-shadow: 0 1.5px 4px 0 #cab48d17;
   position: relative;
 }
 .main-nav li::after {
@@ -339,7 +339,7 @@ body::after {
   background: var(--nav-hover);
   color: var(--primary);
   border-color: var(--secondary);
-  box-shadow: 0 3px 11px 0 #b1b48313;
+  box-shadow: 0 5px 15px 0 #d6cdb41e, 0 1.5px 4px #b1b48315;
   z-index: 2;
 }
 .main-nav li.active:after,
