@@ -435,16 +435,20 @@ body::before {
   .ai-banner-suggestion, .alert-banner, .tab-content, .map-view, .micro-community-info {padding: 8px 5px;}
 }
 
-/* === ACCESSIBLE LINKS === */
+/* === ACCESSIBLE LINKS & NAV LABELS: maroon as interactive secondary, gold for special === */
 a, .main-nav li .nav-label {
-  color: var(--lux-gold-main);
+  color: var(--lux-maroon);               /* Maroon link for modern luxury accent */
   text-decoration: underline;
   font-weight: 530;
   transition: color .18s;
 }
 a:hover, .main-nav li.active .nav-label, a:focus {
-  color: var(--lux-gold-deep);
+  color: var(--lux-accent);               /* Deeper maroon/secondary for interaction */
   text-decoration: underline;
+}
+/* For special gold call-outs, add .gold-link if needed: */
+.gold-link {
+  color: var(--lux-gold-main);
 }
 
 /*
