@@ -395,14 +395,203 @@ body::before {
 /* === HEADINGS & INFO: deep gold or onyx headings, premium feel === */
 .tab-content h2,
 .micro-community-info h3 {
-  color: var(--lux-text-heading);
+  color: var(--lux-text-heading);     /* Maroon: prominent page/section header for luxury highlight and strong identity */
   font-family: var(--lux-font-heading);
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing: 0.05em;
   font-size: 1.67em;
   transition: color .16s;
+  border-left: 6px solid var(--lux-maroon);    /* Maroon vertical bar for visual anchoring */
+  padding-left: 13px;
+  text-shadow: 0 1px 8px #921d3624, 0 0.5px 0 #af507f13;
 }
+
+/* Section/feature divider with gold-maroon gradient for luxury/subtlety */
+.section-divider {
+  border: none;
+  border-top: 2.5px solid transparent;
+  height: 0;
+  margin: 28px 0 18px 0;
+  background: var(--section-divider);
+  opacity: .9;
+}
+
+/* Card containers/outlines: stronger maroon border for premium sectioning */
+.tab-content,
+.map-view,
+.micro-community-info {
+  background: rgba(246,243,230,0.93); /* premium card on champagne bg */
+  border-radius: var(--lux-border-radius);
+  border: 2.2px solid var(--lux-maroon);       /* Maroon: high-contrast frame for separation */
+  box-shadow: 0 5px 15px 0 #BFA14B0a, 0 2px 8px #921d3616;
+  /* Maroon-gold shadow for rich "lift" – see rationale at top */
+  padding: 26px 31px;
+  margin: 14px 0;
+  transition: 
+    box-shadow .22s, 
+    border .17s, 
+    background .15s,
+    transform .19s;
+}
+
+/* Card hover: gold+maroon glow, maroon border remains */
+.tab-content:hover,
+.map-view:hover,
+.micro-community-info:hover {
+  box-shadow: 0 9px 28px 0 #921d3645, 0 1.6px 10px #FFD70016 inset;
+  border-color: var(--lux-maroon-dark);
+  background: linear-gradient(115deg,#fffbe3 85%,#fde6ef 120%);
+  transform: translateY(-2.5px) scale(1.012);
+}
+
+/* Maroon info banner for notifications, calls to action, etc. */
+.ai-banner-suggestion,
+.alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(93deg, #fff6fa 54%, #f9e8eb 100%);
+  border-left: 5px solid var(--lux-maroon-dark);
+  box-shadow: 0 1.5px 8px #921d3633;
+  border-radius: 8px;
+  padding: 14px 22px;
+  margin: 9px 0 16px 0;
+  font-weight: 600;
+  color: var(--lux-maroon);
+  /* Maroon for action baton/banner background and border, gold remains for CTAs/icons */
+}
+.ai-banner-suggestion .ai-icon,
+.alert-banner .alert-icon {
+  color: var(--lux-maroon-dark);
+  font-size: 1.45em;
+  background: #fde6ef;
+  padding: 6px 12px;
+  margin-right: 7px;
+  border-radius: 99px;
+  border: 2px solid var(--lux-maroon-light);
+  /* Maroon as direct accent for notification icons and assists */
+}
+
+/* Badge design: Maroon for achievement, gold for status, onyx for subtlety */
+.badge {
+  font-size: 1.17rem;
+  margin-left: 4px;
+  color: var(--lux-maroon);       /* Maroon badges stand out for role/skill, gold reserved for verified/elite/success */
+  opacity: .97;
+  background: var(--badge-highlight);
+  border-radius: 10px;
+  padding: 2px 10px;
+  border: 1.5px solid var(--lux-maroon-dark);
+  box-shadow: 0 2px 8px #921d3655 inset;
+  filter: saturate(1.1);
+  font-weight: 700;
+  transition: filter .17s, background .16s;
+}
+.badge.verified { color: var(--lux-gold-main); background: #faf8f3; border: 1.7px solid var(--lux-gold-main);}
+.badge.expert { color: var(--lux-maroon-dark); background: var(--lux-gold-soft);}
+.profile-trust {
+  font-size: 0.95rem;
+  color: var(--lux-onyx);
+  margin-left: 14px;
+  padding: 2px 12px;
+  background: var(--badge-highlight);
+  border-radius: 12px;
+  border: 1.3px solid var(--lux-maroon);
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.community-metrics span {
+  background: #f5dde8;
+  color: var(--lux-maroon-dark);
+  border-radius: 9px;
+  padding: 2px 10px;
+  margin-right: 10px;
+  font-weight: 700;
+  border: 1px solid var(--lux-maroon-light);
+  /* Maroon for numbers and status pips on micro-community metrics */
+}
+
+/* Accent state borders: use maroon for selected, highlighted, and state markers (e.g. selection in lists/rows) */
+li[aria-current], li.selected, .highlight-state {
+  border: 2.7px solid var(--lux-maroon-dark) !important;
+  background: linear-gradient(93deg, #ffd7de 46%, #faf6f9 100%);
+  box-shadow: 0 0 8px #921d3632;
+}
+
+/* Subtle maroon borders for muted/secondary cards and overlays */
+.card-outline,
+.map-legend,
+.secondary-section,
+.tab-content .section-helper {
+  border-left: 3px solid var(--lux-maroon-light);
+  padding-left: 17px;
+  background: #f9ecf1;
+}
+
+/* Map pin or special status icon: maroon highlight */
+.map-pin-emoji {
+  color: var(--lux-maroon-dark);
+  font-size: 1.21em;
+  margin-right: 2px;
+}
+
+/* Updates: icons and interactive accentuation now maroon */
+.nav-icon {
+  font-size: 1.19em;
+  color: var(--lux-maroon-dark);  /* Maroon icon within tab for modern luxury accent */
+}
+
+/* Maroon for action-focused/selected nav and tab states */
+.main-nav li {
+  border: 1.7px solid transparent;
+}
+.main-nav li.active,
+.main-nav li:focus,
+.main-nav li:hover {
+  border-color: var(--lux-maroon-dark);
+  color: var(--lux-maroon-dark);
+  background: linear-gradient(91deg, #ffe6ea 42%, #f6efd9 130%);
+  /* Gold and maroon highlighted for active nav */
+  box-shadow: 0 5px 17px -2px #921d3660, 0 2px 6px #FFD70024;
+}
+.main-nav li.active:after,
+.main-nav li:focus:after,
+.main-nav li:hover:after {
+  background: linear-gradient(93deg, #921d36 56%, #FFD700 125%);
+}
+
+/* Selected states & info banners use maroon or maroon/gold gradient for high-visibility */
+.tab-content .selected-state,
+.important-banner,
+.selection-banner {
+  background: linear-gradient(96deg, #921d36 53%, #bfa14b 130%);
+  color: var(--lux-bg-champagne);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 700;
+  border: 2.1px solid var(--lux-maroon-dark);
+}
+
+/* Subtle maroon text for inline links for contrast and richness */
+a, .main-nav li .nav-label {
+  color: var(--lux-maroon);
+  text-decoration: underline;
+  font-weight: 530;
+  transition: color .18s;
+}
+a:hover, .main-nav li.active .nav-label, a:focus {
+  color: var(--lux-maroon-dark);
+  text-decoration: underline;
+}
+
+/* Maroon icons and accents for information and highlight states (e.g., inline icons and badges) */
+.inline-maroon {
+  color: var(--lux-maroon-dark) !important;
+  font-weight: 700;
+}
+
 .tab-content p, .micro-community-info p,
 .tab-content ul, .tab-content li, 
 .tab-content b, .tab-content span,
