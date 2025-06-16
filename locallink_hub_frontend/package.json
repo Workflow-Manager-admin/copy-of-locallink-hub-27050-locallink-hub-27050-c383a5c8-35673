@@ -8,8 +8,8 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "cross-env EDIT_MODE=true webpack serve --config .ve/webpack.config.js --mode development",
-    "build": "react-scripts build",
+    "start": "cross-env PUBLIC_URL=./ EDIT_MODE=true webpack serve --config .ve/webpack.config.js --mode development",
+    "build": "PUBLIC_URL=./ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
