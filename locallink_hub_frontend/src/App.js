@@ -7,13 +7,6 @@ import {
   loadNotificationSettings
 } from './notifications';
 import NotificationSettingsDialog from './NotificationSettingsDialog';
-import {
-  requestNotificationPermission,
-  triggerNotification,
-  isNotificationEnabled,
-  loadNotificationSettings
-} from './notifications';
-import NotificationSettingsDialog from './NotificationSettingsDialog';
 
 /*
   Main Container for LocalLink Hub — REFACTORED & ENHANCED for INTERACTIVITY/RESPONSIVENESS
@@ -462,14 +455,138 @@ function DashboardInteractiveBar({ onAISuggest, onAlerts, isNarrow }) {
   );
 }
 
-// TAB BODIES — minor responsiveness via isNarrow
-function SkillExchangeTab({ aiSuggestOverlay }) {
+/**
+ * PostFilterBar
+ * Props:
+ *   - filter: { distance, needTypes, availOnly }
+ *   - onChange: callback(newFilter)
+ *   - options: { availableNeedTypes: [str], minDistance, maxDistance }
+ *   - isNarrow: bool (for layout)
+ */
+function PostFilterBar({ filter, onChange, options, isNarrow }) {
+  const { availableNeedTypes, minDistance, maxDistance } = options;
+  // Controlled filter form elements
+  return (
+    <div style={{
+      background: "#fff",
+      borderRadius: 10,
+      boxShadow: "0 1.5px 5px rgba(44,77,99,.09)",
+      padding: isNarrow ? "10px 4px" : "12px 22px",
+      marginBottom: isNarrow ? 10 : 19,
+      marginTop: 2,
+      display: 'flex',
+      flexDirection: isNarrow ? "column" : "row",
+      gap: isNarrow ? 8 : 17,
+      alignItems: isNarrow ? "stretch" : "center"
+    }}>
+      <label style={{display:"flex",alignItems:"center",gap:6, fontSize: isNarrow?13.8:15}}>
+        Distance:&nbsp;
+        <select
+          value={filter.distance}
+          onChange={e => onChange({...filter, distance: Number(e.target.value)})}
+          style={{
+            fontSize: isNarrow?13.8:15, padding: "2px 8px", borderRadius: 7, border: "1.1px solid #bbb"
+          }}
+        >
+          {[0.5, 1, 2, 3, 5].map(n => n >= minDistance && n <= maxDistance ? (
+            <option key={n} value={n}>{n} km</option>
+          ) : null)}
+        </select>
+      </label>
+      <label style={{display:"flex",alignItems:"center",gap:6, fontSize: isNarrow?13.8:15}}>
+        Need:&nbsp;
+        <select
+          multiple
+          value={filter.needTypes}
+          size={isNarrow?2:availableNeedTypes.length}
+          style={{
+            fontSize: isNarrow?13.5:15, borderRadius: 7, border: "1.1px solid #bbb", width: isNarrow?90: undefined
+          }}
+          onChange={e => {
+            const opts = [...e.target.options].filter(o => o.selected).map(o => o.value);
+            onChange({...filter, needTypes: opts});
+          }}
+        >
+          {availableNeedTypes.map(nt =>
+            <option key={nt} value={nt}>{nt}</option>
+          )}
+        </select>
+      </label>
+      <label style={{display:"flex",alignItems:"center",gap:6, fontSize:isNarrow?13.5:15}}>
+        <input
+          type="checkbox"
+          checked={filter.availOnly}
+          style={{ width: 16, height: 16 }}
+          onChange={e => onChange({...filter, availOnly: e.target.checked})}
+        />
+        Available Only
+      </label>
+    </div>
+  );
+}
+
+// FAKE post/mock data with metadata for filtering
+const skillMockPosts = [
+  {
+    id: 1,
+    user: "Evelyn C.",
+    verified: true,
+    type: "Offer",
+    needType: "Tutoring",
+    label: "can tutor Math Sat/Sun.",
+    distance: 0.9,
+    availability: "weekend",
+    available: true,
+    color: "#69a989"
+  },
+  {
+    id: 2,
+    user: "Jan P.",
+    verified: false,
+    type: "Offer",
+    needType: "Music",
+    label: "offers Guitar Lessons for exchange.",
+    distance: 1.2,
+    availability: "weekday",
+    available: true,
+    color: ACCENT
+  },
+  {
+    id: 3,
+    user: "Sara K.",
+    verified: false,
+    type: "Request",
+    needType: "IT Help",
+    label: "requests IT Help this weekend!",
+    distance: 0.4,
+    availability: "weekend",
+    available: false,
+    color: PRIMARY
+  },
+];
+
+const skillNeedTypes = ["Tutoring", "Music", "IT Help"];
+
+
+function SkillExchangeTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow }) {
+  // Filter posts
+  const filtered = skillMockPosts.filter(post =>
+    post.distance <= postFilter.distance &&
+    (postFilter.needTypes.length===0 || postFilter.needTypes.includes(post.needType)) &&
+    (!postFilter.availOnly || post.available)
+  );
   return (
     <section>
       <h3 style={{ color: PRIMARY, fontWeight: 600 }}>Skill Exchange</h3>
       <div style={{ color: SECONDARY, fontSize: 15, marginBottom: 8 }}>
         Offer or request help from neighbors with verified skills.
       </div>
+      <PostFilterBar
+        filter={postFilter}
+        onChange={onFilterChange}
+        options={{ availableNeedTypes: skillNeedTypes, minDistance: 0.5, maxDistance: 5 }}
+        isNarrow={isNarrow}
+      />
       {/* Inline option for suggestions on mobile */}
       {!aiSuggestOverlay && (
         <div style={{
@@ -491,35 +608,91 @@ function SkillExchangeTab({ aiSuggestOverlay }) {
         </div>
       )}
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle('#69a989')}></span>
-          <div>
-            <b>Evelyn C.</b> <span style={badgeStyle}>Peer Verified</span> can tutor Math Sat/Sun.
-          </div>
-        </li>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle(ACCENT)}></span>
-          <div>
-            <b>Jan P.</b> offers <span style={badgeStyle}>Guitar Lessons</span> for exchange.
-          </div>
-        </li>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle(PRIMARY)}></span>
-          <div>
-            <b>Sara K.</b> requests <span style={badgeStyle}>IT Help</span> this weekend!
-          </div>
-        </li>
+        {filtered.length === 0 &&
+          <li style={{ color: "#c83842", fontWeight: 500, padding: 12 }}>
+            No posts match these filters.
+          </li>
+        }
+        {filtered.map(post => (
+          <li style={listItemStyle} key={post.id}>
+            <span style={profilePicStyle(post.color)}></span>
+            <div>
+              <b>{post.user}</b>
+              {post.verified && <span style={badgeStyle}>Peer Verified</span>}{" "}
+              {post.label}
+              <span style={{
+                background: "#eee9",
+                color: "#333",
+                marginLeft: 8,
+                borderRadius: 7,
+                padding: "2px 7px",
+                fontSize: 12
+              }}>
+                {post.type} - {post.needType}, {post.distance}km, {post.available ? "Available" : "Not Available"}
+              </span>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   );
 }
-function ResourceReupTab({ aiSuggestOverlay }) {
+
+const resourceMockPosts = [
+  {
+    id: 1,
+    user: "Stacy Y.",
+    verified: false,
+    type: "Offer",
+    needType: "Board Games",
+    label: "is giving away Board Games.",
+    distance: 1.1,
+    available: true,
+    color: ACCENT
+  },
+  {
+    id: 2,
+    user: "Roger Q.",
+    verified: false,
+    type: "Offer",
+    needType: "Homegrown Tomatoes",
+    label: "offers Homegrown Tomatoes.",
+    distance: 2.0,
+    available: false,
+    color: SECONDARY
+  },
+  {
+    id: 3,
+    user: "Lina P.",
+    verified: false,
+    type: "Request",
+    needType: "Stackable Shelves",
+    label: "requests Stackable Shelves for a local project.",
+    distance: 0.7,
+    available: true,
+    color: "#964B00"
+  },
+];
+const resourceNeedTypes = ["Board Games", "Homegrown Tomatoes", "Stackable Shelves"];
+
+function ResourceReupTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow }) {
+  const filtered = resourceMockPosts.filter(post =>
+    post.distance <= postFilter.distance &&
+    (postFilter.needTypes.length===0 || postFilter.needTypes.includes(post.needType)) &&
+    (!postFilter.availOnly || post.available)
+  );
   return (
     <section>
       <h3 style={{ color: PRIMARY, fontWeight: 600 }}>Resource Re-Up</h3>
       <div style={{ color: SECONDARY, fontSize: 15, marginBottom: 8 }}>
         List unneeded items for exchange or free within your micro-community.
       </div>
+      <PostFilterBar
+        filter={postFilter}
+        onChange={onFilterChange}
+        options={{ availableNeedTypes: resourceNeedTypes, minDistance: 0.5, maxDistance: 5 }}
+        isNarrow={isNarrow}
+      />
       {!aiSuggestOverlay && (
         <div style={{
           background: '#262622', borderRadius: 12,
@@ -537,24 +710,31 @@ function ResourceReupTab({ aiSuggestOverlay }) {
         </div>
       )}
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle(ACCENT)}></span>
-          <div>
-            <b>Stacy Y.</b> is giving away <span style={badgeStyle}>Board Games</span>.
-          </div>
-        </li>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle(SECONDARY)}></span>
-          <div>
-            <b>Roger Q.</b> offers <span style={badgeStyle}>Homegrown Tomatoes</span>.
-          </div>
-        </li>
-        <li style={listItemStyle}>
-          <span style={profilePicStyle('#964B00')}></span>
-          <div>
-            <b>Lina P.</b> requests <span style={badgeStyle}>Stackable Shelves</span> for a local project.
-          </div>
-        </li>
+        {filtered.length === 0 &&
+          <li style={{ color: "#c83842", fontWeight: 500, padding: 12 }}>
+            No posts match these filters.
+          </li>
+        }
+        {filtered.map(post => (
+          <li style={listItemStyle} key={post.id}>
+            <span style={profilePicStyle(post.color)}></span>
+            <div>
+              <b>{post.user}</b>
+              {post.verified && <span style={badgeStyle}>Peer Verified</span>}{" "}
+              {post.label}
+              <span style={{
+                background: "#eee9",
+                color: "#333",
+                marginLeft: 8,
+                borderRadius: 7,
+                padding: "2px 7px",
+                fontSize: 12
+              }}>
+                {post.type} - {post.needType}, {post.distance}km, {post.available ? "Available" : "Not Available"}
+              </span>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   );
@@ -649,7 +829,10 @@ function CrisisSupportTab() {
   );
 }
 
-// PUBLIC_INTERFACE
+/*
+ * PUBLIC_INTERFACE
+ * App with post filtering state for Skill Exchange and Resource Re-Up, passes filter state/handlers to relevant tab components.
+ */
 function App() {
   // RESPONSIVENESS: Listen for window width for compact/mobile mode
   const [isNarrow, setIsNarrow] = React.useState(window.innerWidth < 720);
@@ -661,10 +844,46 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Post filter state for each main filterable tab
+  const [skillPostFilter, setSkillPostFilter] = React.useState({
+    distance: 2,
+    needTypes: [],
+    availOnly: false
+  });
+  const [resourcePostFilter, setResourcePostFilter] = React.useState({
+    distance: 2,
+    needTypes: [],
+    availOnly: false
+  });
+
   // TABS and navigation
   const TABS = [
-    { label: "Skill Exchange", id: "skills", component: <SkillExchangeTab aiSuggestOverlay={!isNarrow} /> },
-    { label: "Resource Re-Up", id: "resources", component: <ResourceReupTab aiSuggestOverlay={!isNarrow} /> },
+    {
+      label: "Skill Exchange",
+      id: "skills",
+      // Provide filter state/handlers
+      component: (
+        <SkillExchangeTab
+          aiSuggestOverlay={!isNarrow}
+          postFilter={skillPostFilter}
+          onFilterChange={setSkillPostFilter}
+          isNarrow={isNarrow}
+        />
+      )
+    },
+    {
+      label: "Resource Re-Up",
+      id: "resources",
+      component: (
+        <ResourceReupTab
+          aiSuggestOverlay={!isNarrow}
+          postFilter={resourcePostFilter}
+          onFilterChange={setResourcePostFilter}
+          isNarrow={isNarrow}
+        />
+      )
+    },
     { label: "Community Fund", id: "fund", component: <CommunityFundTab /> },
     { label: "Crisis Support", id: "crisis", component: <CrisisSupportTab /> },
   ];
