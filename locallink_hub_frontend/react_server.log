@@ -7,12 +7,12 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.45 MiB [emitted] (name: main)
+asset bundle.js 1.47 MiB [emitted] (name: main)
 asset index.html 881 bytes [emitted]
 runtime modules 27.5 KiB 14 modules
 modules by path ./node_modules/ 1.24 MiB 31 modules
-modules by path ./src/ 62.5 KiB
-  modules by path ./src/*.js 50.3 KiB 4 modules
+modules by path ./src/ 77.6 KiB
+  modules by path ./src/*.js 65.4 KiB 5 modules
   modules by path ./src/*.css 12.1 KiB
     ./src/index.css 2.23 KiB [built] [code generated]
     + 3 modules
@@ -22,116 +22,306 @@ modules by path ./.ve/ 15.1 KiB
     ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
     ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
   ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1478 ms
+webpack 5.99.9 compiled successfully in 1437 ms
+Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
+assets by status 1.47 MiB [cached] 1 asset
+asset index.html 881 bytes [emitted]
+cached modules 1.25 MiB (javascript) 27.5 KiB (runtime) [cached] 51 modules
+javascript modules 77.6 KiB
+  modules by path ./src/*.js 65.4 KiB
+    ./src/index.js 532 bytes [built]
+    ./src/App.js 44.7 KiB [built]
+    ./src/notifications.js 1.8 KiB [built]
+    ./src/NotificationSettingsDialog.js 5.81 KiB [built]
+    ./src/CalendarScheduler.js 12.6 KiB [built]
+  modules by path ./.ve/ 12.2 KiB
+    ./.ve/EditorRootWrapper.js 2.68 KiB [built]
+    ./.ve/EditorOverlay.jsx 1.58 KiB [built]
+    ./.ve/SidePanel.js 7.93 KiB [built]
+webpack 5.99.9 compiled successfully in 406 ms
 assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.51 MiB
-  asset bundle.js 1.46 MiB [emitted] (name: main)
-  asset main.f8a97ba221172f1a5901.hot-update.js 54.2 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.f8a97ba221172f1a5901.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.51 MiB = bundle.js 1.46 MiB main.f8a97ba221172f1a5901.hot-update.js 54.2 KiB
-cached modules 1.27 MiB [cached] 43 modules
-runtime modules 27.5 KiB 14 modules
-./src/App.js 42.7 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 271 ms
-assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.51 MiB
-  asset bundle.js 1.46 MiB [emitted] (name: main)
-  asset main.29ff30f8665115c37803.hot-update.js 54.7 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.29ff30f8665115c37803.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.51 MiB = bundle.js 1.46 MiB main.29ff30f8665115c37803.hot-update.js 54.7 KiB
-cached modules 1.27 MiB [cached] 43 modules
-runtime modules 27.5 KiB 14 modules
-./src/App.js 43.2 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 157 ms
-assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.54 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.d0578d42a650b0e7911c.hot-update.js 71.9 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.d0578d42a650b0e7911c.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.54 MiB = bundle.js 1.47 MiB main.d0578d42a650b0e7911c.hot-update.js 71.9 KiB
-cached modules 1.27 MiB [cached] 43 modules
-runtime modules 27.5 KiB 14 modules
-javascript modules 57 KiB
-  ./src/App.js 44.4 KiB [built] [code generated]
-  ./src/CalendarScheduler.js 12.6 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 199 ms
-assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.53 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.43e2935b966380f69bc8.hot-update.js 56.6 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.43e2935b966380f69bc8.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.53 MiB = bundle.js 1.47 MiB main.43e2935b966380f69bc8.hot-update.js 56.6 KiB
+assets by path *.js 1.55 MiB
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.56309516d1873612ed77.hot-update.js 68 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.56309516d1873612ed77.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.55 MiB = bundle.js 1.48 MiB main.56309516d1873612ed77.hot-update.js 68 KiB
 cached modules 1.29 MiB [cached] 44 modules
 runtime modules 27.5 KiB 14 modules
-./src/App.js 44.7 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 121 ms
-assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.39 MiB
-  asset bundle.js 1.38 MiB [emitted] (name: main)
-  asset main.48ca9c5372f78c28e920.hot-update.js 6.55 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.48ca9c5372f78c28e920.hot-update.json 189 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.39 MiB = bundle.js 1.38 MiB main.48ca9c5372f78c28e920.hot-update.js 6.55 KiB
-cached modules 1.26 MiB [cached] 38 modules
-runtime modules 27.5 KiB 14 modules
-javascript modules 571 bytes
-  ./src/index.js 532 bytes [code generated]
-  ./src/App.js 39 bytes [built] [code generated] [1 error]
+javascript modules 52.8 KiB
+  ./src/App.js 44.7 KiB [built] [code generated]
+  ./src/InviteQR.js 8.1 KiB [built] [code generated]
 
-ERROR in ./src/App.js
-Module build failed (from ./node_modules/babel-loader/lib/index.js):
-SyntaxError: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/App.js: Identifier 'CalendarScheduler' has already been declared. (869:7)
-
-  867 |  * App with post filtering state for Skill Exchange and Resource Re-Up, passes filter state/handlers to relevant tab components.
-  868 |  */
-> 869 | import CalendarScheduler from "./CalendarScheduler";
-      |        ^
-  870 |
-  871 | function App() {
-  872 |   // RESPONSIVENESS: Listen for window width for compact/mobile mode
-    at constructor (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:363:19)
-    at JSXParserMixin.raise (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:6609:19)
-    at ScopeHandler.checkRedeclarationInScope (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:1626:19)
-    at ScopeHandler.declareName (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:1592:12)
-    at JSXParserMixin.declareNameFromIdentifier (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:7538:16)
-    at JSXParserMixin.checkIdentifier (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:7534:12)
-    at JSXParserMixin.checkLVal (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:7475:12)
-    at JSXParserMixin.finishImportSpecifier (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14184:10)
-    at JSXParserMixin.parseImportSpecifierLocal (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14181:31)
-    at JSXParserMixin.maybeParseDefaultImportSpecifier (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14288:12)
-    at JSXParserMixin.parseImportSpecifiersAndAfter (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14157:29)
-    at JSXParserMixin.parseImport (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14153:17)
-    at JSXParserMixin.parseStatementContent (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:12795:27)
-    at JSXParserMixin.parseStatementLike (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:12685:17)
-    at JSXParserMixin.parseModuleItem (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:12662:17)
-    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:13235:36)
-    at JSXParserMixin.parseBlockBody (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:13228:10)
-    at JSXParserMixin.parseProgram (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:12541:10)
-    at JSXParserMixin.parseTopLevel (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:12531:25)
-    at JSXParserMixin.parse (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14410:10)
-    at parse (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/parser/lib/index.js:14444:38)
-    at parser (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/core/lib/parser/index.js:41:34)
-    at parser.next (<anonymous>)
-    at normalizeFile (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
-    at normalizeFile.next (<anonymous>)
-    at run (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/core/lib/transformation/index.js:22:50)
-    at run.next (<anonymous>)
-    at transform (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/@babel/core/lib/transform.js:22:33)
-    at transform.next (<anonymous>)
-    at step (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/gensync/index.js:261:32)
-    at /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/gensync/index.js:273:13
-    at async.call.result.err.err (/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/gensync/index.js:223:11)
+ERROR in ./src/InviteQR.js 2:0-34
+Module not found: Error: Can't resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/qrcode.react)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
  @ ./src/index.js 5:0-24 11:32-35
 
-webpack 5.99.9 compiled with 1 error in 67 ms
+ERROR in ./src/InviteQR.js 3:0-43
+Module not found: Error: Can't resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/react-qr-reader)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 314 ms
 assets by status 881 bytes [cached] 1 asset
-assets by path *.js 1.57 MiB
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.743b22a3f399a8ff55e6.hot-update.js 99.2 KiB [emitted] [immutable] [hmr] (name: main)
-asset main.743b22a3f399a8ff55e6.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.57 MiB = bundle.js 1.47 MiB main.743b22a3f399a8ff55e6.hot-update.js 99.2 KiB
-cached modules 1.29 MiB [cached] 43 modules
+assets by path *.js 1.54 MiB
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.6a4b91eb756ac1bb7037.hot-update.js 57.3 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.6a4b91eb756ac1bb7037.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.54 MiB = bundle.js 1.48 MiB main.6a4b91eb756ac1bb7037.hot-update.js 57.3 KiB
+cached modules 1.29 MiB [cached] 45 modules
 runtime modules 27.5 KiB 14 modules
-javascript modules 45.2 KiB
-  ./src/index.js 532 bytes [code generated]
-  ./src/App.js 44.7 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 193 ms
+./src/App.js 45.3 KiB [built] [code generated]
+
+ERROR in ./src/InviteQR.js 2:0-34
+Module not found: Error: Can't resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/qrcode.react)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/InviteQR.js 3:0-43
+Module not found: Error: Can't resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/react-qr-reader)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 158 ms
+assets by status 881 bytes [cached] 1 asset
+assets by path *.js 1.54 MiB
+  asset bundle.js 1.49 MiB [emitted] (name: main)
+  asset main.4c701fef44e5f639389f.hot-update.js 58.8 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.4c701fef44e5f639389f.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.54 MiB = bundle.js 1.49 MiB main.4c701fef44e5f639389f.hot-update.js 58.8 KiB
+cached modules 1.29 MiB [cached] 45 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 46.5 KiB [built] [code generated]
+
+ERROR in ./src/InviteQR.js 2:0-34
+Module not found: Error: Can't resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/qrcode.react)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/InviteQR.js 3:0-43
+Module not found: Error: Can't resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/react-qr-reader)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 143 ms
+assets by status 881 bytes [cached] 1 asset
+assets by path *.js 1.54 MiB
+  asset bundle.js 1.49 MiB [emitted] (name: main)
+  asset main.9110fc60ed32e98e11bb.hot-update.js 59.1 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.9110fc60ed32e98e11bb.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.54 MiB = bundle.js 1.49 MiB main.9110fc60ed32e98e11bb.hot-update.js 59.1 KiB
+cached modules 1.29 MiB [cached] 45 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 46.8 KiB [built] [code generated]
+
+ERROR in ./src/InviteQR.js 2:0-34
+Module not found: Error: Can't resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'qrcode.react' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/qrcode.react)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/qrcode.react doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34 1507:28-36
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/InviteQR.js 3:0-43
+Module not found: Error: Can't resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src'
+  Parsed request is a module
+  using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/src/node_modules doesn't exist or is not a directory
+      looking for modules in /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules
+        single file module
+          using description file: /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/package.json (relative path: ./node_modules/react-qr-reader)
+            no extension
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+            .js
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.js doesn't exist
+            .jsx
+              Field 'browser' doesn't contain a valid alias configuration
+              /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader.jsx doesn't exist
+        /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/locallink_hub_frontend/node_modules/react-qr-reader doesn't exist
+      /home/kavia/workspace/code-generation/locallink-hub-27050-c383a5c8/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/code-generation/node_modules doesn't exist or is not a directory
+      /home/kavia/workspace/node_modules doesn't exist or is not a directory
+      /home/kavia/node_modules doesn't exist or is not a directory
+      /home/node_modules doesn't exist or is not a directory
+      /node_modules doesn't exist or is not a directory
+ @ ./src/App.js 6:0-34 1507:28-36
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 117 ms

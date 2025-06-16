@@ -8,6 +8,7 @@ import {
 } from './notifications';
 import NotificationSettingsDialog from './NotificationSettingsDialog';
 import CalendarScheduler from "./CalendarScheduler";
+import InviteQR from "./InviteQR";
 
 /*
   Main Container for LocalLink Hub — REFACTORED & ENHANCED for INTERACTIVITY/RESPONSIVENESS
@@ -954,9 +955,26 @@ function App() {
   ];
   const [activeTab, setActiveTab] = useState(TABS[0].id);
 
+  // QR Invite overlay state
+  const [inviteOverlay, setInviteOverlay] = useState(false);
+
   // Overlay state
   const [aiOverlay, setAiOverlay] = useState(false);
   const [alertsOverlay, setAlertsOverlay] = useState(false);
+
+  // Simulated invite link logic (in real app, could be user or community-dependent)
+  // For demo, use a fixed link pattern; in production this would be dynamically generated.
+  const inviteLink = "https://locallink.app/join/demo-community-001";
+
+  // Handle join attempt from scanned QR
+  function handleInviteJoin(link) {
+    window.alert(
+      "Join via invite:\n" +
+      link +
+      "\n(This would start the join flow in a real app!)"
+    );
+    setInviteOverlay(false);
+  }
 
   // Tab keyboard navigation
   function handleTabsKey(e, idx) {
@@ -982,14 +1000,37 @@ function App() {
               <span className="logo-symbol" style={{ color: PRIMARY, fontSize: 27, marginRight: 4 }}>⦿</span>
               LocalLink Hub
             </div>
-            <div style={{
-              fontWeight: 400, fontSize: 14,
-              color: '#fff',
-              background: ACCENT, borderRadius: 8,
-              padding: '7px 16px',
-              letterSpacing: 1,
-            }}>
-              <span style={{ marginRight: 9 }}>Beta</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <div style={{
+                fontWeight: 400, fontSize: 14,
+                color: '#fff',
+                background: ACCENT, borderRadius: 8,
+                padding: '7px 16px',
+                letterSpacing: 1,
+              }}>
+                <span style={{ marginRight: 9 }}>Beta</span>
+              </div>
+              <button
+                className="btn"
+                style={{
+                  background: PRIMARY,
+                  color: "#fff",
+                  fontWeight: 600,
+                  fontSize: 14,
+                  borderRadius: 8,
+                  border: "none",
+                  marginLeft: 7,
+                  padding: "7px 15px",
+                  outline: "none",
+                  cursor: "pointer"
+                }}
+                onClick={() => setInviteOverlay(true)}
+                aria-label="Invite to Community"
+                title="Share or scan QR code to invite/join"
+              >
+                <span style={{ fontSize: 17, marginRight: 4 }} role="img" aria-label="qr">🔗</span>
+                Invite
+              </button>
             </div>
           </div>
         </div>
@@ -1078,6 +1119,12 @@ function App() {
           onBookSlot={handleBookSlot}
           events={calendarEvents}
           user={loggedInUser}
+        />
+        <InviteQR
+          open={inviteOverlay}
+          onClose={() => setInviteOverlay(false)}
+          inviteLink={inviteLink}
+          onJoin={handleInviteJoin}
         />
       </main>
     </div>
