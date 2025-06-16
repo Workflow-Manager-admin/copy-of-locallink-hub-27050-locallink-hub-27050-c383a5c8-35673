@@ -325,3 +325,4 @@ resolve 'react-qr-reader' in '/home/kavia/workspace/code-generation/locallink-hu
  @ ./src/index.js 5:0-24 11:32-35
 
 webpack 5.99.9 compiled with 2 errors in 117 ms
+<i> [webpack-dev-server] Gracefully shutting down. To force exit, press ^C again. Please wait...

@@ -9,6 +9,7 @@ import {
 import NotificationSettingsDialog from './NotificationSettingsDialog';
 import CalendarScheduler from "./CalendarScheduler";
 import InviteQR from "./InviteQR";
+import Leaderboard from "./Leaderboard";
 
 /*
   Main Container for LocalLink Hub — REFACTORED & ENHANCED for INTERACTIVITY/RESPONSIVENESS
@@ -896,8 +897,43 @@ function App() {
   const [calendarEvents, setCalendarEvents] = React.useState([
     // Example: { title: "Skill Exchange", datetime: "2024-06-19T14:00:00", type: "meeting", participant: "You" }
   ]);
-  // For demonstration, pretend "You" is the logged-in user; in real app use user's actual name/id
+  // Gamification/Points and leaderboard state
+  const [userPoints, setUserPoints] = React.useState({
+    "You": { name: "You", points: 55, verified: true }, // current user
+    "Evelyn C.": { name: "Evelyn C.", points: 108, verified: true },
+    "Sara K.": { name: "Sara K.", points: 79, verified: false },
+    "Jan P.": { name: "Jan P.", points: 40, verified: false },
+    "Lina P.": { name: "Lina P.", points: 22, verified: false },
+    "Roger Q.": { name: "Roger Q.", points: 10, verified: false }
+  });
   const loggedInUser = "You";
+  // Show leaderboard overlay
+  const [leaderboardOpen, setLeaderboardOpen] = React.useState(false);
+
+  // Simulate updating user points - called when user does something helpful/supportive
+  function incrementPoints(user, num = 10, reason = "") {
+    setUserPoints(points => {
+      if (!(user in points)) return points; // skip if not exist
+      return {
+        ...points,
+        [user]: {
+          ...points[user],
+          points: points[user].points + num,
+          lastAction: reason || null
+        }
+      };
+    });
+  }
+  // Example: After verified exchange, meeting, or request fulfillment
+  function handleHelpAction(type = "skill") {
+    incrementPoints(loggedInUser, 15, "Fulfilling a request");
+  }
+  function handleVerifiedExchange() {
+    incrementPoints(loggedInUser, 25, "Verified Exchange");
+  }
+  function handleSupportGiven() {
+    incrementPoints(loggedInUser, 20, "Support Given");
+  }
 
   function handleBookSlot({ date }) {
     // Check if already booked by user, toggle remove/cancel if so
@@ -908,6 +944,7 @@ function App() {
     if (idx > -1) {
       // Remove user's own booking
       setCalendarEvents(evts => evts.filter((_, i) => i !== idx));
+      // Optionally deduct points? Leave unchanged for simplicity.
     } else {
       setCalendarEvents(evts => [
         ...evts,
@@ -918,10 +955,13 @@ function App() {
           participant: loggedInUser
         }
       ]);
+      // Reward booking a meeting/exchange
+      incrementPoints(loggedInUser, 5, "Booked Exchange/Meeting");
     }
   }
 
   // TABS and navigation
+  // Add Gamification button at dashboard, tie helpful actions to points (simulate for demo)
   const TABS = [
     {
       label: "Skill Exchange",
@@ -952,6 +992,7 @@ function App() {
     },
     { label: "Community Fund", id: "fund", component: <CommunityFundTab /> },
     { label: "Crisis Support", id: "crisis", component: <CrisisSupportTab /> },
+    // Optionally: add leaderboard here as a tab. For now, show as overlay.
   ];
   const [activeTab, setActiveTab] = useState(TABS[0].id);
 
@@ -961,6 +1002,7 @@ function App() {
   // Overlay state
   const [aiOverlay, setAiOverlay] = useState(false);
   const [alertsOverlay, setAlertsOverlay] = useState(false);
+
 
   // Simulated invite link logic (in real app, could be user or community-dependent)
   // For demo, use a fixed link pattern; in production this would be dynamically generated.
@@ -1031,6 +1073,27 @@ function App() {
                 <span style={{ fontSize: 17, marginRight: 4 }} role="img" aria-label="qr">🔗</span>
                 Invite
               </button>
+              <button
+                className="btn"
+                style={{
+                  background: ACCENT,
+                  color: "#23250f",
+                  fontWeight: 700,
+                  fontSize: 14,
+                  borderRadius: 8,
+                  border: "none",
+                  marginLeft: 7,
+                  padding: "7px 15px",
+                  outline: "none",
+                  cursor: "pointer"
+                }}
+                onClick={() => setLeaderboardOpen(true)}
+                aria-label="Show leaderboard"
+                title="Show Community Leaderboard"
+              >
+                <span role="img" aria-label="trophy" style={{ fontSize: 16, marginRight: 4 }}>🏆</span>
+                Leaderboard
+              </button>
             </div>
           </div>
         </div>
@@ -1053,6 +1116,52 @@ function App() {
             onAlerts={() => setAlertsOverlay(true)}
             isNarrow={isNarrow}
           />
+          {/* Mini Gamification: My Points and encourage actions */}
+          <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 9 }}>
+            <span style={{
+              background: "#63d4a7", color: "#fff", fontWeight: 800,
+              fontSize: 16, borderRadius: 9, padding: "4px 16px"
+            }}>
+              <span style={{ marginRight: 6, fontSize: 19 }}>⭐</span>
+              My Points: {userPoints[loggedInUser]?.points ?? 0}
+            </span>
+            <button
+              className="btn"
+              style={{
+                background: PRIMARY, color: "#fff", fontWeight: 600, fontSize: 13,
+                borderRadius: 7, padding: "7px 16px"
+              }}
+              title="Simulate: Help a neighbor/fulfill request"
+              onClick={() => handleHelpAction()}
+            >+ Helped Neighbor</button>
+            <button
+              className="btn"
+              style={{
+                background: ACCENT, color: "#163213", fontWeight: 600, fontSize: 13,
+                borderRadius: 7, padding: "7px 13px"
+              }}
+              title="Simulate: Verified Exchange"
+              onClick={() => handleVerifiedExchange()}
+            >+ Verified Exchange</button>
+            <button
+              className="btn"
+              style={{
+                background: SECONDARY, color: "#494700", fontWeight: 600, fontSize: 13,
+                borderRadius: 7, padding: "7px 13px"
+              }}
+              title="Simulate: Provided Support"
+              onClick={() => handleSupportGiven()}
+            >+ Support Given</button>
+            <span style={{ marginLeft: "auto" }}>
+              <button
+                style={{ background: "transparent", border: "none", color: ACCENT, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}
+                onClick={() => setLeaderboardOpen(true)}
+                aria-label="Show Leaderboard"
+              >
+                See Leaderboard &gt;
+              </button>
+            </span>
+          </div>
           {/* Tab navigation */}
           <div
             className="tab-bar"
@@ -1110,7 +1219,7 @@ function App() {
             {TABS.find(tab => tab.id === activeTab)?.component}
           </section>
         </div>
-        {/* Overlays (AI Suggestions, Alerts, Calendar Scheduling) */}
+        {/* Overlays (AI Suggestions, Alerts, Calendar Scheduling, Leaderboard) */}
         <AISuggestionsOverlay open={aiOverlay} onClose={() => setAiOverlay(false)} type={activeTab === 'resources' ? 'resource' : 'skill'} />
         <AlertsOverlay open={alertsOverlay} onClose={() => setAlertsOverlay(false)} />
         <CalendarScheduler
@@ -1125,6 +1234,16 @@ function App() {
           onClose={() => setInviteOverlay(false)}
           inviteLink={inviteLink}
           onJoin={handleInviteJoin}
+        />
+        {/* Gamification Leaderboard */}
+        <Leaderboard
+          users={Object.values(userPoints).map((u) =>
+            u.name === loggedInUser ? { ...u, isCurrentUser: true } : u
+          )}
+          open={leaderboardOpen}
+          onClose={() => setLeaderboardOpen(false)}
+          accentColor={ACCENT}
+          primaryColor={PRIMARY}
         />
       </main>
     </div>
