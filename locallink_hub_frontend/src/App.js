@@ -57,78 +57,173 @@ const badgeStyle = {
 
 // COMPONENTS
 
+/* global google */
 function MapDashboard({ isNarrow }) {
-  // Responsive placeholder map widget—adapts to screen size
+  // PUBLIC_INTERFACE
+  // This component loads Google Maps JS API dynamically and renders a map.
+  // It ensures responsiveness by using container size and re-centering on resize.
+  const mapRef = React.useRef(null);
+  const mapInstance = React.useRef(null);
+  const [hasError, setHasError] = React.useState(false);
+
+  // Google Maps API key (should be moved to env/secure config in production)
+  const GOOGLE_MAPS_API_KEY = "AIzaSyBQxy5JfKUN0UyPTKMKbMyrnFBY3TVzrkE";
+
+  // Helper to dynamically load Google Maps JS API if window.google is not present
+  function loadGoogleMapsApi(cb) {
+    if (window.google && window.google.maps) {
+      cb();
+    } else if (document.getElementById('google-maps-js')) {
+      document.getElementById('google-maps-js').addEventListener('load', cb);
+    } else {
+      const script = document.createElement('script');
+      script.id = 'google-maps-js';
+      script.type = 'text/javascript';
+      script.async = true;
+      script.defer = true;
+      script.src =
+        `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+      script.onload = cb;
+      script.onerror = () => setHasError(true);
+      document.body.appendChild(script);
+    }
+  }
+
+  React.useEffect(() => {
+    let didCancel = false;
+    function initializeMap() {
+      if (!mapRef.current || (window.google && !window.google.maps)) return;
+      // Choose a rough default: city center of a large area or user location fallback
+      const center = { lat: 37.773972, lng: -122.431297 }; // San Francisco, placeholder
+      // If already initialized, just update size
+      if (mapInstance.current) {
+        const mapDiv = mapRef.current;
+        google.maps.event.trigger(mapDiv, 'resize');
+        mapInstance.current.setCenter(center);
+        return;
+      }
+      mapInstance.current = new window.google.maps.Map(mapRef.current, {
+        center,
+        zoom: 15,
+        // You'll want to tune the map styles to fit dark/light as desired
+        disableDefaultUI: false,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false
+      });
+      // Add radius/geofenced overlay circle (1km/2km radius)
+      new window.google.maps.Circle({
+        strokeColor: ACCENT,
+        strokeOpacity: 0.68,
+        strokeWeight: 3,
+        fillColor: ACCENT,
+        fillOpacity: 0.13,
+        map: mapInstance.current,
+        center,
+        radius: 1000, // 1 km radius
+      });
+    }
+    // Dynamically load only once per mount
+    loadGoogleMapsApi(() => {
+      if (!didCancel) initializeMap();
+    });
+    // Responsive: Resize/re-center on width change
+    function handleResize() {
+      if (
+        mapInstance.current &&
+        window.google &&
+        window.google.maps &&
+        mapRef.current
+      ) {
+        window.google.maps.event.trigger(mapRef.current, "resize");
+        // Optionally adjust zoom/center here for extreme mobile screens
+      }
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      didCancel = true;
+      window.removeEventListener("resize", handleResize);
+    };
+    // eslint-disable-next-line
+  }, [isNarrow]);
+
   return (
     <div
       className="map-dashboard"
       style={{
         width: '100%',
-        height: isNarrow ? 150 : 240,
-        minHeight: isNarrow ? 102 : 168,
+        height: isNarrow ? 170 : 310,
+        minHeight: isNarrow ? 108 : 188,
         borderRadius: 17,
         background: CARD_BG,
         border: `1.7px solid ${BG_PANEL}`,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        boxShadow: '0 2px 14px 0 rgba(67,117,187,.06)',
         marginBottom: 17,
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '0 2px 14px 0 rgba(67,117,187,.06)'
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        justifyContent: 'center',
+        transition: "height 0.18s"
       }}
     >
-      <div style={{
-        color: ACCENT,
-        fontWeight: 800,
-        fontSize: isNarrow ? 15.7 : 21.2,
-        marginBottom: 3,
-        letterSpacing: 0.35
-      }}>
-        Your Micro-Community Map
-      </div>
-      <div style={{
-        color: SECONDARY,
-        fontSize: isNarrow ? 13 : 15,
-        marginBottom: 3,
-        fontWeight: 500
-      }}>
-        (1-2km radius geofenced area)
-      </div>
-      <div style={{
-        width: isNarrow ? 53 : 81,
-        height: isNarrow ? 53 : 81,
-        borderRadius: '50%',
-        background: PRIMARY,
-        opacity: 0.15,
-        position: 'absolute',
-        left: '50%',
-        top: isNarrow ? 65 : 101,
-        transform: 'translate(-50%,0)',
-        zIndex: 1,
-      }} />
-      <div style={{
-        width: isNarrow ? 22 : 31,
-        height: isNarrow ? 22 : 31,
-        borderRadius: '50%',
-        background: ACCENT,
-        position: 'relative',
-        zIndex: 2,
-        border: `2.1px solid ${PRIMARY}`,
-      }} />
-      <div
-        aria-label="Coming soon"
-        style={{
-          color: TEXT_SECONDARY,
-          fontSize: isNarrow ? 10.5 : 13.3,
-          opacity: 0.48,
-          marginTop: 6.5,
-          letterSpacing: 0.2,
-          fontWeight: 500
-        }}>
-        Map coming soon
-      </div>
+      {hasError ? (
+        <div style={{ padding: 32, color: 'red', textAlign: 'center', fontWeight: 600 }}>
+          Error loading Google Maps.<br />Please check your internet or API key.
+        </div>
+      ) : (
+        <>
+          <div
+            ref={mapRef}
+            style={{
+              width: '100%',
+              height: '100%',
+              minHeight: isNarrow ? 108 : 188,
+              borderRadius: 17,
+              position: 'relative',
+              zIndex: 2,
+              background: '#deddcc'
+            }}
+            aria-label="Local Community Map"
+            tabIndex={0}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              top: 13,
+              left: 14,
+              color: ACCENT,
+              fontWeight: 800,
+              fontSize: isNarrow ? 15.7 : 21.2,
+              letterSpacing: 0.35,
+              zIndex: 11,
+              background: "rgba(255,255,255,0.89)",
+              borderRadius: 10,
+              padding: isNarrow ? "3px 8px" : "5px 12px",
+              boxShadow: "0 1px 7px rgba(70,90,110,0.08)"
+            }}
+          >
+            Your Micro-Community Map
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              left: 15,
+              top: isNarrow ? 36 : 44,
+              color: SECONDARY,
+              fontSize: isNarrow ? 11.5 : 15,
+              fontWeight: 500,
+              background: "rgba(248,239,210,0.85)",
+              borderRadius: 6,
+              padding: isNarrow ? "2px 6px" : "4px 9px",
+              zIndex: 10
+            }}
+          >
+            (1-2km radius geofenced area)
+          </div>
+        </>
+      )}
     </div>
   );
 }
