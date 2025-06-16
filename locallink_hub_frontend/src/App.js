@@ -10,39 +10,49 @@ import './App.css';
 */
 
 // THEME CONSTANTS
-const PRIMARY = '#8f0a0a';
-const SECONDARY = '#b1b483';
-const ACCENT = '#685808';
+const PRIMARY = '#2563eb';      // Modern blue
+const SECONDARY = '#fbbf24';    // Gold
+const ACCENT = '#63d4a7';       // Soft green
+const BG_SURFACE = '#f8fafc';
+const BG_PANEL = '#e2e8f0';
+const TEXT = '#222e36';
+const TEXT_SECONDARY = '#506174';
+const CARD_BG = '#ffffff';
 
 // HELPER STYLES (for inline dynamic components)
 const listItemStyle = {
   display: 'flex',
   alignItems: 'center',
-  marginBottom: 14,
+  marginBottom: 13,
   borderLeft: `4px solid ${ACCENT}`,
-  background: '#181819',
-  borderRadius: 9,
-  padding: '9px 12px',
-  gap: 11,
+  background: CARD_BG,
+  borderRadius: 10,
+  padding: '13px 16px',
+  gap: 13,
+  boxShadow: '0 1.5px 8px rgba(57, 87, 127, 0.07)',
+  color: TEXT,
+  transition: 'background 0.16s'
 };
 function profilePicStyle(bg) {
   return {
     display: 'inline-block',
-    marginRight: 10,
-    width: 34, height: 34,
+    marginRight: 12,
+    width: 35, height: 35,
     borderRadius: '50%',
     background: bg,
-    border: '2px solid #233',
-    boxShadow: '0 0 0 2px #272727',
+    border: `2.2px solid ${SECONDARY}`,
+    boxShadow: '0 1px 2.5px rgba(85,130,170,0.17)',
   };
 }
 const badgeStyle = {
   background: ACCENT,
-  color: "#fff",
-  padding: '2px 8px',
-  borderRadius: 7,
-  fontSize: 12,
+  color: "#273232",
+  padding: '3px 8px',
+  borderRadius: 11,
+  fontSize: 12.5,
+  fontWeight: 600,
   marginLeft: 4,
+  boxShadow: '0 1.5px 6px rgba(57, 127, 107, 0.08)'
 };
 
 // COMPONENTS
@@ -54,63 +64,68 @@ function MapDashboard({ isNarrow }) {
       className="map-dashboard"
       style={{
         width: '100%',
-        height: isNarrow ? 170 : 260,
-        minHeight: isNarrow ? 110 : 180,
-        borderRadius: 16,
-        background: '#19191c',
-        border: `2px solid ${SECONDARY}`,
+        height: isNarrow ? 150 : 240,
+        minHeight: isNarrow ? 102 : 168,
+        borderRadius: 17,
+        background: CARD_BG,
+        border: `1.7px solid ${BG_PANEL}`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 22,
+        marginBottom: 17,
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '0 2px 16px rgba(0,0,0,0.16)',
+        boxShadow: '0 2px 14px 0 rgba(67,117,187,.06)'
       }}
     >
       <div style={{
-        color: ACCENT, fontWeight: 700,
-        fontSize: isNarrow ? 15 : 20,
-        marginBottom: 7,
+        color: ACCENT,
+        fontWeight: 800,
+        fontSize: isNarrow ? 15.7 : 21.2,
+        marginBottom: 3,
+        letterSpacing: 0.35
       }}>
         Your Micro-Community Map
       </div>
       <div style={{
         color: SECONDARY,
-        fontSize: isNarrow ? 12 : 14,
-        marginBottom: 6,
+        fontSize: isNarrow ? 13 : 15,
+        marginBottom: 3,
+        fontWeight: 500
       }}>
         (1-2km radius geofenced area)
       </div>
       <div style={{
-        width: isNarrow ? 50 : 80,
-        height: isNarrow ? 50 : 80,
+        width: isNarrow ? 53 : 81,
+        height: isNarrow ? 53 : 81,
         borderRadius: '50%',
         background: PRIMARY,
-        opacity: 0.12,
+        opacity: 0.15,
         position: 'absolute',
         left: '50%',
-        top: isNarrow ? 70 : 110,
+        top: isNarrow ? 65 : 101,
         transform: 'translate(-50%,0)',
         zIndex: 1,
       }} />
       <div style={{
-        width: isNarrow ? 20 : 28,
-        height: isNarrow ? 20 : 28,
+        width: isNarrow ? 22 : 31,
+        height: isNarrow ? 22 : 31,
         borderRadius: '50%',
         background: ACCENT,
         position: 'relative',
         zIndex: 2,
-        border: `2px solid ${PRIMARY}`,
+        border: `2.1px solid ${PRIMARY}`,
       }} />
       <div
         aria-label="Coming soon"
         style={{
-          color: '#fff',
-          fontSize: isNarrow ? 11 : 13,
+          color: TEXT_SECONDARY,
+          fontSize: isNarrow ? 10.5 : 13.3,
           opacity: 0.48,
-          marginTop: 6,
+          marginTop: 6.5,
+          letterSpacing: 0.2,
+          fontWeight: 500
         }}>
         Map coming soon
       </div>
@@ -161,22 +176,33 @@ function TrustBadgeList({ isNarrow }) {
 function Overlay({ visible, onClose, title, color, children }) {
   if (!visible) return null;
   return (
-    <div className="overlay-backdrop">
-      <div className="overlay-content" style={{ borderLeft: `8px solid ${color}` }}>
+    <div className="overlay-backdrop" aria-modal="true" role="dialog" tabIndex={-1}>
+      <div
+        className="overlay-content"
+        style={{ borderLeft: `7px solid ${color}`, borderRadius: 22, background: CARD_BG, color: TEXT }}
+      >
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 6,
+          borderTopLeftRadius: 15
         }}>
           <div style={{
-            color, fontWeight: 700, fontSize: 17, letterSpacing: 1.1,
-          }}>{title}</div>
+            color: color, fontWeight: 800, fontSize: 17.5, letterSpacing: 1.06,
+            textShadow: '0 1px 0 rgba(154,174,221,.06)'
+          }}>
+            {title}
+          </div>
           <button aria-label="Close overlay"
             title="Close"
             className="overlay-close"
             onClick={onClose}
             tabIndex={0}
+            style={{ outline: 'none', border: 'none' }}
+            onKeyDown={e => {
+              if (['Enter',' ','Escape'].includes(e.key)) onClose();
+            }}
           >×</button>
         </div>
         <div>{children}</div>
@@ -205,8 +231,20 @@ function AISuggestionsOverlay({ open, onClose, type = 'skill' }) {
       title="AI Suggestions"
       color={ACCENT}
     >
-      <ul style={{ color: SECONDARY, margin: 0, paddingLeft: 16, fontSize: 15 }}>
-        {items.map((s, i) => <li key={i} style={{ marginBottom: 3 }}>{s}</li>)}
+      <ul style={{
+        color: TEXT_SECONDARY,
+        margin: 0,
+        paddingLeft: 18,
+        fontSize: 15.2,
+        lineHeight: 1.7
+      }}>
+        {items.map((s, i) => (
+          <li key={i} style={{
+            marginBottom: 4,
+            padding: "3px 0",
+            transition: "background 0.13s"
+          }}>{s}</li>
+        ))}
       </ul>
     </Overlay>
   );
@@ -234,17 +272,27 @@ function AlertsOverlay({ open, onClose }) {
       title="Community Alerts"
       color={PRIMARY}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
         {alerts.map((a, i) => (
           <div key={i} style={{
-            background: (a.type === 'crisis' ? '#260f13' : '#232317'),
+            background: a.type === 'crisis' ? '#fdf3f7' : '#e8f7ef',
             color: a.color,
-            padding: '7px 18px',
-            borderRadius: 8,
-            border: `1px solid ${a.color}`,
-            fontSize: 14,
+            padding: '10px 20px',
+            borderRadius: 12,
+            border: `1.7px solid ${a.color}`,
+            fontSize: 15,
+            fontWeight: 600,
+            outline: a.type === 'crisis' ? `2px solid ${PRIMARY}` : `2px solid ${ACCENT}`,
+            outlineOffset: 0
           }}>
-            <b style={{ marginRight: 6 }}>{a.type === 'crisis' ? 'Urgent' : 'Notice'}:</b> {a.message}
+            <span style={{
+              marginRight: 7,
+              fontWeight: 800,
+              color: a.type === 'crisis' ? PRIMARY : ACCENT
+            }}>
+              {a.type === 'crisis' ? 'Urgent' : 'Notice'}:
+            </span>
+            <span>{a.message}</span>
           </div>
         ))}
       </div>
@@ -496,6 +544,7 @@ function CrisisSupportTab() {
 function App() {
   // RESPONSIVENESS: Listen for window width for compact/mobile mode
   const [isNarrow, setIsNarrow] = React.useState(window.innerWidth < 720);
+
   React.useEffect(() => {
     function handleResize() {
       setIsNarrow(window.innerWidth < 720);

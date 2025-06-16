@@ -1,19 +1,21 @@
 :root {
-  --primary: #8f0a0a;
-  --secondary: #b1b483;
-  --accent: #685808;
-  --base-dark: #161617;
-  --base-darker: #19191c;
-  --text-color: #fff;
-  --text-secondary: rgba(255,255,255,0.7);
-  --border-color: rgba(255,255,255,0.12);
+  --primary: #2563eb;      /* Vibrant, modern blue */
+  --secondary: #fbbf24;    /* Warm, accessible gold/yellow */
+  --accent: #63d4a7;       /* Soft green accent */
+  --surface: #f8fafc;      /* Lightest background */
+  --surface-alt: #e2e8f0;  /* Soft panel background */
+  --widget-bg: #ffffff;    /* Cards & overlays */
+  --text-color: #222e36;
+  --text-secondary: #506174;
+  --border-color: #dde0e3;
+  --button-shadow: 0 2px 8px rgba(47, 91, 173 / 0.09);
 }
 
 /* Body and App Container */
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--base-dark);
+  background-color: var(--surface);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,111 +24,154 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--base-dark);
+  background: var(--surface);
+  transition: background 0.22s;
 }
 
 /* Navbar Styles */
 .navbar {
-  background-color: var(--base-darker);
-  padding: 16px 0;
+  background-color: #f8fafc;
+  box-shadow: 0 2px 12px rgba(24,34,40,.06);
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 1.5px solid var(--border-color);
   position: fixed;
   top: 0;
   width: 100%;
-  box-sizing: border-box;
+  min-height: 63px;
   z-index: 100;
-  min-height: 64px;
+  transition: background 0.21s, box-shadow 0.18s;
 }
-
 .logo {
-  font-size: 1.32rem;
-  font-weight: 650;
+  font-size: 1.18rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 7px;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-.logo-symbol {
+  gap: 8px;
   color: var(--primary);
+  letter-spacing: 1.4px;
+  font-family: 'Space Mono', 'Roboto Mono', monospace, 'Inter', 'Arial', sans-serif;
+  transition: color 0.16s;
+  text-decoration: none;
+}
+.logo:focus, .logo:active {
+  outline: 2px solid var(--accent);
+  background: var(--surface-alt);
+  border-radius: 9px;
+}
+.logo-symbol {
+  color: var(--secondary);
+  font-size: 26px;
 }
 
 /* Main Container */
 .container {
-  max-width: 1125px;
+  max-width: 1130px;
   margin: 0 auto;
   padding: 0 24px;
   width: 100%;
   box-sizing: border-box;
+  background: transparent;
 }
 
 /* Buttons */
 .btn, .dash-bar-btn, .overlay-close {
-  background-color: var(--accent);
-  color: var(--text-color);
+  background-color: var(--primary);
+  color: #fff;
   border: none;
   border-radius: 7px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.19s, color 0.19s;
+  box-shadow: var(--button-shadow);
+  transition: background 0.18s, color 0.18s, box-shadow 0.17s;
   outline: none;
+  position: relative;
+  overflow: hidden;
 }
 .btn, .dash-bar-btn {
-  padding: 9px 18px;
-}
-
-.btn:hover, .dash-bar-btn:hover {
-  background: var(--primary);
-  color: #fff;
+  padding: 10px 20px;
 }
 .btn-large {
-  padding: 13px 26px;
-  font-size: 1.1rem;
+  padding: 15px 34px;
+  font-size: 1.06rem;
+}
+.btn:hover, .dash-bar-btn:hover, .btn:focus-visible, .dash-bar-btn:focus-visible {
+  background: var(--secondary);
+  color: var(--primary);
+  box-shadow: 0 4px 16px rgba(47 91 173 / 0.18);
+  outline: 2px solid var(--accent);
+}
+.btn:active, .dash-bar-btn:active {
+  background: var(--accent);
+  color: #294366;
+}
+.btn:disabled, .dash-bar-btn:disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
+}
+
+.overlay-close {
+  background: transparent;
+  color: var(--secondary);
+  font-size: 26px;
+  box-shadow: none;
+  transition: background 0.15s, color 0.18s;
+}
+.overlay-close:hover, .overlay-close:focus-visible {
+  background: var(--surface-alt);
+  color: var(--primary);
+  outline: 2px solid var(--primary);
 }
 
 /* Tab Bar Styles - Responsive */
 .tab-bar {
   display: flex;
-  gap: 16px;
-  border-bottom: 2px solid var(--accent);
-  margin-bottom: 32px;
+  gap: 18px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 33px;
   padding-bottom: 2px;
   overflow-x: auto;
+  background: transparent;
+  scroll-snap-type: x mandatory;
 }
 .tab-bar button,
 .tab-bar button.selected {
   background: transparent;
   color: var(--text-secondary);
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.07rem;
   font-weight: 600;
-  padding: 9px 20px;
-  border-radius: 9px 9px 0 0;
+  padding: 10px 19px;
+  border-radius: 11px 11px 0 0;
   cursor: pointer;
-  transition: all 0.16s;
+  transition: background 0.15s, color 0.18s, outline 0.11s;
   margin-bottom: -2px;
+  box-shadow: none;
+  scroll-snap-align: start;
+  outline: none;
 }
-
 .tab-bar button.selected,
 .tab-bar button:active,
 .tab-bar button[aria-selected="true"] {
-  background: var(--primary);
-  color: #fff;
-  border-bottom: 4px solid var(--accent);
-  outline: 2px solid var(--secondary);
+  background: var(--surface-alt);
+  color: var(--primary);
+  border-bottom: 4px solid var(--secondary);
+  outline: 2px solid var(--primary);
 }
-.tab-bar button:focus {
+.tab-bar button:focus, .tab-bar button:focus-visible {
   outline: 2px solid var(--accent);
-  z-index: 2;
+  background: var(--accent);
+  color: #fff;
 }
-
+.tab-bar button:hover {
+  background: var(--surface-alt);
+  color: var(--secondary);
+}
 .tab-bar::-webkit-scrollbar {
-  height: 7px;
+  height: 6px;
 }
 
 /* Overlay Styles */
@@ -134,70 +179,61 @@ body {
   position: fixed;
   z-index: 9999;
   left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.64);
+  background: rgba(83, 114, 180, 0.13);
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 0.25s;
+  animation: fadeIn 0.26s;
+  backdrop-filter: blur(1.5px);
 }
 @keyframes fadeIn {
   from { opacity: 0;}
   to { opacity: 1;}
 }
 .overlay-content {
-  background: #1b1919;
-  border-radius: 14px;
+  background: var(--widget-bg);
+  border-radius: 20px;
   min-width: 270px;
-  max-width: 96vw;
+  max-width: 97vw;
   min-height: 100px;
-  box-shadow: 0 8px 42px rgba(0,0,0,0.21);
-  padding: 24px 20px 20px 26px;
+  box-shadow: 0 8px 42px rgba(38,54,114,0.13), 0 2px 8px rgba(110,145,185,0.10);
+  padding: 27px 20px 23px 27px;
   color: var(--text-color);
   position: relative;
   max-height: 80vh;
   overflow-y: auto;
-}
-.overlay-close {
-  background: transparent;
-  color: var(--secondary);
-  border: none;
-  font-size: 27px;
-  position: relative;
-  top: -3px;
-  right: -7px;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 2px 7px 1px 7px;
-  transition: color 0.14s;
-}
-.overlay-close:hover, .overlay-close:focus {
-  color: var(--primary);
-  background: #191a16;
+  border: 1.7px solid var(--border-color);
+  transition: background 0.2s;
 }
 
 /* Responsive Dashboard Interactive Bar */
 .dash-bar-btn {
   font-size: 1rem;
-  padding: 10px 20px;
+  padding: 10px 17px;
   margin-right: 4px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  transition: all 0.14s;
 }
 
 /* Misc Resets and Utilities */
 ::-webkit-scrollbar {
-  background: var(--base-dark);
+  background: var(--surface-alt);
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #302d2d;
+  background: #b3c5de;
   border-radius: 5px;
 }
 h3, h2, h1 {
   margin-top: 0;
   margin-bottom: 8px;
   font-family: inherit;
+  color: var(--primary);
 }
 
 ul {
@@ -207,34 +243,34 @@ ul {
 /* Responsive tweaks for MOBILE screens */
 @media screen and (max-width: 720px) {
   .navbar {
-    min-height: 54px;
+    min-height: 51px;
     padding: 8px 0;
   }
   .logo {
-    font-size: 1rem;
+    font-size: 0.99rem;
   }
   .container {
-    padding: 0 5px;
+    padding: 0 2vw;
     min-width: 0;
   }
   .tab-bar {
-    gap: 5px;
+    gap: 6px;
     font-size: 15px;
-    margin-bottom: 16px;
+    margin-bottom: 17px;
     padding-bottom: 1px;
   }
   .tab-bar button,
   .tab-bar button.selected {
-    font-size: 0.97rem;
-    padding: 7px 9px;
+    font-size: 0.96rem;
+    padding: 7px 6px;
     border-radius: 7px 7px 0 0;
   }
   .overlay-content {
-    padding: 13px 7px 11px 13px;
+    padding: 11px 5px 13px 9px;
     max-width: 99vw;
   }
   .trust-badges {
-    font-size: 12px !important;
+    font-size: 11.4px !important;
   }
 }
 
@@ -243,12 +279,16 @@ ul {
   .overlay-content {
     min-width: 100vw;
     border-radius: 0;
-    padding: 13px 3vw 10px 4vw;
+    padding: 12px 2vw 9px 3vw;
   }
 }
 
-/* Ensure dashboard (Map) widget is flexible */
+/* Ensure dashboard (Map) widget is flexible and light */
 .map-dashboard {
   min-width: 0;
-  /* for flex parent shrink */
+  background: var(--widget-bg);
+  border-radius: 17px;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 2px 12px 0 rgba(57,65,89,0.06);
+  padding: 0;
 }
