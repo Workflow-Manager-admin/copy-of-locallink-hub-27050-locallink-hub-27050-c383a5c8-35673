@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 import './App.css';
+import {
+  requestNotificationPermission,
+  triggerNotification,
+  isNotificationEnabled,
+  loadNotificationSettings
+} from './notifications';
+import NotificationSettingsDialog from './NotificationSettingsDialog';
+import {
+  requestNotificationPermission,
+  triggerNotification,
+  isNotificationEnabled,
+  loadNotificationSettings
+} from './notifications';
+import NotificationSettingsDialog from './NotificationSettingsDialog';
 
 /*
   Main Container for LocalLink Hub — REFACTORED & ENHANCED for INTERACTIVITY/RESPONSIVENESS
