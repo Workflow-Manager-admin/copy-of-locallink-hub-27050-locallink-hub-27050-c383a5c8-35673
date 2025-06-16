@@ -7,6 +7,7 @@ import {
   loadNotificationSettings
 } from './notifications';
 import NotificationSettingsDialog from './NotificationSettingsDialog';
+import CalendarScheduler from "./CalendarScheduler";
 
 /*
   Main Container for LocalLink Hub — REFACTORED & ENHANCED for INTERACTIVITY/RESPONSIVENESS
@@ -568,7 +569,7 @@ const skillMockPosts = [
 const skillNeedTypes = ["Tutoring", "Music", "IT Help"];
 
 
-function SkillExchangeTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow }) {
+function SkillExchangeTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow, onBookMeetingClick }) {
   // Filter posts
   const filtered = skillMockPosts.filter(post =>
     post.distance <= postFilter.distance &&
@@ -577,7 +578,23 @@ function SkillExchangeTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarr
   );
   return (
     <section>
-      <h3 style={{ color: PRIMARY, fontWeight: 600 }}>Skill Exchange</h3>
+      <h3 style={{ color: PRIMARY, fontWeight: 600 }}>
+        Skill Exchange
+        <button
+          className="btn"
+          style={{
+            marginLeft: 18,
+            background: ACCENT,
+            color: "#19191c",
+            fontWeight: 600,
+            fontSize: isNarrow ? 13.4 : 15,
+            padding: isNarrow ? "8px 9px" : "8px 15px",
+            borderRadius: 7,
+            border: "none"
+          }}
+          onClick={onBookMeetingClick}
+        >Book Exchange/Meeting</button>
+      </h3>
       <div style={{ color: SECONDARY, fontSize: 15, marginBottom: 8 }}>
         Offer or request help from neighbors with verified skills.
       </div>
@@ -675,7 +692,7 @@ const resourceMockPosts = [
 ];
 const resourceNeedTypes = ["Board Games", "Homegrown Tomatoes", "Stackable Shelves"];
 
-function ResourceReupTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow }) {
+function ResourceReupTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarrow, onBookMeetingClick }) {
   const filtered = resourceMockPosts.filter(post =>
     post.distance <= postFilter.distance &&
     (postFilter.needTypes.length===0 || postFilter.needTypes.includes(post.needType)) &&
@@ -683,7 +700,23 @@ function ResourceReupTab({ aiSuggestOverlay, postFilter, onFilterChange, isNarro
   );
   return (
     <section>
-      <h3 style={{ color: PRIMARY, fontWeight: 600 }}>Resource Re-Up</h3>
+      <h3 style={{ color: PRIMARY, fontWeight: 600 }}>
+        Resource Re-Up
+        <button
+          className="btn"
+          style={{
+            marginLeft: 18,
+            background: ACCENT,
+            color: "#19191c",
+            fontWeight: 600,
+            fontSize: isNarrow ? 13.4 : 15,
+            padding: isNarrow ? "8px 9px" : "8px 15px",
+            borderRadius: 7,
+            border: "none"
+          }}
+          onClick={onBookMeetingClick}
+        >Book Exchange/Meeting</button>
+      </h3>
       <div style={{ color: SECONDARY, fontSize: 15, marginBottom: 8 }}>
         List unneeded items for exchange or free within your micro-community.
       </div>
@@ -857,6 +890,36 @@ function App() {
     availOnly: false
   });
 
+  // Calendar/scheduler state (simply store events in memory for demo - would come from backend)
+  const [calendarOpen, setCalendarOpen] = React.useState(false);
+  const [calendarEvents, setCalendarEvents] = React.useState([
+    // Example: { title: "Skill Exchange", datetime: "2024-06-19T14:00:00", type: "meeting", participant: "You" }
+  ]);
+  // For demonstration, pretend "You" is the logged-in user; in real app use user's actual name/id
+  const loggedInUser = "You";
+
+  function handleBookSlot({ date }) {
+    // Check if already booked by user, toggle remove/cancel if so
+    const idx = calendarEvents.findIndex(ev => {
+      const ed = new Date(ev.datetime);
+      return ed.getTime() === date.getTime() && ev.participant === loggedInUser;
+    });
+    if (idx > -1) {
+      // Remove user's own booking
+      setCalendarEvents(evts => evts.filter((_, i) => i !== idx));
+    } else {
+      setCalendarEvents(evts => [
+        ...evts,
+        {
+          title: "Exchange/Meeting",
+          datetime: date.toISOString(),
+          type: "meeting",
+          participant: loggedInUser
+        }
+      ]);
+    }
+  }
+
   // TABS and navigation
   const TABS = [
     {
@@ -869,6 +932,7 @@ function App() {
           postFilter={skillPostFilter}
           onFilterChange={setSkillPostFilter}
           isNarrow={isNarrow}
+          onBookMeetingClick={() => setCalendarOpen(true)}
         />
       )
     },
@@ -881,6 +945,7 @@ function App() {
           postFilter={resourcePostFilter}
           onFilterChange={setResourcePostFilter}
           isNarrow={isNarrow}
+          onBookMeetingClick={() => setCalendarOpen(true)}
         />
       )
     },
@@ -1004,9 +1069,16 @@ function App() {
             {TABS.find(tab => tab.id === activeTab)?.component}
           </section>
         </div>
-        {/* Overlays */}
+        {/* Overlays (AI Suggestions, Alerts, Calendar Scheduling) */}
         <AISuggestionsOverlay open={aiOverlay} onClose={() => setAiOverlay(false)} type={activeTab === 'resources' ? 'resource' : 'skill'} />
         <AlertsOverlay open={alertsOverlay} onClose={() => setAlertsOverlay(false)} />
+        <CalendarScheduler
+          open={calendarOpen}
+          onClose={() => setCalendarOpen(false)}
+          onBookSlot={handleBookSlot}
+          events={calendarEvents}
+          user={loggedInUser}
+        />
       </main>
     </div>
   );
