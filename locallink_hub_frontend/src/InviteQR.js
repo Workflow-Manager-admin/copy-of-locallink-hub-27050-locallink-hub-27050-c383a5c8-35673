@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import QRCode from "qrcode.react";
-import { QrReader } from "react-qr-reader";
+import { QrReader } from "@blackbox-vision/react-qr-reader";
 
 /*
   PUBLIC_INTERFACE

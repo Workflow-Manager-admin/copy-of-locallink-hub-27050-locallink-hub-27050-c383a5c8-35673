@@ -7,7 +7,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "qrcode.react": "^3.1.0",
-    "react-qr-reader": "^3.0.0"
+    "@blackbox-vision/react-qr-reader": "^3.0.0"
   },
   "scripts": {
     "start": "cross-env PUBLIC_URL=./ EDIT_MODE=true webpack serve --config .ve/webpack.config.js --mode development",
